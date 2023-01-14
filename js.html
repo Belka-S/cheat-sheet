@@ -13,6 +13,9 @@
 </head>
 
 <body class="container">
+  <!-- https://lodash.com -->
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+
   <header class="header">
     <div class="wrap">
       <div class="goit">
@@ -375,6 +378,9 @@
         <li><b>.concat(</b><i>arrayName1, arrayName2, ...</i><b>)</b> method - consolidates two or more arrays into one;
         </li>
         <li><b>.reverse()</b> method - reverses an array;</li>
+        <li><b>.flat(depth)</b> method - creates a new array with all sub-array elements concatenated into it
+          recursively up to the
+          specified depth;</li>
         <li><b>.at(</b>index<b>)</b> method - takes an integer value and returns the item at that index, allowing for
           positive and negative integers.;</li>
         <li><b>rest parameter</b> syntax allows to apply any Math.methodName to an Array:
@@ -713,6 +719,41 @@
       <p>The method chain can be of arbitrary length, but usually no more than 2-3 operations. First, iteration methods
         are used for relatively simple collection operations. Second, calling each subsequent method is an additional
         array iteration, which, with a large number of elements, can affect performance.</p>
+      <h3>Lodash</h3>
+      <ul>
+        <li><b>&#60script src="</b>https://cdn.jsdelivr.net/npm/<b>lodash</b>@4.17.21/lodash.min.js<b>">&#60/script>
+          </b>- to plugin lodash, <b>console.dir</b>(<b>_</b>) - to find out methods;
+        </li>
+        <li><b>_.isEmpty(</b>value<b>)</b> - checks if value is an empty object, collection, map, or set;</li>
+        <li><b>_.get(</b>object, path, [defaultValue]<b>)</b> - gets the value at path of object, if the resolved value
+          is undefined, the defaultValue is returned in its place,<br>
+          varName<b>?.</b>objectKey1<b>.?</b>objectKey2 - modern code for checking nested object properties;</li>
+        <li><b>_.union(</b>[arrays]<b>)</b> - creates an array of unique values, in order, from all given arrays using
+          SameValueZero for equality comparisons;</li>
+        <li><b>_.unionBy(</b>[arrays], [iteratee=_.identity]<b>)</b> - accepts iteratee which is invoked for each
+          element of each arrays to generate the criterion by which uniqueness is computed;</li>
+        <li><b>_.range(</b>[start=0], end, [step=1]<b>)</b> - creates an array of numbers (positive and/or negative)
+          progressing from start up to, but not including, end;</li>
+        <li><b>_.sortBy(</b>collection, [iteratees=[_.identity]]<b>)</b> - creates an array of elements, sorted in
+          ascending order by the results of running each element in a collection thru each iteratee. This method
+          performs a stable sort, that is, it preserves the original sort order of equal elements;
+        </li>
+        <li><b>_.sum(</b>array<b>)</b> - computes the sum of the values in array;</li>
+        <li><b>_.sumBy(</b>array, [iteratee=_.identity]<b>)</b> - accepts iteratee which is invoked for each element in
+          array to generate the value to be summed;</li>
+        <li><b>_.uniq(</b>array<b>)</b> - reates a duplicate-free version of an array, using SameValueZero for equality
+          comparisons, in which only the first occurrence of each element is kept;</li>
+        <li><b>_.uniqBy(</b>array, [iteratee=_.identity]<b>)</b> - accepts iteratee which is invoked for each element in
+          array to generate the criterion by which uniqueness is computed;</li>
+        <li><b><b>_.minBy()</b>, _.minBy(</b>array, [iteratee=_.identity]<b>)</b> - accepts iteratee which is invoked
+          for each element in array to generate the criterion by which the value is ranked;</li>
+        <li><b>_.camelCase()</b>, <b>_.kebabCase()</b>, <b>_.lowerCase()</b>, <b>_.snakeCase()</b>,
+          <b>_.startCase()</b>, <b>_.upperCase()</b> - converts string.
+        </li>
+        <li></li>
+        <li></li>
+      </ul>
+
     </section>
     <section class="keyword">
       <a href=" #goit">
@@ -809,14 +850,15 @@
   </main>
 
   <footer></footer>
-  <script src="./js/task.js" type="module"></script>
-  <script src="./js/objects/album.js" type="module"></script>
-  <script src="./js/objects/album-list.js" type="module"></script>
-  <script src="./js/objects/shop-cart.js" type="module"></script>
-  <script src="./js/objects/shop-admin.js" type="module"></script>
+  <script src="./js/training.js" type="module"></script>
+  <script src="./js/patterns/album.js" type="module"></script>
+  <script src="./js/patterns/album-list.js" type="module"></script>
+  <script src="./js/patterns/shop-cart.js" type="module"></script>
+  <script src="./js/patterns/shop-admin.js" type="module"></script>
   <script src="./js/callbacks-arrow/internal-closure.js" type="module"></script>
   <script src="./js/callbacks-arrow/arrow-this.js" type="module"></script>
-  <script src="./js/arrays/array-iteration.js" type="module"></script>
+  <script src="./js/arrays-objects/array-iteration.js" type="module"></script>
+  <script src="./js/arrays-objects/methods.js" type="module"></script>
 </body>
 
 

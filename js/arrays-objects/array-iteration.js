@@ -53,4 +53,4 @@ const getTagCount = getAllTags(insta).reduce(
   {}
 );
 
-console.table(getTagCount);
+// console.table(getTagCount);

@@ -1557,13 +1557,13 @@
 // });
 // console.log('upper: ', upper);
 // -----------------------------------------------------------------------------
-const holders = [
-  { name: 'mango', score: 83 },
-  { name: 'poly', score: 59 },
-  { name: 'ajax', score: 37 },
-  { name: 'kiwi', score: 94 },
-  { name: 'houston', score: 64 },
-];
+// const holders = [
+//   { name: 'mango', score: 83 },
+//   { name: 'poly', score: 59 },
+//   { name: 'ajax', score: 37 },
+//   { name: 'kiwi', score: 94 },
+//   { name: 'houston', score: 64 },
+// ];
 // const names = holders.map(
 //   holder =>
 //     holder.name.at(0).toUpperCase() +
@@ -1645,13 +1645,17 @@ const holders = [
 // letters.sort();
 // console.log(letters); // ['A', 'B', 'C', 'a', 'b', 'c']
 
-// ******************** .localeCompare() ********************
+// ******************** .sort() .localeCompare() ********************
 
 // const students = ['Vika', 'Andrey', 'oleg', 'Julia', 'boris', 'Katya'];
 // const inAlphabetOrder = [...students].sort((a, b) => a.localeCompare(b));
 // console.log(inAlphabetOrder); // ['Andrey', 'Boris', 'Julia', 'Katya', 'Oleg', 'Vika']
 // const inReversedOrder = [...students].sort((a, b) => b.localeCompare(a));
 // console.log(inReversedOrder); // ['Vika', 'Oleg', 'Katya', 'Julia', 'Boris', 'Andrey']
+// const test = [...students].sort(
+// (a, b) => a.charCodeAt(a[0]) - b.charCodeAt(b[0])
+// );
+// console.log('test: ', test);
 // -----------------------------------------------------------------------------
 // const students = [
 //   { name: 'Mango', score: 83 },
@@ -1688,20 +1692,21 @@ const holders = [
 //   .sort((a, b) => a.localeCompare(b));
 // console.table(sortCourseList);
 // -----------------------------------------------------------------------------
-const tweets = [
-  { id: '000', position: 1, likes: 5, tags: ['js', 'nodejs'] },
-  { id: '001', position: 4, likes: 2, tags: ['html', 'css'] },
-  { id: '002', position: 2, likes: 17, tags: ['html', 'js', 'nodejs'] },
-  { id: '003', position: 6, likes: 8, tags: ['css', 'react'] },
-  { id: '004', position: 9, likes: 0, tags: ['js', 'nodejs', 'react'] },
-];
-const insta = [
-  { id: '000', position: 1, likes: 3, tags: ['js', 'nodejs', 'css'] },
-  { id: '001', position: 11, likes: 6, tags: ['html', 'css', 'nodejs', 'js'] },
-  { id: '002', position: 8, likes: 11, tags: ['html', 'js', 'nodejs'] },
-  { id: '003', position: 5, likes: 1, tags: ['css', 'react', 'nodejs'] },
-  { id: '004', position: 6, likes: 3, tags: ['js', 'nodejs', 'react'] },
-];
+// const tweets = [
+
+//   { id: '000', position: 1, likes: 5, tags: ['js', 'nodejs'] },
+//   { id: '001', position: 4, likes: 2, tags: ['html', 'css'] },
+//   { id: '002', position: 2, likes: 17, tags: ['html', 'js', 'nodejs'] },
+//   { id: '003', position: 6, likes: 8, tags: ['css', 'react'] },
+//   { id: '004', position: 9, likes: 0, tags: ['js', 'nodejs', 'react'] },
+// ];
+// const insta = [
+//   { id: '000', position: 1, likes: 3, tags: ['js', 'nodejs', 'css'] },
+//   { id: '001', position: 11, likes: 6, tags: ['html', 'css', 'nodejs', 'js'] },
+//   { id: '002', position: 8, likes: 11, tags: ['html', 'js', 'nodejs'] },
+//   { id: '003', position: 5, likes: 1, tags: ['css', 'react', 'nodejs'] },
+//   { id: '004', position: 6, likes: 3, tags: ['js', 'nodejs', 'react'] },
+// ];
 
 // const getChangedID = (social, id) =>
 //   social.map(item => {
@@ -1781,14 +1786,3 @@ const insta = [
 // '🍎'--------------------'🍎' Syntax async/await (Lesson 22) '🍎'--------------------'🍎'
 
 // ******************** Питання ********************
-
-// Яким буде результат виразів? String порівнюються посимвольно по коду символа.
-// При порівнянні з числом відбувається перетворення на число.
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
-
-// console.log(5 > 4); // true
-// console.log(8 >= '7'); // true.
-// console.log(5 > '9'); // false  - чому?
-// console.log('2' > '12'); // true. - чому?
-// -----------------------------------------------------------------------------
-// -----------------------------------------------------------------------------
