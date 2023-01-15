@@ -1510,7 +1510,6 @@
 // const filteredNumbers = numbers.filter(value => value > 3);
 // console.log(filteredNumbers);
 // -----------------------------------------------------------------------------
-// -----------------------------------------------------------------------------
 // const numbers1 = [1, 2, 3, 4, 5];
 // const numbers2 = [1, 2, 3, 4, 5, 6, 7, 8];
 
@@ -1522,20 +1521,106 @@
 
 // filter(numbers1, 3, getBigger);
 // filter(numbers2, 6, getSmaller);
+
+// ******************** Autocheck ********************
+
+// ******************** 4-4 ********************
+// It is necessary to write the logic for processing a pizza order. Refactor the order method so that it accepts two callbacks onSuccess and onError as the second and third parameters.
+// If the pizzas property does not contain a pizza with the name from the pizzaName parameter, the order method should return the result of calling the onError callback, passing it the following string as an argument "There is no pizza with a name <pizza name> in the assortment."
+// If the pizzas property contains a pizza with the name from the pizzaName parameter, the order method must return the result of calling the onSuccess callback, passing it the name of the ordered pizza as an argument.
 // -----------------------------------------------------------------------------
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+// const pizzaPalace = {
+//   pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
+//   order(pizzaName, onSuccess, onError) {
+//     this.pizzas.includes(pizzaName)
+//       ? console.log(onSuccess(pizzaName))
+//       : console.log(
+//           onError(
+//             `There is no pizza with a name ${pizzaName} in the assortment.`
+//           )
+//         );
+//   },
+// };
+
+// const pizzaPalace1 = {
+//   pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
+//   order(pizzaName, onSuccess, onError) {
+//     if (this.pizzas.includes(pizzaName)) {
+//       return console.log(onSuccess(pizzaName));
+//     } else {
+//       return console.log(
+//         onError(`There is no pizza with a name ${pizzaName} in the assortment.`)
+//       );
+//     }
+//   },
+// };
+
+// // Change code above this line
+
+// // Callback for onSuccess
+// function makePizza(pizzaName) {
+//   return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+// }
+
+// // Callback for onError
+// function onOrderError(error) {
+//   return `Error! ${error}`;
+// }
+
+// // Method calls with callbacks
+// pizzaPalace.order('Smoked', makePizza, onOrderError);
+// pizzaPalace1.order('Smoked', makePizza, onOrderError);
+// pizzaPalace.order('Four meats', makePizza, onOrderError);
+// pizzaPalace1.order('Four meats', makePizza, onOrderError);
+// pizzaPalace.order('Big Mike', makePizza, onOrderError);
+// pizzaPalace1.order('Big Mike', makePizza, onOrderError);
+// pizzaPalace.order('Vienna', makePizza, onOrderError);
+// pizzaPalace1.order('Vienna', makePizza, onOrderError);
+
+// ******************** 4-6 ********************
+
+// function filterArray(numbers, value) {
+//   const filteredNumbers = [];
+//   // Change code below this line
+
+//   numbers.forEach(function callback(number) {
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   });
+//   return filteredNumbers;
+// }
+// console.log(filterArray([1, 2, 3, 4, 5], 3));
+
+// ******************** 4-7 ********************
+
+// function getCommonElements(firstArray, secondArray) {
+//   const commonElements = [];
+//   // Change code below this line
+
+//   firstArray.forEach(function callback(element) {
+//     if (secondArray.includes(element)) {
+//       commonElements.push(element);
+//     }
+//   });
+//   return commonElements;
+// }
+// console.log(getCommonElements([1, 2, 3], [2, 4]));
+
+// ******************** 4-13 ********************
+
+// function changeEven(numbers, value) {
+//   // Change code below this line
+//   const newArray = [...numbers];
+//   for (let i = 0; i < numbers.length; i += 1) {
+//     if (numbers[i] % 2 === 0) {
+//       newArray[i] = newArray[i] + value;
+//     }
+//   }
+//   return newArray;
+//   // Change code above this line
+// }
+// console.log(changeEven([1, 2, 3, 4, 5], 10));
 
 // '🍎'--------------------'🍎' Iterating Array Methods (Lesson 8) '🍎'--------------------'🍎'
 
@@ -1758,17 +1843,140 @@
 //   }, {});
 // console.table(getTagCount(tagsTweet));
 // console.table(getTagCount(tagsInsta));
+
 // -----------------------------------------------------------------------------
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
+const users = [
+  {
+    name: 'Moore Hensley',
+    email: 'moorehensley@indexia.com',
+    eyeColor: 'blue',
+    friends: ['Sharron Pace'],
+    isActive: false,
+    balance: 2811,
+    gender: 'male',
+  },
+  {
+    name: 'Sharlene Bush',
+    email: 'sharlenebush@tubesys.com',
+    eyeColor: 'blue',
+    friends: ['Briana Decker', 'Sharron Pace'],
+    isActive: true,
+    balance: 3821,
+    gender: 'female',
+  },
+  {
+    name: 'Ross Vazquez',
+    email: 'rossvazquez@xinware.com',
+    eyeColor: 'green',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+    isActive: false,
+    balance: 3793,
+    gender: 'male',
+  },
+  {
+    name: 'Elma Head',
+    email: 'elmahead@omatom.com',
+    eyeColor: 'green',
+    friends: ['Goldie Gentry', 'Aisha Tran'],
+    isActive: true,
+    balance: 2278,
+    gender: 'female',
+  },
+  {
+    name: 'Carey Barr',
+    email: 'careybarr@nurali.com',
+    eyeColor: 'blue',
+    friends: ['Jordan Sampson', 'Eddie Strong', 'Adrian Cross'],
+    isActive: true,
+    balance: 3951,
+    gender: 'male',
+  },
+  {
+    name: 'Blackburn Dotson',
+    email: 'blackburndotson@furnigeer.com',
+    eyeColor: 'brown',
+    friends: [
+      'Jacklyn Lucas',
+      'Linda Chapman',
+      'Adrian Cross',
+      'Solomon Fokes',
+    ],
+    isActive: false,
+    balance: 1498,
+    gender: 'male',
+  },
+  {
+    name: 'Sheree Anthony',
+    email: 'shereeanthony@kog.com',
+    eyeColor: 'brown',
+    friends: ['Goldie Gentry', 'Briana Decker'],
+    isActive: true,
+    balance: 2764,
+    gender: 'female',
+  },
+];
+
+// ******************** 4-25 ********************
+
+const getFriends = usersArray => {
+  const allFriends = usersArray.flatMap(user => user.friends);
+  return allFriends.filter(
+    (friend, index) => allFriends.indexOf(friend) === index
+  );
+};
+// console.log(getFriends(users));
+
+// ******************** 4-29 ********************
+
+const getUserWithEmail = (usersArray, email) =>
+  users.find(usersArray => usersArray.email === email);
+// console.log(getUserWithEmail(users, 'shereeanthony@kog.com'));
+
+// ******************** 4-36 ********************
+
+const calculateTotalBalance = usersArray =>
+  usersArray.reduce((acc, user) => {
+    acc += user.balance;
+    return acc;
+  }, 0);
+// console.log(calculateTotalBalance(users));
+
+// ******************** 4-46 ********************
+
+// Modify the getNamesSortedByFriendCount(users) function so that it returns an array
+// of usernames sorted in ascending order by the number of their friends(the friends property).
+const getNamesSortedByFriendCount = usersArray =>
+  [...usersArray]
+    .sort((a, b) => a.friends.length - b.friends.length)
+    .map(user => user.name);
+// console.log(getNamesSortedByFriendCount(users));
+
+// ******************** 4-46 ********************
+
+// Modify the getSortedFriends(users) function so that it returns an array
+// of uniquefriends' names (the friends property) sorted alphabetically.
+const getSortedFriends = usersArray => {
+  const allFriends = usersArray.flatMap(user => user.friends);
+  return allFriends
+    .filter((friend, index) => allFriends.indexOf(friend) === index)
+    .sort((a, b) => a.localeCompare(b));
+};
+// console.log(getSortedFriends(users));
+
+// ******************** 4-48 ********************
+
+// Modify the getTotalBalanceByGender(users, gender) function so that it returns
+// the total balance of users(the balance property) whose gender(the gender
+// property) matches the value of the gender parameter.
+const getTotalBalanceByGender = (usersArray, gender) =>
+  usersArray
+    .filter(user => user.gender === gender)
+    .reduce((acc, user) => {
+      acc += user.balance;
+      return acc;
+    }, 0);
+console.log(getTotalBalanceByGender(users, 'male'));
 
 // '🍎'--------------------'🍎' The keyword this (Lesson 9) '🍎'--------------------'🍎'
 // '🍎'--------------------'🍎' Prototypes and Classes (Lesson 10) '🍎'--------------------'🍎'

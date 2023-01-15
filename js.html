@@ -610,25 +610,26 @@
       </a>
       <h3>Callbacks</h3>
       <p>Callbacks are used to process user actions on the page, process requests to the server, execute unknown
-        functions, etc. and intended for deferred execution. <b>Callback</b> is a function that is passed as an argument
-        to another function, and the latter calls such function. <b>Higher-order</b> function is a function that takes
-        other functions as parameters or returns a function as a result: <br>
+        functions, etc. and intended for deferred execution.Any function can assume an arbitrary number of callbacks.
       </p>
-      <span>
-        function <b>callbackName(</b>item<b>) {</b>\\Logic whith item<b>}</b>; <br>
-        function <b>higherOrderName(</b>item, element, callback<b>) {</b>\\Logic whith element;
-        callback(element);<b>}</b> <br>
-        <b>higherOrderName(</b>'item', 'element', callbackName<b>)</b>;
-      </span>
-      <p><b>Inline callback</b> is a function declared immediately when calling the function to which the callback is
-        being passed and will be available only as a parameter value and nowhere else in the code. Any function can
-        assume an arbitrary number of callbacks.</p>
-      <span>
-        function <b>higherOrderName(</b>item, element, callback<b>) {</b>\\Logic whith element;
-        callback(element);<b>}</b> <br>
-        <b>higherOrderName(</b>'item', 'element', function <b>callbackName(</b>item<b>) {</b>\\Logic whith
-        item<b>}</b>;<b>)</b>;
-      </span>
+      <ul>
+        <li><b>Callback</b> is a function that is passed as an argument to another function, and the latter calls such
+          function: <br>
+          function <b>callbackName(</b>element<b>) {</b>\\Logic whith element<b>}</b>; <br>
+          higherOrderName<b>(</b>element, <b>callbackName)</b>;
+        </li>
+        <li><b>Higher-order</b> function is a function that takes other functions as parameters or returns a function as
+          a result: <br>
+          function <b>higherOrderName(</b>element, callback<b>) {</b>\\Logic whith element; callback(element);<b>}</b>
+          <br>
+          <b>higherOrderName(</b>element, callbackName<b>)</b>;
+        </li>
+        <li><b>Inline callback</b> is a function declared immediately when calling the function to which the callback is
+          being passed and will be available only as a parameter value and nowhere else in the code:<br>
+          <b>higherOrderName(</b>element, function <b>callbackName(</b>element<b>) {</b>\\Logic whith
+          element<b>}</b>;<b>)</b>;
+        </li>
+      </ul>
       <h3>Arrow Functions</h3>
       <p>Arrow functions are created as a function expression, and if the function is not anonymous then it must be
         assigned to a variable.</p>
@@ -667,7 +668,7 @@
       <h3>Syntax</h3>
       <ul>
         <li>array.<b>method(</b>callbackFn[, thisArg]<b>)</b> - callback function;</li>
-        <li>array.<b>method(</b>function (element, index, array)<b> {</b>//logic for each iteration<b>}</b>[,
+        <li>array.<b>method(</b>function callbackFn(element, index, array)<b> {</b>//logic for each iteration<b>}</b>[,
           thisArg]<b>)</b> - inline callback function;
         </li>
         <li>array.<b>method(</b>(element, index, array)<b> => {</b>//logic for each iteration<b>})</b> - arrow
@@ -676,11 +677,11 @@
       <h3>Array Iteration Methods</h3>
       <ul>
         <li><b>.forEach(</b><i>(element, index, array)</i> <b>=> {</b>//logic for each iteration<b>}</b>[,
-          thisArg]<b>)</b> -
-          executes a provided function once for each array element, execution of the <i>forEach</i> can't be
-          interrupted;</li>
-        <li><b>.map()</b> method - to transform an array, returns a new array of the same length, ccan be used to change
-          every element of an array;</li>
+          thisArg]<b>)</b> - executes a provided function once for each array element, returns nothing, execution of the
+          <i>forEach</i> can't be interrupted;
+        </li>
+        <li><b>.map()</b> method - returns a new array of the same length, can be used to change every element of an
+          array;</li>
         <li><b>.flatMap()</b> method is similar to the <i>map()</i> method, but it is used in cases where the result is
           a multidimensional array that needs to be "flattened", tnew array is "flattened" by one (one nesting);</li>
         <li><b>.filter()</b> method - to copy array whith filtering, when more than one element from a collection should
@@ -697,8 +698,9 @@
         <li><b>.some()</b> method - returns <i>true</i> if at least one array element satisfies a condition, otherwise
           returns <i>false</i></i>;
         </li>
-        <li><b>.sort()</b> method - to sort the elements of an <i>original</i> array;</li>
-        <li><b>.reduce(</b>(accumulator, element, index, array) <b>=></b> {// Callback body}, initialValue<b>)</b> -
+        <li><b>.sort()</b> method - to sort the elements of an <i><b>original</b></i> array, sorting occurs by
+          converting the values ​​to a string and comparing the ordinal numbers in the Unicode table;</li>
+        <li><b>.reduce(</b>(accumulator, element, index, array) <b>=></b> {// Callback body}[, initialValue]<b>)</b> -
           to process each array element, storing the intermediate result as an accumulator, returns anything (most often
           returns accumulator).</li>
       </ul>
