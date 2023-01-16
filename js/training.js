@@ -1846,122 +1846,122 @@
 
 // -----------------------------------------------------------------------------
 
-const users = [
-  {
-    name: 'Moore Hensley',
-    email: 'moorehensley@indexia.com',
-    eyeColor: 'blue',
-    friends: ['Sharron Pace'],
-    isActive: false,
-    balance: 2811,
-    gender: 'male',
-  },
-  {
-    name: 'Sharlene Bush',
-    email: 'sharlenebush@tubesys.com',
-    eyeColor: 'blue',
-    friends: ['Briana Decker', 'Sharron Pace'],
-    isActive: true,
-    balance: 3821,
-    gender: 'female',
-  },
-  {
-    name: 'Ross Vazquez',
-    email: 'rossvazquez@xinware.com',
-    eyeColor: 'green',
-    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
-    isActive: false,
-    balance: 3793,
-    gender: 'male',
-  },
-  {
-    name: 'Elma Head',
-    email: 'elmahead@omatom.com',
-    eyeColor: 'green',
-    friends: ['Goldie Gentry', 'Aisha Tran'],
-    isActive: true,
-    balance: 2278,
-    gender: 'female',
-  },
-  {
-    name: 'Carey Barr',
-    email: 'careybarr@nurali.com',
-    eyeColor: 'blue',
-    friends: ['Jordan Sampson', 'Eddie Strong', 'Adrian Cross'],
-    isActive: true,
-    balance: 3951,
-    gender: 'male',
-  },
-  {
-    name: 'Blackburn Dotson',
-    email: 'blackburndotson@furnigeer.com',
-    eyeColor: 'brown',
-    friends: [
-      'Jacklyn Lucas',
-      'Linda Chapman',
-      'Adrian Cross',
-      'Solomon Fokes',
-    ],
-    isActive: false,
-    balance: 1498,
-    gender: 'male',
-  },
-  {
-    name: 'Sheree Anthony',
-    email: 'shereeanthony@kog.com',
-    eyeColor: 'brown',
-    friends: ['Goldie Gentry', 'Briana Decker'],
-    isActive: true,
-    balance: 2764,
-    gender: 'female',
-  },
-];
+// const users = [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     gender: 'female',
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     gender: 'female',
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong', 'Adrian Cross'],
+//     isActive: true,
+//     balance: 3951,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: [
+//       'Jacklyn Lucas',
+//       'Linda Chapman',
+//       'Adrian Cross',
+//       'Solomon Fokes',
+//     ],
+//     isActive: false,
+//     balance: 1498,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     gender: 'female',
+//   },
+// ];
 
 // ******************** 4-25 ********************
 
-const getFriends = usersArray => {
-  const allFriends = usersArray.flatMap(user => user.friends);
-  return allFriends.filter(
-    (friend, index) => allFriends.indexOf(friend) === index
-  );
-};
+// const getFriends = usersArray => {
+//   const allFriends = usersArray.flatMap(user => user.friends);
+//   return allFriends.filter(
+//     (friend, index) => allFriends.indexOf(friend) === index
+//   );
+// };
 // console.log(getFriends(users));
 
 // ******************** 4-29 ********************
 
-const getUserWithEmail = (usersArray, email) =>
-  users.find(usersArray => usersArray.email === email);
+// const getUserWithEmail = (usersArray, email) =>
+//   users.find(usersArray => usersArray.email === email);
 // console.log(getUserWithEmail(users, 'shereeanthony@kog.com'));
 
 // ******************** 4-36 ********************
 
-const calculateTotalBalance = usersArray =>
-  usersArray.reduce((acc, user) => {
-    acc += user.balance;
-    return acc;
-  }, 0);
+// const calculateTotalBalance = usersArray =>
+//   usersArray.reduce((acc, user) => {
+//     acc += user.balance;
+//     return acc;
+//   }, 0);
 // console.log(calculateTotalBalance(users));
 
 // ******************** 4-46 ********************
 
 // Modify the getNamesSortedByFriendCount(users) function so that it returns an array
 // of usernames sorted in ascending order by the number of their friends(the friends property).
-const getNamesSortedByFriendCount = usersArray =>
-  [...usersArray]
-    .sort((a, b) => a.friends.length - b.friends.length)
-    .map(user => user.name);
+// const getNamesSortedByFriendCount = usersArray =>
+//   [...usersArray]
+//     .sort((a, b) => a.friends.length - b.friends.length)
+//     .map(user => user.name);
 // console.log(getNamesSortedByFriendCount(users));
 
 // ******************** 4-46 ********************
 
 // Modify the getSortedFriends(users) function so that it returns an array
 // of uniquefriends' names (the friends property) sorted alphabetically.
-const getSortedFriends = usersArray => {
-  const allFriends = usersArray.flatMap(user => user.friends);
-  return allFriends
-    .filter((friend, index) => allFriends.indexOf(friend) === index)
-    .sort((a, b) => a.localeCompare(b));
-};
+// const getSortedFriends = usersArray => {
+//   const allFriends = usersArray.flatMap(user => user.friends);
+//   return allFriends
+//     .filter((friend, index) => allFriends.indexOf(friend) === index)
+//     .sort((a, b) => a.localeCompare(b));
+// };
 // console.log(getSortedFriends(users));
 
 // ******************** 4-48 ********************
@@ -1969,17 +1969,271 @@ const getSortedFriends = usersArray => {
 // Modify the getTotalBalanceByGender(users, gender) function so that it returns
 // the total balance of users(the balance property) whose gender(the gender
 // property) matches the value of the gender parameter.
-const getTotalBalanceByGender = (usersArray, gender) =>
-  usersArray
-    .filter(user => user.gender === gender)
-    .reduce((acc, user) => {
-      acc += user.balance;
-      return acc;
-    }, 0);
-console.log(getTotalBalanceByGender(users, 'male'));
+// const getTotalBalanceByGender = (usersArray, gender) =>
+//   usersArray
+//     .filter(user => user.gender === gender)
+//     .reduce((acc, user) => {
+//       acc += user.balance;
+//       return acc;
+//     }, 0);
+// console.log(getTotalBalanceByGender(users, 'male'));
 
 // '🍎'--------------------'🍎' The keyword this (Lesson 9) '🍎'--------------------'🍎'
+
+// ******************** call(), apply() methods ********************
+
+// function greetGuest(greeting) {
+//   console.log(`${greeting}, ${this.username}.`);
+// }
+// const mango = {
+//   username: 'Mango',
+// };
+// const poly = {
+//   username: 'Poly',
+// };
+// greetGuest.call(mango, 'Welcome'); // Welcome, Mango.
+// greetGuest.apply(poly, ['Welcome back']); // Welcome back, Poly.
+
+// ******************** bind() method ********************
+
+// function greet(clientName) {
+//   console.log(`${clientName}, welcome to «${this.service}».`);
+// }
+// const gmail = {
+//   service: 'Gmail',
+// };
+// const gmailGreeter = greet.bind(gmail);
+// gmailGreeter('Kiwi'); // "Kiwi, welcome to «Gmail»."
+// gmailGreeter('MJ');
+// greet.call(gmail, 'Mango'); // "Mango, welcome to «Gmail»."
+// console.dir(gmailGreeter); // [[BoundThis]]:Object // service: "Gmail"
+
+// const gmailGreeter1 = greet.bind(gmail, 'Poly');
+// gmailGreeter1();
+// gmailGreeter1('MJ');
+
+// ******************** method ********************
+
+// const customer = {
+//   firstName: 'Jacob',
+//   lastName: 'Mercer',
+//   getFullName() {
+//     return `${this.firstName} ${this.lastName}`;
+//   },
+// };
+
+// function makeMessage(callback) {
+//   console.log(`Processing request from ${callback()}.`); // callback() is a call of the getFullName method without an object
+// }
+// makeMessage(customer.getFullName); // Function call error
+
+// -----------------------------------------------------------------------------
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 // '🍎'--------------------'🍎' Prototypes and Classes (Lesson 10) '🍎'--------------------'🍎'
+
+// ******************** Object prototype ********************
+
+// const animal = {
+//   legs: 4,
+// };
+// const dog = Object.create(animal);
+// dog.name = 'Mango';
+
+// console.log(dog); // { name: 'Mango', __proto__: animal }
+// console.log(animal.isPrototypeOf(dog)); // true
+
+// ******************** Classes ********************
+
+// class User {
+//   constructor(varName, email) {
+//     // Initializing instance properties
+//     this.popertyKey = varName;
+//     this.email = email;
+//   }
+// }
+
+// const mango = new User('Mango', 'mango@mail.com');
+// console.log(mango); // { name: 'Mango', email: 'mango@mail.com' }
+
+// const poly = new User('Poly', 'poly@mail.com');
+// console.log(poly); // { name: 'Poly', email: 'poly@mail.com' }
+
+// ******************** Class methods ********************
+
+// class User {
+//   constructor({ name, email }) {
+//     this.name = name;
+//     this.email = email;
+//   }
+
+//   // getEmail method
+//   getEmail() {
+//     return this.email;
+//   }
+
+//   // changeEmail method
+//   changeEmail(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+
+// ******************** Classes ********************
+
+// class User {
+//   // Optional declaration of public properties
+//   name;
+//   // Mandatory declaration of private properties
+//   #email;
+//   constructor({ name, email }) {
+//     this.name = name;
+//     this.#email = email;
+//   }
+//   getEmail() {
+//     return this.#email;
+//   }
+//   changeEmail(newEmail) {
+//     this.#email = newEmail;
+//   }
+// }
+// const mango = new User({
+//   name: 'Mango',
+//   email: 'mango@mail.com',
+// });
+// console.log(mango);
+
+// ******************** Getters and setters ********************
+
+// class clsName {
+//   #popertyKey;
+//   constructor({ name, varName }) {
+//     this.name = name;
+//     this.#popertyKey = varName;
+//   }
+
+//   getVarName() {
+//     return this.#popertyKey;
+//   }
+//   // varName getter
+//   get varName() {
+//     return this.#popertyKey;
+//   }
+
+//   changeVarName(newVarName) {
+//     if (newVarName === '') {
+//       console.error('Error! varName cannot be an empty string!');
+//       return;
+//     }
+//     this.#popertyKey = newVarName;
+//   }
+//   // varName setter
+//   set varName(newVarName) {
+//     if (newVarName === '') {
+//       console.error('Error! varName cannot be an empty string!');
+//       return;
+//     }
+
+//     this.#popertyKey = newVarName;
+//   }
+// }
+// const objName = new clsName({ name: 'Mango', varName: 'mango@mail.com' });
+// // varName getter
+// console.log(objName.varName); // mango@mail.com
+// console.log(objName.getVarName()); // mango@supermail.com
+// // varName setter
+// objName.varName = 'NEW@supermail.com';
+// console.log(objName.varName); // mango@supermail.com
+// objName.changeVarName('mango@supermail.com');
+// console.log(objName.getVarName()); // mango@supermail.com
+// objName.changeVarName('');
+
+// ******************** Static properties ********************
+
+// class User {
+//   // Declaring and initializing a static property
+//   static Roles = {
+//     ADMIN: "admin",
+//     EDITOR: "editor",
+//   };
+//   #email;
+//   #role;
+//   constructor({ email, role }) {
+//     this.#email = email;
+//     this.#role = role;
+//   }
+//   get role() {
+//     return this.#role;
+//   }
+//   set role(newRole) {
+//     this.#role = newRole;
+//   }
+// }
+// const mango = new User({
+//   email: "mango@mail.com",
+//   role: User.Roles.ADMIN,
+// });
+// console.log(mango.Roles); // undefined
+// console.log(User.Roles); // { ADMIN: "admin", EDITOR: "editor" }
+
+// console.log(mango.role); // "admin"
+// mango.role = User.Roles.EDITOR;
+// console.log(mango.role); // "editor"
+
+// ******************** Child class constructor ********************
+
+class Parent {
+  #popertyKey;
+  constructor(varName) {
+    this.#popertyKey = varName;
+  }
+  get varName() {
+    return this.#popertyKey;
+  }
+  set varName(newVarName) {
+    this.#popertyKey = newVarName;
+  }
+}
+
+class Child extends Parent {
+  constructor({ varName, posts }) {
+    // Виклик конструктора батьківського класу User
+    super(varName);
+    this.posts = posts;
+  }
+}
+const editor = new Child({ varName: 'mango@mail.com', posts: [] });
+console.log(editor); // { varName: 'mango@mail.com', posts: [] }
+console.log(editor.varName); // 'mango@mail.com'
+
+// ******************** Child class methods ********************
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 // '🍎'--------------------'🍎' Destructuring and spread/rest (Lesson 11) '🍎'--------------------'🍎'
 // '🍎'--------------------'🍎' Callbacks and Arrow Functions (Lesson 12) '🍎'--------------------'🍎'
 // '🍎'--------------------'🍎' Event Delegation (Lesson 13) '🍎'--------------------'🍎'

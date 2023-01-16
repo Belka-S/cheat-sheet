@@ -499,10 +499,8 @@
         <li><b>[variableName]</b> - to access a property with a name that you do not know, as it is stored as the value
           of a variable;</li>
         <li>const <i>object = {</i> <b>[variableName]</b><i>: value, ...}</i> - to <b>add</b> objects property with a
-          name
-          that you do not know, as it is stored as the value of a variable or as the result of a
-          function,
-          the value of a <b>computed property</b> can be any valid expression;</li>
+          name that you do not know, as it is stored as the value of a variable or as the result of a function, the
+          value of a <b>computed property</b> can be any valid expression;</li>
         <li><b>fnName:</b> function<b>() {</b>\\Body<b>}</b> <i>or</i> <b>fnName() {</b>\\Body<b>}</b> - to store
           function (<b>object method</b>) for working with the object's (<b>model's</b>) data;</li>
         <li><b>this.</b>propertyKey - to access the properties in object methods, we refer to it through
@@ -517,7 +515,7 @@
           <i>objectName</i><b>[</b><i>key</i><b>]</b>;<b>}</b> _ _ _ _ _ _ _ _ _ _ _ to access values of the
           proherties;<br>
         </li>
-        <li><b>hasOwnProperty(</b><i>key</i><b>)</b> method - returns a boolean indicating whether the object has the
+        <li><b>.hasOwnProperty(</b><i>key</i><b>)</b> method - returns a boolean indicating whether the object has the
           specified property as its own property or inherited one;</li>
         <li><b>Object.keys(</b><i>object</i><b>)</b> method - returns an array of own property keys of an object;</li>
         <li><b>Object.values(</b><i>object</i><b>)</b> method - returns an array of its own property values</li>
@@ -595,9 +593,10 @@
         which order. The <b>parameter object pattern</b> solves this problem by replacing a set of parameters with just
         one, an object with named properties:</p>
       <ul>
+        <li><i>function fnName(<b>objectName</b>) {\\Function body}</i> - then, when calling, you pass one object with
+          the necessary properties;</li>
         <li><i>function fnName(objectName) {<b>const {</b>varName1, varName2<b>} =</b> objectName; \\Function body}</i>
-          - destructure the
-          object in the <i>objectName</i> parameter;</li>
+          - destructure the object in the <i>objectName</i> parameter;</li>
         <li><i>function fnName(<b>{</b>varName1, varName2<b>}</b>) {\\Function body}</i> - destructure the object in the
           <i>function
             signature</i>.
@@ -752,28 +751,159 @@
         <li><b>_.camelCase()</b>, <b>_.kebabCase()</b>, <b>_.lowerCase()</b>, <b>_.snakeCase()</b>,
           <b>_.startCase()</b>, <b>_.upperCase()</b> - converts string.
         </li>
-        <li></li>
-        <li></li>
       </ul>
-
     </section>
     <section class="keyword">
       <a href=" #goit">
         <h2 id="keyword">The keyword this (Lesson 9)</h2>
       </a>
-
-
-
-
-
-
+      <h3>Function Execution Context</h3>
+      <p>The reserved keyword <b>this</b> can be used <b><i>inside functions</i></b>. During the execution of a
+        function, a reference to the <b>context</b> object of its call is written to <b>this</b>. Therefore, in the
+        function body, you can access the properties and methods of this object. The <b>context</b> value inside a
+        function (not arrow) is determined not at the time of its creation, but <b>at the time of calling</b>. That is,
+        the value of this is determined by how the function is called, not where it was declared.</p>
+      <ul>
+        <li>In <b>the global scope</b>, in non-strict mode, this refers to the <b>window</b> object, in strict mode the
+          value of this in the global scope will be <b>undefined</b>.</li>
+        <li>In <b>object method</b>, the context (<i>this</i>) will refer to the <b>object</b> that includes the method.
+        </li>
+        <li>In <b>callback functions</b> the context (<i>this</i>) is <b>not preserved</b>.</li>
+        <li><b>Arrow functions</b> do not have their own this. The context inside an arrow is determined by the <b>place
+            of its declaration</b>, not the call, and refers to the <b>parent function’s context</b>. Arrow functions
+          also ignore the presence of strict mode. If the arrow remembers the global context, <i>this</i> in it will
+          contain a reference to <i>window</i>, regardless of whether the script is executed in strict mode or not.</li>
+      </ul>
+      <h3>Function Methods</h3>
+      <p>There are situations where a function needs to be called in the context of an object, and the function is not
+        its method. To do this, functions have <b>call</b>, <b>apply</b> and <b>bind</b> methods.</p>
+      <ul>
+        <li><b>.call(</b>objectName, arg1, arg2, ...<b>)</b> method <b>calls</b> the function that contain a
+          reference to the <i>objectName</i> object, and passes arguments as <i>arg1</i>, <i>arg2</i>;
+        </li>
+        <li><b>.apply(</b>objectName, <b>[</b>arg1, arg2, ...<b>])</b> method <b>calls</b> the function that contain a
+          reference to the <i>objectName</i> object, and passes an <i>array</i> as arguments;</li>
+        <li><b>.bind(</b>objectName, arg1, arg2, ...<b>)</b> method <b>creates and returns a copy</b> of the function
+          with the bound <i>objectName</i> context and such arguments as <i>arg1</i>, <i>arg2</i>, the function can be
+          passed anywhere and called whenever.
+          <p>higherOrderFnName<b>(</b>objectName.objectMetodName<b>.bind</b>(objectName)<b>)</b> - the <i>bind</i>
+            method is used to bind the context when passing object methods <i>objectMetodName</i> as <b>callback</b>
+            functions. Callback passes not the original <i>objectMetodName</i> method, but its <b>copy</b> with the
+            context bound to the <i>objectName</i> object.
+          </p>
+        </li>
+      </ul>
     </section>
     <section class="prototypes">
       <a href=" #goit">
         <h2 id="prototypes">Prototypes and Classes (Lesson 10)</h2>
       </a>
-    </section>
+      <h3>Object-Oriented Programming</h3>
+      <ul>
+        <li><b>Procedural</b> programming is a set of not explicitly related functions and variables for storing and
+          processing information.</li>
+        <li><b>Object-oriented</b> programming (OOP) is a methodology describing a program as a collection of objects,
+          each of which contains data (properties) and methods for interacting with them. OOP entities:
+          <ul>
+            <li><b>Class</b> is a way of describing entities, their state and behavior depending on this state, along
+              with the rules for interacting with this entity (contract).</li>
+            <li><b>Instance (object)</b> is a separate representative of a class with a specific state and behavior
+              completely defined by the class.</li>
+            <li><b>Interface</b> is a set of class properties and methods available for use when working with instances.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h3>Prototypal Inheritance</h3>
+      <p>OOP in JavaScript is built on prototypal inheritance. Objects can be chained so that a property not found in
+        one object is automatically searched for in another. The link here is a special internal property,
+        <b>[[Prototype]]</b>.
+      </p>
+      <ul>
+        <li><b>Object.create(</b><i>protoObj</i>[, propertiesObject]<b>)</b> method creates and returns a new object
+          <i>newObg</i>, linking it to the <i>protoObj</i> object;
+        </li>
+        <li><i>protoObj</i><b>.isPrototypeOf(</b><i>newObj</i><b>)</b> method checks if the <i>protoObj</i> object is
+          <i>newObj</i> prototype and returns true or false;
+        </li>
+        <li><i>newObj</i><b>.hasOwnProperty(</b><i>key</i><b>)</b> method returns a boolean indicating whether the
+          <i>newObj</i> object has the <i>key</i> property as its own property or inherited one;
+        </li>
+        <li><b>Object.keys(</b><i>newObj</i><b>)</b> method returns an array of own property keys of the <i>newObj</i>
+          object;</li>
+      </ul>
+      <p>When interpreter looks for non-existent property in the <i>newObj</i> object, it continues searching in the
+        object by reference from <i>newObj</i><b>.__ proto__</b>, that is, in the <i>protoObj</i> object, its prototype.
+        The prototype is a backup storage of object properties and methods, which is automatically enabled when
+        searching for them.</p>
+      <h3>Classes</h3>
+      <p>Object literal syntax makes it possible to create a single object. However, often you need to create many
+        objects of the same type with the same set of properties, but different values and methods for interacting with
+        them. Classes are a special syntax for declaring function to create objects.</p>
+      <ul>
+        <li><b>class</b> clsName <b>{</b>//Class body<b>}</b> - class <b>declaration</b> begins with the keyword
+          class, followed by the class name and curly braces, i.e. its body;</li>
+        <li>const objName = <b>new</b> clsName<b>()</b> - create the <i>objName</i> object called <b>class
+            instance</b> because it contains the data and behavior described by the class;</li>
+        <li>class clsName {<b>constructor(</b>varName, ...<b>) {</b>this.popertyKey = varName; ...<b>}</b>} - the
+          class has a <i>constructor</i> <b>method</b>, that enables to add <b>public properties</b> to each instance
+          object;</li>
+        <li>class clsName {constructor(<b>{varName, ...}</b>) {this.popertyKey = varName; ...}} -->
+          const objName = new clsName(<b>{popertyKey: value, ...}</b>) - applys the <b>“Parameter Object”</b> pattern
+          to them, passing a single object with properties having logical names;</li>
+        <li>class clsName {<b>metodName() {</b>\\Method body<b>}</b>} - functions that will be available to the
+          instance in its prototype are <b>class methods</b>;</li>
+        <li>class clsName {<b>#</b>popertyKey; <b>#</b>metodName(){}} - <b>encapsulation</b> is a concept to hide
+          the internal details of a class, adding <b>#</b> to the <b>property</b> name or class <b>methods</b> makes
+          them <b>private</b> (can only be accessed from within the class);</li>
+        <li>getVarName() {return this.#popertyKey;} --> <b>get</b> varName() {return this.#popertyKey;} -
+          <b>declares getter</b>,<br>
+          objName.getVarName() --> objName<b>.varName</b> - <b>getter</b> is <b>executed</b> when trying to get a
+          property value;
+        </li>
+        <li>changeVarName(newVarName) {this.#popertyKey = newVarName;} --> <b>set</b> varName(newVarName)
+          {this.#popertyKey = newVarName;} - <b>declares setter</b>,<br>
+          objName.changeVarName(value) --> objName<b>.varName = value</b> - <b>setter</b> is <b>executed</b> when trying
+          to changea property value;<br>
+        </li>
+        <li>class clsName {<b>static</b> <i>popertyKey</i> <b>= {</b>ADMIN: "admin", EDITOR: "editor",<b>}</b>} - static
+          <b>property</b> declaration whith the keyword <i>static</i>;
+        <li>class clsName {<b>static</b> <i>methodName</i><b>() {}</b> - static <b>method</b> declaration whith the
+          keyword <i>static</i>, when it is called, the keyword <i>this</i> refers to the class itself;
+        </li>
+        <li>class <i>Child</i> <b>extends</b> <i>Parent</i> {//...} - <b>class inheritance</b>, when one class (child,
+          derived) inherits the properties and methods of another class (parent), is used for declaration a base class
+          that stores common characteristics and methods for a group of derived classes, which inherit the properties
+          and methods of the parent and, besides, add their own unique ones, private properties and methods of the
+          parent class are not inherited by the child class;</li>
+        <li>class Child extends Parent {<b>constructor(</b>{varName}<b>) {super(</b>varName<b>)}</b> - to call a special
+          function, <b>super(</b>arguments<b>)</b>, wich is an alias for the parent class constructor, otherwise, when
+          trying to access <i>this</i> in the child class constructor, an error will be generated;</li>
+        <li><b>child class methods</b> will only be available to its instances.</li>
+      </ul>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
 
 
 
