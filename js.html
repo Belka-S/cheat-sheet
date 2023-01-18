@@ -480,9 +480,9 @@
           property;
         </li>
         <li>const <b>object</b> = <b>new</b> constructor(arguments) - creates an instance of a user-defined object
-          type or of one of the built-in object types that has a <i>constructor</i> function (<b>constructor</b> data
+          type or of one of the built-in object types that has a <i>constructor</i> function, <b>constructor</b> data
           property of an <i>object</i> returns a reference to the constructor function that created the instance
-          object);</li>
+          object;</li>
         <li><b>Object.create(</b><i>proto[, propertiesObject]</i><b>)</b> method - creates a new object, using an
           existing object as the prototype of the newly created object;</li>
         <li><b>Object.assign(</b><i>target, source1, source2, ...</i><b>)</b> method - copies all enumerable own
@@ -778,12 +778,13 @@
       <p>There are situations where a function needs to be called in the context of an object, and the function is not
         its method. To do this, functions have <b>call</b>, <b>apply</b> and <b>bind</b> methods.</p>
       <ul>
-        <li><b>.call(</b>objectName, arg1, arg2, ...<b>)</b> method <b>calls</b> the function that contain a
+        <li><b>.call(</b>objectName[, arg1, arg2, ...]<b>)</b> method <b>calls</b> the function that contain a
           reference to the <i>objectName</i> object, and passes arguments as <i>arg1</i>, <i>arg2</i>;
         </li>
-        <li><b>.apply(</b>objectName, <b>[</b>arg1, arg2, ...<b>])</b> method <b>calls</b> the function that contain a
+        <li><b>.apply(</b>objectName[, <b>[</b>arg1, arg2, ...<b>]</b>]<b>)</b> method <b>calls</b> the function that
+          contain a
           reference to the <i>objectName</i> object, and passes an <i>array</i> as arguments;</li>
-        <li><b>.bind(</b>objectName, arg1, arg2, ...<b>)</b> method <b>creates and returns a copy</b> of the function
+        <li><b>.bind(</b>objectName[, arg1, arg2, ...]<b>)</b> method <b>creates and returns a copy</b> of the function
           with the bound <i>objectName</i> context and such arguments as <i>arg1</i>, <i>arg2</i>, the function can be
           passed anywhere and called whenever.
           <p>higherOrderFnName<b>(</b>objectName.objectMetodName<b>.bind</b>(objectName)<b>)</b> - the <i>bind</i>
@@ -816,8 +817,8 @@
       </ul>
       <h3>Prototypal Inheritance</h3>
       <p>OOP in JavaScript is built on prototypal inheritance. Objects can be chained so that a property not found in
-        one object is automatically searched for in another. The link here is a special internal property,
-        <b>[[Prototype]]</b>.
+        one object is automatically searched for in another. A special internal property, <b>[[Prototype]]</b> for
+        functions and <b>__proto__</b> for objects is used for prototypal inheritance.
       </p>
       <ul>
         <li><b>Object.create(</b><i>protoObj</i>[, propertiesObject]<b>)</b> method creates and returns a new object
@@ -834,50 +835,67 @@
       </ul>
       <p>When interpreter looks for non-existent property in the <i>newObj</i> object, it continues searching in the
         object by reference from <i>newObj</i><b>.__ proto__</b>, that is, in the <i>protoObj</i> object, its prototype.
-        The prototype is a backup storage of object properties and methods, which is automatically enabled when
-        searching for them.</p>
+        The <b>prototype</b> is a <b>storage</b> of object <b>properties</b> and <b>methods</b>:</p>
+
+      <ul>
+        <li><b>function</b> ClsName <b>(</b>{varName}<b>) {</b>// Operating with <b>this.</b>varName<b>}</b> - making a
+          constructor function <i>ClsName</i>; </li>
+        <li>const objName = <b>new</b> ClsName<b>()</b> - the <b>new</b> operator creates an empty object, then
+          calls the constructor function <i>ClsName</i> in the context of that empty object and makes the <i>objName</i>
+          object, which is <b>class instance</b> because it contains the data and behavior described by the class;
+        </li>
+        <li>ClsName<b>.prototype</b>.methodName = function () {\\Fn body} - <i>prototype</i> data property of the
+          function ClsName is used for adding by prototypal inheritance the method <i>metodName</i> to the class
+          <i>ClsName</i> (this approach is used to storage object methods);
+        </li>
+      </ul>
       <h3>Classes</h3>
       <p>Object literal syntax makes it possible to create a single object. However, often you need to create many
         objects of the same type with the same set of properties, but different values and methods for interacting with
         them. Classes are a special syntax for declaring function to create objects.</p>
       <ul>
-        <li><b>class</b> clsName <b>{</b>//Class body<b>}</b> - class <b>declaration</b> begins with the keyword
+        <li><b>class</b> ClsName <b>{</b>//Class body<b>}</b> - class <b>declaration</b> begins with the keyword
           class, followed by the class name and curly braces, i.e. its body;</li>
-        <li>const objName = <b>new</b> clsName<b>()</b> - create the <i>objName</i> object called <b>class
-            instance</b> because it contains the data and behavior described by the class;</li>
-        <li>class clsName {<b>constructor(</b>varName, ...<b>) {</b>this.popertyKey = varName; ...<b>}</b>} - the
+        <li>const objName = <b>new</b> ClsName<b>()</b> - the <b>new</b> operator creates an empty object, then
+          calls the constructor function <i>ClsName</i> in the context of that empty object and makes the <i>objName</i>
+          object, which is <b>class instance</b> because it contains the data and behavior described by the class;
+        </li>
+        <li>class ClsName {<b>constructor(</b>varName, ...<b>) {</b>this.popertyKey = varName; ...<b>}</b>} - the
           class has a <i>constructor</i> <b>method</b>, that enables to add <b>public properties</b> to each instance
           object;</li>
-        <li>class clsName {constructor(<b>{varName, ...}</b>) {this.popertyKey = varName; ...}} -->
-          const objName = new clsName(<b>{popertyKey: value, ...}</b>) - applys the <b>“Parameter Object”</b> pattern
+        <li>class ClsName {constructor(<b>{varName, ...}</b>) {this.popertyKey = varName; ...}} -->
+          const objName = new ClsName(<b>{popertyKey: value, ...}</b>) - applys the <b>“Parameter Object”</b> pattern
           to them, passing a single object with properties having logical names;</li>
-        <li>class clsName {<b>metodName() {</b>\\Method body<b>}</b>} - functions that will be available to the
+        <li>class ClsName {<b>methodName() {</b>\\Method body<b>}</b>} - functions that will be available to the
           instance in its prototype are <b>class methods</b>;</li>
-        <li>class clsName {<b>#</b>popertyKey; <b>#</b>metodName(){}} - <b>encapsulation</b> is a concept to hide
-          the internal details of a class, adding <b>#</b> to the <b>property</b> name or class <b>methods</b> makes
-          them <b>private</b> (can only be accessed from within the class);</li>
+        <li>class ClsName {<b>#</b>popertyKey = value; <b>#</b>metodName(){}} - <b>encapsulation</b> is a concept to
+          hide the internal details of a class, adding <b>#</b> to the <b>property</b> name or class <b>methods</b>
+          makes them <b>private</b> (can only be accessed from within the class);</li>
         <li>getVarName() {return this.#popertyKey;} --> <b>get</b> varName() {return this.#popertyKey;} -
-          <b>declares getter</b>,<br>
-          objName.getVarName() --> objName<b>.varName</b> - <b>getter</b> is <b>executed</b> when trying to get a
+          <b>declares</b> getter, wich is obgect's functionality,<br>
+          objName.getVarName() --> objName<b>.varName</b> - getter is <b>executed</b> when trying to get a
           property value;
         </li>
         <li>changeVarName(newVarName) {this.#popertyKey = newVarName;} --> <b>set</b> varName(newVarName)
-          {this.#popertyKey = newVarName;} - <b>declares setter</b>,<br>
-          objName.changeVarName(value) --> objName<b>.varName = value</b> - <b>setter</b> is <b>executed</b> when trying
+          {this.#popertyKey = newVarName;} - <b>declares</b> setter, wich is obgect's functionality,<br>
+          objName.changeVarName(value) --> objName<b>.varName = value</b> - setter is <b>executed</b> when trying
           to changea property value;<br>
         </li>
-        <li>class clsName {<b>static</b> <i>popertyKey</i> <b>= {</b>ADMIN: "admin", EDITOR: "editor",<b>}</b>} - static
+        <li>class ClsName {<b>static</b> <i>popertyKey</i> <b>=</b> value or ClsName.<i>popertyKey</i> <b>=</b> value -
+          static
           <b>property</b> declaration whith the keyword <i>static</i>;
-        <li>class clsName {<b>static</b> <i>methodName</i><b>() {}</b> - static <b>method</b> declaration whith the
-          keyword <i>static</i>, when it is called, the keyword <i>this</i> refers to the class itself;
+        <li>class ClsName {<b>static</b> <i>methodName</i><b>() {}</b> or ClsName.<i>methodName</i> <b>=</b> function
+          <i>methodName</i>() {} - static
+          <b>method</b> declaration whith the keyword <i>static</i>, when it is called, the keyword <i>this</i> refers
+          to the class itself;
         </li>
-        <li>class <i>Child</i> <b>extends</b> <i>Parent</i> {//...} - <b>class inheritance</b>, when one class (child,
-          derived) inherits the properties and methods of another class (parent), is used for declaration a base class
-          that stores common characteristics and methods for a group of derived classes, which inherit the properties
-          and methods of the parent and, besides, add their own unique ones, private properties and methods of the
-          parent class are not inherited by the child class;</li>
-        <li>class Child extends Parent {<b>constructor(</b>{varName}<b>) {super(</b>varName<b>)}</b> - to call a special
-          function, <b>super(</b>arguments<b>)</b>, wich is an alias for the parent class constructor, otherwise, when
+        <li>class <i>Child</i> <b>extends</b> <i>Parent</i> {constructor() {super()} - <b>class inheritance</b>, when
+          one class (child, derived) inherits the properties and methods of another class (parent), is used for
+          declaration a base class that stores common characteristics and methods for a group of derived classes, which
+          inherit the properties and methods of the parent and, besides, add their own unique ones, private properties
+          and methods of the parent class are not inherited by the child class;</li>
+        <li>class Child extends Parent {<b>constructor(</b>{varName}<b>) {super(</b>varName<b>)}</b> - to call a
+          special function, <b>super(</b>arg<b>)</b>, wich is an alias for the parent class constructor, otherwise, when
           trying to access <i>this</i> in the child class constructor, an error will be generated;</li>
         <li><b>child class methods</b> will only be available to its instances.</li>
       </ul>
@@ -991,6 +1009,7 @@
   <script src="./js/callbacks-arrow/arrow-this.js" type="module"></script>
   <script src="./js/arrays-objects/array-iteration.js" type="module"></script>
   <script src="./js/arrays-objects/methods.js" type="module"></script>
+  <script src="./js/prototypes/constructor.js" type="module"></script>
 </body>
 
 

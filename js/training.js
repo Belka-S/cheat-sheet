@@ -1980,6 +1980,38 @@
 
 // '🍎'--------------------'🍎' The keyword this (Lesson 9) '🍎'--------------------'🍎'
 
+// ******************** this ********************
+
+// function showTag() {
+//   console.log('this: ', this);
+//   console.log('this.propertyKey: ', this.propertyKey);
+// }
+// const objName = { propertyKey: 'value' };
+// objName.methodName = showTag;
+// console.log('objName: ', objName);
+// objName.methodName(); //this:  {propertyKey: 'Mango', methodName: ƒ}
+// showTag(); // this:  undefined
+
+// ******************** this ********************
+
+// const objName = {
+//   propertyKey: 'value',
+//   showTag() {
+//     console.log('this: ', this);
+//     console.log('this.propertyKey: ', this.propertyKey);
+//   },
+// };
+// objName.showTag();
+// const qwe = objName.showTag;
+// console.log('qwe: ', qwe);
+// // qwe(); //this:  undefined
+
+// function highOrderName(callback) {
+//   console.log('callback: ', callback);
+//   callback();
+// }
+// highOrderName(objName.showTag);
+
 // ******************** call(), apply() methods ********************
 
 // function greetGuest(greeting) {
@@ -2011,6 +2043,24 @@
 // const gmailGreeter1 = greet.bind(gmail, 'Poly');
 // gmailGreeter1();
 // gmailGreeter1('MJ');
+// -----------------------------------------------------------------------------
+// const counter = {
+//   value: 0,
+//   increment(number) {
+//     console.log('this.value: ', this.value);
+//     this.value += number;
+//   },
+//   decrement(number) {
+//     console.log('this.value: ', this.value);
+//     this.value -= number;
+//   },
+// };
+// function makeCount(arg, calback) {
+//   calback(arg);
+// }
+// makeCount(15, counter.increment.bind(counter));
+// makeCount(5, counter.decrement.bind(counter));
+// console.log('counter.value: ', counter.value);
 
 // ******************** method ********************
 
@@ -2026,20 +2076,6 @@
 //   console.log(`Processing request from ${callback()}.`); // callback() is a call of the getFullName method without an object
 // }
 // makeMessage(customer.getFullName); // Function call error
-
-// -----------------------------------------------------------------------------
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 // '🍎'--------------------'🍎' Prototypes and Classes (Lesson 10) '🍎'--------------------'🍎'
 
@@ -2192,29 +2228,29 @@
 
 // ******************** Child class constructor ********************
 
-class Parent {
-  #popertyKey;
-  constructor(varName) {
-    this.#popertyKey = varName;
-  }
-  get varName() {
-    return this.#popertyKey;
-  }
-  set varName(newVarName) {
-    this.#popertyKey = newVarName;
-  }
-}
+// class Parent {
+//   #popertyKey;
+//   constructor(varName) {
+//     this.#popertyKey = varName;
+//   }
+//   get varName() {
+//     return this.#popertyKey;
+//   }
+//   set varName(newVarName) {
+//     this.#popertyKey = newVarName;
+//   }
+// }
 
-class Child extends Parent {
-  constructor({ varName, posts }) {
-    // Виклик конструктора батьківського класу User
-    super(varName);
-    this.posts = posts;
-  }
-}
-const editor = new Child({ varName: 'mango@mail.com', posts: [] });
-console.log(editor); // { varName: 'mango@mail.com', posts: [] }
-console.log(editor.varName); // 'mango@mail.com'
+// class Child extends Parent {
+//   constructor({ varName, posts }) {
+//     // Виклик конструктора батьківського класу User
+//     super(varName);
+//     this.posts = posts;
+//   }
+// }
+// const editor = new Child({ varName: 'mango@mail.com', posts: [] });
+// console.log(editor); // { varName: 'mango@mail.com', posts: [] }
+// console.log(editor.varName); // 'mango@mail.com'
 
 // ******************** Child class methods ********************
 
@@ -2248,3 +2284,7 @@ console.log(editor.varName); // 'mango@mail.com'
 // '🍎'--------------------'🍎' Syntax async/await (Lesson 22) '🍎'--------------------'🍎'
 
 // ******************** Питання ********************
+
+// не знайшов у обєкта властивість (як показував Репета)
+// [[Prototype]] for futctions and __proto__ for objects is used for prototypal inheritance.
+// -----------------------------------------------------------------------------
