@@ -2252,23 +2252,96 @@
 // console.log(editor); // { varName: 'mango@mail.com', posts: [] }
 // console.log(editor.varName); // 'mango@mail.com'
 
-// ******************** Child class methods ********************
+// ******************** 5-9 ********************
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+// class Car {
+//   constructor({ brand, model, price }) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+//   getPrice() {
+//     return this.price;
+//   }
+//   changePrice(newPrice) {
+//     this.price = newPrice;
+//   }
+// }
+
+// const tesla = new Car({ brand: 'Tesla', model: 'Model 3', price: 40000 });
+// tesla.changePrice(45000);
+// console.log(tesla.changePrice(45000));
+// console.log(tesla.getPrice());
+// console.log('tesla: ', tesla);
+
+// ******************** 5-10 ********************
+
+// class Storage {
+//   constructor(items) {
+//     this.items = items;
+//   }
+//   getItems() {
+//     return this.items;
+//   }
+//   addItem(newItem) {
+//     this.items.push(newItem);
+//   }
+//   removeItem(itemToRemove) {
+//     this.items.splice(this.items.indexOf(itemToRemove), 1);
+//   }
+// }
+
+// const storage = new Storage(['Nanitoids', 'Prolonger', 'Antigravitator']);
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+// storage.addItem('Droid');
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+// storage.removeItem('Prolonger');
+// console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+
+// ******************** 5-12 ********************
+
+// class Car {
+//   #brand;
+//   constructor({ brand, model, price }) {
+//     this.#brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+//   getBrand() {
+//     return this.#brand;
+//   }
+//   changeBrand(newBrand) {
+//     this.#brand = newBrand;
+//   }
+// }
+// const audi = new Car({ brand: 'Audi', model: 'Q3', price: 36000 });
+// audi.model = 'Q6';
+// // // audi.#brand = 'BMW';
+// console.log('audi: ', audi);
+
+// ******************** 5-16 ********************
+
+// class Car {
+//   static MAX_PRICE = 50000;
+//   #price;
+//   constructor({ price }) {
+//     this.#price = price;
+//   }
+//   get price() {
+//     return this.#price;
+//   }
+//   set price(newPrice) {
+//     if (newPrice <= Car.MAX_PRICE) {
+//       this.#price = newPrice;
+//     }
+//   }
+// }
+// const audi = new Car({ price: 35000 });
+// console.log(audi.price); // 35000
+// audi.price = 49000;
+// console.log(audi.price); // 49000
+// audi.price = 51000;
+// console.log(audi.price); // 49000
 
 // '🍎'--------------------'🍎' Destructuring and spread/rest (Lesson 11) '🍎'--------------------'🍎'
 // '🍎'--------------------'🍎' Callbacks and Arrow Functions (Lesson 12) '🍎'--------------------'🍎'
