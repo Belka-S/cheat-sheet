@@ -56,7 +56,7 @@ a:hover, a:focus {
   list-style: none;
   font-size: 18px;
   font-weight: 700;
-  line-height: 2;
+  line-height: 1.5;
 }
 .faq-list li:not(:last-of-type),
 .prodaction-list li:not(:last-of-type) {
@@ -78,6 +78,9 @@ a:hover, a:focus {
   max-width: 40%;
   font-size: 18px;
   line-height: 1.23;
+}
+.goit--js {
+  line-height: 1.1;
 }
 
 .terminal {

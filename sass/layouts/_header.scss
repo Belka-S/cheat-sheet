@@ -8,7 +8,7 @@
     list-style: none;
     font-size: 18px;
     font-weight: 700;
-    line-height: 2;
+    line-height: 1.5;
 
     &:not(:last-of-type) {
       margin-right: 20px;
@@ -25,7 +25,12 @@
   max-width: 40%;
   font-size: 18px;
   line-height: 1.23;
+
+  &--js {
+    line-height: 1.1;
+  }
 }
+
 .terminal {
   max-width: 60%;
   font-size: 15px;
