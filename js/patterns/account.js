@@ -5,12 +5,16 @@ const account = {
   transactionTypes: { deposit: 'deposit', withdraw: 'withdraw' },
   transactions: [],
 
+  generateId() {
+    return '_' + Math.random().toString(36).substr(2, 9);
+  },
+
   createTransaction(amount, type) {
     this.transactionNumber += 1;
     const tansaction = {
       // time: 0,
       number: this.transactionNumber,
-      id: String(this.transactionId % 123456),
+      id: this.generateId(),
       type: type,
       amount: amount,
       balance: this.balance,

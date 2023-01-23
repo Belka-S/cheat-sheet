@@ -2,7 +2,7 @@ function date() {
   let sec = Math.round(Date.now() / 1000) % 60;
   let min = Math.floor(Math.round(Date.now() / 1000) / 60) % 60;
   let hour = Math.floor(1 + Math.round(Date.now() / 1000) / 60 / 60) % 24;
-  let day = Math.ceil(Math.round(1 + Date.now() / 1000 / 60 / 60) / 24);
+  let day = Math.ceil(Math.round(1.47 + Date.now() / 1000 / 60 / 60) / 24);
   let month = 0;
   let year = 1970;
   while (day > 365) {

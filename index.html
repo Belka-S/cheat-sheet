@@ -13,9 +13,6 @@
 </head>
 
 <body class="container">
-  <!-- https://lodash.com -->
-  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
-  <!-- https://lodash.com -->
   <h1 id="goit"><a href="./html-css.html">HTML - structure and semantics, CSS - style and position,</a> JS -
     functionality.
   </h1>
@@ -340,7 +337,7 @@
       </ul>
     </section>
     <section class="arrays">
-      <a href=" #goit">
+      <a href="#goit">
         <h2 id="arrays">Arrays (Lesson 3)</h2>
       </a>
       <h3>Array</h3>
@@ -434,7 +431,7 @@
       </ul>
     </section>
     <section class="functions">
-      <a href=" #goit">
+      <a href="#goit">
         <h2 id="functions">Functions (Lesson 4)</h2>
       </a>
       <h3>Function declaration, expression, calling</h3>
@@ -508,7 +505,7 @@
         from it first, which means that you can add or remove elements only from the top of the stack.</p>
     </section>
     <section class="objects">
-      <a href=" #goit">
+      <a href="#goit">
         <h2 id="objects">Objects (Lesson 5)</h2>
       </a>
       <h3>Object properties and methods</h3>
@@ -573,7 +570,7 @@
         object, only their values differ.</p>
     </section>
     <section class="destructuring">
-      <a href=" #goit">
+      <a href="#goit">
         <h2 id="destructuring">Destructuring and spread/rest (Lesson 6)</h2>
       </a>
       <h3>Spread and Rest Syntax</h3>
@@ -649,7 +646,7 @@
       </ul>
     </section>
     <section class="callbacks">
-      <a href=" #goit">
+      <a href="#goit">
         <h2 id="callbacks">Callbacks and Arrow Functions (Lesson 7)</h2>
       </a>
       <h3>Callbacks</h3>
@@ -699,7 +696,7 @@
       </ul>
     </section>
     <section class="iterating">
-      <a href=" #goit">
+      <a href="#goit">
         <h2 id="iterating">Array Iteration Methods (Lesson 8)</h2>
       </a>
       <p>JavaScript has array methods that come from functional languages. Most of them are pure functions. They create
@@ -799,7 +796,7 @@
       </ul>
     </section>
     <section class="keyword">
-      <a href=" #goit">
+      <a href="#goit">
         <h2 id="keyword">The keyword this (Lesson 9)</h2>
       </a>
       <h3>Function Execution Context</h3>
@@ -841,7 +838,7 @@
       </ul>
     </section>
     <section class="prototypes">
-      <a href=" #goit">
+      <a href="#goit">
         <h2 id="prototypes">Prototypes and Classes (Lesson 10)</h2>
       </a>
       <h3>Object-Oriented Programming</h3>
@@ -967,133 +964,311 @@
 
 
     </section>
-
-
-
-
     <section class="dom">
-      <a href=" #goit">
+      <a href="#goit">
         <h2 id="dom">DOM (Lesson 11)</h2>
       </a>
-    </section>
+      <h3>Document Object Model</h3>
+      <ul>
+        <li><b>Document Object Model</b> is a language-independent interface for work with HTML documents. It offers a
+          set of properties and methods to search for, create and delete elements, respond to user actions, and much
+          more. In other words, it serves as a link between the page and the programming language.</li>
+        <li><b>Browser Object Model</b> is a language-independent interface for work with browser tabs. It offers a set
+          of properties and methods to access directly the current tab and a number of browser functions. This model
+          includes an object to work with navigation history, location, and more./li>
+      </ul>
+      <p>According to the DOM model, each tag forms a separate <b>node element</b>, whereas each piece of text is a
+        <b>text element</b>. An HTML document is a hierarchical tree in which every element (except for the root) has
+        only one parent. Browser engines have a special piece of code called an <b>HTML parser</b> that is used to
+        convert HTML to DOM. After the DOM tree is ready, you can find elements using JavaScript and perform some
+        actions with them, since each element has an interface with many properties and methods.
+      </p>
+      <h3>Query for Elements, DOM Traversal</h3>
+      <p>Access to DOM begins with the <b>document object</b>, which is part of the global <i>window object</i> that is
+        available in the script when executed by the browser and from which you can access any elements. DOM tree
+        elements are hierarchically related to each other. To find in or navigate this hierarchy, is used methods or
+        elements properties:
+      </p>
+      <ul>
 
+        <li><i>elem</i><b>.querySelector(</b>selector<b>)</b> method - to find only one (most often unique) element,
+          returns the first element found within <i>elem</i> that matches the <i>selector</i>:
+          <ul>
+            <li><b>'.className.nestedClassName'</b> - selector by <i>className</i>,</li>
+            <li><b>'tagName[data-attrName="attrValue"]'</b> - selector by <i>tagName</i>.</li>
+          </ul>
+        </li>
+        <li><i>elem</i><b>.querySelectorAll(</b>selector<b>)</b> method - to find a collection of elements, that is, to
+          get an array of references to elements with the same selector, returns a pseudo-array of all elements inside
+          <i>elem</i> that match the <i>selector</i>, if nothing is found, it will return an <i>empty array</i>.
+        </li>
+        <li><i>elem</i><b>.nextElementSibling</b> property selects the element node to the right of <i>elem</i> (its
+          next sibling);</li>
+        <li><i>elem</i><b>.parentNode</b> property selects the parent of <i>elem</i>;</li>
+        <li><i>elem</i><b>.childNodes</b> property is a pseudo-array that stores all child elements, including text
+          ones;</li>
+        <li><i>elem</i><b>.children</b> property is a pseudo-array that stores only child element nodes, that is,
+          corresponding to tags;</li>
+        <li><i>elem</i><b>.firstChild</b> property selects the first child element inside <i>elem</i>, including text
+          nodes;</li>
+        <li><i>elem</i><b>.firstElementChild</b> property selects the first child element node inside <i>elem</i>;
+        </li>
+        <li><i>elem</i><b>.lastChild</b> property selects the last child element inside <i>elem</i>, including text
+          nodes;</li>
+        <li><i>elem</i><b>.lastElementChild</b> property selects the last child element node inside <i>elem</i>;</li>
+        <li><i>elem</i><b>.previousSibling</b> property selects the element to the left of <i>elem</i> (its previous
+          sibling);
+        </li>
+        <li><i>elem</i><b>.previousElementSibling</b> property selects the element node to the left of <i>elem</i>
+          (its previous sibling);</li>
+        <li><i>elem</i><b>.nextSibling</b> property selects the element to the right of <i>elem</i> (its next
+          sibling);</li>
+      </ul>
+      <h3>Properties and Attributes</h3>
+      <ul>
+        <li><i>elem</i><b>.value</b> contains the current text content of <i>form elements</i>;</li>
+        <li><i>elem</i><b>.checked</b> stores the state of a <i>checkbox</i> or <i>radio button</i>;</li>
+        <li><i>elem</i><b>.name</b> stores the value specified in the name HTML attribute;</li>
+        <li><i>elem</i><b>.src</b> is the path to the <i>&#60img></i> tag’s image;</li>
+        <li><i>elem</i><b>.href</b> property is a stringifier that returns a string containing the <i>whole URL</i>, and
+          allows the href to be updated;</li>
+        <li><i>elem</i><b>.textContent</b> returns the text content inside the <i>elem</i>, it is available for reading
+          and writing;</li>
+        <li><i>elem</i><b>.classList</b> property stores an object with methods for work with the element’s classes:
+          <ul>
+            <li><i>elem.classList</i>.<b>contains(</b>cls<b>)</b> returns <i>true</i> or <i>false</i> depending on
+              whether the <i>elem</i> has the <i>cls</i> class;</li>
+            <li><i>elem.classList</i>.<b>add(</b>cls<b>)</b> adds the <i>cls</i> class to the list of the element’s
+              classes;</li>
+            <li><i>elem.classList</i>.<b>remove(</b>cls<b>)</b> removes the <i>cls</i> class from the list of the
+              element’s classes;</li>
+            <li><i>elem.classList</i>.<b>toggle(</b>cls<b>)</b> if there is no <i>cls</i> class, it adds this class,
+              otherwise it removes this class;</li>
+            <li><i>elem.classList</i>.<b>replace(</b>oldClass, newClass<b>)</b> replaces the existing <i>oldClass</i>
+              class with the specified <i>newClass</i>.</li>
+          </ul>
+        </li>
+        <li><i>elem</i><b>.style</b> property stores the <i>SSStyleDeclaration</i> object that contains a list of all
+          properties defined only in the inline styles of the element, and not all CSS, is used to read and modify
+          inline styles:
+          <ul>
+            <li><i>elem.style</i><b>.textAlign</b>[ = 'value'];</li>
+            <li><i>elem.style</i><b>.backgroundColor</b>[ = 'value'];</li>
+            <li><i>elem.style</i><b>.fontSize</b>[ = 'value'];</li>
+            <li><i>elem.style</i><b>.textAlign</b>[ = 'value'];</li>
+          </ul>
+        </li>
+        <li><i>elem</i><b>.attributes</b> property returns an object of all attributes of the element:
+          <ul>
+            <li><i>elem.attributes</i>.<b>hasAttribute(</b>attrName<b>)</b> checks for the presence of the
+              <i>attrName</i>,
+              returns <i>true</i> or <i>false</i>;
+            <li><i>elem.attributes</i>.<b>getAttribute(</b>attrName<b>)</b> gets and returns the attribute <i>value</i>;
+            <li><i>elem.attributes</i>.<b>setAttribute(</b>attrName, value<b>)</b> sets an attribute;
+            <li><i>elem.attributes</i>.<b>removeAttribute(</b>attrName<b>)</b> removes an attribute.
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>&#60tagName <b>data-attrName</b>="<b>attrValue</b>">Save&#60/tagName> - to add an arbitrary attribute to a
+          tag and set its value;</li>
+        <li>const varName = document<b>.querySelector('</b>tagName<b>[</b>data-attrName="attrValue"<b>]')</b> - to find
+          an arbitrary attribute;</li>
+        <li>varName<b>.dataset.attrName</b> - to get the value of <i>data-attrName</i> data-attribute, the
+          <i>dataset</i> property is used.
+        </li>
+      </ul>
+      <h3>Creating and Removing Elements</h3>
+      <ul>
+        <li>const el1 = document<b>.createElement('tagName')</b> - creates an element <i>tagName</i> and
+          returns a reference to it as the result of execution;</li>
+        <li>el1<b>.textContent = 'value'</b> - adds <i>value</i> content to the <i>tagName</i> element;</li>
+        <li><i>elem</i><b>.append(</b>el1, el2, ...<b>)</b> adds one or more <i>el</i> elements after all children of
+          the <i>elem</i> element;</li>
+        <li><i>elem</i><b>.prepend(</b>el1, el2, ...<b>)</b> adds one or more <i>el</i> elements before all children of
+          the <i>elem</i> element;
+        <li><i>elem</i><b>.append(</b>el1, el2, ...<b>)</b> adds one or more <i>el</i> elements after the <i>elem</i>
+          element;</li>
+        <li><i>elem</i><b>.before(</b>el1, el2, ...<b>)</b> adds one or more <i>el</i> elements before the <i>elem</i>
+          element;</li>
+        <li><i>elem</i><b>.remove()</b> to remove the <i>elem</i> element.</li>
+      </ul>
+      <p>Modern browsers try to optimize page rendering without developer intervention. However, <b>DOM optimization</b>
+        is an expensive operation. <b>Repaint</b> occurs when changes have affected the styles that define the
+        appearance of the element, but not its geometry. <b>Reflow</b> occurs when changes affect the content, structure
+        of the document or the position of elements. All of the above operations block the browser.</p>
+      <ul>
+        <li><i>elem</i><b>.innerHTML</b>[ <b>+=</b> 'newValue'] property stores, writes and adds the content of an
+          element, including tags, as a string;</li>
+        <li><i>elem</i><b>.insertAdjacentHTML(</b>position, string<b>)</b> mathod method for adding a string with HTML
+          tags before, after or inside an element, the <b>position</b> argument is a string, position relative to the
+          <i>elem</i> element, it takes one of the four values below:
+          <ul>
+            <li>'beforebegin' - before <i>elem</i>;</li>
+            <li>'afterbegin' - inside <i>elem</i>, before all children;</li>
+            <li>'beforeend' - inside <i>elem</i>, after all children;</li>
+            <li>'afterend' - after <i>elem.</i></li>
+          </ul>
+        </li>
+      </ul>
+      <h3>Adding Scripts</h3>
+      <p>Loading and executing the script specified in the &#60script> tag with no attributes will block HTML document
+        processing and DOM building. When the analyzer sees such a tag, the processing of the HTML document is suspended
+        and files of the script specified in the src attribute begin to load. After loading, the script is executed, and
+        only then HTML processing resumes. This is called a "blocking" script.</p>
+      <ul>
+        <li>The <b>defer</b> attribute instructs the browser to load the script file in the background, together with
+          HTML document processing and DOM building.The script will only be executed after the HTML document has been
+          processed and DOM has been built. The script will only be executed after the HTML document has been processed
+          and DOM has been built.</li>
+        <li>The <b>async</b> attribute does not block DOM building, but it is executed immediately after loading. This
+          means that such scripts can block DOM building, and they are executed in no particular order.</li>
+      </ul>
+    </section>
     <section class="events">
-      <a href=" #goit">
+      <a href="#goit">
         <h2 id="events">Events (Lesson 12)</h2>
       </a>
+      <h3>Events</h3>
+      <p>An event is a signal from the browser that something has happened on a web page. In order for an element to
+        react to user actions, it needs an event listener (handler), that is, a function that will be called as soon as
+        the event occurs. </p>
+      <ul>
+        <li><i>elem</i><b>.addEventListener(</b>event, handler, options<b>)</b> - dds an event listener to the
+          <i>elem</i> element, where:
+          <ul>
+            <li><i>event</i> is event name, a string, for example 'click';</li>
+            <li><i>handler</i> is a callback that will be called when the event occurs;</li>
+            <li><i>options</i> is an optional parameter object with advanced options.</li>
+          </ul>
+        </li>
+        <li><i>elem</i><b>.removeEventListener(</b>event, handler, options<b>)</b> - removes an event listener from the
+          <i>elem</i> element, it is need to pass a reference to the callback that was assigned in
+          <i>addEventListener()</i>;
+        </li>
+        <li><i>elem</i>.addEventListener(event, <b>objName.callbackName.bind(</b>objName<b>)</b>) - if the callback is a
+          function that uses <b>this</b>, by default the context inside it will refer to the <i>elem</i> element with
+          the listener.</li>
+      </ul>
+      <h3>Event Object</h3>
+      <p>Each event is an <b>object</b> that contains information about the event details, and it is automatically
+        passed as the first argument to the event handler. All events belong to the base <b>class Event</b> with
+        properties and methods:</p>
+      <ul>
+        <li><i>event</i><b>.type</b> property is event type;</li>
+        <li><i>event</i><b>.currentTarget</b> property is the element on which the event handler is executed;</li>
+        <li><i>event</i><b>.preventDefault()</b> method is to cancel the default browser action on the event objec.</li>
+      </ul>
+      <h3>KeyboardEvent Object</h3>
+      <p>Unlike others, keyboard events are handled on the <i>document</i>, not on a specific element. There are two
+        basic keyboard events: <b>keydown</b> and <b>keyup</b>. KeyboardEvent objects belong to the KeyboardEvent base
+        class:
+      </p>
+      <ul>
+        <li><i>event</i><b>.key</b> property returns the character generated by key pressing, adjusted for the state of
+          modifier keys, such as Shift, and the active language;</li>
+        <li><i>event</i><b>.code</b> property returns the code of a physical key on the keyboard and does not depend on
+          languages.</li>
+        <li><i>event</i><b>.ctrlKey</b>(<i>.altKey</i> | <i>.shiftkey</i> | <i>.metaKey</i>) property storing a
+          boolean value indicating whether a modifier key is pressed or not.</li>
+      </ul>
+      <h3>Form Events</h3>
+      <ul>
+        <li><b>submit</b> event - can be used to validate (check) a form before submitting,when you click on a button
+          with the type ="submit" attribute or press the Enter in any of its text fields;</li>
+        <li><b>change</b> event ccurs after a form element has changed, for text fields or textarea, the event will not
+          occur every time a character is entered, but when focus is lost, which is not always convenient;</li>
+        <li><b>input</b> event occurs only in text fields and textarea, and it is generated every time the element value
+          changes, without waiting for focus to be lost;</li>
+        <li><b>focus</b> and <b>blur</b> events occur when an element is focused and when focus is lost.</li>
+      </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </section>
 
     <section class="delegation">
-      <a href=" #goit">
+      <a href="#goit">
         <h2 id="delegation">Event Delegation (Lesson 13)</h2>
       </a>
     </section>
 
     <section class="throttle">
-      <a href=" #goit">
+      <a href="#goit">
         <h2 id="throttle">Throttle/Debounce and Lazyload (Lesson 14)</h2>
       </a>
     </section>
 
     <section class="modularity">
-      <a href=" #goit">
+      <a href="#goit">
         <h2 id="modularity">Code Modularity (Lesson 15)</h2>
       </a>
     </section>
 
     <section class="storage">
-      <a href=" #goit">
+      <a href="#goit">
         <h2 id="storage">Web Storage (Lesson 16)</h2>
       </a>
     </section>
 
     <section class="timers">
-      <a href=" #goit">
+      <a href="#goit">
         <h2 id="timers">Timers and Time (Lesson 17)</h2>
       </a>
     </section>
 
     <section class="promises">
-      <a href=" #goit">
+      <a href="#goit">
         <h2 id="promises">Promises (Lesson 18)</h2>
       </a>
     </section>
 
     <section class="requests">
-      <a href=" #goit">
+      <a href="#goit">
         <h2 id="requests">HTTP Requests (Lesson 19)</h2>
       </a>
     </section>
 
     <section class="pagination">
-      <a href=" #goit">
+      <a href="#goit">
         <h2 id="pagination">Pagination (Lesson 20)</h2>
       </a>
     </section>
 
     <section class="crud">
-      <a href=" #goit">
+      <a href="#goit">
         <h2 id="crud">CRUD (Lesson 21)</h2>
       </a>
     </section>
 
     <section class="syntax">
-      <a href=" #goit">
+      <a href="#goit">
         <h2 id="syntax">Syntax async/await (Lesson 22)</h2>
       </a>
     </section>
   </main>
 
-  <footer></footer>
-  <script src="./js/training.js" type="module"></script>
-
-  <!-- <script src="./js/hometask/js_01.js" type="module"></script> -->
-  <!-- <script src="./js/hometask/js_02.js" type="module"></script> -->
-  <!-- <script src="./js/hometask/js_03.js" type="module"></script> -->
-  <!-- <script src="./js/hometask/js_04.js" type="module"></script> -->
-  <script src="./js/hometask/js_05.js" type="module"></script>
-  <!-- <script src="./js/hometask/js_06.js" type="module"></script> -->
-  <!-- <script src="./js/hometask/js_07.js" type="module"></script> -->
-  <!-- <script src="./js/hometask/js_08.js" type="module"></script> -->
-  <!-- <script src="./js/hometask/js_09.js" type="module"></script> -->
-  <!-- <script src="./js/hometask/js_10.js" type="module"></script> -->
-  <!-- <script src="./js/hometask/js_11.js" type="module"></script> -->
-  <!-- <script src="./js/hometask/js_12.js" type="module"></script> -->
-  <!-- <script src="./js/hometask/js_13.js" type="module"></script> -->
-  <!-- <script src="./js/hometask/js_14.js" type="module"></script> -->
-  <!-- <script src="./js/hometask/js_15.js" type="module"></script> -->
-  <!-- <script src="./js/hometask/js_16.js" type="module"></script> -->
-  <!-- <script src="./js/hometask/js_17.js" type="module"></script> -->
-  <!-- <script src="./js/hometask/js_18.js" type="module"></script> -->
-  <!-- <script src="./js/hometask/js_19.js" type="module"></script> -->
-  <!-- <script src="./js/hometask/js_20.js" type="module"></script> -->
-  <!-- <script src="./js/hometask/js_21.js" type="module"></script> -->
-  <!-- <script src="./js/hometask/js_22.js" type="module"></script> -->
-
-  <script src="./js/hometask/group-1.js" type="module"></script>
-  <!-- <script src="./js/hometask/group-2.js" type="module"></script> -->
-  <!-- <script src="./js/hometask/group-3.js" type="module"></script> -->
-  <!-- <script src="./js/hometask/group-4.js" type="module"></script> -->
-
-  <script src="./js/patterns/album.js" type="module"></script>
-  <script src="./js/patterns/album-list.js" type="module"></script>
-  <script src="./js/patterns/shop-cart.js" type="module"></script>
-  <script src="./js/patterns/shop-admin.js" type="module"></script>
-  <script src="./js/patterns/date.js" type="module"></script>
-  <script src="./js/patterns/account.js" type="module"></script>
-
-  <script src="./js/callbacks-arrow/internal-closure.js" type="module"></script>
-  <script src="./js/callbacks-arrow/arrow-this.js" type="module"></script>
-
-  <script src="./js/arrays-objects/array-iteration.js" type="module"></script>
-  <script src="./js/arrays-objects/methods.js" type="module"></script>
-
-  <script src="./js/prototypes/constructor.js" type="module"></script>
-
-  <script src="" type="module"></script>
-  <script src="" type="module"></script>
-  <script src="" type="module"></script>
-  <script src="" type="module"></script>
+  <footer>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li><a href="./html-css.html" target="_blank">HTML-CSS</a></li>
+        <li><a href="./index.html" target="_blank">JS</a></li>
+        <li><a href="./test.html" target="_blank">test</a></li>
+      </ul>
+    </nav>
+  </footer>
 </body>
 
 </html>

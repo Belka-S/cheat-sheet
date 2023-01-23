@@ -2343,8 +2343,143 @@
 // audi.price = 51000;
 // console.log(audi.price); // 49000
 
-// '🍎'--------------------'🍎' Destructuring and spread/rest (Lesson 11) '🍎'--------------------'🍎'
-// '🍎'--------------------'🍎' Callbacks and Arrow Functions (Lesson 12) '🍎'--------------------'🍎'
+// '🍎'--------------------'🍎' DOM (Lesson 11) '🍎'--------------------'🍎'
+
+// ******************** DOM Traversal ********************
+
+// console.log(document);
+// console.log(document.head);
+// const body = document.body
+// console.log(body);
+// console.log(body.childNodes);
+// console.log(body.children);
+// console.log(body.firstElementChild);
+
+// ******************** Query for Elements ********************
+
+// const prototypes = document.querySelector('.prototypes');
+// console.log('prototypes: ', prototypes);
+
+// ******************** Properties and Attributes ********************
+
+// const dom = document.querySelector('h2');
+// console.log(dom);
+// console.log(dom.firstChild);
+// console.log(dom.firstElementChild);
+// console.log(dom.firstElementChild.textContent);
+// console.log(dom.firstElementChild.href);
+// console.dir(dom.firstElementChild.style);
+// dom.firstElementChild.style.textAlign = 'center';
+// console.log(dom.classList);
+// console.log(dom.attributes);
+// console.log(dom.getAttribute('class'));
+
+// let find = document.querySelector('ul[data-list="qwe"]');
+// find = document.querySelector('[data-list="qwe"]');
+// find = document.querySelector('[data-list]');
+// find = document.querySelector('[id="dom"]');
+// console.log(find);
+
+// ******************** Creating and Removing Elements ********************
+
+// const find = document.querySelector('section[class="inner-html"]');
+// console.log(find);
+
+// const technologies = ['HTML', 'CSS', 'JavaScript', 'React', 'Node'];
+//  // const innerhtml = (document.createElement('h2').textContent = 'Technologies'); // don't do this
+// const innerhtml = document.createElement('h2');
+// innerhtml.classList.add('titel');
+// innerhtml.textContent = 'Technologies';
+// document.querySelector('.inner-html').prepend(innerhtml);
+
+// const techList = document.querySelector('.technologies');
+// techList.innerHTML = technologies
+//   .map(technologie => `<li>${technologie}</li>`)
+//   .join('');
+
+// techList.innerHTML += '<li>Vue</li>';
+// techList.insertAdjacentHTML('beforeend', '<li>TypeScript</li>');
+
+// console.log(techList.innerHTML);
+// console.log(innerhtml.innerHTML);
+
+// ******************** DOM ********************
+
+// '🍎'--------------------'🍎' Events (Lesson 12) '🍎'--------------------'🍎'
+
+// ******************** KeyboardEvent Object ********************
+
+// document.addEventListener('keydown', event => {
+//   console.log('key: ', event.key);
+//   console.log('code: ', event.code);
+// });
+
+// ******************** Form Events ********************
+
+// <!-- submit event -->
+const form = document.querySelector('.form');
+
+form.addEventListener('submit', handleSubmit);
+
+function handleSubmit(event) {
+  event.preventDefault();
+  const {
+    elements: { login, password },
+  } = event.currentTarget;
+
+  if (login.value === '' || password.value === '') {
+    return console.log('Please fill in all the fields!');
+  }
+
+  console.log(`Login: ${login.value}, Password: ${password.value}`);
+  event.currentTarget.reset();
+}
+//  <!-- change event -->
+const select = document.querySelector('.pizza-select');
+const textOutput = document.querySelector('.text-output');
+const valueOutput = document.querySelector('.value-output');
+
+setOutput();
+
+select.addEventListener('change', setOutput);
+
+function setOutput() {
+  const selectedOptionValue = select.value;
+  const selectedOptionIndex = select.selectedIndex;
+  const selectedOptionText = select.options[selectedOptionIndex].text;
+
+  textOutput.textContent = selectedOptionText;
+  valueOutput.textContent = selectedOptionValue;
+}
+// <!-- input event -->
+const textInput = document.querySelector('.text-input');
+const output = document.querySelector('.output');
+
+textInput.addEventListener('input', event => {
+  output.textContent = event.currentTarget.value;
+});
+//    <!-- focus and blur events -->
+const textInputNew = document.querySelector('.text-input-new');
+const setFocusBtn = document.querySelector('[data-action="set"]');
+const removeFocusBtn = document.querySelector('[data-action="remove"]');
+
+setFocusBtn.addEventListener('click', () => {
+  textInputNew.focus();
+});
+
+removeFocusBtn.addEventListener('click', () => {
+  textInputNew.blur();
+});
+
+textInputNew.addEventListener('focus', () => {
+  textInputNew.value = 'This input has focus';
+});
+
+textInputNew.addEventListener('blur', () => {
+  textInputNew.value = '';
+});
+// ******************** DOM ********************
+
 // '🍎'--------------------'🍎' Event Delegation (Lesson 13) '🍎'--------------------'🍎'
 // '🍎'--------------------'🍎' Throttle/Debounce and Lazyload (Lesson 14) '🍎'--------------------'🍎'
 // '🍎'--------------------'🍎' Code Modularity (Lesson 15) '🍎'--------------------'🍎'

@@ -86,4 +86,18 @@ a:hover, a:focus {
 .terminal {
   max-width: 60%;
   font-size: 15px;
+}
+
+.nav__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.nav__list li {
+  list-style: none;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
 }/*# sourceMappingURL=main.css.map */

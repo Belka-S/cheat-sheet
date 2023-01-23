@@ -1,0 +1,12 @@
+.nav {
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    & li {
+      list-style: none;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+  }
+}
