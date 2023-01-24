@@ -54,6 +54,8 @@
         <li><a href="https://lodash.com" target="_blank" rel="noopener noreferrer nofollow">lodash</a></li>
         <li><a href="https://pawelgrzybek.github.io/siema/" target="_blank" rel="noopener noreferrer nofollow">siema</a>
         </li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/web/Events" target="_blank"
+            rel="noopener noreferrer nofollow">Events</a></li>
         <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
         <li><a href="https://github.com/remy/nodemon/" target="_blank" rel="noopener noreferrer nofollow">nodemon</a>
         </li>
@@ -144,6 +146,12 @@
       <p>In order to run your script in strict mode, it is enough to enter the following directive at the beginning of
         the js-file. Another way to run script in strict mode to use attribute <b>type="module"</b>. Always write your
         code in strict mode.</p>
+      <ul>
+        <li><b>import</b> defaultExport <b>from</b> './module-name.js' - to import read-only live bindings which are
+          exported
+          by another module;</li>
+        <li></li>
+      </ul>
       <h3>Syntax Basics</h3>
       <ul>
         <li><b>Statement</b> is a related set of words and symbols from the syntax of a language that combines to
@@ -992,9 +1000,11 @@
       <ul>
 
         <li><i>elem</i><b>.querySelector(</b>selector<b>)</b> method - to find only one (most often unique) element,
-          returns the first element found within <i>elem</i> that matches the <i>selector</i>:
+          returns the first element found within <i>elem</i> that matches the <i>selector</i> and <i>null</i> if nothing
+          is found:
           <ul>
-            <li><b>'.className.nestedClassName'</b> - selector by <i>className</i>,</li>
+            <li><b>'.className .nestedClassName'</b> - selector by <i>className</i>,</li>
+            <li><b>'#idName'</b> - selector by <i>idName</i>,</li>
             <li><b>'tagName[data-attrName="attrValue"]'</b> - selector by <i>tagName</i>.</li>
           </ul>
         </li>
@@ -1027,13 +1037,14 @@
       <h3>Properties and Attributes</h3>
       <ul>
         <li><i>elem</i><b>.value</b> contains the current text content of <i>form elements</i>;</li>
+        <li><i>elem</i><b>.textContent</b> returns the text content inside <i>text elemetts</i>, it is available for
+          reading and writing;</li>
         <li><i>elem</i><b>.checked</b> stores the state of a <i>checkbox</i> or <i>radio button</i>;</li>
+        <li><i>elem</i><b>.disabled</b> stores the state of a <i>button</i>;</li>
         <li><i>elem</i><b>.name</b> stores the value specified in the name HTML attribute;</li>
         <li><i>elem</i><b>.src</b> is the path to the <i>&#60img></i> tag’s image;</li>
         <li><i>elem</i><b>.href</b> property is a stringifier that returns a string containing the <i>whole URL</i>, and
           allows the href to be updated;</li>
-        <li><i>elem</i><b>.textContent</b> returns the text content inside the <i>elem</i>, it is available for reading
-          and writing;</li>
         <li><i>elem</i><b>.classList</b> property stores an object with methods for work with the element’s classes:
           <ul>
             <li><i>elem.classList</i>.<b>contains(</b>cls<b>)</b> returns <i>true</i> or <i>false</i> depending on
@@ -1072,10 +1083,9 @@
       <ul>
         <li>&#60tagName <b>data-attrName</b>="<b>attrValue</b>">Save&#60/tagName> - to add an arbitrary attribute to a
           tag and set its value;</li>
-        <li>const varName = document<b>.querySelector('</b>tagName<b>[</b>data-attrName="attrValue"<b>]')</b> - to find
-          an arbitrary attribute;</li>
-        <li>varName<b>.dataset.attrName</b> - to get the value of <i>data-attrName</i> data-attribute, the
-          <i>dataset</i> property is used.
+        <li>elem<b>.dataset</b> - to get the values of all data-attributes of the <i>elem</i> element;</li>
+        <li>elem<b>.dataset</b>.attrName - to get the value of the <i>attrName</i> data-attribute of the <i>elem</i>
+          element, the <i>dataset</i> property is used.
         </li>
       </ul>
       <h3>Creating and Removing Elements</h3>
@@ -1091,7 +1101,7 @@
           element;</li>
         <li><i>elem</i><b>.before(</b>el1, el2, ...<b>)</b> adds one or more <i>el</i> elements before the <i>elem</i>
           element;</li>
-        <li><i>elem</i><b>.remove()</b> to remove the <i>elem</i> element.</li>
+        <li><i>elem</i><b>.remove()</b> - to remove the <i>elem</i> element.</li>
       </ul>
       <p>Modern browsers try to optimize page rendering without developer intervention. However, <b>DOM optimization</b>
         is an expensive operation. <b>Repaint</b> occurs when changes have affected the styles that define the
@@ -1151,18 +1161,22 @@
           the listener.</li>
       </ul>
       <h3>Event Object</h3>
-      <p>Each event is an <b>object</b> that contains information about the event details, and it is automatically
-        passed as the first argument to the event handler. All events belong to the base <b>class Event</b> with
-        properties and methods:</p>
+      <p>Each <b>event</b> is an <b>object</b> that contains information about the event details, and it is
+        automatically passed as the first argument to the event handler. All events belong to the base <b>class
+          Event</b> with properties and methods:</p>
       <ul>
         <li><i>event</i><b>.type</b> property is event type;</li>
+        <li><i>event</i><b>.target</b> property is the element on which the event is occured;</li>
         <li><i>event</i><b>.currentTarget</b> property is the element on which the event handler is executed;</li>
+        <li><i>event</i><b>.currentTarget.elements</b>.name.value - to find value of forms;</li>
+        <li>const formData = new <b>FormData(</b>event.currentTarget<b>)</b>; formData.forEach((value,name) =>{}) - to
+          get all names and values;</li>
         <li><i>event</i><b>.preventDefault()</b> method is to cancel the default browser action on the event objec.</li>
       </ul>
       <h3>KeyboardEvent Object</h3>
-      <p>Unlike others, keyboard events are handled on the <i>document</i>, not on a specific element. There are two
-        basic keyboard events: <b>keydown</b> and <b>keyup</b>. KeyboardEvent objects belong to the KeyboardEvent base
-        class:
+      <p>Unlike others, keyboard events are handled on the <i>document</i>, not on a specific element. There are three
+        basic keyboard events: <b>keydown</b>, <b>keypress</b> and <b>keyup</b>. KeyboardEvent objects belong to the
+        KeyboardEvent base class:
       </p>
       <ul>
         <li><i>event</i><b>.key</b> property returns the character generated by key pressing, adjusted for the state of
@@ -1176,31 +1190,13 @@
       <ul>
         <li><b>'submit'</b> event - can be used to validate (check) a form before submitting,when you click on a button
           with the type ="submit" attribute or press the Enter in any of its text fields;</li>
-        <li><b>'change'</b> event ccurs after a form element has changed, for text fields or textarea, the event will
-          not
-          occur every time a character is entered, but when focus is lost, which is not always convenient;</li>
+        <li><b>'change'</b> event occurs after a form element has changed, useful for checkboxes and radiobuttons;</li>
         <li><b>'input'</b> event occurs only in text fields and textarea, and it is generated every time the element
-          value
-          changes, without waiting for focus to be lost;</li>
+          value changes, without waiting for focus to be lost;</li>
         <li><b>'focus'</b> and <b>'blur'</b> events occur when an element is focused and when focus is lost;</li>
         <li><i>elem</i><b>.focus()</b> and <i>elem</i><b>.blur()</b> methods - to activate or cancel focus
-          programmatically by calling the for the <i>elem</i> element.</li>
+          programmatically for the <i>elem</i> element.</li>
       </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </section>
 
     <section class="delegation">

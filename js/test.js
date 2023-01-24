@@ -2357,6 +2357,7 @@
 
 // ******************** Query for Elements ********************
 
+// console.log(document.querySelector('#goit'));
 // const prototypes = document.querySelector('.prototypes');
 // console.log('prototypes: ', prototypes);
 
@@ -2417,67 +2418,74 @@
 // ******************** Form Events ********************
 
 // <!-- submit event -->
-const form = document.querySelector('.form');
+// const form = document.querySelector('.form');
 
-form.addEventListener('submit', handleSubmit);
+// form.addEventListener('submit', handleSubmit);
 
-function handleSubmit(event) {
-  event.preventDefault();
-  const {
-    elements: { login, password },
-  } = event.currentTarget;
+// function handleSubmit(event) {
+//   event.preventDefault();
+//   const {
+//     elements: { login, password },
+//   } = event.currentTarget;
 
-  if (login.value === '' || password.value === '') {
-    return console.log('Please fill in all the fields!');
-  }
+//   if (login.value === '' || password.value === '') {
+//     return console.log('Please fill in all the fields!');
+//   }
 
-  console.log(`Login: ${login.value}, Password: ${password.value}`);
-  event.currentTarget.reset();
-}
+//   console.log(`Login: ${login.value}, Password: ${password.value}`);
+//   event.currentTarget.reset();
+// }
+
 //  <!-- change event -->
-const select = document.querySelector('.pizza-select');
-const textOutput = document.querySelector('.text-output');
-const valueOutput = document.querySelector('.value-output');
+// const select = document.querySelector('.pizza-select');
+// const textOutput = document.querySelector('.text-output');
+// const valueOutput = document.querySelector('.value-output');
 
-setOutput();
+// select.addEventListener('change', setOutput);
 
-select.addEventListener('change', setOutput);
+// function setOutput() {
+//   const selectedOptionValue = select.value;
+//   const selectedOptionIndex = select.selectedIndex;
+//   const selectedOptionText = select.options[selectedOptionIndex].text;
 
-function setOutput() {
-  const selectedOptionValue = select.value;
-  const selectedOptionIndex = select.selectedIndex;
-  const selectedOptionText = select.options[selectedOptionIndex].text;
+//   textOutput.textContent = selectedOptionText;
+//   valueOutput.textContent = selectedOptionValue;
+// }
 
-  textOutput.textContent = selectedOptionText;
-  valueOutput.textContent = selectedOptionValue;
-}
 // <!-- input event -->
-const textInput = document.querySelector('.text-input');
-const output = document.querySelector('.output');
+// const textInput = document.querySelector('.text-input');
+// const output = document.querySelector('.output');
 
-textInput.addEventListener('input', event => {
-  output.textContent = event.currentTarget.value;
-});
+// textInput.addEventListener('input', event => {
+//   output.textContent = event.currentTarget.value;
+// });
+// -----------------------------------------------------------------------------
+// textInput.addEventListener('input', callback);
+// function callback(event) {
+//   output.textContent = event.currentTarget.value;
+// }
+
 //    <!-- focus and blur events -->
-const textInputNew = document.querySelector('.text-input-new');
-const setFocusBtn = document.querySelector('[data-action="set"]');
-const removeFocusBtn = document.querySelector('[data-action="remove"]');
+// const textInputNew = document.querySelector('.text-input-new');
+// const setFocusBtn = document.querySelector('[data-action="set"]');
+// const removeFocusBtn = document.querySelector('[data-action="remove"]');
 
-setFocusBtn.addEventListener('click', () => {
-  textInputNew.focus();
-});
+// setFocusBtn.addEventListener('click', () => {
+//   textInputNew.focus();
+// });
 
-removeFocusBtn.addEventListener('click', () => {
-  textInputNew.blur();
-});
+// removeFocusBtn.addEventListener('click', () => {
+//   textInputNew.blur();
+// });
 
-textInputNew.addEventListener('focus', () => {
-  textInputNew.value = 'This input has focus';
-});
+// textInputNew.addEventListener('focus', () => {
+//   textInputNew.value = 'This input has focus';
+// });
 
-textInputNew.addEventListener('blur', () => {
-  textInputNew.value = '';
-});
+// textInputNew.addEventListener('blur', () => {
+//   textInputNew.value = '';
+// });
+
 // ******************** DOM ********************
 
 // '🍎'--------------------'🍎' Event Delegation (Lesson 13) '🍎'--------------------'🍎'
