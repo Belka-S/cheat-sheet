@@ -147,10 +147,9 @@
         the js-file. Another way to run script in strict mode to use attribute <b>type="module"</b>. Always write your
         code in strict mode.</p>
       <ul>
-        <li><b>import</b> defaultExport <b>from</b> './module-name.js' - to import read-only live bindings which are
-          exported
-          by another module;</li>
-        <li></li>
+        <li><b>export default</b> 'entity' - to export <i>entity</i>;</li>
+        <li><b>import</b> varName <b>from</b> './module-name.js' - to import read-only live bindings which are
+          exported by another module.</li>
       </ul>
       <h3>Syntax Basics</h3>
       <ul>
@@ -164,9 +163,9 @@
           use in the source code.
           <ul>
             <li>data has <b>properties</b>, for example, a string has a length. The syntax for accessing a property is
-              very simple: use a dot - <b>entity.property_name</b>.</li>
+              very simple: use a dot - <b>entity.propertyName</b>.</li>
             <li>data has its own predefined methods, this is an action call. The syntax for calling a method is similar,
-              but parentheses are added at the end - <b>entity.method_name()</b>.</li>
+              but parentheses are added at the end - <b>entity.methodName()</b>.</li>
           </ul>
         </li>
       </ul>
@@ -428,9 +427,8 @@
         <li><b>.concat(</b><i>arrayName1, arrayName2, ...</i><b>)</b> method - consolidates two or more arrays into one;
         </li>
         <li><b>.reverse()</b> method - reverses an array;</li>
-        <li><b>.flat(depth)</b> method - creates a new array with all sub-array elements concatenated into it
-          recursively up to the
-          specified depth;</li>
+        <li><b>.flat(</b>depth<b>)</b> method - creates a new array with all sub-array elements concatenated into it
+          recursively up to the specified depth;</li>
         <li><b>.at(</b>index<b>)</b> method - takes an integer value and returns the item at that index, allowing for
           positive and negative integers.;</li>
         <li><b>rest parameter</b> syntax allows to apply any Math.methodName to an Array:
@@ -1012,32 +1010,35 @@
           get an array of references to elements with the same selector, returns a pseudo-array of all elements inside
           <i>elem</i> that match the <i>selector</i>, if nothing is found, it will return an <i>empty array</i>.
         </li>
-        <li><i>elem</i><b>.nextElementSibling</b> property selects the element node to the right of <i>elem</i> (its
-          next sibling);</li>
-        <li><i>elem</i><b>.parentNode</b> property selects the parent of <i>elem</i>;</li>
-        <li><i>elem</i><b>.childNodes</b> property is a pseudo-array that stores all child elements, including text
+        <li><i>elem</i>.parentNode property selects the parent of <i>elem</i>, including text ones;</li>
+        <li><i>elem</i>.<b>parentElement</b> property selects the parent of <i>elem</i>;</li>
+        <li><i>elem</i>.childNodes property is a pseudo-array that stores all child elements, including text
           ones;</li>
-        <li><i>elem</i><b>.children</b> property is a pseudo-array that stores only child element nodes, that is,
-          corresponding to tags;</li>
-        <li><i>elem</i><b>.firstChild</b> property selects the first child element inside <i>elem</i>, including text
+        <li><i>elem</i><b>.children</b> property is a pseudo-array that stores only child element nodes;</li>
+        <li><i>elem</i>.firstChild property selects the first child element inside <i>elem</i>, including text
           nodes;</li>
         <li><i>elem</i><b>.firstElementChild</b> property selects the first child element node inside <i>elem</i>;
         </li>
-        <li><i>elem</i><b>.lastChild</b> property selects the last child element inside <i>elem</i>, including text
+        <li><i>elem</i>.lastChild property selects the last child element inside <i>elem</i>, including text
           nodes;</li>
         <li><i>elem</i><b>.lastElementChild</b> property selects the last child element node inside <i>elem</i>;</li>
-        <li><i>elem</i><b>.previousSibling</b> property selects the element to the left of <i>elem</i> (its previous
+        <li><i>elem</i>.previousSibling property selects the element to the left of <i>elem</i> (its previous
           sibling);
         </li>
         <li><i>elem</i><b>.previousElementSibling</b> property selects the element node to the left of <i>elem</i>
           (its previous sibling);</li>
-        <li><i>elem</i><b>.nextSibling</b> property selects the element to the right of <i>elem</i> (its next
+        <li><i>elem</i>.nextSibling property selects the element to the right of <i>elem</i> (its next
           sibling);</li>
+        <li><i>elem</i><b>.nextElementSibling</b> property selects the element node to the right of <i>elem</i> (its
+          next sibling);</li>
+        <li><i>elem</i><b>.childElementCount</b> read-only property returns the number of child elements of the
+          <i>elem</i>.
+        </li>
       </ul>
       <h3>Properties and Attributes</h3>
       <ul>
         <li><i>elem</i><b>.value</b> contains the current text content of <i>form elements</i>;</li>
-        <li><i>elem</i><b>.textContent</b> returns the text content inside <i>text elemetts</i>, it is available for
+        <li><i>elem</i><b>.textContent</b> returns the text content inside <i>text elemets</i>, it is available for
           reading and writing;</li>
         <li><i>elem</i><b>.checked</b> stores the state of a <i>checkbox</i> or <i>radio button</i>;</li>
         <li><i>elem</i><b>.disabled</b> stores the state of a <i>button</i>;</li>
@@ -1059,7 +1060,7 @@
               class with the specified <i>newClass</i>.</li>
           </ul>
         </li>
-        <li><i>elem</i><b>.style</b> property stores the <i>SSStyleDeclaration</i> object that contains a list of all
+        <li><i>elem</i><b>.style</b> property stores the <i>CSSStyleDeclaration</i> object that contains a list of all
           properties defined only in the inline styles of the element, and not all CSS, is used to read and modify
           inline styles:
           <ul>
@@ -1071,23 +1072,29 @@
         </li>
         <li><i>elem</i><b>.attributes</b> property returns an object of all attributes of the element:
           <ul>
-            <li><i>elem.attributes</i>.<b>hasAttribute(</b>attrName<b>)</b> checks for the presence of the
-              <i>attrName</i>,
-              returns <i>true</i> or <i>false</i>;
-            <li><i>elem.attributes</i>.<b>getAttribute(</b>attrName<b>)</b> gets and returns the attribute <i>value</i>;
-            <li><i>elem.attributes</i>.<b>setAttribute(</b>attrName, value<b>)</b> sets an attribute;
-            <li><i>elem.attributes</i>.<b>removeAttribute(</b>attrName<b>)</b> removes an attribute.
+            <li><i>elem</i>.<b>hasAttribute(</b>attrName<b>)</b> checks for the presence of the
+              <i>attrName</i>, returns <i>true</i> or <i>false</i>;
+            <li><i>elem</i>.<b>getAttribute(</b>attrName<b>)</b> gets and returns the attribute <i>value</i>;
+            <li><i>elem</i>.<b>setAttribute(</b>attrName, value<b>)</b> sets an attribute;
+            <li><i>elem</i>.<b>removeAttribute(</b>attrName<b>)</b> removes an attribute.
           </ul>
         </li>
-      </ul>
-      <ul>
         <li>&#60tagName <b>data-attrName</b>="<b>attrValue</b>">Save&#60/tagName> - to add an arbitrary attribute to a
           tag and set its value;</li>
-        <li>elem<b>.dataset</b> - to get the values of all data-attributes of the <i>elem</i> element;</li>
-        <li>elem<b>.dataset</b>.attrName - to get the value of the <i>attrName</i> data-attribute of the <i>elem</i>
-          element, the <i>dataset</i> property is used.
+        <li><i>elem</i><b>.dataset</b> - to get the values of all data-attributes of the <i>elem</i> element;</li>
+        <li><i>elem</i><b>.dataset</b>.attrName - to get the value of the <i>attrName</i> data-attribute of the
+          <i>elem</i> element, the <i>dataset</i> property is used;
+        </li>
+        <li><i>elemForm</i><b>.elements</b> - stores all children form-elements of the <i>elemForm</i> element;</li>
+        <li><i>elemForm</i><b>.elements</b>.formName - to get the <i>formName</i> form-element of the <i>elemForm</i>
+          element;</li>
+        <li><i>elemForm</i><b>.elements</b>.formName.value - to get the value of the <i>formName</i> form-element of the
+          <i>elemForm</i> element.
         </li>
       </ul>
+
+
+
       <h3>Creating and Removing Elements</h3>
       <ul>
         <li>const el1 = document<b>.createElement('tagName')</b> - creates an element <i>tagName</i> and
@@ -1168,7 +1175,6 @@
         <li><i>event</i><b>.type</b> property is event type;</li>
         <li><i>event</i><b>.target</b> property is the element on which the event is occured;</li>
         <li><i>event</i><b>.currentTarget</b> property is the element on which the event handler is executed;</li>
-        <li><i>event</i><b>.currentTarget.elements</b>.name.value - to find value of forms;</li>
         <li>const formData = new <b>FormData(</b>event.currentTarget<b>)</b>; formData.forEach((value,name) =>{}) - to
           get all names and values;</li>
         <li><i>event</i><b>.preventDefault()</b> method is to cancel the default browser action on the event objec.</li>
@@ -1188,7 +1194,7 @@
       </ul>
       <h3>Form Events</h3>
       <ul>
-        <li><b>'submit'</b> event - can be used to validate (check) a form before submitting,when you click on a button
+        <li><b>'submit'</b> event - can be used to validate (check) a form before submitting, when you click on a button
           with the type ="submit" attribute or press the Enter in any of its text fields;</li>
         <li><b>'change'</b> event occurs after a form element has changed, useful for checkboxes and radiobuttons;</li>
         <li><b>'input'</b> event occurs only in text fields and textarea, and it is generated every time the element
