@@ -2456,7 +2456,7 @@
 //   output.textContent = event.currentTarget.value;
 // }
 
-//    <!-- focus and blur events -->
+//  //  <!-- focus and blur events -->
 // const textInputNew = document.querySelector('.text-input-new');
 // const setFocusBtn = document.querySelector('[data-action="set"]');
 // const removeFocusBtn = document.querySelector('[data-action="remove"]');
@@ -2495,3 +2495,13 @@
 // не знайшов у обєкта властивість (як показував Репета)
 // [[Prototype]] for futctions and __proto__ for objects is used for prototypal inheritance.
 // -----------------------------------------------------------------------------
+// як зберегти паттерн
+// const ref = {
+//   El: document.querySelector('head'),
+//   El: document.querySelector('body'),
+// };
+
+// Object.keys(ref).forEach(key => {
+//   console.log(key);
+//   console.log(ref[key]);
+// });

@@ -34,6 +34,9 @@
             rel="noopener noreferrer nofollow">uk.JS</a></li>
         <li><a href="  https://itvolution.wordpress.com/page/14/" target="_blank"
             rel="noopener noreferrer nofollow">itvolution</a></li>
+        <li><a href="https://github.com/bardachov/dsa.js-data-structures-algorithms-javascript" target="_blank"
+            rel="noopener noreferrer nofollow">dsa.js</a></li>
+
         <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
         <li><a href="https://bootcamp.du.edu/blog/programming-skills/" target="_blank"
             rel="noopener noreferrer nofollow">Skills</a></li>
@@ -1090,11 +1093,11 @@
           element;</li>
         <li><i>elemForm</i><b>.elements</b>.formName.value - to get the value of the <i>formName</i> form-element of the
           <i>elemForm</i> element.
-        </li>
+        <li>const formData = new <b>FormData(</b>formName<b>)</b>; formData.forEach((<b>value</b>, <b>name</b>)
+          =>{\\value, name}) - to use class <i>FormData</i> to get all names and values of the <i>formName</i>
+          form-element;</li>
+        <li><i>elemForm</i><b>.reset()</b> method - to clear the values of the <i>elemForm</i> form fields.</li>
       </ul>
-
-
-
       <h3>Creating and Removing Elements</h3>
       <ul>
         <li>const el1 = document<b>.createElement('tagName')</b> - creates an element <i>tagName</i> and
@@ -1104,7 +1107,7 @@
           the <i>elem</i> element;</li>
         <li><i>elem</i><b>.prepend(</b>el1, el2, ...<b>)</b> adds one or more <i>el</i> elements before all children of
           the <i>elem</i> element;
-        <li><i>elem</i><b>.append(</b>el1, el2, ...<b>)</b> adds one or more <i>el</i> elements after the <i>elem</i>
+        <li><i>elem</i><b>.after(</b>el1, el2, ...<b>)</b> adds one or more <i>el</i> elements after the <i>elem</i>
           element;</li>
         <li><i>elem</i><b>.before(</b>el1, el2, ...<b>)</b> adds one or more <i>el</i> elements before the <i>elem</i>
           element;</li>
@@ -1175,8 +1178,6 @@
         <li><i>event</i><b>.type</b> property is event type;</li>
         <li><i>event</i><b>.target</b> property is the element on which the event is occured;</li>
         <li><i>event</i><b>.currentTarget</b> property is the element on which the event handler is executed;</li>
-        <li>const formData = new <b>FormData(</b>event.currentTarget<b>)</b>; formData.forEach((value,name) =>{}) - to
-          get all names and values;</li>
         <li><i>event</i><b>.preventDefault()</b> method is to cancel the default browser action on the event objec.</li>
       </ul>
       <h3>KeyboardEvent Object</h3>
@@ -1194,7 +1195,9 @@
       </ul>
       <h3>Form Events</h3>
       <ul>
-        <li><b>'submit'</b> event - can be used to validate (check) a form before submitting, when you click on a button
+        <li><b>'click'</b> event occurs when a pointing device button (such as a mouse's primary mouse button) is both
+          pressed and released while the pointer is located inside the element;</li>
+        <li><b>'submit'</b> event can be used to validate (check) a form before submitting, when you click on a button
           with the type ="submit" attribute or press the Enter in any of its text fields;</li>
         <li><b>'change'</b> event occurs after a form element has changed, useful for checkboxes and radiobuttons;</li>
         <li><b>'input'</b> event occurs only in text fields and textarea, and it is generated every time the element
