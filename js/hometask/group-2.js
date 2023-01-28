@@ -59,11 +59,11 @@ const movies = [
 
 // -----------------------------------------------------------------------------
 
-// const collection = movies.reduce((acc, movie) => {
-//   if (!acc[movie.director]) {
-//     acc[movie.director] = [];
+// const collection = movies.reduce((acc, { director, title }) => {
+//   if (!acc[director]) {
+//     acc[director] = [];
 //   }
-//   acc[movie.director].push(movie.title);
+//   acc[director].push(title);
 //   return acc;
 // }, {});
 // console.table(collection);
