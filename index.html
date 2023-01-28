@@ -868,8 +868,9 @@
       </ul>
       <h3>Prototypal Inheritance</h3>
       <p>OOP in JavaScript is built on prototypal inheritance. Objects can be chained so that a property not found in
-        one object is automatically searched for in another. A special internal property, <b>[[Prototype]]</b> for
-        functions and <b>__proto__</b> for objects is used for prototypal inheritance.
+        one object is automatically searched for in another. A special internal property, <b>[[Prototype]]</b>
+        (<b>__proto__</b>) for
+        functions and objects is used for prototypal inheritance.
       </p>
       <ul>
         <li><b>Object.create(</b><i>protoObj</i>[, propertiesObject]<b>)</b> method creates and returns a new object
@@ -886,8 +887,9 @@
       </ul>
       <p>When interpreter looks for non-existent property in the <i>newObj</i> object, it continues searching in the
         object by reference from <i>newObj</i><b>.__ proto__</b>, that is, in the <i>protoObj</i> object, its prototype.
-        The <b>prototype</b> is a <b>storage</b> of object <b>properties</b> and <b>methods</b>:</p>
-
+        The <b>prototype</b> is a <b>storage</b> of object <b>properties</b> and <b>methods</b> for <b>functions</b> and
+        <b>classes</b>:
+      </p>
       <ul>
         <li><b>function</b> ClsName <b>(</b>{varName}<b>) {</b>// Operating with <b>this.</b>varName<b>}</b> - making a
           constructor function <i>ClsName</i>; </li>
