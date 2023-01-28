@@ -2508,11 +2508,11 @@
 
 // -----------------------------------------------------------------------------
 
-const a = { mj: 23 };
-console.log('a: ', a.__proto__);
-console.log('a: ', a.prototype);
+// const a = { mj: 23 };
+// console.log('a: ', a.__proto__);
+// console.log('a: ', a.prototype);
 
-function b() {
-  console.log('hello');
-}
-console.log(b.prototype);
+// function b() {
+//   console.log('hello');
+// }
+// console.log(b.prototype);
