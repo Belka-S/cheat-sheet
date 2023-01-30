@@ -14,8 +14,8 @@ const chopShop = {
     { name: 'Ruby', price: 800, quantity: 2 },
   ],
 
-  // ----------------------------------------------------------------------------- //   calcTotalPrice(stoneName) { let total = 0; this.stones.forEach(({ name, price, quantity }) => {
-  // ----------------------------------------------------------------------------- //       if (name === stoneName) {total = price * quantity;}});return total;},};
+  // -------------------------------------------------------------------------------------------- //   calcTotalPrice(stoneName) { let total = 0; this.stones.forEach(({ name, price, quantity }) => {
+  // -------------------------------------------------------------------------------------------- //       if (name === stoneName) {total = price * quantity;}});return total;},};
 
   calcTotalPrice(stoneName) {},
 };
@@ -48,7 +48,7 @@ const chopShop = {
 //   },
 // };
 
-// -----------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------------- //
 
 const phonebook = {};
 
@@ -75,9 +75,9 @@ const phonebook = {};
 // - `add()` - returns the sum of the stored values.
 // - `mult()` - multiplies the stored values and returns the result.
 
-// ----------------------------------------------------------------------------- // const calculator = { read(a, b) { this.a = a; this.b = b; },
-// ----------------------------------------------------------------------------- //   sum() { const { a, b } = this; console.log('a + b =', a + b); },
-// ----------------------------------------------------------------------------- //   mult() { console.log('a * b =', this.a * this.b); }, };
+// -------------------------------------------------------------------------------------------- // const calculator = { read(a, b) { this.a = a; this.b = b; },
+// -------------------------------------------------------------------------------------------- //   sum() { const { a, b } = this; console.log('a + b =', a + b); },
+// -------------------------------------------------------------------------------------------- //   mult() { console.log('a * b =', this.a * this.b); }, };
 
 const calculator = {};
 
@@ -136,7 +136,7 @@ function logMessage() {
   console.log(this.message); // "Hello, World!"
 }
 
-// ----------------------------------------------------------------------------- // logMessage.call(object); logMessage.apply(object); const boundLogMessage = logMessage.bind(object); boundLogMessage();
+// -------------------------------------------------------------------------------------------- // logMessage.call(object); logMessage.apply(object); const boundLogMessage = logMessage.bind(object); boundLogMessage();
 
 // ## ******************** Example 8 - Greeting and farewell ********************
 

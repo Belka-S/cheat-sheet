@@ -90,7 +90,7 @@ const cars = [
 // Let the `getModels` function return an array of models (model field) of all cars.
 // const getModels = cars => {};
 
-// ----------------------------------------------------------------------------- // const getModels = cars => cars.map(({ model }) => model);
+// -------------------------------------------------------------------------------------------- // const getModels = cars => cars.map(({ model }) => model);
 
 const getModels = cars => {};
 
@@ -102,8 +102,8 @@ const getModels = cars => {};
 // value of the `price` property depending on the discount passed.
 // const makeCarsWithDiscount = (cars, discount) => {};
 
-// ----------------------------------------------------------------------------- // const makeCarsWithDiscount = (cars, discount) =>
-// ----------------------------------------------------------------------------- //   cars.map(car => ({ ...car, price: car.price * (1 - discount) }));
+// -------------------------------------------------------------------------------------------- // const makeCarsWithDiscount = (cars, discount) =>
+// -------------------------------------------------------------------------------------------- //   cars.map(car => ({ ...car, price: car.price * (1 - discount) }));
 
 const makeCarsWithDiscount = (cars, discount) => {};
 
@@ -116,8 +116,8 @@ const makeCarsWithDiscount = (cars, discount) => {};
 // than the value of the `threshold` parameter.
 // const filterByPrice = (cars, threshold) => {};
 
-// ----------------------------------------------------------------------------- // const filterByPrice = (cars, threshold) =>
-// ----------------------------------------------------------------------------- //   cars.filter(({ price }) => price < threshold);
+// ------------------------------------------------------------------------------------------- // const filterByPrice = (cars, threshold) =>
+// -------------------------------------------------------------------------------------------- //   cars.filter(({ price }) => price < threshold);
 
 const filterByPrice = (cars, threshold) => {};
 
@@ -127,7 +127,7 @@ const filterByPrice = (cars, threshold) => {};
 // onSale property is true.
 // const getCarsWithDiscount = cars => {};
 
-// ----------------------------------------------------------------------------- // const getCarsWithDiscount = cars => cars.filter(({ onSale }) => onSale);
+// -------------------------------------------------------------------------------------------- // const getCarsWithDiscount = cars => cars.filter(({ onSale }) => onSale);
 
 const getCarsWithDiscount = cars => {};
 
@@ -139,7 +139,7 @@ const getCarsWithDiscount = cars => {};
 // coincide with the value of the `type` parameter.
 // const getCarsWithType = (cars, type) => {};
 
-// ----------------------------------------------------------------------------- // const getCarsWithType = (cars, type) => cars.filter(car => car.type === type);
+// -------------------------------------------------------------------------------------------- // const getCarsWithType = (cars, type) => cars.filter(car => car.type === type);
 
 const getCarsWithType = (cars, type) => {};
 
@@ -152,7 +152,7 @@ const getCarsWithType = (cars, type) => {};
 // coincide with the value of the `model` parameter.
 // const getCarByModel = (cars, model) => {};
 
-// ----------------------------------------------------------------------------- // const getCarByModel = (cars, model) => cars.filter(car => car.model === model);
+// -------------------------------------------------------------------------------------------- // const getCarByModel = (cars, model) => cars.filter(car => car.model === model);
 
 const getCarByModel = (cars, model) => {};
 
@@ -165,7 +165,7 @@ const getCarByModel = (cars, model) => {};
 // sorted in ascending order by the value of the `amount` property.
 // const sortByAscendingAmount = cars => {};
 
-// ----------------------------------------------------------------------------- // console.table(sortByAscendingAmount(cars));
+// -------------------------------------------------------------------------------------------- // console.table(sortByAscendingAmount(cars));
 
 const sortByAscendingAmount = cars => {};
 
@@ -178,7 +178,7 @@ const sortByAscendingAmount = cars => {};
 
 // const sortByDescendingPrice = cars => {};
 
-// ----------------------------------------------------------------------------- // const sortByDescendingPrice = cars => [...cars].sort((a, b) => b.price - a.price);
+// -------------------------------------------------------------------------------------------- // const sortByDescendingPrice = cars => [...cars].sort((a, b) => b.price - a.price);
 
 const sortByDescendingPrice = cars => {};
 
@@ -191,8 +191,8 @@ const sortByDescendingPrice = cars => {};
 // depending on the value of the `order` parameter.
 // const sortByModel = (cars, order) => {};
 
-// ----------------------------------------------------------------------------- // const sortByModel = (cars, order) => [...cars].sort((a, b) =>
-// ----------------------------------------------------------------------------- //     order === 'asc' ? a.model.localeCompare(b.model) : b.model.localeCompare(a.model));
+// -------------------------------------------------------------------------------------------- // const sortByModel = (cars, order) => [...cars].sort((a, b) =>
+// -------------------------------------------------------------------------------------------- //     order === 'asc' ? a.model.localeCompare(b.model) : b.model.localeCompare(a.model));
 
 const sortByModel = {};
 
@@ -206,9 +206,9 @@ const sortByModel = {};
 
 // const getTotalAmount = cars => {};
 
-// ---------------------------------------------------------------------------- // const getTotalAmount = cars => cars.reduce(
-// ---------------------------------------------------------------------------- //     (acc, { make, amount }) => {!acc[make] ? (acc[make] = amount) : (acc[make] += amount);
-// ---------------------------------------------------------------------------- //       acc['total'] += amount; return acc; }, { total: 0 } );
+// ------------------------------------------------------------------------------------------- // const getTotalAmount = cars => cars.reduce(
+// ------------------------------------------------------------------------------------------- //     (acc, { make, amount }) => {!acc[make] ? (acc[make] = amount) : (acc[make] += amount);
+// ------------------------------------------------------------------------------------------- //       acc['total'] += amount; return acc; }, { total: 0 } );
 
 const getTotalAmount = cars => {};
 
@@ -221,7 +221,7 @@ const getTotalAmount = cars => {};
 
 // const getModelsOnSale = cars => {};
 
-// ----------------------------------------------------------------------------- // const getModelsOnSale = cars => cars.filter(car => car.onSale).map(car => car);
+// -------------------------------------------------------------------------------------------- // const getModelsOnSale = cars => cars.filter(car => car.onSale).map(car => car);
 
 const getModelsOnSale = {};
 
@@ -234,7 +234,7 @@ const getModelsOnSale = {};
 
 // const getSortedCarsOnSale = cars => {};
 
-// ----------------------------------------------------------------------------- // const getSortedCarsOnSale = cars => cars.filter(car => car.onSale).map(car => car).sort((a, b) => a.price - b.price);
+// -------------------------------------------------------------------------------------------- // const getSortedCarsOnSale = cars => cars.filter(car => car.onSale).map(car => car).sort((a, b) => a.price - b.price);
 
 const getSortedCarsOnSale = cars => {};
 

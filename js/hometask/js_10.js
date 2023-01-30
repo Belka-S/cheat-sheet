@@ -13,8 +13,8 @@
 // Add the `updatePostCount(value)` method, which in the `value` parameter takes
 // number of posts to add to the user.
 
-// ----------------------------------------------------------------------------- //class Blogger { constructor({ email, age, numberOfPosts, topics }) { this.email = email; this.age = age; this.numberOfPosts = numberOfPosts; this.topics = topics; }
-// ----------------------------------------------------------------------------- //  getInfo() { return `User ${this.email} is ${this.age} years old and has ${this.numberOfPosts} posts`; } updatePostCount(value) { this.numberOfPosts += value; } }
+// --------------------------------------------------------------------------------------------- //class Blogger { constructor({ email, age, numberOfPosts, topics }) { this.email = email; this.age = age; this.numberOfPosts = numberOfPosts; this.topics = topics; }
+// --------------------------------------------------------------------------------------------- //  getInfo() { return `User ${this.email} is ${this.age} years old and has ${this.numberOfPosts} posts`; } updatePostCount(value) { this.numberOfPosts += value; } }
 
 class Blogger {}
 
@@ -40,8 +40,8 @@ const kiwi = new Blogger({
 // - `addItem(item)` - receives a new product and adds it to the current ones.
 // - `removeItem(item)` - receives the product and, if it exists, removes it from the current.
 
-// ----------------------------------------------------------------------------- // class Storage { constructor(array) { this.item = array; } getItems() { return this.item; } addItem(item) { this.item.push(item); }
-// ----------------------------------------------------------------------------- //   removeItem(item) { const index = this.item.indexOf(item); if (index > -1) this.item.splice(index, 1); } }
+// --------------------------------------------------------------------------------------------- // class Storage { constructor(array) { this.item = array; } getItems() { return this.item; } addItem(item) { this.item.push(item); }
+// --------------------------------------------------------------------------------------------- //   removeItem(item) { const index = this.item.indexOf(item); if (index > -1) this.item.splice(index, 1); } }
 
 class Storage {}
 
@@ -63,8 +63,8 @@ class Storage {}
 // Declare private properties `#login` and `#email`, which can be accessed via
 // getter and setter of `login` and `email`.
 
-// ----------------------------------------------------------------------------- // class User { #login; #email; constructor({ login, email }) { this.#login = login; this.#email = email; }
-// ----------------------------------------------------------------------------- //   get login() { return this.#login; } set login(login) { return (this.#login = login); } }
+// --------------------------------------------------------------------------------------------- // class User { #login; #email; constructor({ login, email }) { this.#login = login; this.#email = email; }
+// -------------------------------------------------------------------------------------------- //   get login() { return this.#login; } set login(login) { return (this.#login = login); } }
 
 class User {}
 
@@ -87,9 +87,9 @@ const poly = new User({
 // { LOW: 'low', NORMAL: 'normal', HIGH: 'high' }
 // Add methods`addNote(note)`, `removeNote(text)` and `updatePriority(text, newPriority)`.
 
-// ----------------------------------------------------------------------------- // class Notes {  static Priority = { LOW: 'low', NORM: 'normal', HIGH: 'high' }; constructor() { this.items = []; } addNote(note) { this.items.push(note); }
-// ----------------------------------------------------------------------------- //   removeNote(text) { const index = this.items.findIndex(item => item.text === text); if (index > -1) this.items.splice(index, 1); }
-// ----------------------------------------------------------------------------- //   updatePriority(text, newPriority) { const index = this.items.findIndex(item => item.text === text); if (index > -1) this.items.at(index).priority = newPriority; }}
+// --------------------------------------------------------------------------------------------- // class Notes {  static Priority = { LOW: 'low', NORM: 'normal', HIGH: 'high' }; constructor() { this.items = []; } addNote(note) { this.items.push(note); }
+// --------------------------------------------------------------------------------------------- //   removeNote(text) { const index = this.items.findIndex(item => item.text === text); if (index > -1) this.items.splice(index, 1); }
+// --------------------------------------------------------------------------------------------- //   updatePriority(text, newPriority) { const index = this.items.findIndex(item => item.text === text); if (index > -1) this.items.at(index).priority = newPriority; }}
 
 class Notes {}
 
@@ -111,7 +111,7 @@ const myNotes = new Notes();
 // declares one property `on` - state on/off (true/false). By default the value
 // of the `on` property should be`false`.Method toggle() switches state on / off.
 
-// ----------------------------------------------------------------------------- // class Toggle { constructor({ isOpen = false } = {}) { this.on = isOpen; } toggle() { this.on = !this.on; } }
+// --------------------------------------------------------------------------------------------- // class Toggle { constructor({ isOpen = false } = {}) { this.on = isOpen; } toggle() { this.on = !this.on; } }
 
 class Toggle {}
 

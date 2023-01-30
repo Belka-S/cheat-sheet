@@ -7,9 +7,6 @@
 // ## ******************** Example 1 - Mathematical operators ********************
 
 // Display the total number of apples and grapes on the screen. The difference between apples and grapes.
-
-// ----------------------------------------------------------------------------- //
-
 const apples = 47;
 const grapes = 135;
 const total = apples + grapes;
@@ -21,9 +18,6 @@ const diff = grapes - apples;
 // ## ******************** Example 2 - Combined operators ********************
 
 // Replace the override expression with the combined operator `+=`.
-
-// ----------------------------------------------------------------------------- //
-
 let students = 100;
 students += 50;
 
@@ -32,9 +26,6 @@ students += 50;
 // ## ******************** Example 3 - Operators Priority ********************
 
 // Disassemble operators priority in the variable value assignment  instruction `result`.
-
-// ----------------------------------------------------------------------------- //
-
 const result = 10 + 20 - 2 * 5;
 
 // console.log(result);
@@ -44,9 +35,6 @@ const result = 10 + 20 - 2 * 5;
 // Write a script that prints to the console rounded up/down, etc. number
 // of variable `number`. Use the methods `Math.floor()`, `Math.ceil()` and
 // `Math.round()`. Check what happens in the console for the number "27.3" and "27.9".
-
-// ----------------------------------------------------------------------------- //
-
 const number = 27.5;
 
 // console.log(Math.round(number));
@@ -57,9 +45,6 @@ const number = 27.5;
 
 // Compose a phrase using the template strings `A has B bots in stock`, where A, B -
 // variables inserted into a line.
-
-// ----------------------------------------------------------------------------- //
-
 const companyName = 'Cyberdyne Systems';
 const repairBots = 150;
 const defenceBots = 50;
@@ -76,13 +61,12 @@ const message = `${companyName} has ${repairBots + defenceBots} bots in stock`;
 // as strings (specially for the task). Non-integer numbers can be given as
 // `24.7` or `24,7`,that is, as a separator of the fractional part can be comma.
 // The body mass index should be rounded to one decimal place;
-
-// ----------------------------------------------------------------------------- // const bmi = ( weight.replace(',', '.') / Math.pow(height.replace(',', '.'), 2) ).toFixed(2);
-
 const weight = '88.3';
 const height = '1,75';
 
-const bmi = weight;
+// -------------------------------------------------------------------------------------------- // const bmi = ( weight.replace(',', '.') / Math.pow(height.replace(',', '.'), 2) ).toFixed(2);
+
+const bmi = '';
 
 // console.log(bmi); // 28.8
 
@@ -151,13 +135,10 @@ const bmi = weight;
 // `defaultValue` must be assigned. Check work script for the following values of the
 // `incomingValue` variable: null, undefined, 0, false.
 // Use operator`??`(nullish coalescing operator).
-
-// ----------------------------------------------------------------------------- //
-
 const incomingValue = false;
 const defaultValue = 10;
-const test = incomingValue || defaultValue;
-const value = incomingValue ?? defaultValue;
+
+// -------------------------------------------------------------------------------------------- // const test = incomingValue || defaultValue; const value = incomingValue ?? defaultValue;
 
 // console.log('test: ', test);
 // console.log('value: ', value);
@@ -169,9 +150,8 @@ const value = incomingValue ?? defaultValue;
 // - 70 will show 01:10
 // - 450 will show 07:30
 // - 1441 will show 24:01
-
-// ----------------------------------------------------------------------------- // const hourString = String(Math.floor(totalMinutes / 60)).padStart(2, 0); const minuteString = String(totalMinutes % 60).padStart(2, 0); const time = `${hourString}:${minuteString}`;
-
 const totalMinutes = 70;
+
+// -------------------------------------------------------------------------------------------- // const hourString = String(Math.floor(totalMinutes / 60)).padStart(2, 0); const minuteString = String(totalMinutes % 60).padStart(2, 0); const time = `${hourString}:${minuteString}`;
 
 // console.log('time: ', time);
