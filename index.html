@@ -774,7 +774,7 @@
       <p>The method chain can be of arbitrary length, but usually no more than 2-3 operations. First, iteration methods
         are used for relatively simple collection operations. Second, calling each subsequent method is an additional
         array iteration, which, with a large number of elements, can affect performance.</p>
-      <h3>Lodash</h3>
+      <h3>Lodash Methods</h3>
       <ul>
         <li><b>&#60script src="</b>https://cdn.jsdelivr.net/npm/<b>lodash</b>@4.17.21/lodash.min.js<b>">&#60/script>
           </b>- to plugin lodash, <b>console.dir</b>(<b>_</b>) - to find out methods;
@@ -1029,6 +1029,7 @@
         <li><i>elem</i><b>.checked</b> stores the state of a <i>checkbox</i> or <i>radio button</i>;</li>
         <li><i>elem</i><b>.disabled</b> stores the state of a <i>button</i>;</li>
         <li><i>elem</i><b>.name</b> stores the value specified in the name HTML attribute;</li>
+        <li><i>elem</i><b>.nodeName</b> returns the name of the current node as a string in upper-case;</li>
         <li><i>elem</i><b>.src</b> is the path to the <i>&#60img></i> tag’s image;</li>
         <li><i>elem</i><b>.href</b> property is a stringifier that returns a string containing the <i>whole URL</i>, and
           allows the href to be updated;</li>
@@ -1161,7 +1162,10 @@
         <li><i>event</i><b>.type</b> property is event type;</li>
         <li><i>event</i><b>.target</b> property is the element on which the event is occured;</li>
         <li><i>event</i><b>.currentTarget</b> property is the element on which the event handler is executed;</li>
-        <li><i>event</i><b>.preventDefault()</b> method is to cancel the default browser action on the event objec.</li>
+        <li><i>event</i><b>.preventDefault()</b> method is to cancel the default browser action on the event object;
+        </li>
+        <li><i>event</i><b>.stopPropagation()</b> method impedes the event to go further;</li>
+        <li><i>event</i><b>.stopImmediatePropagation()</b> method is to completely stop event handling.</li>
       </ul>
       <h3>KeyboardEvent Object</h3>
       <p>Unlike others, keyboard events are handled on the <i>document</i>, not on a specific element. There are three
@@ -1185,22 +1189,68 @@
         <li><b>'change'</b> event occurs after a form element has changed, useful for checkboxes and radiobuttons;</li>
         <li><b>'input'</b> event occurs only in text fields and textarea, and it is generated every time the element
           value changes, without waiting for focus to be lost;</li>
-        <li><b>'focus'</b> and <b>'blur'</b> events occur when an element is focused and when focus is lost;</li>
+        <li><b>'focus'</b> and <b>'blur'</b> events occur when an element is focused and when focus is lost, these two
+          events do not bubble;</li>
+        <li><b>'focusin'</b> and <b>'focusout'</b> events occur when an element is focused and when focus is lost, the
+          two events differ in that they bubble;</li>
         <li><i>elem</i><b>.focus()</b> and <i>elem</i><b>.blur()</b> methods - to activate or cancel focus
           programmatically for the <i>elem</i> element.</li>
       </ul>
     </section>
-
     <section class="delegation">
       <a href="#goit">
         <h2 id="delegation">Event Delegation (Lesson 13)</h2>
       </a>
+      <h3>Event Propagation and Delegation</h3>
+      <ul>
+        <li>Event <b>propagation</b> is a term describing the life cycle of an event, which includes three stages:
+          <b>capturing</b>, <b>targeting</b> and <b>bubbling</b>. If there is an event listener registered on the
+          outermost element, it will "catch" all clicks inside, because events will <i>bubble</i> up to that element.
+          Typically, the event will <i>bubble</i> up to the <i>window</i> element, calling all handlers on its way. Do
+          not stop bubbling unless necessary.
+        </li>
+        <li>Bubbling makes it possible to do one of the most useful tricks, event <b>delegation</b>. When there is a
+          group of elements with events that need to be handled in the same way, then one handler should be added to
+          their common ancestor, instead of adding a handler to each element.</li>
+      </ul>
     </section>
-
     <section class="throttle">
       <a href="#goit">
         <h2 id="throttle">Throttle/Debounce and Lazyload (Lesson 14)</h2>
       </a>
+      <h3>Throttle and Debounce</h3>
+      <p><b>Throttle</b> and <b>Debounce</b> are two similar (but different in their behavior) techniques to control how
+        many times you allow a function to execute over time. Use their versions from the <b>Lodash</b> library.</p>
+      <ul>
+        <li><b>_.throttle(</b><i>func</i>, <i>N</i>, [{'trailing':true | leading':true}]<b>)</b> - controls the number
+          of times a <i>func</i> function can be called one time in <i>N</i> milliseconds;
+        </li>
+        <li><b>_.debounce(</b><i>func</i>, <i>N</i>, [{trailing:false, leading:true}]<b>)</b> - ensures
+          that the <i>func</i> function will only be called if there is a pause of <i>N</i> milliseconds between events,
+          <i>trailing</i> edge (at the end) mode is called by default.
+        </li>
+      </ul>
+      <h3>Lazy Loading</h3>
+      <p>Lazy loading is a technique that delays the loading of non-critical resources during page loading. Instead,
+        these non-critical resources are loaded only when needed. Modern browsers can do this without JavaScript, but
+        unfortunately not all of them do. To ensure cross-browser compatibility a number of existing JavaScript
+        libraries is used, such as <i>lazysizes</i>, <i>vanilla-lazyload</i> and <i>lozad.js</i>.</p>
+      <ul>
+        <li>&#60img <b>loading</b>="lazy" /> - <b>HTML attribute</b> of the <i>&#60img></i> tag is supported natively in
+          all modern browsers except Safari, is used to lazy load below the fold images until the user scrolls down to
+          them and three values:
+          <ul>
+            <li><b>lazy</b> - the browser will lazy load the image;</li>
+            <li><b>eager</b> - the image will be loaded as soon as possible, that is, without lazy loading;</li>
+            <li><b>auto</b> - the default value whhen the browser decides whether to perform lazy loading or not.</li>
+          </ul>
+        </li>
+        <li> &#60img <b>class</b>="lazyload" <b>src</b>="path/to/lqip-placeholder.jpg"
+          <b>data-src</b>="path/to/my-image.jpg" /> - images that need lazy loading whith <b>lazysizes library</b>, set
+          the <i>lazyload class</i> and replace the src attribute with <i>data-src</i>, when the image has been loaded,
+          lazysizes adds the <i>lazyload<b>ed</b> class</i> to the element.
+        </li>
+      </ul>
     </section>
 
     <section class="modularity">
