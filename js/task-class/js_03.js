@@ -12,8 +12,6 @@
 
 // const genres = ;
 
-// -----------------------------------------------------------------------------
-
 // ## ******************** Example 2 - Arrays and Strings ********************
 
 // Write a script to calculate the area of a rectangle with sides, whichvalues
