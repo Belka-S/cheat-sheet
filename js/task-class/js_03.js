@@ -85,8 +85,6 @@
 
 // -----------------------------------------------------------------------------
 
-const qwe = Boolean('loading' in HTMLImageElement.prototype);
-console.log(qwe);
 //
 //
 //
