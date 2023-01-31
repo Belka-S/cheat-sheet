@@ -62,8 +62,11 @@
         <li><a href="https://lodash.com" target="_blank" rel="noopener noreferrer nofollow">lodash</a></li>
         <li><a href="https://pawelgrzybek.github.io/siema/" target="_blank" rel="noopener noreferrer nofollow">siema</a>
         </li>
-        <li><a href="https://developer.mozilla.org/en-US/docs/web/Events" target="_blank"
-            rel="noopener noreferrer nofollow">Events</a></li>
+        <li><a href="https://github.com/krisk/Fuse" target="_blank" rel="noopener noreferrer nofollow">Fuse.js</a></li>
+        <li><a href="https://github.com/aFarkas/lazysizes" target="_blank"
+            rel="noopener noreferrer nofollow">lazysizes</a></li>
+        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
+        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
         <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
         <li><a href="https://github.com/remy/nodemon/" target="_blank" rel="noopener noreferrer nofollow">nodemon</a>
         </li>
@@ -285,11 +288,13 @@
       </p>
       <ul>
         <li><b>Boolean()</b> function - to convert a value to logical <i>true</i> or <i>false</i>;</li>
-        <li>Logical AND <b>&&</b> - result will be false, since at least one of the operands is converted to false;</li>
-        <li>Logical OR <b>||</b> - result will be true, since at least one of the operands is converted to true;</li>
-        <li>Logical NOT <b>!</b> - replaces value with the opposite.</li>
+        <li>Logical AND <b>&&</b> - result will be <i>false</i>, since at least one of the operands is converted to
+          false, in opposite returns last true value;</li>
+        <li>Logical OR <b>||</b> - result will be <i>true</i>, since at least one of the operands is converted to true,
+          in opposite returns last false value;</li>
+        <li>Logical NOT <b>!</b> - replaces value with the <i>opposite</i>.</li>
         <li>Nullish coalescing operator <b>??</b> - returns its right-hand side operand when its left-hand side operand
-          is null or undefined, and otherwise returns its left-hand side operand;</li>
+          is <i>null</i> or <i>undefined</i>, and otherwise returns its left-hand side operand;</li>
         <li>Logical OR assignment <b>||=</b> - (x ||= y) operator only assigns if x is falsy.</li>
       </ul>
     </section>
@@ -313,7 +318,8 @@
       </ul>
       <h3>Ternary Operator</h3>
       <p><i>condition</i> <b>?</b> <i>expression_if_true</i> <b>:</b> <i>expression_if_false</i> - the ternary
-        operator is used as a more syntactically concise replacement for the <b>if</b> ... <b>else</b> statement</p>
+        operator is used <i>only for</i> <b>return</b> and <b>assign</b> operations as a more syntactically concise
+        replacement for the <b>if</b> ... <b>else</b> statement.</p>
       <h3>Switch Statement</h3>
       <p>The scope of <b>switch</b> is limited to tasks with one common question (what to compare) and many answer
         options (what to compare with). For comparison, the strict equality operator <b>===</b> is used.</p>
@@ -953,7 +959,10 @@
         <li>class Child extends Parent {<b>constructor(</b>{varName}<b>) {super(</b>varName<b>)}</b> - to call a
           special function, <b>super(</b>arg<b>)</b>, wich is an alias for the parent class constructor, otherwise, when
           trying to access <i>this</i> in the child class constructor, an error will be generated;</li>
-        <li><b>child class methods</b> will only be available to its instances.</li>
+        <li><b>child class methods</b> will only be available to its instances;</li>
+        <li>const uniqueValues = new <b>Set()</b> - <i>Set</i> object lets you store unique values of any type, whether
+          primitive values or object references.
+        </li>
       </ul>
     </section>
     <section class="dom">
@@ -996,6 +1005,8 @@
           get an array of references to elements with the same selector, returns a pseudo-array of all elements inside
           <i>elem</i> that match the <i>selector</i>, if nothing is found, it will return an <i>empty array</i>.
         </li>
+        <li><i>elem</i><b>.closest(</b>selector<b>)</b> method traverses the <i>elem</i> element and its
+          parents (heading toward the document root) until it finds a node that matches the specified CSS selector;</li>
         <li><i>elem</i>.parentNode property selects the parent of <i>elem</i>, including text ones;</li>
         <li><i>elem</i>.<b>parentElement</b> property selects the parent of <i>elem</i>;</li>
         <li><i>elem</i>.childNodes property is a pseudo-array that stores all child elements, including text
@@ -1138,15 +1149,17 @@
         react to user actions, it needs an event listener (handler), that is, a function that will be called as soon as
         the event occurs. </p>
       <ul>
-        <li><i>elem</i><b>.addEventListener(</b>event, handler, options<b>)</b> - dds an event listener to the
+        <li><i>elem</i><b>.addEventListener(</b>event, handler[, {\\options}]<b>)</b> - dds an event listener to the
           <i>elem</i> element, where:
           <ul>
             <li><i>event</i> is event name, a string, for example 'click';</li>
             <li><i>handler</i> is a callback that will be called when the event occurs;</li>
-            <li><i>options</i> is an optional parameter object with advanced options.</li>
+            <li><i>options</i> is an optional parameter object with advanced options: <i>{once: true}</i> - removes the
+              event listener after its execution.</li>
           </ul>
         </li>
-        <li><i>elem</i><b>.removeEventListener(</b>event, handler, options<b>)</b> - removes an event listener from the
+        <li><i>elem</i><b>.removeEventListener(</b>event, handler[, {\\options}]<b>)</b> - removes an event listener
+          from the
           <i>elem</i> element, it is need to pass a reference to the callback that was assigned in
           <i>addEventListener()</i>;
         </li>
@@ -1194,7 +1207,8 @@
         <li><b>'focusin'</b> and <b>'focusout'</b> events occur when an element is focused and when focus is lost, the
           two events differ in that they bubble;</li>
         <li><i>elem</i><b>.focus()</b> and <i>elem</i><b>.blur()</b> methods - to activate or cancel focus
-          programmatically for the <i>elem</i> element.</li>
+          programmatically for the <i>elem</i> element;</li>
+        <li><b>'load'</b> event occurs when an element has been loaded.</li>
       </ul>
     </section>
     <section class="delegation">
@@ -1250,6 +1264,8 @@
           the <i>lazyload class</i> and replace the src attribute with <i>data-src</i>, when the image has been loaded,
           lazysizes adds <b>class</b>="lazyload<b>ed</b>" to the element.
         </li>
+        <li>Boolean(<b>'loading' in HTMLImageElement.prototype</b>) - to check if browser supports natively lazy
+          loading. </li>
       </ul>
     </section>
 
