@@ -2491,28 +2491,3 @@
 // '🍎'--------------------'🍎' Syntax async/await (Lesson 22) '🍎'--------------------'🍎'
 
 // ******************** Питання ********************
-
-// не знайшов у обєкта властивість (як показував Репета)
-// [[Prototype]] for futctions and __proto__ for objects is used for prototypal inheritance.
-// -----------------------------------------------------------------------------
-// як зберегти паттерн
-// const ref = {
-//   El: document.querySelector('head'),
-//   El: document.querySelector('body'),
-// };
-
-// Object.keys(ref).forEach(key => {
-//   console.log(key);
-//   console.log(ref[key]);
-// });
-
-// -----------------------------------------------------------------------------
-
-// const a = { mj: 23 };
-// console.log('a: ', a.__proto__);
-// console.log('a: ', a.prototype);
-
-// function b() {
-//   console.log('hello');
-// }
-// console.log(b.prototype);

@@ -265,7 +265,7 @@
           string. This operation is called <b>concatenation</b>, or string addition. Template strings are an alternative
           to concatenation with more convenient syntax, they may contain placeholders with the dollar sign and curly
           braces - <b>${</b><i>expression</i><b>}</b></li>
-        <li><b>.length</b> property - to get value of a string;</li>
+        <li><b>.length</b> property - to get the number of characters of a string;</li>
         <li><b>.toLowerCase()</b> method - return a new string in the lower case without modifying the original string;
         </li>
         <li><b>.toUpperCase()</b> method - return a new string in the upper case without modifying the original
@@ -274,17 +274,20 @@
           substring match, or <b>-1</b> if nothing is found;</li>
         <li><b>.includes(</b>'searchString'[, position]<b>)</b> method - checks if a substring is included in the
           string, returns true/false;</li>
-        <li><b>.endsWith(</b>searchString[, length]<b>)</b> method - determines if a string ends with the characters
+        <li><b>.endsWith(</b>'searchString'[, length]<b>)</b> method - determines if a string ends with the characters
           (substring) specified in parentheses, returns true/false</li>
-        <li><b>.startsWith(</b>searchString[, length]<b>)</b> method - determines if a string starts with the characters
+        <li><b>.startsWith(</b>'searchString'[, length]<b>)</b> method - determines if a string starts with the
+          characters
           (substring) specified in parentheses, returns true/false</li>
-        <li><b>.replace(</b>pattern, replacement<b>)</b> method - return a new string in which the first substring
-          matches have been replaced with the specified value;</li>
-        <li><b>.replaceAll(</b>pattern, replacement<b>)</b> method - return a new string in which all substring matches
+        <li><b>.replace(</b>'searchString', 'replacementString'<b>)</b> method - return a new string in which the first
+          substring matches have been replaced with the specified value;</li>
+        <li><b>.replaceAll(</b>'searchString', 'replacementString'<b>)</b> method - return a new string in which all
+          substring matches
           have been replaced with the specified value;</li>
-        <li><b>.padStart(</b>targetLength [, padString]<b>)</b> method - pads the current string from the start with
+        <li><b>.padStart(</b>targetLength [, 'padString']<b>)</b> method - pads the current string from the start with
           another string until the resulting string reaches the given length;</li>
-        <li><b>.padEnd(</b>targetLength [, padString]<b>)</b> method - pads the current string from the end with another
+        <li><b>.padEnd(</b>targetLength [, 'padString']<b>)</b> method - pads the current string from the end with
+          another
           string until the resulting string reaches the given length;</li>
         <li><b>.at(</b>index<b>)</b> method - takes an integer value and returns a new String consisting of the single
           UTF-16 code unit located at the specified offset;</li>
@@ -419,10 +422,10 @@
       </ul>
       <h3>Array Methods</h3>
       <ul>
-        <li><b>.split(</b><i>delimiter</i><b>)</b> method - converts a string to an array by splitting it with
+        <li><b>.split(</b><i>'delimiter'</i><b>)</b> method - converts a string to an array by splitting it with
           <i>delimiter</i>, strArray = strArray.split(<b>/\s+/</b>) - unlimited space pattern;
         </li>
-        <li><b>.join(</b><i>delimiter</i><b>)</b> method - joins the elements of an array into a string by joining it
+        <li><b>.join(</b><i>'delimiter'</i><b>)</b> method - joins the elements of an array into a string by joining it
           with <i>delimiter</i>;
         </li>
         <li><b>.indexOf(</b><i>value</i><b>)</b> method - returns the first index at which the element with <i>value</i>
@@ -437,19 +440,19 @@
           the array, without the need to specify the indices of the added elements;</li>
         <li><b>.shift(</b><i>value</i><b>)</b> method - removes one element from the beginning of the array and
           returns the removed element, if the array is empty, it returns <i>undefined</i>;</li>
-        <li><b>.slice(</b><i>beginIndex, endIndex</i><b>)</b> method - returns a new array which is a partial copy from
-          <i>beginIndex</i> to, but not including, <i>endIndex</i>;
+        <li><b>.slice(</b><i>indexStart, indexEnd</i><b>)</b> method - returns a new array which is a partial copy from
+          <i>indexStart</i> to, but not including, <i>indexEnd</i>;
         </li>
-        <li><b>.splice(</b><i>position, num</i><b>)</b> method - <b>removal</b>, modifies the original array and returns
-          an array containing the removed elements, where <i>position</i> indicates the position (index) of the first
+        <li><b>.splice(</b><i>index, num</i><b>)</b> method - <b>removal</b>, modifies the original array and returns
+          an array containing the removed elements, where <i>index</i> indicates the position (index) of the first
           element to be removed and <i>num</i> indicates the number of elements to be removed; </li>
-        <li><b>.splice(</b><i>position, 0, new_element_1, new_element_2, ...</i><b>)</b> method - <b>addition</b>,
-          <i>position</i> argument specifies the starting position in the array where new elements will be inserted,
+        <li><b>.splice(</b><i>index, 0, newElem1, newElem2, ...</i><b>)</b> method - <b>addition</b>,
+          <i>index</i> argument specifies the starting position in the array where new elements will be inserted,
           second argument is <i>0</i>, it instructs the method not to remove elements where new ones are added;
         </li>
-        <li><b>.splice(</b><i>position, num, new_element_1, new_element_2, ...</i><b>)</b> method - <b>replacement</b>,
-          <i>position</i> indicates the position (index) of the first element to be removed <i>num</i> determines the
-          number of elements to be removed;
+        <li><b>.splice(</b><i>index, num, newElem1, newElem2, ...</i><b>)</b> method - <b>replacement</b>,
+          <i>index</i> indicates the position (index) of the first element to be removed <i>num</i> determines the
+          number of elements to be removed, next arguments are elements that are added to the array;
         </li>
         <li><b>.concat(</b><i>arrayName1, arrayName2, ...</i><b>)</b> method - consolidates two or more arrays into one;
         </li>
@@ -819,7 +822,7 @@
           comparisons, in which only the first occurrence of each element is kept;</li>
         <li><b>_.uniqBy(</b>array, [iteratee=_.identity]<b>)</b> - accepts iteratee which is invoked for each element in
           array to generate the criterion by which uniqueness is computed;</li>
-        <li><b><b>_.minBy()</b>, _.minBy(</b>array, [iteratee=_.identity]<b>)</b> - accepts iteratee which is invoked
+        <li><b>_.minBy(</b>array, [iteratee=_.identity]<b>)</b> - accepts iteratee which is invoked
           for each element in array to generate the criterion by which the value is ranked;</li>
         <li><b>_.camelCase()</b>, <b>_.kebabCase()</b>, <b>_.lowerCase()</b>, <b>_.snakeCase()</b>,
           <b>_.startCase()</b>, <b>_.upperCase()</b> - converts string.
@@ -1004,7 +1007,6 @@
         elements properties:
       </p>
       <ul>
-
         <li><i>elem</i><b>.querySelector(</b>selector<b>)</b> method - to find only one (most often unique) element,
           returns the first element found within <i>elem</i> that matches the <i>selector</i> and <i>null</i> if nothing
           is found:
@@ -1054,9 +1056,28 @@
         <li><i>elem</i><b>.disabled</b> stores the state of a <i>button</i>;</li>
         <li><i>elem</i><b>.name</b> stores the value specified in the name HTML attribute;</li>
         <li><i>elem</i><b>.nodeName</b> returns the name of the current node as a string in upper-case;</li>
+        <li><i>elem</i><b>.attributes</b> property returns an object of all attributes of the element:
+          <ul>
+            <li><i>elem</i>.<b>hasAttribute(</b>attrName<b>)</b> checks for the presence of the
+              <i>attrName</i>, returns <i>true</i> or <i>false</i>;
+            <li><i>elem</i>.<b>getAttribute(</b>attrName<b>)</b> gets and returns the attribute <i>value</i>;
+            <li><i>elem</i>.<b>setAttribute(</b>attrName, value<b>)</b> sets an attribute;
+            <li><i>elem</i>.<b>removeAttribute(</b>attrName<b>)</b> removes an attribute;
+            </li>
+          </ul>
+        </li>
         <li><i>elem</i><b>.src</b> is the path to the <i>&#60img></i> tag’s image;</li>
-        <li><i>elem</i><b>.href</b> property is a stringifier that returns a string containing the <i>whole URL</i>, and
-          allows the href to be updated;</li>
+        <li><i>elem</i><b>.href</b> property is a stringifier that returns a string containing the <i>whole URL</i>,
+          and allows the href to be updated;</li>
+        <li><i>elem</i><b>.style</b> property stores the <i>CSSStyleDeclaration</i> object that contains a list of all
+          properties defined only in the inline styles of the element, and not all CSS, is used to read and modify
+          inline styles:
+          <ul>
+            <li><i>elem.style</i><b>.textAlign</b>[ = 'value'];</li>
+            <li><i>elem.style</i><b>.backgroundColor</b>[ = 'value'];</li>
+            <li><i>elem.style</i><b>.fontSize</b>[ = 'value'];</li>
+          </ul>
+        <li><i>elem</i><b>.className</b> gets and sets the value of the class attribute of the <i>elem</i> element;
         <li><i>elem</i><b>.classList</b> property stores an object with methods for work with the element’s classes:
           <ul>
             <li><i>elem.classList</i>.<b>contains(</b>cls<b>)</b> returns <i>true</i> or <i>false</i> depending on
@@ -1071,25 +1092,10 @@
               class with the specified <i>newClass</i>.</li>
           </ul>
         </li>
-        <li><i>elem</i><b>.style</b> property stores the <i>CSSStyleDeclaration</i> object that contains a list of all
-          properties defined only in the inline styles of the element, and not all CSS, is used to read and modify
-          inline styles:
-          <ul>
-            <li><i>elem.style</i><b>.textAlign</b>[ = 'value'];</li>
-            <li><i>elem.style</i><b>.backgroundColor</b>[ = 'value'];</li>
-            <li><i>elem.style</i><b>.fontSize</b>[ = 'value'];</li>
-            <li><i>elem.style</i><b>.textAlign</b>[ = 'value'];</li>
-          </ul>
+
         </li>
-        <li><i>elem</i><b>.attributes</b> property returns an object of all attributes of the element:
-          <ul>
-            <li><i>elem</i>.<b>hasAttribute(</b>attrName<b>)</b> checks for the presence of the
-              <i>attrName</i>, returns <i>true</i> or <i>false</i>;
-            <li><i>elem</i>.<b>getAttribute(</b>attrName<b>)</b> gets and returns the attribute <i>value</i>;
-            <li><i>elem</i>.<b>setAttribute(</b>attrName, value<b>)</b> sets an attribute;
-            <li><i>elem</i>.<b>removeAttribute(</b>attrName<b>)</b> removes an attribute.
-          </ul>
-        </li>
+      </ul>
+      <ul>
         <li>&#60tagName <b>data-attrName</b>="<b>attrValue</b>">Save&#60/tagName> - to add an arbitrary attribute to a
           tag and set its value;</li>
         <li><i>elem</i><b>.dataset</b> - to get the values of all data-attributes of the <i>elem</i> element;</li>
