@@ -1,19 +1,20 @@
 // const ref = {
-//   incrBtnEl: document.querySelector('[data-action="increment"]'),
-//   decrBtnEl: document.querySelector('[data-action="decrement"]'),
+//   counterDivEl: document.querySelector('div#counter'),
+//   spanEl: document.querySelector('span#value'),
 // };
-
+// // Object.values(ref).forEach(el => console.log(el));
 // let counterValue = 0;
+// ref.counterDivEl.addEventListener('click', onBtnClick);
 
-// function count() {
-//   ref.incrBtnEl === event.currentTarget
-//     ? (counterValue += 1)
-//     : (counterValue -= 1);
-//   document.querySelector('#value').textContent = counterValue;
+// function onBtnClick(event) {
+//   if (event.target.type !== 'button') {
+//     return; // event.target.nodeName !== 'BUTTON'
+//   }
+//   event.target.dataset.action === 'decrement'
+//     ? (counterValue -= 1)
+//     : (counterValue += 1);
+//   ref.spanEl.textContent = counterValue;
 // }
-
-// ref.incrBtnEl.addEventListener('click', count);
-// ref.decrBtnEl.addEventListener('click', count);
 
 // -------------------------------------------------------------------------------------------- //
 

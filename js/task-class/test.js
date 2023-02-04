@@ -2491,3 +2491,32 @@
 // '🍎'--------------------'🍎' Syntax async/await (Lesson 22) '🍎'--------------------'🍎'
 
 // ******************** Питання ********************
+// hw-6 task-8 де в formData property name ???? Чому в .forEach((value, name) перше має бути value ???
+
+// const formEl = document.querySelector('form.login-form');
+
+// formEl.addEventListener('submit', onFormSubmit);
+
+// function onFormSubmit(event) {
+//   event.preventDefault();
+//   const { email, password } = event.target.elements;
+
+//   if (!email.value || !password.value) {
+//     alert('All fields must be filled in');
+//   } else {
+//     const formData = new FormData(formEl);
+//     formData.forEach((value, name) => {
+//       formData[name] = value;
+//     });
+//     console.table(formData);
+//     formEl.reset();
+//   }
+// }
+
+// -------------------------------------------------------------------------------------------- //
+
+// Nullish coalescing operator ?? , чи можна так:
+
+//   const { create, destroy } = event.target.dataset;
+//   create ?? ((ref.divBoxesEl.innerHTML = ''), console.log('destroy'));
+//   destroy ?? ref.divBoxesEl.insertAdjacentHTML('afterbegin', markup);

@@ -1092,13 +1092,11 @@
               class with the specified <i>newClass</i>.</li>
           </ul>
         </li>
-
-        </li>
       </ul>
       <ul>
         <li>&#60tagName <b>data-attrName</b>="<b>attrValue</b>">Save&#60/tagName> - to add an arbitrary attribute to a
           tag and set its value;</li>
-        <li><i>elem</i><b>.dataset</b> - to get the values of all data-attributes of the <i>elem</i> element;</li>
+        <li><i>elem</i><b>.dataset</b> - to get an object of all data-attributes of the <i>elem</i> element;</li>
         <li><i>elem</i><b>.dataset</b>.attrName - to get the value of the <i>attrName</i> data-attribute of the
           <i>elem</i> element, the <i>dataset</i> property is used;
         </li>
@@ -1107,14 +1105,14 @@
           element;</li>
         <li><i>elemForm</i><b>.elements</b>.formName.value - to get the value of the <i>formName</i> form-element of the
           <i>elemForm</i> element.
-        <li>const formData = new <b>FormData(</b>formName<b>)</b>; formData.forEach((<b>value</b>, <b>name</b>)
-          =>{\\value, name}) - to use class <i>FormData</i> to get all names and values of the <i>formName</i>
-          form-element;</li>
+        <li>const formData = new <b>FormData(</b>elemForm<b>)</b>; formData.forEach((<b>value</b>, <b>name</b>)
+          =>{\\value, name}) - to use class <i>FormData</i> to get the <i>formData</i> object of all names and values of
+          the <i>elemForm</i> form-element;</li>
         <li><i>elemForm</i><b>.reset()</b> method - to clear the values of the <i>elemForm</i> form fields.</li>
       </ul>
       <h3>Creating and Removing Elements</h3>
       <ul>
-        <li>const el1 = document<b>.createElement('tagName')</b> - creates an element <i>tagName</i> and
+        <li>const el1 = document<b>.createElement(</b>'tagName'<b>)</b> - creates an element <i>tagName</i> and
           returns a reference to it as the result of execution;</li>
         <li>el1<b>.textContent = 'value'</b> - adds <i>value</i> content to the <i>tagName</i> element;</li>
         <li><i>elem</i><b>.append(</b>el1, el2, ...<b>)</b> adds one or more <i>el</i> elements after all children of
@@ -1134,7 +1132,7 @@
       <ul>
         <li><i>elem</i><b>.innerHTML</b>[ <b>+=</b> 'newValue'] property stores, writes and adds the content of an
           element, including tags, as a string;</li>
-        <li><i>elem</i><b>.insertAdjacentHTML(</b>position, string<b>)</b> mathod method for adding a string with HTML
+        <li><i>elem</i><b>.insertAdjacentHTML(</b>position, string<b>)</b> method for adding a string with HTML
           tags before, after or inside an element, the <b>position</b> argument is a string, position relative to the
           <i>elem</i> element, it takes one of the four values below:
           <ul>

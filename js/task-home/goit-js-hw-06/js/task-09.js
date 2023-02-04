@@ -3,13 +3,13 @@
 //   spanEl: document.querySelector('span.color'),
 //   btnEl: document.querySelector('button.change-color'),
 // };
-
+// // Object.values(ref).forEach(el => console.log(el));
 // ref.btnEl.addEventListener('click', onBtnClick);
 
 // function onBtnClick(event) {
-//   const randomColor = getRandomHexColor();
-//   ref.bodyEl.style.backgroundColor = randomColor;
-//   ref.spanEl.textContent = randomColor;
+//   const color = getRandomHexColor();
+//   ref.bodyEl.style.backgroundColor = color;
+//   ref.spanEl.textContent = color;
 // }
 
 // -------------------------------------------------------------------------------------------- //

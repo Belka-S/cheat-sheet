@@ -1,14 +1,10 @@
 // const ulEl = document.querySelector('ul#ingredients');
-// const liArray = [];
 
-// ingredients.forEach(ingredient => {
+// const liArray = ingredients.map(ingredient => {
 //   const liEl = document.createElement('li');
-
 //   liEl.textContent = ingredient;
 //   liEl.className = 'item'; //liEl.classList.add('item');
-
-//   liArray.push(liEl);
-//   console.log(liEl);
+//   return liEl;
 // });
 
 // ulEl.append(...liArray);

@@ -7,8 +7,8 @@
 
 // ref.createBtnEl.addEventListener('click', createBoxes);
 
-// function createBoxes() {
-//   console.log(event);
+// function createBoxes(event) {
+
 //   const amount = ref.inputEl.value;
 //   const element = [];
 //   let size = 30;
@@ -27,8 +27,33 @@
 
 // ref.destroyBtnEl.addEventListener('click', destroyBoxes);
 
-// function destroyBoxes() {
+// function destroyBoxes(event) {
 //   ref.divEl.innerHTML = '';
+// }
+
+// -------------------------------------------------------------------------------------------- //
+
+// const ref = {
+//   divControlsEl: document.querySelector('div#controls'),
+//   inputEl: document.querySelector('input[type="number"]'),
+//   divBoxesEl: document.querySelector('div#boxes'),
+// };
+// // Object.values(ref).forEach(el => console.log(el));
+// ref.divControlsEl.addEventListener('click', onBtnClick);
+
+// function onBtnClick(event) {
+//   if (event.target.nodeName !== 'BUTTON') {
+//     return;
+//   }
+//   let markup = '';
+//   for (let i = 0; i < ref.inputEl.value; i += 1) {
+//     const color = getRandomHexColor();
+//     const size = 30 + i * 10;
+//     markup += `<div style="background-color: ${color}; width: ${size}px; height: ${size}px;"></div>`;
+//   }
+//   const { create, destroy } = event.target.dataset;
+//   create ?? (ref.divBoxesEl.innerHTML = '');
+//   destroy ?? ref.divBoxesEl.insertAdjacentHTML('afterbegin', markup);
 // }
 
 // -------------------------------------------------------------------------------------------- //

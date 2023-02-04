@@ -1,12 +1,13 @@
 // const ref = {
-//   scrollEl: document.querySelector('input#font-size-control'),
-//   textOutputEl: document.querySelector('span#text'),
+//   inputEl: document.querySelector('input#font-size-control'),
+//   spanEl: document.querySelector('span#text'),
 // };
 
-// ref.scrollEl.addEventListener(
-//   'input',
-//   () => (ref.textOutputEl.style.fontSize = `${ref.scrollEl.value}px`)
-// );
+// ref.inputEl.addEventListener('input', onInput);
+
+// function onInput(event) {
+//   ref.spanEl.style.fontSize = `${ref.inputEl.value}px`;
+// }
 
 // -------------------------------------------------------------------------------------------- //
 

@@ -1,38 +1,11 @@
-const ref = {
-  ulEl: document.querySelector('ul#categories'),
-  liEl: document.querySelectorAll('ul#categories li.item'),
-  hEl: document.querySelectorAll('ul#categories h2'),
-  nestedUlEl: document.querySelectorAll('ul#categories li.item ul'),
-};
-// Object.values(ref).forEach(el => console.log(el));
+// const liItemEl = document.querySelectorAll('ul#categories li.item');
 
-console.log(`Number of categories: ${ref.liEl.length}`);
+// console.log(`Number of categories: ${liItemEl.length}`);
 
-ref.liEl.forEach(el => {
-  console.log(`Category: ${el.querySelector('h2').textContent}`);
-  console.log(`Elements ${el.querySelectorAll('li').length}`);
-});
-
-console.log('********************');
-
-// -------------------------------------------------------------------------------------------- //
-
-// console.log(
-//   'Number of categories:',
-//   document.querySelector('ul#categories').childElementCount
-// );
-
-// const allCategories = document.querySelectorAll('ul#categories .item');
-
-// allCategories.forEach(category => {
-//   const categoryTitel = category.firstElementChild;
-//   const categoryList = categoryTitel.nextElementSibling;
-
-//   console.log(`Category: ${categoryTitel.textContent}`);
-//   console.log(`Elements: ${categoryList.childElementCount}`);
+// liItemEl.forEach(el => {
+//   console.log(`Category: ${el.querySelector('h2').textContent}`);
+//   console.log(`Elements ${el.querySelectorAll('li').length}`);
 // });
-
-// console.log('********************');
 
 // -------------------------------------------------------------------------------------------- //
 

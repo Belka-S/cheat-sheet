@@ -1,20 +1,13 @@
-// const ref = {
-//   galleryEl: document.querySelector('ul.gallery'),
-//   headEl: document.querySelector('head'),
-// };
+const ulEl = document.querySelector('ul.gallery');
+console.log(ulEl);
 
-// const galleryMarkup = images
-//   .map(
-//     ({ url, alt }) =>
-//       ` <li class = "gallery__item"><img src="${url}" alt="${alt}"></li>`
-//   )
-//   .join('');
+let galleryMarkup = '';
 
-// ref.galleryEl.insertAdjacentHTML('afterbegin', galleryMarkup);
+images.forEach(image => {
+  galleryMarkup += `<li><img src="${image.url}}" alt="${image.alt}}"></li>`;
+});
 
-// const galleryStylesCss =
-//   '<style>img { display: block; width: 100%; height: auto; object-fit: cover;} .gallery { padding: 5px; display: flex; gap: 10px; outline: 1px tomato dashed;} .gallery__item { display: flex; flex-grow: 1; list-style: none;}</style>';
-// ref.headEl.insertAdjacentHTML('beforeend', galleryStylesCss);
+ulEl.insertAdjacentHTML('beforeend', galleryMarkup);
 
 // -------------------------------------------------------------------------------------------- //
 
