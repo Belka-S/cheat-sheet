@@ -45,8 +45,12 @@
 //   if (event.target.nodeName !== 'BUTTON') {
 //     return;
 //   }
+//   createBoxes(ref.inputEl.value);
+// }
+
+// function createBoxes(amount) {
 //   let markup = '';
-//   for (let i = 0; i < ref.inputEl.value; i += 1) {
+//   for (let i = 0; i < amount; i += 1) {
 //     const color = getRandomHexColor();
 //     const size = 30 + i * 10;
 //     markup += `<div style="background-color: ${color}; width: ${size}px; height: ${size}px;"></div>`;
