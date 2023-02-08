@@ -2527,3 +2527,26 @@
 //   const { create, destroy } = event.target.dataset;
 //   create ?? ((ref.divBoxesEl.innerHTML = ''), console.log('destroy'));
 //   destroy ?? ref.divBoxesEl.insertAdjacentHTML('afterbegin', markup);
+
+// -------------------------------------------------------------------------------------------- //
+
+// чому перший запис кращий за другий (зі слів Репети), чи можна прибрати фігурні дужки { console.log('qwe');}
+//  в другому записі(Репета показував, що вони потрібні, але навіщо ??)
+
+// const onClick = e => {
+//   if (!e.target.dataset.source) {
+//     return;
+//   }
+
+//   console.log('qwe');
+// };
+
+// const onClick = e => {
+//   if (e.target.dataset.source) {
+//     console.log('qwe');
+//   }
+// };
+
+// -------------------------------------------------------------------------------------------- //
+
+// 7hw task-1 removeEventListner ???
