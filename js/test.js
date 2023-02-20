@@ -8,8 +8,8 @@
 // console.log('Boolean(NaN): ', Boolean(NaN));  //false
 // console.log('Boolean(null): ', Boolean(null));  //false
 // console.log('Boolean(undefined): ', Boolean(undefined));  //false
-// console.log('Boolean(false): ', Boolean(false));  //false
-// console.log('Boolean(''): ', Boolean('')); // ?????????
+// console.log('Boolean(false): ', Boolean(false)); //false
+// console.log("Boolean(''): ", Boolean('')); // ?????????
 // -----------------------------------------------------------------------------
 // typeof null;
 // console.log('typeof null: ', typeof null);
