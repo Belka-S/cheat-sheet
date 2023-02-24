@@ -2492,6 +2492,48 @@
 // '🍎'--------------------'🍎' Web Storage (Lesson 16) '🍎'--------------------'🍎'
 // '🍎'--------------------'🍎' Timers and Time (Lesson 17) '🍎'--------------------'🍎'
 // '🍎'--------------------'🍎' Promises (Lesson 18) '🍎'--------------------'🍎'
+
+// function doSmth() {
+//   return new Promise((resolve, reject) => {
+//     resolve('Hello');
+//     reject('Error');
+//   });
+// }
+
+// function doSmthElse() {
+//   console.log('This is doSmthElse');
+//   return new Promise((resolve, reject) => {
+//     resolve('Another greeting');
+//     reject('Another error');
+//   });
+// }
+
+// function finalHandler(value) {
+//   console.log(value);
+// }
+
+// 1;
+// doSmth()
+//   .then(function (value) {
+//     console.log(value);
+//     return doSmthElse();
+//   })
+//   .then(finalHandler);
+
+// 2;
+// doSmth()
+//   .then(function (value) {
+//     console.log(value);
+//     doSmthElse();
+//   })
+//   .then(finalHandler);
+
+// // 3
+// doSmth().then(doSmthElse()).then(finalHandler);
+
+// // // 4
+// doSmth().then(doSmthElse).then(finalHandler);
+
 // '🍎'--------------------'🍎' HTTP Requests (Lesson 19) '🍎'--------------------'🍎'
 // '🍎'--------------------'🍎' Pagination (Lesson 20) '🍎'--------------------'🍎'
 // '🍎'--------------------'🍎' CRUD (Lesson 21) '🍎'--------------------'🍎'

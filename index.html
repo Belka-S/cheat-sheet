@@ -13,15 +13,15 @@
 <body class="container">
 
   <header id="goit" class="header">
-      <nav class="nav">
-        <ul class="nav__list">
-          <li><a href="./html-css.html">HTML-CSS</a></li>
-          <li><a href="./index.html">JS</a></li>
-          <li><a href="./test.html">test</a></li>
-          <!-- <li><a href="http://" target="_blank"></a></li> -->
-          <!-- <li><a href="http://" target="_blank"></a></li> -->
-        </ul>
-      </nav>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li><a href="./html-css.html">HTML-CSS</a></li>
+        <li><a href="./index.html">JS</a></li>
+        <li><a href="./test.html">test</a></li>
+        <!-- <li><a href="http://" target="_blank"></a></li> -->
+        <!-- <li><a href="http://" target="_blank"></a></li> -->
+      </ul>
+    </nav>
 
     <div>
       <h2>FAQ</h2>
@@ -97,7 +97,8 @@
             rel="noopener noreferrer nofollow">flatpickr</a></li>
         <li><a href="https://github.com/notiflix/Notiflix#readme" target="_blank"
             rel="noopener noreferrer nofollow">notiflix</a></li>
-        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
+        <li><a href="https://www.npmjs.com/package/uuid" target="_blank" rel="noopener noreferrer nofollow">uuid</a>
+        </li>
         <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
         <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
         <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
@@ -1369,6 +1370,7 @@
       </ul>
       <h3>NPM commands</h3>
       <ul>
+
         <li>npm <b>init</b> [<b>-y</b>] initializes npm in the project and creates a package.json file</li>
         <li>npm <b>i</b> or <b>install</b> installs all dependencies listed in package.json</li>
         <li>npm <b>list --depth=0</b> displays in the terminal a list of locally installed packages with their version
@@ -1398,6 +1400,8 @@
         <li>npm <b>update</b> [<b>package-name</b>] updates all packages to the most recent version possible</li>
         <li>npm <b></b>cache clean</b> cleans cache from the .npm folder</li>
         <li>npm <b>-v</b> returns NPM version</li>
+        <li><b>npx</b> runs file in <i>node_modules</i> directory</li>
+        <li><b>nvm</b> - node version manager</li>
         <li>const moduleName = <b>require(</b>'moduleName'<b>)</b> function to get the package interface in Node.js code
         </li>
       </ul>
@@ -1564,6 +1568,10 @@
           state, and its value will be an array of the results of each promise, if at least one of the promises is
           rejected, the returned promise will go into the rejected state, and its value will be an error.
         </li>
+        <li><b>Promise.allSettled(</b>[promise1, promise2, promise3, ...]<b>)</b> static method takes an iterable of
+          promises as input and returns a single Promise, this returned promise fulfills when all of the input's
+          promises settle (including when an empty iterable is passed), with an array of objects that describe the
+          outcome of each promise.</li>
         <li><b>Promise.race(</b>[promise1, promise2, promise3, ...]<b>)</b> returns a fulfilled or rejected promise,
           depending on the result of the “fastest” of all the promises passed, with a
           value or reason for rejection.</li>
@@ -1572,20 +1580,117 @@
           syntax.</li>
       </ul>
     </section>
-
-
-
-
     <section class="http-requests">
       <a href="#goit">
         <h2 id="http-requests">HTTP Requests (Lesson 19)</h2>
       </a>
+      <h3>HTTP Protocol</h3>
+      <p><b>HyperText Transfer Protocol</b> is based on the client-server structure and the request-response model, in
+        which the client application initiates a connection, generates a request and sends it to the server, after which
+        the server processes this request, generates a response and sends it back to the client. They communicate
+        through a series of alternating HTTP requests and HTTP responses.</p>
+      <p><b>HyperText Transfer Protocol Secure</b> is an extension of the HTTP protocol in which all messages between
+        the client and the server are encrypted to improve security. It provides protection against eavesdropping
+        attacks. Data is transferred over SSL or TLS cryptographic protocols.</p>
+      <h3>REST API</h3>
+      <ul>
+        <li><b>API</b> (<b>Application Programming Interface</b>) is a set of well-defined communication rules between
+          various software components. The interface describes what you can ask the program to do and what you will get
+          as a result.</li>
+        <li><b>REST</b> (<b>Representational State Transfer</b>) is a back-end architecture style based on a number of
+          principles that describe how network resources are defined and addressed.</li>
+        <li><b>REST API</b> is a back-end built on the REST principle. It serves as a layer between the web application
+          and database. It has a standard interface for accessing resources. It works like a website: you send an HTTP
+          request from the client to the server, and in response, instead of an HTML page, you receive data in JSON
+          format.</li>
+      </ul>
+      <p>A REST service requires the client to make a request to add, retrieve or modify data. The server sends a
+        response to the client's request, which contains a <a href="https://httpstatuses.com/" target="_blank"
+          rel="noopener noreferrer">status code</a> to inform the client about the operation result. Such request can
+        consist of the following parts:</p>
+      <ul>
+        <li><b>HTTP methods</b> - determines what operation to perform:
+          <ul>
+            <li><i>POST</i> - creating a new resource;</li>
+            <li><i>GET</i> - getting a set of resources or a single resource;</li>
+            <li><i>PUT</i> - updating an existing or creating a new resource;</li>
+            <li><i>PATCH</i> - updating an existing resource;</li>
+            <li><i>DELETE</i> - deleting a resource.</li>
+          </ul>
+        </li>
+        <li><b>HTTP headers</b> - enable the client to transfer additional request-related information:
+          <ul>
+            <li><i>Accept: text/html</i> - the type of content that the client can process in the server’s response</li>
+            <li><i>Content-Type: application/json</i> - the type of resource that the client sends to the
+              server or the server sends to the client;</li>
+            <li><i>MIME types</i> are used to indicate the content of requests and responses, they consist of a type
+              and a subtype separated by a forward slash (<i>text/css</i>).</li>
+          </ul>
+        </li><b>Path</b> - the path to the resource:
+        <ul>
+          <li><i>https://jsonplaceholder.typicode.com</i> - the endpoint, base URL, API entry point;</li>
+          <li><i>/users</i> - the resource you are accessing.</li>
+        </ul>
+        <li><b>Body</b> - request block containing data:</b>
+          <ul>
+            <li>Body: <i>JSON data for all customers</i> - to receive the data for customers;</li>
+            <li>Body: <i>{ "username": "Mango", "email": "mango@gmail.com" }</i> - to add a new customer.</li>
+          </ul>
+        </li>
+      </ul>
+      <h3>AJAX</h3>
+      <p>AJAX (Asynchronous JavaScript and XML) is a method of receiving or sending data, and then updating the
+        interface according to this data, without having to reload the page. A browser-built interface available on the
+        window object that contains a set of properties and methods for sending, receiving and processing resources from
+        the server.</p>
+      <ul>
+        <li><b>fetch(</b>url, options<b>)</b> method provides a modern interface for making requests to the server:
+          <ul>
+            <li><i>url</i> is the path to the back-end data that needs to be retrieved, created or modified;</li>
+            <li><i>options</i> contains optional parameters of requests – methods (GET by default).</li>
+          </ul>
+        </li>
+        <li><b>.json()</b>, <b>.text()</b>, <b>.blob()</b> - depending on the type of received content, a different
+          method is used to transform the response body into
+          data.</li>
+        <li>.../users<b>?</b>_limit=7<b>&</b>_sort=name - query string parameter is a <b>name=value</b> pair and used to
+          specify additional criteria for the back-end, <b>?</b> character marks the start of parameters, <b>&</b>
+          character separates parameters.</li>
+        <li>const searchParams = new <b>URLSearchParams(</b>{_limit: 5, _sort: "name",}<b>)</b> - special object with
+          <i>.toString()</i> method to specify parameters and their values.
+        </li>
+        <li>
+          .../users<b>?${</b>searchParams<b>}</b> - when interpolating a value in template strings, it is implicitly
+          converted to a string, so you do not need to call the <b>.toString()</b> method when creating a URL</i>
+        </li>
+        <li>const headers = new <b>Headers(</b>{"Content-Type": "application/json", "X-Custom-Header": "custom
+          value",}<b>)</b> - a simple object literal with properties is commonly used to make up request headers.
+        </li>
+      </ul>
+      <h3>CORS</h3>
+      <p>By default, an HTTP request can only be made within the current site. When trying to send a request to a
+        different domain, port or protocol, that is, to make a cross-domain request, the browser throws an error.
+        This browser policy is called CORS, <b>Cross-Origin Resource Sharing</b>, where Origin is the domain, port or
+        protocol. The browser is an intermediary between the JavaScript code and the back-end. It adds the Origin header
+        with the correct value to each request and checks for the Access-Control-Allow-Origin header in the response. If
+        the header is there and its value is correct, the original request will be executed and the JavaScript code will
+        receive its result, otherwise there will be a CORS error.
+      </p>
     </section>
-
     <section class="pagination">
       <a href="#goit">
         <h2 id="pagination">Pagination (Lesson 20)</h2>
       </a>
+      <h3>Pagination</h3>
+      <p>Рagination is a technique in which not the entire collection is returned at the first and each subsequent GET
+        request, but a certain part of it. Pagination is implemented on the back-end and used on the front-end by means
+        of special request parameters:</p>
+      <ul>
+        <li>the first parameter defines the number of items in the response from the back-end;</li>
+        <li>the second pagination parameter controls offset within the collection, by changing the value of this
+          parameter, you tell the back-end what next group of items you want to receive, and so on until the collection
+          runs out of items;</li>
+      </ul>
     </section>
 
 
