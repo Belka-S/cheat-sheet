@@ -99,7 +99,9 @@
             rel="noopener noreferrer nofollow">notiflix</a></li>
         <li><a href="https://www.npmjs.com/package/uuid" target="_blank" rel="noopener noreferrer nofollow">uuid</a>
         </li>
-        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
+        <li><a
+            href="https://www.cloud66.com/compare/cloud66-vs-heroku/?utm_source=g&utm_medium=a&utm_campaign=R-heroku0321&gclid=Cj0KCQiAo-yfBhD_ARIsANr56g6UQ_RN-mvNTQL9f9WLFJfQKHht_9hIsl097mrm4Nw0M6rcHG9Atx8aAnBMEALw_wcB"
+            target="_blank" rel="noopener noreferrer nofollow">Heroku</a></li>
         <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
         <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
         <li><a href="https://pawelgrzybek.github.io/siema/" target="_blank" rel="noopener noreferrer nofollow">siema</a>
@@ -1298,8 +1300,7 @@
         <li>Event <b>propagation</b> is a term describing the life cycle of an event, which includes three stages:
           <b>capturing</b>, <b>targeting</b> and <b>bubbling</b>. If there is an event listener registered on the
           outermost element, it will "catch" all clicks inside, because events will <i>bubble</i> up to that element.
-          Typically, the event will <i>bubble</i> up to the <i>window</i> element, calling all handlers on its way. Do
-          not stop bubbling unless necessary.
+          Typically, the event will <i>bubble</i> up to the <i>window</i> element, calling all handlers on its way.
         </li>
         <li>Bubbling makes it possible to do one of the most useful tricks, event <b>delegation</b>. When there is a
           group of elements with events that need to be handled in the same way, then one handler should be added to
@@ -1326,9 +1327,14 @@
       <p>Lazy loading is a technique that delays the loading of non-critical resources during page loading. Instead,
         these non-critical resources are loaded only when needed. Modern browsers can do this without JavaScript, but
         unfortunately not all of them do. To ensure cross-browser compatibility a number of existing JavaScript
-        libraries is used, such as <i>lazysizes</i>, <i>vanilla-lazyload</i> and <i>lozad.js</i>.</p>
+        libraries is used, such as <i><a href="https://github.com/aFarkas/lazysizes" target="_blank"
+            rel="noopener noreferrer">lazysizes</a></i>,
+        <i><a href="https://github.com/verlok/vanilla-lazyload" target="_blank"
+            rel="noopener noreferrer">vanilla-lazyload</a></i> and <i><a href="https://apoorv.pro/lozad.js/"
+            target="_blank" rel="noopener noreferrer">lozad.js</a></i>.
+      </p>
       <ul>
-        <li>&#60img <b>loading</b>="lazy" /> - <b>HTML attribute</b> of the <i>&#60img></i> tag is supported natively in
+        <li>&#60img <b>loading</b>="lazy" /> - <i>HTML attribute</i> of the <i>&#60img></i> tag is supported natively in
           all modern browsers except Safari, is used to lazy load below the fold images until the user scrolls down to
           them and three values:
           <ul>
@@ -1398,7 +1404,7 @@
         <li>npm <b>outdated</b> is used to search for updates, detecting compatible versions programmatically and
           displaying a list of available updates</li>
         <li>npm <b>update</b> [<b>package-name</b>] updates all packages to the most recent version possible</li>
-        <li>npm <b></b>cache clean</b> cleans cache from the .npm folder</li>
+        <li>npm <b>cache clean</b> cleans cache from the .npm folder</li>
         <li>npm <b>-v</b> returns NPM version</li>
         <li><b>npx</b> runs file in <i>node_modules</i> directory</li>
         <li><b>nvm</b> - node version manager</li>
@@ -1620,28 +1626,20 @@
         </li>
         <li><b>HTTP headers</b> - enable the client to transfer additional request-related information:
           <ul>
-            <li><i>Accept: text/html</i> - the type of content that the client can process in the server’s response</li>
             <li><i>Content-Type: application/json</i> - the type of resource that the client sends to the
               server or the server sends to the client;</li>
             <li><i>MIME types</i> are used to indicate the content of requests and responses, they consist of a type
               and a subtype separated by a forward slash (<i>text/css</i>).</li>
           </ul>
-        </li><b>Path</b> - the path to the resource:
-        <ul>
-          <li><i>https://jsonplaceholder.typicode.com</i> - the endpoint, base URL, API entry point;</li>
-          <li><i>/users</i> - the resource you are accessing.</li>
-        </ul>
-        <li><b>Body</b> - request block containing data:</b>
-          <ul>
-            <li>Body: <i>JSON data for all customers</i> - to receive the data for customers;</li>
-            <li>Body: <i>{ "username": "Mango", "email": "mango@gmail.com" }</i> - to add a new customer.</li>
-          </ul>
-        </li>
+        <li><b>Path</b> - the path to the resource.</li>
+        <li><b>Body</b> - request block containing data.</li>
       </ul>
       <h3>AJAX</h3>
       <p>AJAX (Asynchronous JavaScript and XML) is a method of receiving or sending data, and then updating the
-        interface according to this data, without having to reload the page. A browser-built interface available on the
-        window object that contains a set of properties and methods for sending, receiving and processing resources from
+        interface according to this data, without having to reload the page. A browser-built interface available on
+        the
+        window object that contains a set of properties and methods for sending, receiving and processing resources
+        from
         the server.</p>
       <ul>
         <li><b>fetch(</b>url, options<b>)</b> method provides a modern interface for making requests to the server:
@@ -1653,7 +1651,8 @@
         <li><b>.json()</b>, <b>.text()</b>, <b>.blob()</b> - depending on the type of received content, a different
           method is used to transform the response body into
           data.</li>
-        <li>.../users<b>?</b>_limit=7<b>&</b>_sort=name - query string parameter is a <b>name=value</b> pair and used to
+        <li>.../users<b>?</b>_limit=7<b>&</b>_sort=name - query string parameter is a <b>name=value</b> pair and used
+          to
           specify additional criteria for the back-end, <b>?</b> character marks the start of parameters, <b>&</b>
           character separates parameters.</li>
         <li>const searchParams = new <b>URLSearchParams(</b>{_limit: 5, _sort: "name",}<b>)</b> - special object with
@@ -1671,9 +1670,12 @@
       <p>By default, an HTTP request can only be made within the current site. When trying to send a request to a
         different domain, port or protocol, that is, to make a cross-domain request, the browser throws an error.
         This browser policy is called CORS, <b>Cross-Origin Resource Sharing</b>, where Origin is the domain, port or
-        protocol. The browser is an intermediary between the JavaScript code and the back-end. It adds the Origin header
-        with the correct value to each request and checks for the Access-Control-Allow-Origin header in the response. If
-        the header is there and its value is correct, the original request will be executed and the JavaScript code will
+        protocol. The browser is an intermediary between the JavaScript code and the back-end. It adds the Origin
+        header
+        with the correct value to each request and checks for the Access-Control-Allow-Origin header in the response.
+        If
+        the header is there and its value is correct, the original request will be executed and the JavaScript code
+        will
         receive its result, otherwise there will be a CORS error.
       </p>
     </section>
@@ -1692,9 +1694,6 @@
           runs out of items;</li>
       </ul>
     </section>
-
-
-
 
     <section class="crud">
       <a href="#goit">
