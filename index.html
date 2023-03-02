@@ -34,8 +34,7 @@
         <li><a href="https://developer.mozilla.org/ru/" target="_blank" rel="noopener noreferrer nofollow">MDN</a></li>
         <li><a href="https://css.in.ua/css/properties" target="_blank" rel="noopener noreferrer nofollow">css.in.ua</a>
         </li>
-        <li><a href="https://uk.javascript.info/comparison#divnii-rezultat-porivnyannya-null-i-0" target="_blank"
-            rel="noopener noreferrer nofollow">uk.JS</a></li>
+        <li><a href="https://uk.javascript.info" target="_blank" rel="noopener noreferrer nofollow">uk.JS.info</a></li>
         <li><a href="  https://itvolution.wordpress.com/page/14/" target="_blank"
             rel="noopener noreferrer nofollow">itvolution</a></li>
         <li><a href="https://github.com/bardachov/dsa.js-data-structures-algorithms-javascript" target="_blank"
@@ -54,7 +53,6 @@
         <li><a href="https://devdocs.io" target="_blank" rel="noopener noreferrer nofollow">devdocs</a>
         <li><a href="https://www.freecodecamp.org/learn" target="_blank" rel="noopener noreferrer nofollow">codecamp</a>
         </li>
-        <li><a href="https://github.com/bardachov/JS68" target="_blank" rel="noopener noreferrer nofollow">JS68</a></li>
         <li><a href="https://chat.openai.com/chat" target="_blank" rel="noopener noreferrer nofollow">OpenAI</a></li>
         <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li>
       </ul>
@@ -87,8 +85,8 @@
             rel="noopener noreferrer nofollow">event</a></li>
         <li><a href="https://lodash.com" target="_blank" rel="noopener noreferrer nofollow">lodash</a></li>
         <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
-        <li><a href="https://www.npmjs.com/package/date-fns" target="_blank"
-            rel="noopener noreferrer nofollow">date-fns</a></li>
+        <li><a href="https://www.npmjs.com/package/moment" target="_blank"
+            rel="noopener noreferrer nofollow">Moment.js</a></li>
         <li><a href="https://www.npmjs.com/package/bootstrap.native" target="_blank"
             rel="noopener noreferrer nofollow">bootstrap</a></li>
         <li><a href="https://flatpickr.js.org/getting-started/" target="_blank"
@@ -114,8 +112,8 @@
         <li><a href="https://pugjs.org/api/getting-started.html" target="_blank"
             rel="noopener noreferrer nofollow">pug</a>
         </li>
-        <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li>
 
+        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
         <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
         <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
         <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
@@ -156,7 +154,7 @@
           <li><a href="#http-requests">HTTP Requests (Lesson 19)</a></li>
           <li><a href="#pagination">Pagination (Lesson 20)</a></li>
           <li><a href="#crud">CRUD (Lesson 21)</a></li>
-          <li><a href="#async-await">Syntax async/await (Lesson 22)</a></li>
+          <li><a href="#async-await">Asynchronous Functions (Lesson 22)</a></li>
         </ul>
       </div>
       <div class="terminal">
@@ -1425,12 +1423,14 @@
           bundling</b> is the process of concatenating a group of modules and their dependencies into a file or a group
         of files. </p>
       <ul>
-        <li><b>export</b> <i>entity-name</i> or <b>export default {</b><i>entity-name1</i>, <i>entity-name2</i><b>}</b>
-        </li>
+        <li><b>export</b> (<b>const</b>/<b>function</b>) <i>entity-name</i></li>
+        <li><b>export {</b><i>entity-name1</i>, <i>entity-name2</i><b>}</b></li>
         <li><b>import {</b><i>entity-name1[<b> as</b> new-entity-name ]</i>, <i>entity-name2</i><b>} from</b>
           "<i>./path/to/module</i>"
         </li>
         <li><b>import * as</b> <i>myModule</i> <b>from</b> "<i>./path/to/module</i>"</li>
+      </ul>
+      <ul>
         <li><b>export default</b> <i>entity-name</i>
         <li><b>import</b> <i>entity-name</i> <b>from</b> "<i>./path/to/module</i>"</li>
       </ul>
@@ -1613,12 +1613,11 @@
           rel="noopener noreferrer">status code</a> to inform the client about the operation result. Such request can
         consist of the following parts:</p>
       <ul>
-        <li><b>HTTP methods</b> - determines what operation to perform:
+        <li><b>HTTP methods</b> - determines what operation (CRUD) to perform to interact with back-end resources:
           <ul>
             <li><i>POST</i> - creating a new resource;</li>
             <li><i>GET</i> - getting a set of resources or a single resource;</li>
-            <li><i>PUT</i> - updating an existing or creating a new resource;</li>
-            <li><i>PATCH</i> - updating an existing resource;</li>
+            <li><i>PUT</i> & <i>PATCH</i> - updating a resource by its identifier;</li>
             <li><i>DELETE</i> - deleting a resource.</li>
           </ul>
         </li>
@@ -1640,8 +1639,8 @@
         from
         the server.</p>
       <ul>
-        <li><b>fetch(</b>url, options<b>)</b> method provides a modern interface for making requests to the server:
-          <ul>
+        <li><b>fetch(</b>url, options<b>)</b> method returns the promise which value is an object with additional
+          information about the server response status:<ul>
             <li><i>url</i> is the path to the back-end data that needs to be retrieved, created or modified;</li>
             <li><i>options</i> contains optional parameters of requests – methods (GET by default).</li>
           </ul>
@@ -1659,9 +1658,6 @@
         <li>
           .../users<b>?${</b>searchParams<b>}</b> - when interpolating a value in template strings, it is implicitly
           converted to a string, so you do not need to call the <b>.toString()</b> method when creating a URL</i>
-        </li>
-        <li>const headers = new <b>Headers(</b>{"Content-Type": "application/json", "X-Custom-Header": "custom
-          value",}<b>)</b> - a simple object literal with properties is commonly used to make up request headers.
         </li>
       </ul>
       <h3>CORS</h3>
@@ -1692,17 +1688,97 @@
           runs out of items;</li>
       </ul>
     </section>
-
     <section class="crud">
       <a href="#goit">
         <h2 id="crud">CRUD (Lesson 21)</h2>
       </a>
+      <h3>Create--Read--Update--Delete</h3>
+      <p>
+        <b>fetch(</b>"https://...", <b>options)</b><br>
+        <b>.then(</b>response => {if (!response.ok) {throw new Error(response.status);} <b>return</b>
+        response.<b>json()</b>;}<b>)</b><br>
+        <b>.then(</b>data => {//data handling}<b>)</b><br>
+        <b>.catch(</b>error => {//error handling}<b>)</b>;
+      </p>
+      <p>
+        const <b>options</b> = <b>{</b><br>
+        <b>method</b>: "POST",<br>
+        <b>body</b>: JSON.stringify(valueToAdd),<br>
+        <b>headers</b>: {"Content-Type": "application/json; charset=UTF-8",},<b>}</b>;
+      </p>
+      <ul>
+        <li><b>Create</b>. The <b>POST</b> method is used to add a new resource. The <i>fetch()</i> method must send a
+          <i>POST</i> request to the server, having an object in the body,the database will automatically create the
+          identifier. Such request will result in an object added to the database.
+        </li>
+        <li><b>Read</b>. The <b>GET</b> HTTP method is used to get existing data. The <i>fetch()</i> method should send
+          a GET request without a body to the server.The <i>fetch()</i> method makes a <i>GET</i> request by default, so
+          it is not necessary to override the request options.</li>
+        <li><b>Update</b>. The <b>PUT</b> and <b>PATCH</b> methods are used to update existing data. Which method to use
+          will be specified in the back-end documentation. The <i>fetch()</i> method must send a request to the server,
+          having the object with fields to change in the body. The path indicates in which collection and which item
+          should be updated. If everything is fine, you will receive the updated object.</li>
+        <li><b>Delete</b>. The <b>DELETE</b> method is used to delete existing data. The <i>fetch()</i> method should
+          send the <i>DELETE</i> request without a body to the server. The path indicates in which collection and which
+          item to delete. </li>
+      </ul>
     </section>
-
     <section class="async-await">
       <a href="#goit">
-        <h2 id="async-await">Syntax async/await (Lesson 22)</h2>
+        <h2 id="async-await">Asynchronous Functions (Lesson 22)</h2>
       </a>
+      <h3>Syntax async/await</h3>
+      <p><b>Asynchronous functions (async/await)</b> is a convenient way to create asynchronous code that looks like
+        synchronous. The async/await syntax is based on promises, so it does not block the main program flow. Any
+        function can be asynchronous, be it an object method, class, callback, declaration or inline function.</p>
+      <ul>
+        <li>The <b>await</b> suspends the function until the promise is executed (<i>fulfilled</i> or <i>rejected</i>)
+          and can only be used in the body of the <b>async</b> function.
+        </li>
+        <li>If the promise is <i>fulfilled</i>, the <b>await</b> operator will return its <i>value</i>, if the promise
+          is
+          <i>rejected</i>, the <b>await</b> operator will throw an <i>error</i>.
+        </li>
+        <li>An <b>asynchronous function</b> always returns a <b>promise</b>, so any <i>return</i> value will be its
+          <i>value</i>, if you do not specify a return value, a promise with undefined will be returned.
+        </li>
+      </ul>
+      <p>
+        const fetchData = <b>async ()</b> => <b>{</b><br>
+        const response = <b>await</b> fetch("https://...");<br>
+        const data = <b>await</b> response.json();<br>
+        <b>return</b> data;<b>}</b>;<br>
+      </p>
+      <p><b>fetchData().then(</b>data => {//data handling}<b>)</b>
+      <h3>Handling errors</h3>
+      <ul>
+        <li>If the result of an asynchronous function (promise) is not used in outer code, errors are handled in the
+          function body by the <b>try...catch</b> construct:<br>
+          const fetchData = <b>async ()</b> => <b>{</b><br>
+          <b>try {</b><br>
+          const response = <b>await</b> fetch("https://...");<br>
+          const data = <b>await</b> response.json();<br>
+          <b>} catch (</b>error<b>) {</b><br>
+          console.log(error.message);<b>}</b>
+        </li>
+        <li>f the result of an asynchronous function (promise) is used in outer (global) code, that is, outside of other
+          asynchronous functions, errors are handled by the catch() method’s callback:<br>
+          <b>fetchData().then(</b>data => {//data handling}<b>).catch(</b>error => {//error handling}<b>)</b>
+        </li>
+        <li>If the result of an asynchronous function is used in another asynchronous function, errors are handled by
+          thes <b>try...catch</b> construct.
+        </li>
+      </ul>
+      <h3>Parallel requests</h3>
+      <p>In case of completely independent requests so it is need to run them in <b>parallel</b>. For this, create an
+        array of promises, after which use the <b>Promise.all()</b> to wait for their execution.</p>
+      <span>
+        const <b>fetchUsers</b> = <b>async ()</b> => <b>{</b>const baseUrl = "https://..."; const userIds = [1, 2, 3];
+        <br>
+        const arrayOfPromises = userIds.map(<b>async userId</b> => <b>{</b>const response = await
+        fetch(`${baseUrl}/users/${userId}`); return response.json();<b>}</b>);<br>
+        const users = <b>await Promise.all(</b>arrayOfPromises); console.log(users<b>)</b>;<b>}</b>;
+      </span>
     </section>
   </main>
 
