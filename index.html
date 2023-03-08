@@ -438,6 +438,10 @@
       <h3>Array</h3>
       <p>Is a data structure for storing and manipulating collections of indexed values.</p>
       <ul>
+        <li><b>Array.from()</b> method creates an array from a pseudo-array:
+          <i>function createArray() {const newArray =</i> <b>Array.from(</b>arguments<b>)</b><i>; return
+            newArray};</i>
+        </li>
         <li><b>const</b> <i>arrayName</i> = <b>[</b><i>element1, element2, element3</i><b>]</b> - declared with the
           opening and closing square brackets <b>[]</b>, array elements are separated by a comma;</li>
         <li><b>arrayName[</b><i>index</i><b>]</b> - to access the values of array elements;</li>
@@ -550,10 +554,6 @@
           stores all arguments as a pseudo-array:<br>
           <i>function multiply() {let total = 1; for (const</i> varName <i>of</i> <b>arguments</b>)<i>
             total *= varName;</i> <i>return total;}</i>
-        </li>
-        <li><b>Array.from()</b> method creates an array from a pseudo-array:<br>
-          <i>function createArray() {const newArray =</i> <b>Array.from(</b>arguments<b>)</b><i>; return
-            newArray}</i>
         </li>
         <li><b>rest parameter</b> syntax allows a function to accept an indefinite number of arguments as an array:<br>
           <i>function fnName<b>(...</b>argToArray<b>)</b> {There is access to Array <b>'argToArray'</b> that was made
@@ -1289,15 +1289,31 @@
           two events differ in that they bubble;</li>
         <li><i>elem</i><b>.focus()</b> and <i>elem</i><b>.blur()</b> methods - to activate or cancel focus
           programmatically for the <i>elem</i> element;</li>
-
       </ul>
       <h3>Other Events</h3>
       <ul>
         <li><b>'load'</b> event occurs when an element has been loaded;</li>
         <li><b>'wheel'</b> event occurs when the user rotates a wheel button on a mouse;</li>
-        <li><b>Window.scrollBy()</b> method scrolls the document in the window by the given amount.</li>
+        <li><b>'scroll'</b> event occurs when the visual viewport is scrolled, additional syntax: <b>onscroll</b> =
+          <b>(</b>event<b>)</b> =&#62 <b>{</b>\\do smth.<b>}</b>;
+        </li>
+        <li><b>window.scrollBy()</b> method scrolls to a particular set of coordinates in the document;</li>
+        <li><b>window.scrollTo()</b> method scrolls the document in the window by the given amount;</li>
+        <li><b>window.pageYOffset</b> property returns the number of pixels the document is currently scrolled
+          along the vertical axis.</li>
       </ul>
-
+      <h3>IntersectionObserver API</h3>
+      <p>The IntersectionObserver() constructor creates and returns a new IntersectionObserver object: </p>
+      <span>const <b>io</b> = new <b>IntersectionObserver((</b><i>entries</i>, <i>observer</i><b>)</b> =&#62
+        <b>{</b><i>entries</i>.forEach(<i>entry</i> =&#62 {\\do smth.})<b>}</b>, <i>options</i><b>)</b></span>
+      <ul>
+        <li>const options ={<b>root</b>: element, <b>rootMargin</b>: '2px 3px' or '4% 5%', <b>threshold</b>: [0, ...
+          ,1]}</li>
+        <li>io<b>.observe(</b>elem<b>)</b> - tells the IntersectionObserver a target element to observe;</li>
+        <li>io<b>.unobserve(</b>elem<b>)</b> - ells the IntersectionObserver to stop observing a particular target
+          element;</li>
+        <li>io<b>.disconnect()</b> - stops the IntersectionObserver object from observing any target.</li>
+      </ul>
     </section>
     <section class="delegation">
       <a href="#goit">
