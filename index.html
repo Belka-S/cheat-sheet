@@ -2,1816 +2,243 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HTML-CSS</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cheet-scheet</title>
 
-  <link rel="stylesheet" href="./css/main.min.css">
+  <link rel="stylesheet" href="./css/index.min.css" />
 </head>
 
-<body class="container">
-
-  <header id="goit" class="header">
+<body>
+  <header id="goit" class="header container">
     <nav class="nav">
       <ul class="nav__list">
-        <li><a href="./html-css.html">HTML-CSS</a></li>
-        <li><a href="./index.html">JS</a></li>
-        <li><a href="./react.html">React</a></li>
-        <li><a href="./test.html">test</a></li>
-        <!-- <li><a href="http://" target="_blank"></a></li> -->
+        <!-- <li><a href="./index.html">Main</a></li> -->
+        <li> <a href="./pages/html-css.html" target="_blank" rel="noopener noreferrer nofollow">HTML-CSS</a> </li>
+        <li> <a href="./pages/js.html" target="_blank" rel="noopener noreferrer nofollow">JS</a> </li>
+        <li> <a href="./pages/react.html" target="_blank" rel="noopener noreferrer nofollow">React</a> </li>
+        <li> <a href="./pages/node.html" target="_blank" rel="noopener noreferrer nofollow">Node</a> </li>
+        <!-- <li><a href=""></a></li> -->
+        <li><a href="./pages/terminal.html">terminal</a></li>
+        <li> <a href="https://www.edu.goit.global/uk/learn/6420780/2294/2295/textbook" target="_blank"
+            rel="noopener noreferrer nofollow">GoIT</a> </li>
+        <li> <a href="https://github.com/Belka-S?tab=repositories" target="_blank"
+            rel="noopener noreferrer nofollow">GitHub</a> </li>
+        <li> <a href="https://chat.openai.com/chat" target="_blank" rel="noopener noreferrer nofollow">OpenAI</a> </li>
       </ul>
     </nav>
-
-    <div>
-      <h2>FAQ</h2>
-      <ul class="faq-list">
-        <li><a href="https://github.com/Belka-S?tab=repositories" target="_blank"
-            rel="noopener noreferrer nofollow">GitHub</a>
-        </li>
-        <li><a href="https://html5book.ru/css-css3/" target="_blank" rel="noopener noreferrer nofollow">html5book</a>
-        </li>
-        <li><a href="https://developer.mozilla.org/ru/" target="_blank" rel="noopener noreferrer nofollow">MDN</a></li>
-        <li><a href="https://css.in.ua/css/properties" target="_blank" rel="noopener noreferrer nofollow">css.in.ua</a>
-        </li>
-        <li><a href="https://uk.javascript.info" target="_blank" rel="noopener noreferrer nofollow">uk.JS.info</a></li>
-        <li><a href="  https://itvolution.wordpress.com/page/14/" target="_blank"
-            rel="noopener noreferrer nofollow">itvolution</a></li>
-        <li><a href="https://github.com/bardachov/dsa.js-data-structures-algorithms-javascript" target="_blank"
-            rel="noopener noreferrer nofollow">dsa.js</a></li>
-        <li><a href="https://www.taniarascia.com/how-to-use-webpack/" target="_blank"
-            rel="noopener noreferrer nofollow">webpack</a></li>
-        <li><a href="https://dmitripavlutin.com/tag/interview/" target="_blank"
-            rel="noopener noreferrer nofollow">DP</a></li>
-        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
-        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
-        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
-        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
-        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
-        <li><a href="https://bootcamp.du.edu/blog/programming-skills/" target="_blank"
-            rel="noopener noreferrer nofollow">Skills</a></li>
-        <li><a href="https://devdocs.io" target="_blank" rel="noopener noreferrer nofollow">devdocs</a>
-        <li><a href="https://www.freecodecamp.org/learn" target="_blank" rel="noopener noreferrer nofollow">codecamp</a>
-        </li>
-        <li><a href="https://chat.openai.com/chat" target="_blank" rel="noopener noreferrer nofollow">OpenAI</a></li>
-        <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li>
-      </ul>
-    </div>
-    <div>
-      <h2>Production</h2>
-      <ul class="prodaction-list">
-        <li><a href="https://www.npmjs.com/" target="_blank" rel="noopener noreferrer nofollow">NPM</a></li>
-        <li><a href="https://www.jsdelivr.com/" target="_blank" rel="noopener noreferrer nofollow">jsdelivr</a></li>
-        <li><a href="https://webpack.js.org/" target="_blank" rel="noopener noreferrer nofollow">Webpack</a></li>
-        <li><a href="https://parceljs.org/" target="_blank" rel="noopener noreferrer nofollow">Parcel</a></li>
-        <li><a href="https://www.npmjs.com/package/@parcel/transformer-sass" target="_blank"
-            rel="noopener noreferrer nofollow">transformer-sass</a></li>
-        <li><a href="https://www.npmjs.com/package/parcel-reporter-clean-dist" target="_blank"
-            rel="noopener noreferrer nofollow">clean-dist</a></li>
-        <li><a href="https://www.npmjs.com/package/posthtml-include" target="_blank"
-            rel="noopener noreferrer nofollow">posthtml-include</a></li>
-        <li><a href="https://www.npmjs.com/package/parcel-plugin-custom-dist-structure" target="_blank"
-            rel="noopener noreferrer nofollow">dist-structure</a></li>
-        <li><a href="https://www.npmjs.com/package/parcel-plugin-structurize/v/2.4.4?activeTab=readme" target="_blank"
-            rel="noopener noreferrer nofollow">structurize</a></li>
-        <li><a href="https://www.npmjs.com/package/parcel-transformer-hbs" target="_blank"
-            rel="noopener noreferrer nofollow">handlebars</a></li>
-        <li><a href="https://www.npmjs.com/package/parcel-reporter-clean-dist" target="_blank"
-            rel="noopener noreferrer nofollow">clean-dist</a></li>
-        <li><a href="https://github.com/browserslist/browserslist" target="_blank"
-            rel="noopener noreferrer nofollow">browserslist</a></li>
-        <!-- <li><a href="https://babeljs.io/" target="_blank" rel="noopener noreferrer nofollow">Babel</a></li> -->
-        <li><a href="https://developer.mozilla.org/en-US/docs/Web/Events" target="_blank"
-            rel="noopener noreferrer nofollow">event</a></li>
-        <li><a href="https://lodash.com" target="_blank" rel="noopener noreferrer nofollow">lodash</a></li>
-        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
-        <li><a href="https://www.npmjs.com/package/moment" target="_blank"
-            rel="noopener noreferrer nofollow">Moment.js</a></li>
-        <li><a href="https://www.npmjs.com/package/bootstrap.native" target="_blank"
-            rel="noopener noreferrer nofollow">bootstrap</a></li>
-        <li><a href="https://flatpickr.js.org/getting-started/" target="_blank"
-            rel="noopener noreferrer nofollow">flatpickr</a></li>
-        <li><a href="https://github.com/notiflix/Notiflix#readme" target="_blank"
-            rel="noopener noreferrer nofollow">notiflix</a></li>
-        <li><a href="https://www.npmjs.com/package/uuid" target="_blank" rel="noopener noreferrer nofollow">uuid</a>
-        </li>
-        <li><a
-            href="https://www.cloud66.com/compare/cloud66-vs-heroku/?utm_source=g&utm_medium=a&utm_campaign=R-heroku0321&gclid=Cj0KCQiAo-yfBhD_ARIsANr56g6UQ_RN-mvNTQL9f9WLFJfQKHht_9hIsl097mrm4Nw0M6rcHG9Atx8aAnBMEALw_wcB"
-            target="_blank" rel="noopener noreferrer nofollow">Heroku</a></li>
-        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
-        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
-        <li><a href="https://pawelgrzybek.github.io/siema/" target="_blank" rel="noopener noreferrer nofollow">siema</a>
-        </li>
-        <li><a href="https://github.com/krisk/Fuse" target="_blank" rel="noopener noreferrer nofollow">Fuse.js</a></li>
-        <li><a href="https://github.com/aFarkas/lazysizes" target="_blank"
-            rel="noopener noreferrer nofollow">lazysizes</a></li>
-        <li><a href="https://basiclightbox.electerious.com" target="_blank"
-            rel="noopener noreferrer nofollow">basicLightbox</a></li>
-        <li><a href="https://simplelightbox.com/" target="_blank" rel="noopener noreferrer nofollow">SimpleLightbox</a>
-        </li>
-        <li><a href="https://pugjs.org/api/getting-started.html" target="_blank"
-            rel="noopener noreferrer nofollow">pug</a>
-        </li>
-
-        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
-        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
-        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
-        <li><a
-            href="https://red-firefly-268401.postman.co/workspace/4bf09a4e-6be0-4d40-84d5-1a6323b6e0d6/request/create?requestId=31518bd1-4891-417b-939d-2cf426209f5a"
-            target="_blank" rel="noopener noreferrer nofollow">Postman</a></li>
-        <li><a href="https://github.com/typicode/json-server" target="_blank"
-            rel="noopener noreferrer nofollow">json-server</a></li>
-
-        <li><a href="https://github.com/remy/nodemon/" target="_blank" rel="noopener noreferrer nofollow">nodemon</a>
-        <li><a href="https://github.com/luxplanjay?tab=repositories" target="_blank"
-            rel="noopener noreferrer nofollow">Repeta</a></li>
-        </li>
-        <li><a href="https://github.com/goitacademy/parcel-project-template" target="_blank"
-            rel="noopener noreferrer nofollow">PPT</a></li>
-        <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li>
-      </ul>
-    </div>
-    <div class="wrap">
-      <div class="goit  goit--js">
-        <h2><a href="https://www.edu.goit.global/uk/learn/6420780/2294/2295/textbook" target="_blank"
-            rel="noopener noreferrer nofollow">GoIT JS</a></h2>
-        <ul>
-          <li><a href="#var-types">Variables and Types (Lesson 1)</a></li>
-          <li><a href="#branches-cycles">Branches and Cycles (Lesson 2)</a></li>
-          <li><a href="#arrays">Arrays (Lesson 3)</a></li>
-          <li><a href="#functions">Functions (Lesson 4)</a></li>
-          <li><a href="#objects">Objects (Lesson 5)</a></li>
-          <li><a href="#destructuring">Destructuring and spread/rest (Lesson 6)</a></li>
-          <li><a href="#callbacks-arrow">Callbacks and Arrow Functions (Lesson 7)</a></li>
-          <li><a href="#array-iterating">Array Iteration Methods (Lesson 8)</a></li>
-          <li><a href="#this">The keyword this (Lesson 9)</a></li>
-          <li><a href="#prototypes-classes">Prototypes and Classes (Lesson 10)</a></li>
-          <li><a href="#dom">DOM (Lesson 11)</a></li>
-          <li><a href="#events">Events (Lesson 12)</a></li>
-          <li><a href="#delegation">Event Delegation (Lesson 13)</a></li>
-          <li><a href="#throttle-debounce-lazyload">Throttle/Debounce and Lazyload (Lesson 14)</a></li>
-          <li><a href="#modularity">Code Modularity (Lesson 15)</a></li>
-          <li><a href="#webstorage">Web Storage (Lesson 16)</a></li>
-          <li><a href="#timers-time">Timers and Time (Lesson 17)</a></li>
-          <li><a href="#promises">Promises (Lesson 18)</a></li>
-          <li><a href="#http-requests">HTTP Requests (Lesson 19)</a></li>
-          <li><a href="#pagination">Pagination (Lesson 20)</a></li>
-          <li><a href="#crud">CRUD (Lesson 21)</a></li>
-          <li><a href="#async-await">Asynchronous Functions (Lesson 22)</a></li>
-        </ul>
-      </div>
-      <div class="terminal">
-        <!-- <h3>Terminal Cheet Sheet</h3> -->
-        <h3>
-          <a href="https://habr.com/ru/company/ruvds/blog/445270/" target="_blank"
-            rel="noopener noreferrer nofollow">terminal</a>
-        </h3>
-
-        <ul>
-          <li><b>pwd</b> - prints working directory</li>
-          <li><b>ls</b> [<b>-l</b>] | [<b>-la</b>] - directory list</li>
-          <li><b>cd</b> <i>directory-name</i> | ~ | - | .. - changes directory</li>
-          <li><b>touch</b> <i>file-name</i> - makes file</li>
-          <li><b>mkdir</b> <i>directory-name</i> - makes directory</li>
-          <li><b>mv</b> <i>old-name new-name</i> - renames, removes files or directories</li>
-          <li><b>rm</b> [<b>-rf</b>] <i>name</i> - deletes files or directories</li>
-          <li><b>git clone</b> <i>https://link</i> - clones repository from GitHub</li>
-          <li><b>git remote -v</b> - checks connections between local files and GitHub</li>
-          <li><b>git remote set-url origin</b> <i>https://link</i> - sets connections</li>
-          <li><b>git add .</b> - saves local changes in all files</li>
-          <li><b>git commit -m</b> <i>“commit-name”</i> - adds signature to changes</li>
-          <li><b>git commit -am</b> <i>“commit-name”</i> - saves local changes add signature</li>
-          <li><b>git status</b> - tracks files</li>
-          <li><b>git checkout</b> <i>branch-name</i> - goes to ‘branch-name’ or saved commit</li>
-          <li><b>git checkout -b</b> <i>branch-name</i> - makes and goes to local ‘branch-name’</li>
-          <li><b>git push</b> - pushes changes for current brunch to GitHub</li>
-          <li><b>git push -u origin</b> <i>branch-name</i> - makes and pushes ‘branch-name’ and set upstream</li>
-          <li><b>git push origin</b> <i>branch-name</i> - pushes changes on ‘branch-name’ to GitHub</li>
-          <li><b>git push origin --delete</b> <i>branch-name</i> - deletes ‘branch-name’ on GitHub</li>
-
-          <!-- <li><b>git push --set upstream origin</b> <i>branch-name</i> - push ‘branch-name’ and set upstream</li> -->
-          <li><b>git fetch</b> - fetches all changes from GitHub in refs/remotes/</li>
-          <li><b>git merge</b> - merges fetched changes in all branches</li>
-          <li><b>git merge</b> <i>branch-name</i> - merges ‘branch-name’ in current brunch</li>
-          <li><b>git merge --abort</b> - canceles merge brunches</li>
-          <li><b>git pull</b> - pulles changes for current brunch from GitHub</li>
-          <li><b>git pull origin</b> <i>branch-name</i> - pulles changes on ‘branch-name’ from GitHub</li>
-
-          <li><b>git log</b> - shows commits history (q - exit)</li>
-          <li><b>git diff</b> - shows changes from last commit (q - exit)</li>
-          <li><b>git stash</b> - saves local changes in temp boofer</li>
-          <li><b>git stash apply</b> - pulles local changes from temp boofer</li>
-          <li><b>npx browserslist@latest --update-db</b> - update</li>
-        </ul>
-      </div>
-    </div>
   </header>
-  <main>
-    <section class="var-types">
-      <a href="#goit">
-        <h2 id="var-types">Variables and Types (Lesson 1)</h2>
-      </a>
-      <h3>JavaScript</h3>
-      <p>Today, using JavaScript you can create:</p>
-      <ul>
-        <li>web applications using frameworks such as <b>React</b>, <b>Vue</b>, <b>Angular</b> and others;</li>
-        <li>back-end applications using <b>Node.js</b>;</li>
-        <li>mobile applications with <b>React Native</b> or <b>Ionic</b>;</li>
-        <li>desktop applications using <b>Electron</b>;</li>
-        <li>microcontrollers with <b>Johnny-Five</b> and <b>Espruino</b>.</li>
-      </ul>
-      <h3>Adding Script</h3>
-      <p>To add a script to a web page, HTML files use the script tag. In its src attribute you should include a link to
-        an external JavaScript file. The script should be added before the &#60body> closing tag, after all content.</p>
-      <span><b>&#60script</b> src="./js/script.js" <i>type="module"</i><b>>&#60/script></b></span>
-      <p>In order to run your script in strict mode, it is enough to enter the following directive at the beginning of
-        the js-file. Another way to run script in strict mode to use attribute <b>type="module"</b>. Always write your
-        code in strict mode.</p>
-      <ul>
-        <li><b>export default</b> 'entity' - to export <i>entity</i>;</li>
-        <li><b>import</b> varName <b>from</b> './module-name.js' - to import read-only live bindings which are
-          exported by another module.</li>
-      </ul>
-      <h3>Syntax Basics</h3>
-      <ul>
-        <li><b>Statement</b> is a related set of words and symbols from the syntax of a language that combines to
-          express a common idea, in order to give an instruction to a PC.</li>
-        <li>
-          <base>Expression</base> is a reference to a variable or value, or to a set of variables and values in
-          combination with operators. The statement contains expressions.
-        </li>
-        <li><b>Interface</b> is a set of <b><i>properties</i></b> and <b><i>methods</i></b> of an entity available for
-          use in the source code.
-          <ul>
-            <li>data has <b>properties</b>, for example, a string has a length. The syntax for accessing a property is
-              very simple: use a dot - <b>entity.propertyName</b>.</li>
-            <li>data has its own predefined methods, this is an action call. The syntax for calling a method is similar,
-              but parentheses are added at the end - <b>entity.methodName()</b>.</li>
-          </ul>
-        </li>
-      </ul>
-      <h3>Variables</h3>
-      <p>Variables are used to store data and consist of an identifier (name) and a memory space for storing their
-        values. A variable declaration begins with the keyword <b>var</b>, <b>let</b> or <b>const</b>:</p>
-      <ul>
-        <li><b>const</b> declaration creates block-scoped constants, the value of it can't be changed through
-          reassignment;</li>
-        <li><b>let</b> declaration declares a block-scoped local variable, he value of it can be changed through
-          reassignment, latter can only be accessed after its declaration is reached;
-        </li>
-        <li><b>var</b> statement declares a function-scoped or globally-scoped variable, optionally initializing it to a
-          value, latter can be accessed before its declaration is reached;</li>
-      </ul>
-      <p><b>Undefined</b> is a variable that has been declared with the keyword let, but has not been initialized with a
-        value.<br><b>Undeclared</b> or not defined is a variable that has not been declared in the available scope.</p>
-      <p><b>Variable scope</b> is the availability of variables in a certain part of code. Any construct using curly
-        braces <b>{}</b> (conditions, loops, functions, etc.) creates a new local scope, and variables declared in this
-        scope using <b>let</b> or <b>const</b> are not available outside this block.</p>
-      <h3>Primitive types</h3>
-      <p><b>typeof</b> operator is used to get the variable's value type. It returns in place of its call the value type
-        of the variable specified after it. A variable is not associated with any data type; its value has a type.</p>
-      <ul>
-        <li><b>number</b> - integers and floating-point numbers.</li>
-        <li><b>string</b> - indexed set of zero or more characters, enclosed in single double or back quotes;</li>
-        <li><b>boolean</b> - logical data type, true/false flags;</li>
-        <li><b>null</b> - special value that essentially means nothing, is used in situations where emptiness must be
-          explicitly indicated;</li>
-        <li><b>undefined</b> - when a variable is declared but not initialized, its value is undefined.</li>
-      </ul>
-      <h3>User Input</h3>
-      <ul>
-        <li>data <i>output</i> methods are <b>console.log()</b> and <b>alert()</b>, the <i>alert()</i> method displays a
-          modal window, with a text corresponding to the value of the variable (or literal) in parentheses;</li>
-        <li>data <i>get from the user</i> methods are <b>prompt()</b> and <b>confirm()</b>, as a result of their
-          execution, they return what was entered by the user, it can be written to a variable for further use
-          (<i>prompt</i> always returns a string).</li>
-      </ul>
-      <h3>Basic Operators</h3>
-      <ul>
-        <li><b>Mathematical</b> operators <b>+</b>, <b>-</b>, <b>*</b>, <b>/</b>, <b>%</b> are operators, whereas their
-          objects are operands;</li>
-        <li><b>Comparison</b> operators <b>></b> and <b>&#60</b> (greater than/less than),<b>>=</b> and <b>&#60=</b>
-          (greater/less than or equal), <b>==</b> and <b>!=</b>(equal/not equal), <b>===</b> and <b>!==</b> (strict
-          equality/inequality);
-        </li>
-        <li><b>Equality</b> operators - the "non-strict" equality operators <b>==</b> and <b>!=</b> convert types of
-          compared values to numbers.</li>
-      </ul>
-      <h3>Numbers</h3>
 
+  <main class="container">
+    <section class="projects">
+      <h2>progects</h2>
       <ul>
-        <li><b>Number()</b> function - most operations and functions convert a value to a number automatically, use this
-          function to do this explicitly;</li>
-        <li><b>Number.parseInt()</b> method - parses an integer from the string;</li>
-        <li><b>Number.parseFloat()</b> method - parses a fractional number from the string;</li>
-        <li><b>Number.isNaN()</b> method - checks if the entered value is NaN or not;</li>
-        <li><b>.toFixed()</b> method - to add and round the result to a certain decimal place;</li>
-        <li><b>Math.floor()</b> method - returns the smallest integer less than or equal to the specified one;</li>
-        <li><b>Math.ceil()</b> method - returns the largest integer greater than or equal to the specified number;</li>
-        <li><b>Math.round()</b> method - returns the value of a number rounded to the nearest integer;</li>
-        <li><b>Math.max()</b> method - returns the largest number from a set;</li>
-        <li><b>Math.min()</b> method - returns the smallest number from a set;</li>
-        <li><b>Math.pow(</b>base, exponent<b>)</b> method - exponentiation;</li>
-        <li><b>Math.random()</b> method - returns a pseudo-random number in the range (0, 1).</li>
-      </ul>
-      <h3>Strings</h3>
-      <p>The content of a string cannot be changed, only read.</p>
-      <ul>
-        <li><b>String()</b> function - to convert a value to a string;</li>
-        <li>If you apply the <b>+</b> operator to a string and any other data type, the result of this addition is a
-          string. This operation is called <b>concatenation</b>, or string addition. Template strings are an alternative
-          to concatenation with more convenient syntax, they may contain placeholders with the dollar sign and curly
-          braces - <b>${</b><i>expression</i><b>}</b></li>
-        <li><b>.length</b> property - to get the number of characters of a string;</li>
-        <li><b>.toLowerCase()</b> method - return a new string in the lower case without modifying the original string;
-        </li>
-        <li><b>.toUpperCase()</b> method - return a new string in the upper case without modifying the original
-          string;</li>
-        <li><b>.indexOf(</b>'searchValue'[, fromIndex]<b>)</b> method - returns the position (index) of the first
-          substring match, or <b>-1</b> if nothing is found;</li>
-        <li><b>.includes(</b>'searchString'[, position]<b>)</b> method - checks if a substring is included in the
-          string, returns true/false;</li>
-        <li><b>.endsWith(</b>'searchString'[, length]<b>)</b> method - determines if a string ends with the characters
-          (substring) specified in parentheses, returns true/false</li>
-        <li><b>.startsWith(</b>'searchString'[, length]<b>)</b> method - determines if a string starts with the
-          characters
-          (substring) specified in parentheses, returns true/false</li>
-        <li><b>.replace(</b>'searchString', 'replacementString'<b>)</b> method - return a new string in which the first
-          substring matches have been replaced with the specified value;</li>
-        <li><b>.replaceAll(</b>'searchString', 'replacementString'<b>)</b> method - return a new string in which all
-          substring matches
-          have been replaced with the specified value;</li>
-        <li><b>.padStart(</b>targetLength [, 'padString']<b>)</b> method - pads the current string from the start with
-          another string until the resulting string reaches the given length;</li>
-        <li><b>.padEnd(</b>targetLength [, 'padString']<b>)</b> method - pads the current string from the end with
-          another
-          string until the resulting string reaches the given length;</li>
-        <li><b>.at(</b>index<b>)</b> method - takes an integer value and returns a new String consisting of the single
-          UTF-16 code unit located at the specified offset;</li>
-        <li><b>.substring(</b>indexStart[, indexEnd]<b>)</b> method - returns the part of the string between the start
-          and end indexes, or to the end of the string.</li>
-        <li><b>.trim()</b> method - removes whitespace from both ends of a string and returns a new string, without
-          modifying the original string.</li>
-      </ul>
-      <h3>Logical Operators</h3>
-      <p>In logical operations, the types of operands are converted/cast to <i>true</i> or <i>false</i>. <b>Truthy</b>
-        and <b>Falsy</b> are the terms used for those values that are converted to true or false in a logical operation,
-        although they were not originally booleans. Values that are converted to false in logical conversion
-        <b>0, NaN, null, undefined, empty string, false</b>.
-      </p>
-      <ul>
-        <li><b>Boolean()</b> function - to convert a value to logical <i>true</i> or <i>false</i>;</li>
-        <li>Logical AND <b>&&</b> - result will be <i>false</i>, since at least one of the operands is converted to
-          false, in opposite returns last true value;</li>
-        <li>Logical OR <b>||</b> - result will be <i>true</i>, since at least one of the operands is converted to true,
-          in opposite returns last false value;</li>
-        <li>Logical NOT <b>!</b> - replaces value with the <i>opposite</i>.</li>
-        <li>Nullish coalescing operator <b>??</b> - returns its right-hand side operand when its left-hand side operand
-          is <i>null</i> or <i>undefined</i>, and otherwise returns its left-hand side operand;</li>
-        <li>Logical OR assignment <b>||=</b> - (x ||= y) operator only assigns if x is falsy.</li>
+        <li> <a href="https://belka-s.github.io/html-css-js-webstudio/" target="_blank"
+            rel="noopener noreferrer nofollow">WebStudio</a> </li>
+        <li> <a href="https://belka-s.github.io/html-css-mimino/" target="_blank"
+            rel="noopener noreferrer nofollow">Mimino</a> </li>
+        <li> <a href="https://belka-s.github.io/goit-js-hw-11/" target="_blank"
+            rel="noopener noreferrer nofollow">ImageSearch</a> </li>
+        <li> <a href="https://dimashabatyn.github.io/parcel-team-project-mimino/" target="_blank"
+            rel="noopener noreferrer nofollow">Team HTML-CSS</a> </li>
+        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
       </ul>
     </section>
-    <section class="branches-cycles">
-      <a href="#goit">
-        <h2 id="branches-cycles">Branches and Cycles (Lesson 2)</h2>
-      </a>
-      <h3>Branching</h3>
-      <p>Branches are used to execute particular code depending on the condition. The principle is simple: the
-        condition result is converted to a <i>boolean</i>, <i>true</i> or <i>false</i>, after which the program
-        executes this or that branch.</p>
+
+    <section class="tutorial">
+      <h2>tutorial</h2>
       <ul>
-        <li><b>if (</b><i>condition</i><b>) {</b><i>//if body</i></i><b>}</b> statement - if the condition is
-          converted to true, the code in
-          curly braces of the if body is then executed;</li>
-        <li><b>if (</b><i>condition</i><b>) {</b><i>//if body</i><b>} else {</b><i>//else body</i><b>}</b> statement -
-          <i>if</i> syntax is extended, if the condition is converted to false, the code in curly braces after the
-          <i>else</i> statement will be executed;
+        <li> <a href="https://developer.mozilla.org/ru/" target="_blank" rel="noopener noreferrer nofollow">MDN</a>
         </li>
-        <li><b>else if</b> statement - enables you to add after else another if statement with a condition.</li>
+        <li> <a href="https://devdocs.io" target="_blank" rel="noopener noreferrer nofollow">devdocs</a> </li>
+        <li> <a href="https://drafts.csswg.org/" target="_blank" rel="noopener noreferrer nofollow">W3C<span>-
+              CSS</span></a> </li>
+        <li> <a href="https://html.spec.whatwg.org/multipage/dom.html#kinds-of-content" target="_blank"
+            rel="noopener noreferrer nofollow">Kinds of Content <span>- HTML Living Standard</span></a> </li>
+        <li> <a href="https://html5book.ru/css-css3/" target="_blank" rel="noopener noreferrer nofollow">html5book
+            <span>- JS, HTML, CSS</span></a> </li>
+        <li><a href="http://sadcitizen.me/code-guide/#html-syntax" target="_blank"
+            rel="noopener noreferrer nofollow">@mdo <span>- HTML, CSS</span></a> </li>
+        <li> <a href="https://webref.ru" target="_blank" rel="noopener noreferrer nofollow">WebRef <span>- HTML,
+              CSS</span></a> </li>
+        <li> <a href="https://css.in.ua/css/properties" target="_blank" rel="noopener noreferrer nofollow">css.in.ua
+            <span>- HTML, CSS</span></a> </li>
+        <li> <a href="http://shpargalkablog.ru/2013/03/px-em-calc.html" target="_blank"
+            rel="noopener noreferrer nofollow">Units <span>- CSS</span></a> </li>
+        <li> <a href="https://uk.javascript.info" target="_blank" rel="noopener noreferrer nofollow">uk.JS.info <span>-
+              JS</span></a> </li>
+        <li> <a href="https://www.freecodecamp.org/learn" target="_blank" rel="noopener noreferrer nofollow">CodeCamp
+            <span>- JS</span></a> </li>
+        <li> <a
+            href="https://startup.jobs/interview-questions?utm_source=telegram&utm_medium=students&utm_campaign=producthunt&utm_content=10march"
+            target="_blank" rel="noopener noreferrer nofollow">ph-interview <span>- interview</span></a> </li>
+        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
+        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
+        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
+        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
+        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
       </ul>
-      <h3>Ternary Operator</h3>
-      <p><i>condition</i> <b>?</b> <i>expression_if_true</i> <b>:</b> <i>expression_if_false</i> - the ternary
-        operator is used <i>only for</i> <b>return</b> and <b>assign</b> operations as a more syntactically concise
-        replacement for the <b>if</b> ... <b>else</b> statement.</p>
-      <h3>Switch Statement</h3>
-      <p>The scope of <b>switch</b> is limited to tasks with one common question (what to compare) and many answer
-        options (what to compare with). For comparison, the strict equality operator <b>===</b> is used.</p>
-      <span>
-        <b>switch (</b>value<b>) {</b><br>
-        <b>case</b> value: statements;<br>
-        <b>break</b>;<br>
-        <b>case</b> value: statements;<br>
-        <b>break</b>;<br>
-        <b>default</b>:<br>
-        statements;<br>
-        <b>}</b>
-      </span>
-      <h3>Loops</h3>
-      <ul>
-        <li><b>while (</b><i>condition</i><b>) {</b><i>//statement</i><b>}</b> - pre-test loop is a loop that is
-          executed as long as a condition specified before its beginning stays true;</li>
-        <li><b>do {</b><i>//statement</i><b>} while (</b><i>condition</i><b>)</b> - post-test loop is a loop in which
-          the condition is tested after executing the loop body;</li>
-        <li><b>for (</b><i>let i = 0; i < max; i +=n</i><b>) {</b><i>//statements</i><b>}</b> - count-controlled loop
-              in which a variable changes its value from a set initial value to an end value with a step, and for each
-              value of this variable the loop body is executed once.</li>
+    </section>
+
+    <section class="production">
+      <div>
+        <h2>HTML-CSS</h2>
         <ul>
-          <li><i><b>break</b></i> operator - completely terminates the execution of the loop and transfers control to
-            the string after its body;</li>
-          <li><i><b>continue</b></i> operator - does not interrupt the entire loop, but only the current iteration.
+          <li> <a href="https://validator.w3.org/nu/" target="_blank" rel="noopener noreferrer nofollow">HTML
+              Checker</a> </li>
+          <li> <a href="https://jigsaw.w3.org/css-validator/#validate_by_input" target="_blank"
+              rel="noopener noreferrer nofollow">CSS Checker</a> </li>
+          <li> <a href="https://caninclude.glitch.me" target="_blank" rel="noopener noreferrer nofollow">CanInclude</a>
           </li>
-          <span>
-            const number = 10;<br>
-            <b>for (</b>let i = 0; i < number; i +=1<b>) {</b><br>
-              <b>if (</b>i % 2 === 0<b>) {</b><br>
-              <i><b>break</b> / <b>continue</b></i>;<br>
-              <b>} }</b>
-          </span>
+          <li> <a href="https://caniuse.com" target="_blank" rel="noopener noreferrer nofollow">CanIUse</a> </li>
+          <li> <a href="https://www.figma.com/files/drafts?fuid=1139607182020165886" target="_blank"
+              rel="noopener noreferrer nofollow">Figma</a> </li>
+          <li> <a href="https://squoosh.app" target="_blank" rel="noopener noreferrer nofollow">Squoosh</a> </li>
+          <li> <a href="https://www.iloveimg.com" target="_blank" rel="noopener noreferrer nofollow">iLoveImg</a> </li>
+          <li> <a href="https://icomoon.io" target="_blank" rel="noopener noreferrer nofollow">IcoMoon</a> </li>
+          <li> <a href="https://jakearchibald.github.io/svgomg/" target="_blank"
+              rel="noopener noreferrer nofollow">SVGOMG</a> </li>
+          <li> <a href="https://cssgrid-generator.netlify.app" target="_blank" rel="noopener noreferrer nofollow">CSS
+              Grid</a> </li>
+          <li> <a href="https://yoksel.github.io/url-encoder/" target="_blank"
+              rel="noopener noreferrer nofollow">URL-SVG</a> </li>
+          <li> <a href="https://www.mydevice.io" target="_blank" rel="noopener noreferrer nofollow">MyDevice</a> </li>
+          <li> <a href="https://cssgenerator.org/box-shadow-css-generator.html" target="_blank"
+              rel="noopener noreferrer nofollow">ShadowGen</a> </li>
+          <li> <a href="https://fonts.google.com" target="_blank" rel="noopener noreferrer nofollow">GoogleFonts</a>
+          </li>
+          <li> <a href="https://gwfh.mranftl.com/fonts" target="_blank" rel="noopener noreferrer nofollow">GWFHelper</a>
+          </li>
+          <!-- <li><a href="https://en.bestfonts.pro/" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
+          <li> <a href="https://en.bestfonts.pro/" target="_blank" rel="noopener noreferrer nofollow">BestFonts</a>
+          </li>
+          <li> <a href="https://kenwheeler.github.io/slick/" target="_blank"
+              rel="noopener noreferrer nofollow">Slick</a> </li>
+          <li> <a href="https://swiperjs.com/" target="_blank" rel="noopener noreferrer nofollow">Swiper</a> </li>
+          <li> <a href="https://pawelgrzybek.github.io/siema/" target="_blank"
+              rel="noopener noreferrer nofollow">siema</a> </li>
+          <li> <a href="https://start.atlassian.com" target="_blank" rel="noopener noreferrer nofollow">Atlassian</a>
+          </li>
+          <li> <a href="https://trello.com/u/belkasrg/boards" target="_blank"
+              rel="noopener noreferrer nofollow">Trello</a></li>
+          <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
+          <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
+          <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
+          <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
+          <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
         </ul>
-        <li><b>debugger</b> - to stop loop execution and find bugs.</li>
-      </ul>
-    </section>
-    <section class="arrays">
-      <a href="#goit">
-        <h2 id="arrays">Arrays (Lesson 3)</h2>
-      </a>
-      <h3>Array</h3>
-      <p>Is a data structure for storing and manipulating collections of indexed values.</p>
-      <ul>
-        <li><b>Array.from()</b> method creates an array from a pseudo-array:
-          <i>function createArray() {const newArray =</i> <b>Array.from(</b>arguments<b>)</b><i>; return
-            newArray};</i>
-        </li>
-        <li><b>const</b> <i>arrayName</i> = <b>[</b><i>element1, element2, element3</i><b>]</b> - declared with the
-          opening and closing square brackets <b>[]</b>, array elements are separated by a comma;</li>
-        <li><b>arrayName[</b><i>index</i><b>]</b> - to access the values of array elements;</li>
-        <li><b>arrayName[</b><i>index</i><b>]</b> = <i>newElement</i> - can be changed if you access them by index and
-          assign a different value;</li>
-        <li><i>arrayName</i><b>.length</b> property - length of an array, that is, the number of its elements;</li>
-        <li><b>console.table(</b>arrayName<b>)</b> - displays a table whith the indexes and values of the
-          <i>arrayName</i>
-        </li>
-      </ul>
-      <h3>Array Iteration</h3>
-      <ul>
-        <li><b>for (</b><i>let i = 0; i < arrayName.length; i +=1</i><b>)</b>
-              <b>{</b>console.log(<i>arrayName<b>[i]</b></i>);<b>}</b> - to iterate over an array element by element;
-        </li>
-        <li><b>for (</b><i>const varName</i> <b>of</b> <i>arrayName/stringName</i><b>)
-            {</b>console.log(<i>varName</i>);<b>}</b> - iterates over iterable (enumerable) objects such as arrays and
-          strings;
-          <ul>
-            <li><b>for (</b><i>const varName</i> <b>of</b> <i>arrayName/stringName</i><b>)
-                {if (</b><i>varName === searchName</i><b>) {</b>console.log(<i>varName</i>); <b>break</b>;<b>} }</b> -
-              after indentifying of <i>searchName</i>, the loop is interrupted, as there is no point in looking further;
-            </li>
-            <li><b>for (</b><i>let i = 0; i < i arrayName.length; i +=1</i><b>) {if (</b><i>arrayName<b>[i]</b>
-                    &#60 threshold</i><b>)</b>; <b>continue</b>;<b>}</b> - for numbers less than the threshold value,
-                  continue is triggered and control is passed to the next iteration;
-            </li>
-          </ul>
-        </li>
-        <li>array.<b>forEach</b>(function (<i>element, index, array</i>) {//function body}[, <i>thisArg</i>]) method -
-          executes a provided function once for each array element, execution of the <i>forEach</i> can't be
-          interrupted.</li>
-      </ul>
-      <h3>Value and Reference</h3>
-      <ul>
-        <li><b>Primitives</b> are <i>strings</i>, <i>numbers</i>, <i>booleans</i>, <i>null</i> and <i>undefined</i>;
-          when assigning, they are copied entirely, by <b>value</b>.</li>
-        <li><b>Complex</b> types are variable to which an array or object is assigned does not store the value
-          itself, but the address of its space in memory, they are copied by <b>reference</b>.</li>
-      </ul>
-      <h3>Array Methods</h3>
-      <ul>
-        <li><b>.split(</b><i>'delimiter'</i><b>)</b> method - converts a string to an array by splitting it with
-          <i>delimiter</i>, strArray = strArray.split(<b>/\s+/</b>) - unlimited space pattern;
-        </li>
-        <li><b>.join(</b><i>'delimiter'</i><b>)</b> method - joins the elements of an array into a string by joining it
-          with <i>delimiter</i>;
-        </li>
-        <li><b>.indexOf(</b><i>value</i><b>)</b> method - returns the first index at which the element with <i>value</i>
-          is found in the array;</li>
-        <li><b>.includes(</b><i>value</i><b>)</b> method - checks if there is an element with <i>value</i> in the array,
-          and it returns <i>true</i> or <i>false</i>;</li>
-        <li><b>.push(</b><i>value1, value2, ...</i><b>)</b> method - adds one or more elements to the end of the array,
-          without the need to specify the indices of the added elements;</li>
-        <li><b>.pop(</b><i>value</i><b>)</b> method - removes the last element from the end of the array and returns the
-          removed element, if the array is empty, it returns <i>undefined</i>;</li>
-        <li><b>.unshift(</b><i>value1, value2, ...</i><b>)</b> method - adds one or more elements to the beginning of
-          the array, without the need to specify the indices of the added elements;</li>
-        <li><b>.shift(</b><i>value</i><b>)</b> method - removes one element from the beginning of the array and
-          returns the removed element, if the array is empty, it returns <i>undefined</i>;</li>
-        <li><b>.slice(</b><i>indexStart, indexEnd</i><b>)</b> method - returns a new array which is a partial copy from
-          <i>indexStart</i> to, but not including, <i>indexEnd</i>;
-        </li>
-        <li><b>.splice(</b><i>index, num</i><b>)</b> method - <b>removal</b>, modifies the original array and returns
-          an array containing the removed elements, where <i>index</i> indicates the position (index) of the first
-          element to be removed and <i>num</i> indicates the number of elements to be removed; </li>
-        <li><b>.splice(</b><i>index, 0, newElem1, newElem2, ...</i><b>)</b> method - <b>addition</b>,
-          <i>index</i> argument specifies the starting position in the array where new elements will be inserted,
-          second argument is <i>0</i>, it instructs the method not to remove elements where new ones are added;
-        </li>
-        <li><b>.splice(</b><i>index, num, newElem1, newElem2, ...</i><b>)</b> method - <b>replacement</b>,
-          <i>index</i> indicates the position (index) of the first element to be removed <i>num</i> determines the
-          number of elements to be removed, next arguments are elements that are added to the array;
-        </li>
-        <li><b>.concat(</b><i>arrayName1, arrayName2, ...</i><b>)</b> method - consolidates two or more arrays into one;
-        </li>
-        <li><b>.reverse()</b> method - reverses an array;</li>
-        <li><b>.flat(</b>depth<b>)</b> method - creates a new array with all sub-array elements concatenated into it
-          recursively up to the specified depth;</li>
-        <li><b>.at(</b>index<b>)</b> method - takes an integer value and returns the item at that index, allowing for
-          positive and negative integers.;</li>
-        <li><b>rest parameter</b> syntax allows to apply any Math.methodName to an Array:
-          <i>Math.methodName</i><b>(...</b><i>arrayName</i><b>)</b>.
-        </li>
-      </ul>
-    </section>
-    <section class="functions">
-      <a href="#goit">
-        <h2 id="functions">Functions (Lesson 4)</h2>
-      </a>
-      <h3>Function declaration, expression, calling</h3>
-      <p><b>Function</b> is a subroutine, an independent piece of code designed to repeatedly execute a specific task
-        with different initial values. <b><i>Function name</i></b> must be a verb answering the question "What to do?".
-        If you need to declare a function with <b><i>parameters</i></b> other than <i>undefined</i>, it is enough to
-        specify the default value.</p>
-      <ul>
-        <li>Function declaration <b>function</b> <i>functionName</i><b>(</b><i>parameters</i><b>) {</b><i>\\function
-            body</i><b>}</b> - can be called before its creation;</li>
-        <li>Function expression <b>const</b> <i>functionName</i> = <b>function(</b><i>parameters</i><b>)
-            {</b><i>\\function body</i><b>}</b> - cannot be called before its creation, only after, as it is literally a
-          const variable declaration;</li>
-        <li>Function calling <b><i>functionName</i></b><b>(</b><i>arguments</i><b>)</b> - in parentheses you can pass
-          <i><b>arguments</b></i>, i.e. values for the declared function <i><b>parameters</b></i>.
-        </li>
-      </ul>
-      <h3>Usage Features</h3>
-      <ul>
-        </li>
-        <li><b>arguments</b> can be accessed using the special variable, which is only available inside the function and
-          stores all arguments as a pseudo-array:<br>
-          <i>function multiply() {let total = 1; for (const</i> varName <i>of</i> <b>arguments</b>)<i>
-            total *= varName;</i> <i>return total;}</i>
-        </li>
-        <li><b>rest parameter</b> syntax allows a function to accept an indefinite number of arguments as an array:<br>
-          <i>function fnName<b>(...</b>argToArray<b>)</b> {There is access to Array <b>'argToArray'</b> that was made
-            from <b>arguments</b>}</i>
-        </li>
-        <li><b>return</b> operator passes a value from the function body to external code and exit the function:<br>
-          <i>function multiply(x, y, z) {</i><b>return</b> <i>x * y * z;}</i>;
-        <li><b>return early pattern</b> is a way to return early from a function using the return operator:<br>
-          <i>function withdraw(amount, balance) {<br>
-            if(amount === 0) {<br>
-            console.log("Enter an amount greater than zero");<br>
-            <b>return</b>;}<br>
-            if (amount > balance) {<br>
-            console.log("Insufficient account balance");<br>
-            <b>return</b>;}<br>
-            console.log("Withdrawal has been successful");}</i>
-        </li>
-      </ul>
-      <h3>Scope</h3>
-      <p><b>Scope</b> is a mechanism that determines the availability of variables in your code. <b>Scope chain</b>:
-        scopes form a hierarchy so that child scopes can access variables from parent scopes, but not vice versa. </p>
-      <ul>
-        <li>Variables declared at the very top level, that is, outside of any constructs like <i>if</i>, <i>while</i>,
-          <i>for</i> and <i>functions</i>, are in the <b>global scope</b>, and they are available everywhere after
-          they
-          are declared.
-        </li>
-        <li>Variables declared inside <i>if</i> and <i>for</i> statements, <i>functions</i> and other blocks of code
-          enclosed in curly braces <i>{}</i> are in the <b>block scope</b>, and they are available only within this
-          block of code or those nested inside it. </li>
-        <li><b>Scope chain look-up</b> - the interpreter first tries to find a variable in the scope in which such
-          variable was accessed. If there is no such variable in the local scope, then the interpreter goes out, one
-          level per attempt, until it finds the necessary value or reaches the topmost scope (global) and realizes
-          that
-          no variable with such an identifier can be found, since it does not exist</li>
-      </ul>
-      <h3>Call Stack</h3>
-      <p><b>Call stack</b> is a mechanism for keeping track of where the interpreter is located in the code that calls
-        multiple functions. You can see which of the functions is currently being executed, which functions are called
-        from within the function being executed, which will be called next, etc. <i><b>Stack</b></i> is a data
-        structure
-        using the <b>LIFO</b> (Last-In-First-Out) principle. The last thing that is added to the stack will be removed
-        from it first, which means that you can add or remove elements only from the top of the stack.</p>
-    </section>
-    <section class="objects">
-      <a href="#goit">
-        <h2 id="objects">Objects (Lesson 5)</h2>
-      </a>
-      <h3>Object properties and methods</h3>
-      <p>Objects serve to describe and group the characteristics of an entity. Objects are also called dictionaries,
-        that is, they contain terms (<b>properties</b>) and their definitions (<b>values</b>). Objects can store not
-        only data, but also functions for working with this data, i.e. methods. If the property value is a function,
-        such property is called an <b>object method</b>. Such objects can be called <b>models</b>. They couple data with
-        methods to work with that data.</p>
-      <ul>
-        <li>const <b>object</b> = <b>{</b>propertyKey: value, ...<b>}</b> - object creation, property value can be
-          another object in order to store nested and grouped data; </li>
-        <li>const <b>object</b> = <b>{</b>variableName, ...<b>}</b> - shorthand object creation, when creating an object
-          and you need to take the property value from a variable or function parameter of the same name as the
-          property;
-        </li>
-        <li>const <b>object</b> = <b>new</b> constructor(arguments) - creates an instance of a user-defined object
-          type or of one of the built-in object types that has a <i>constructor</i> function, <b>constructor</b> data
-          property of an <i>object</i> returns a reference to the constructor function that created the instance
-          object;</li>
-        <li><b>Object.create(</b><i>proto[, propertiesObject]</i><b>)</b> method - creates a new object, using an
-          existing object as the prototype of the newly created object;</li>
-        <li><b>Object.assign(</b><i>target, source1, source2, ...</i><b>)</b> method - copies all enumerable own
-          properties from one or more source objects to a target object;</li>
-        <li>object<b>.propertyKey</b> - to access a value of the proherty;</li>
-        <li>object<b>.propertyKey.nestedPropertyKey</b> - to access a value nested the property;</li>
-        <li> object.propertyKey = <b>value</b> - <b>adding</b> objects property whith value or <b>changing</b> objects
-          property value;</li>
-        <li><b>delete</b> <i>object.propertyKey</i> or <b>delete</b> <i>object[propertyKey]</i> - removes a property
-          from an object;</li>
-        <li>object<b>["propertyKey"]</b> - to access a value of the proherty;</li>
-        <li>object<b>[variableName]</b> - to access a value of the property with a name that you do not know, as it is
-          stored as the value of a variable;</li>
-        <li><b>[variableName]</b> - to access a property with a name that you do not know, as it is stored as the value
-          of a variable;</li>
-        <li>const <i>object = {</i> <b>[variableName]</b><i>: value, ...}</i> - to <b>add</b> objects property with a
-          name that you do not know, as it is stored as the value of a variable or as the result of a function, the
-          value of a <b>computed property</b> can be any valid expression;</li>
-        <li><b>fnName:</b> function<b>() {</b>\\Body<b>}</b> <i>or</i> <b>fnName() {</b>\\Body<b>}</b> - to store
-          function (<b>object method</b>).</li>
+      </div>
 
-        </li>
-      </ul>
-      <h3>Iteration</h3>
-      <ul>
-        <li>
-          <b>for (</b><i>const key</i> <b>in</b> <i>objectName</i><b>) {</b> _ _ _ to iterate over objects,<br>
-          <i>key</i>; _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ to access properties,<br>
-          <i>objectName</i><b>[</b><i>key</i><b>]</b>;<b>}</b> _ _ _ _ _ _ _ _ _ _ _ to access values of the
-          proherties;<br>
-        </li>
-        <li><b>.hasOwnProperty(</b><i>key</i><b>)</b> method - returns a boolean indicating whether the object has the
-          specified property as its own property or inherited one;</li>
-        <li><b>Object.keys(</b><i>object</i><b>)</b> method - returns an array of own property keys of an object;</li>
-        <li><b>Object.values(</b><i>object</i><b>)</b> method - returns an array of its own property values</li>
-        <li><b>Object.entries(</b><i>object</i><b>)</b> method returns an array, with each element as another array of
-          the propertyName and the value of this property.</li>
-      </ul>
-      <h3>Array of Objects</h3>
-      <p>To iterate over an array of objects of the same type, use the standard <b>for...of</b> loop. To get property
-        values of each object, use <b>dot</b> notation, since the set of properties and their names are the same in each
-        object, only their values differ.</p>
+      <div>
+        <h2>JS</h2>
+        <ul>
+          <li> <a href="https://www.npmjs.com/" target="_blank" rel="noopener noreferrer nofollow">NPM</a> </li>
+          <li> <a href="https://www.jsdelivr.com/" target="_blank" rel="noopener noreferrer nofollow">jsdelivr</a> </li>
+          <li> <a href="https://webpack.js.org/" target="_blank" rel="noopener noreferrer nofollow">Webpack</a>
+          </li>
+          <li><a href="https://parceljs.org/" target="_blank" rel="noopener noreferrer nofollow">Parcel</a></li>
+          <li> <a href="https://github.com/nvm-sh/nvm" target="_blank" rel="noopener noreferrer nofollow">nvm</a> </li>
+          <li> <a href="https://www.npmjs.com/package/@parcel/transformer-sass" target="_blank"
+              rel="noopener noreferrer nofollow">transformer-sass</a> </li>
+          <li> <a href="https://www.npmjs.com/package/parcel-reporter-clean-dist" target="_blank"
+              rel="noopener noreferrer nofollow">clean-dist</a> </li>
+          <li> <a href="https://www.npmjs.com/package/posthtml-include" target="_blank"
+              rel="noopener noreferrer nofollow">posthtml-include</a> </li>
+          <li> <a href="https://www.npmjs.com/package/parcel-plugin-custom-dist-structure" target="_blank"
+              rel="noopener noreferrer nofollow">dist-structure</a> </li>
+          <li> <a href="https://www.npmjs.com/package/parcel-plugin-structurize/v/2.4.4?activeTab=readme"
+              target="_blank" rel="noopener noreferrer nofollow">structurize</a> </li>
+          <li> <a href="https://www.npmjs.com/package/parcel-transformer-hbs" target="_blank"
+              rel="noopener noreferrer nofollow">handlebars</a> </li>
+          <li> <a href="https://www.npmjs.com/package/parcel-reporter-clean-dist" target="_blank"
+              rel="noopener noreferrer nofollow">clean-dist</a> </li>
+          <li> <a href="https://github.com/browserslist/browserslist" target="_blank"
+              rel="noopener noreferrer nofollow">browserslist</a> </li>
+          <!-- <li><a href="https://babeljs.io/" target="_blank" rel="noopener noreferrer nofollow">Babel</a></li> -->
+          <li> <a href="https://developer.mozilla.org/en-US/docs/Web/Events" target="_blank"
+              rel="noopener noreferrer nofollow">event</a> </li>
+          <li> <a href="https://lodash.com" target="_blank" rel="noopener noreferrer nofollow">lodash</a> </li>
+          <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
+          <li> <a href="https://www.npmjs.com/package/moment" target="_blank"
+              rel="noopener noreferrer nofollow">Moment.js</a> </li>
+          <li> <a href="https://www.npmjs.com/package/bootstrap.native" target="_blank"
+              rel="noopener noreferrer nofollow">bootstrap</a> </li>
+          <li> <a href="https://flatpickr.js.org/getting-started/" target="_blank"
+              rel="noopener noreferrer nofollow">flatpickr</a> </li>
+          <li> <a href="https://github.com/notiflix/Notiflix#readme" target="_blank"
+              rel="noopener noreferrer nofollow">notiflix</a> </li>
+          <li> <a href="https://www.npmjs.com/package/uuid" target="_blank" rel="noopener noreferrer nofollow">uuid</a>
+          </li>
+          <li> <a
+              href="https://www.cloud66.com/compare/cloud66-vs-heroku/?utm_source=g&utm_medium=a&utm_campaign=R-heroku0321&gclid=Cj0KCQiAo-yfBhD_ARIsANr56g6UQ_RN-mvNTQL9f9WLFJfQKHht_9hIsl097mrm4Nw0M6rcHG9Atx8aAnBMEALw_wcB"
+              target="_blank" rel="noopener noreferrer nofollow">Heroku</a> </li>
+          <li> <a href="https://pawelgrzybek.github.io/siema/" target="_blank"
+              rel="noopener noreferrer nofollow">siema</a> </li>
+          <li> <a href="https://github.com/krisk/Fuse" target="_blank" rel="noopener noreferrer nofollow">Fuse.js</a>
+          </li>
+          <li> <a href="https://github.com/aFarkas/lazysizes" target="_blank"
+              rel="noopener noreferrer nofollow">lazysizes</a> </li>
+          <li> <a href="https://basiclightbox.electerious.com" target="_blank"
+              rel="noopener noreferrer nofollow">basicLightbox</a> </li>
+          <li> <a href="https://simplelightbox.com/" target="_blank"
+              rel="noopener noreferrer nofollow">SimpleLightbox</a> </li>
+          <li> <a href="https://pugjs.org/api/getting-started.html" target="_blank"
+              rel="noopener noreferrer nofollow">pug</a> </li>
+          <li>
+            <a href="https://red-firefly-268401.postman.co/workspace/4bf09a4e-6be0-4d40-84d5-1a6323b6e0d6/request/create?requestId=31518bd1-4891-417b-939d-2cf426209f5a"
+              target="_blank" rel="noopener noreferrer nofollow">Postman</a>
+          </li>
+          <li> <a href="https://github.com/typicode/json-server" target="_blank"
+              rel="noopener noreferrer nofollow">json-server</a> </li>
+          <li> <a href="https://github.com/remy/nodemon/" target="_blank" rel="noopener noreferrer nofollow">nodemon</a>
+          </li>
+          <li> <a href="https://github.com/luxplanjay?tab=repositories" target="_blank"
+              rel="noopener noreferrer nofollow">Repeta</a> </li>
+          <li> <a href="https://github.com/goitacademy/parcel-project-template" target="_blank"
+              rel="noopener noreferrer nofollow">PPT</a> </li>
+          <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
+          <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
+          <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
+          <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
+          <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
+        </ul>
+      </div>
     </section>
-    <section class="destructuring">
-      <a href="#goit">
-        <h2 id="destructuring">Destructuring and spread/rest (Lesson 6)</h2>
-      </a>
-      <h3>Spread and Rest Syntax</h3>
-      <ul>
-        <li><b>...</b> (spread) <b>passing arguments</b> - to spread a collection of elements from array, string or
-          object to the places where a set of single values is expected;</li>
-        <li><b>...</b> (spread) <b>creating a new array</b> - to create a copy of an array or "bond" an arbitrary number
-          of arrays together to make a new one:<br>
-          <i>const copyOfArray = [<b>...</b>array]</i>;
-        </li>
-        <li><b>...</b> (spread) <b>creating a new object</b> - to spread the properties of an arbitrary number of
-          objects to a new one:<br>
-          <i>const third = {propertyName: value,</i> <b>...</b><i>first,</i> <b>...</b><i>second }</i>, it is possible
-          add properties to any location, <b>spread order matters</b>, object property names are unique, so the
-          properties of the sprayed object can overwrite the value of an existing property if their names are the same;
-        </li>
-        <li><b>...</b> (rest) <b>collecting all function arguments</b> - to collect a group of independent elements into
-          a new array;</li>
-        <li><b>...</b> (rest) <b>collecting part of function arguments</b> - to collect into an array only the required
-          part of the arguments:<br>
-          <i>function fnName(firstNumber, secondNumber,</i> <b>...</b><i>otherArgs)</i>;
-        </li>
-      </ul>
-      <h3>Object Destructuring</h3>
-      <p>Destructuring enables you to "unpack" the values of an object's properties into local variables, if the
-        variable and property names are the same, assignment takes place, otherwise it will be assigned undefined.</p>
-      <ul>
-        <li><i><b>const {</b>varName1, varName2, varName3 <b>= value}</b> = <b>objectName</b></i> - specifies default
-          values,they will be assigned only if the object does not have a property with that name;</li>
-        <li><i><b>const {</b>propertyName1<b>:</b> newPropertyName1, propertyName2<b>:</b> newPropertyName2<b>}</b> =
-            <b>objectName</b></i> - changing variable name;</li>
-        <li><i>for (<b>const</b> book of books) {<b>const {</b>title, author, rating<b>}</b> = book;}</i> -
-          destructuring in loop body;
-        </li>
-        <li><i>for (<b>const {</b>title, author, rating<b>}</b> of books) {}</i> - destructuring in loop can be
-          done right where the variable book is declared;</li>
-        <li>
-          <i><b>const {</b>propertyName1, propertyName2<b>: {</b>nestedPropName1, nestedPropName2<b>}</b>,
-            propertyName3<b>}</b> = <b>objectName</b> - deep destructuring is for the properties of nested objects.</i>;
-        </li>
-      </ul>
-      <h3>Array Destructuring</h3>
-      <p>Destructuring assignment can be used for arrays as well: use square brackets <b>[]</b> instead of curly braces
-        <b>{}.</b>
-      </p>
-      <ul>
-        <li><i><b>const [</b>varName1, varName2, varName3<b>]</b> = <b>arrayName</b></i> - creates variables with
-          elements placed in them in ascending order, from 0 to the array end;</li>
-        <li><i><b>let</b> varName1, varName2, varName3; <b>[</b>varName1, varName2, varName3<b>]</b> =
-            <b>arrayName</b></i> -
-          value can be assigned to a variable after arrays declaration;</li>
-        <li><i><b>const [</b>varName1, varName2, varName3 <b>= value]</b> = <b>arrayName</b></i> - specifies default
-          values;</li>
-        <li><i><b>const [</b>varName, <b>...</b>restArrayName<b>]</b> = <b>arrayName</b></i> - unpacks and assigns the
-          rest of the array elements to a variable;</li>
-        <li><i><b>const [, ,</b> varName<b>]</b> = <b>arrayName</b></i> - skips elements.</li>
-      </ul>
-      <h3>«Parameter Object» Pattern</h3>
-      <p>If a function has more than two or three arguments, it is very easy to get confused about what is passed and in
-        which order. The <b>parameter object pattern</b> solves this problem by replacing a set of parameters with just
-        one, an object with named properties:</p>
-      <ul>
-        <li><i>function fnName(<b>objectName</b>) {\\Function body}</i> - then, when calling, you pass one object with
-          the necessary properties;</li>
-        <li><i>function fnName(objectName) {<b>const {</b>varName1, varName2<b>} =</b> objectName; \\Function body}</i>
-          - destructure the object in the <i>objectName</i> parameter;</li>
-        <li><i>function fnName(<b>{</b>varName1, varName2<b>}</b>) {\\Function body}</i> - destructure the object in the
-          <i>function
-            signature</i>.
-        </li>
-      </ul>
-    </section>
-    <section class="callbacks-arrow">
-      <a href="#goit">
-        <h2 id="callbacks-arrow">Callbacks and Arrow Functions (Lesson 7)</h2>
-      </a>
-      <h3>Callbacks</h3>
-      <p>Callbacks are used to process user actions on the page, process requests to the server, execute unknown
-        functions, etc. and intended for deferred execution.Any function can assume an arbitrary number of callbacks.
-      </p>
-      <ul>
-        <li><b>Callback</b> is a function that is passed as an argument to another function, and the latter calls such
-          function: <br>
-          function <b>callbackName(</b>element<b>) {</b>\\Logic whith element<b>}</b>; <br>
-          higherOrderName<b>(</b>element, <b>callbackName)</b>;
-        </li>
-        <li><b>Higher-order</b> function is a function that takes other functions as parameters or returns a function as
-          a result: <br>
-          function <b>higherOrderName(</b>element, callback<b>) {</b>\\Logic whith element; callback(element);<b>}</b>
-          <br>
-          <b>higherOrderName(</b>element, callbackName<b>)</b>;
-        </li>
-        <li><b>Inline callback</b> is a function declared immediately when calling the function to which the callback is
-          being passed and will be available only as a parameter value and nowhere else in the code:<br>
-          <b>higherOrderName(</b>element, function <b>callbackName(</b>element<b>) {</b>\\Logic whith
-          element<b>}</b>;<b>)</b>;
-        </li>
-      </ul>
-      <h3>Arrow Functions</h3>
-      <p>Arrow functions are created as a function expression, and if the function is not anonymous then it must be
-        assigned to a variable.</p>
-      <ul>
-        <li>const arrowFn <b>= (</b>param1, param2, param3<b>) => {</b>\\Fn body<b>}</b> - several parameters;
-        </li>
-        <li>const arrowFn <b>=</b> param1 <b>=> {</b>\\Fn body<b>}</b> - one parameter;</li>
-        <li>const arrowFn <b>= () => {</b>\\Fn body<b>}</b> - no parameters;</li>
-        <li>const arrowFn <b>= (</b>a, b, c<b>) => {return</b> a + b + c;<b>}</b> - <b><i>explicit</i></b> return when
-          there are curly braces, and the function must return a value;</li>
-        <li>const arrowFn <b>= (</b>a, b, c<b>) =></b> a + b + c - <b><i>implicit</i></b> return will return the result
-          of expression;</li>
-        <li>const arrowFn <b>= (...args) => {</b>\\Fn body<b>}</b> - there is no local variable <i>arguments</i>
-          inside, to collect all arguments into an array, the <b>rest</b> operation is used.</li>
-      </ul>
 
-      <h3>Code Types</h3>
+    <section class="you-tube">
+      <h2>you-tube</h2>
       <ul>
-        <li><b>Imperative</b> programming describes computation as a set sequence of statements that change a program
-          state. It is a description of how something is done. </li>
-        <li><b>Declarative</b> programming describes what you want as a result, not how to achieve it. The order of
-          execution and the method of achievement are not important.</li>
+        <li> <a href="https://www.youtube.com/playlist?list=PLZlA0Gpn_vH-cEDOofOujFIknfZZpIk3a" target="_blank"
+            rel="noopener noreferrer nofollow">WebDevSimplified <span>- HTML, CSS, JS</span></a> </li>
+        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
+        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
+        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
+        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
+        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
       </ul>
     </section>
-    <section class="array-iterating">
-      <a href="#goit">
-        <h2 id="array-iterating">Array Iteration Methods (Lesson 8)</h2>
-      </a>
-      <p>JavaScript has array methods that come from functional languages. Most of them are pure functions. They create
-        a new array, populate it, applying the specified callback to the value of each element, and then return this new
-        array. <b>Side-effect</b> function is a function that, during execution, can change or use global variables,
-        change the values of reference arguments, perform I/O operations, etc. <b>Pure</b> function is a function with
-        the result depending only on the values of the passed arguments and has no side effects, that is, it does not
-        change the values of the arguments.
-      </p>
-      <h3>Syntax</h3>
-      <ul>
-        <li>array.<b>method(</b>callbackFn[, thisArg]<b>)</b> - callback function;</li>
-        <li>array.<b>method(</b>function callbackFn(element, index, array)<b> {</b>//logic for each iteration<b>}</b>[,
-          thisArg]<b>)</b> - inline callback function;
-        </li>
-        <li>array.<b>method(</b>(element, index, array)<b> => {</b>//logic for each iteration<b>})</b> - arrow
-          function.</li>
-      </ul>
-      <h3>Array Iteration Methods</h3>
-      <ul>
-        <li><b>.forEach(</b><i>(element, index, array)</i> <b>=> {</b>//logic for each iteration<b>}</b>[,
-          thisArg]<b>)</b> - executes a provided function once for each array element, returns nothing, execution of the
-          <i>forEach</i> can't be interrupted;
-        </li>
-        <li><b>.map()</b> method - returns a new array of the same length, can be used to change every element of an
-          array;</li>
-        <li><b>.flatMap()</b> method is similar to the <i>map()</i> method, but it is used in cases where the result is
-          a multidimensional array that needs to be "flattened", tnew array is "flattened" by one (one nesting);</li>
-        <li><b>.filter()</b> method - to copy array whith filtering, when more than one element from a collection should
-          be selected using a specific criterion;</li>
-        <li><b>.find()</b> method - to find and return the first matching element, after which the array iteration
-          stops;</li>
-        <li><b>.findLast()</b> method - to find and return the last matching element, after which the array iteration
-          stops;</li>
-        <li><b>.findIndex()</b> method - to find and return the index of the <i>first</i> element that satisfies a
-          condition, that is, when the callback returns true;</li>
-        <li><b>.every()</b> method - returns <i>true</i> if all array elements satisfy a condition, otherwise returns
-          <i>false</i>;
-        </li>
-        <li><b>.some()</b> method - returns <i>true</i> if at least one array element satisfies a condition, otherwise
-          returns <i>false</i></i>;
-        </li>
-        <li><b>.sort()</b> method - to sort the elements of an <i><b>original</b></i> array, sorting occurs by
-          converting the values ​​to a string and comparing the ordinal numbers in the Unicode table;</li>
-        <li><b>.reduce(</b>(accumulator, element, index, array) <b>=></b> {// Callback body}[, initialValue]<b>)</b> -
-          to process each array element, storing the intermediate result as an accumulator, returns anything (most often
-          returns accumulator).</li>
-      </ul>
-      <h3>Useful Patterns</h3>
-      <ul>
-        <li><b>.filter(</b>(element, index, array) <b>=></b> array.indexOf(element) <b>===</b> index<b>)</b> - filtering
-          <b>unique</b> elements;
-        </li>
-        <li><b>[...</b>numbers<b>].sort(</b>(a, b) <b>=></b> a <b>-</b> b<b>)</b> method - to copy an array of numbers
-          and sort the <b>numbers</b> in <i>ascending</i> order;
-        </li>
-        <li><b>[...</b>words<b>].sort(</b>(a, b) <b>=></b> a.localeCompare(b)<b>)</b> method - to
-          copy an array of words and sort the <b>words</b> in <i>ascending</i> order; <br>
-        <li>array.<b>reduce(</b>(acc, tag) <b>=></b> { if (!acc.hasOwnProperty(tag) /or/ !acc[tag]) {acc[tag] = 0;} <br>
-          acc[tag] += 1; return acc;}, {}<b>)</b>; - to <b>count</b> the number of <b>identical</b> array elements.</li>
-      </ul>
-      <h3>Method Chaining</h3>
-      <p>The method chain can be of arbitrary length, but usually no more than 2-3 operations. First, iteration methods
-        are used for relatively simple collection operations. Second, calling each subsequent method is an additional
-        array iteration, which, with a large number of elements, can affect performance.</p>
-      <h3>Lodash Methods</h3>
-      <ul>
-        <li><b>&#60script src="</b>https://cdn.jsdelivr.net/npm/<b>lodash</b>@4.17.21/lodash.min.js<b>">&#60/script>
-          </b>- to plugin lodash, <b>console.dir</b>(<b>_</b>) - to find out methods;
-        </li>
-        <li><b>_.isEmpty(</b>value<b>)</b> - checks if value is an empty object, collection, map, or set;</li>
-        <li><b>_.get(</b>object, path, [defaultValue]<b>)</b> - gets the value at path of object, if the resolved value
-          is undefined, the defaultValue is returned in its place,<br>
-          varName<b>?.</b>objectKey1<b>.?</b>objectKey2 - modern code for checking nested object properties;</li>
-        <li><b>_.union(</b>[arrays]<b>)</b> - creates an array of unique values, in order, from all given arrays using
-          SameValueZero for equality comparisons;</li>
-        <li><b>_.unionBy(</b>[arrays], [iteratee=_.identity]<b>)</b> - accepts iteratee which is invoked for each
-          element of each arrays to generate the criterion by which uniqueness is computed;</li>
-        <li><b>_.range(</b>[start=0], end, [step=1]<b>)</b> - creates an array of numbers (positive and/or negative)
-          progressing from start up to, but not including, end;</li>
-        <li><b>_.sortBy(</b>collection, [iteratees=[_.identity]]<b>)</b> - creates an array of elements, sorted in
-          ascending order by the results of running each element in a collection thru each iteratee. This method
-          performs a stable sort, that is, it preserves the original sort order of equal elements;
-        </li>
-        <li><b>_.sum(</b>array<b>)</b> - computes the sum of the values in array;</li>
-        <li><b>_.sumBy(</b>array, [iteratee=_.identity]<b>)</b> - accepts iteratee which is invoked for each element in
-          array to generate the value to be summed;</li>
-        <li><b>_.uniq(</b>array<b>)</b> - reates a duplicate-free version of an array, using SameValueZero for equality
-          comparisons, in which only the first occurrence of each element is kept;</li>
-        <li><b>_.uniqBy(</b>array, [iteratee=_.identity]<b>)</b> - accepts iteratee which is invoked for each element in
-          array to generate the criterion by which uniqueness is computed;</li>
-        <li><b>_.minBy(</b>array, [iteratee=_.identity]<b>)</b> - accepts iteratee which is invoked
-          for each element in array to generate the criterion by which the value is ranked;</li>
-        <li><b>_.camelCase()</b>, <b>_.kebabCase()</b>, <b>_.lowerCase()</b>, <b>_.snakeCase()</b>,
-          <b>_.startCase()</b>, <b>_.upperCase()</b> - converts string.
-        </li>
-      </ul>
-    </section>
-    <section class="this">
-      <a href="#goit">
-        <h2 id="this">The keyword this (Lesson 9)</h2>
-      </a>
-      <h3>Function Execution Context</h3>
-      <p>The reserved keyword <b>this</b> can be used <b><i>inside functions</i></b>. During the execution of a
-        function, a reference to the <b>context</b> object of its call is written to <b>this</b>. Therefore, in the
-        function body, you can access the properties and methods of this object. The <b>context</b> value inside a
-        function (not arrow) is determined not at the time of its creation, but <b>at the time of calling</b>. That is,
-        the value of this is determined by how the function is called, not where it was declared.</p>
-      <ul>
-        <li>In <b>the global scope</b>, in non-strict mode, this refers to the <b>window</b> object, in strict mode the
-          value of this in the global scope will be <b>undefined</b>.</li>
-        <li>In <b>object method</b>, the context (<i>this</i>) will refer to the <b>object</b> that includes the method.
-        </li>
-        <li>In <b>callback functions</b> the context (<i>this</i>) is <b>not preserved</b>.</li>
-        <li><b>Arrow functions</b> do not have their own this. The context inside an arrow is determined by the <b>place
-            of its declaration</b>, not the call, and refers to the <b>parent function’s context</b>. Arrow functions
-          also ignore the presence of strict mode. If the arrow remembers the global context, <i>this</i> in it will
-          contain a reference to <i>window</i>, regardless of whether the script is executed in strict mode or not.</li>
-      </ul>
-      <h3>Function Methods</h3>
-      <p>There are situations where a function needs to be called in the context of an object, and the function is not
-        its method. To do this, functions have <b>call</b>, <b>apply</b> and <b>bind</b> methods.</p>
-      <ul>
-        <li><b>.call(</b>objectName[, arg1, arg2, ...]<b>)</b> method <b>calls</b> the function that contain a
-          reference to the <i>objectName</i> object, and passes arguments as <i>arg1</i>, <i>arg2</i>;
-        </li>
-        <li><b>.apply(</b>objectName[, <b>[</b>arg1, arg2, ...<b>]</b>]<b>)</b> method <b>calls</b> the function that
-          contain a
-          reference to the <i>objectName</i> object, and passes an <i>array</i> as arguments;</li>
-        <li><b>.bind(</b>objectName[, arg1, arg2, ...]<b>)</b> method <b>creates and returns a copy</b> of the function
-          with the bound <i>objectName</i> context and such arguments as <i>arg1</i>, <i>arg2</i>, the function can be
-          passed anywhere and called whenever.
-          <p>higherOrderFnName<b>(</b>objectName.objectMetodName<b>.bind</b>(objectName)<b>)</b> - the <i>bind</i>
-            method is used to bind the context when passing object methods <i>objectMetodName</i> as <b>callback</b>
-            functions. Callback passes not the original <i>objectMetodName</i> method, but its <b>copy</b> with the
-            context bound to the <i>objectName</i> object.
-          </p>
-        </li>
-      </ul>
-    </section>
-    <section class="prototypes-classes">
-      <a href="#goit">
-        <h2 id="prototypes-classes">Prototypes and Classes (Lesson 10)</h2>
-      </a>
-      <h3>Object-Oriented Programming</h3>
-      <ul>
-        <li><b>Procedural</b> programming is a set of not explicitly related functions and variables for storing and
-          processing information.</li>
-        <li><b>Object-oriented</b> programming (OOP) is a methodology describing a program as a collection of objects,
-          each of which contains data (properties) and methods for interacting with them. OOP entities:
-          <ul>
-            <li><b>Class</b> is a way of describing entities, their state and behavior depending on this state, along
-              with the rules for interacting with this entity (contract).</li>
-            <li><b>Instance (object)</b> is a separate representative of a class with a specific state and behavior
-              completely defined by the class.</li>
-            <li><b>Interface</b> is a set of class properties and methods available for use when working with instances.
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <h3>Prototypal Inheritance</h3>
-      <p>OOP in JavaScript is built on prototypal inheritance. Objects can be chained so that a property not found in
-        one object is automatically searched for in another. A special internal property, <b>[[Prototype]]</b>
-        (<b>__proto__</b>) for
-        functions and objects is used for prototypal inheritance.
-      </p>
-      <ul>
-        <li><b>Object.create(</b><i>protoObj</i>[, propertiesObject]<b>)</b> method creates and returns a new object
-          <i>newObg</i>, linking it to the <i>protoObj</i> object;
-        </li>
-        <li><i>protoObj</i><b>.isPrototypeOf(</b><i>newObj</i><b>)</b> method checks if the <i>protoObj</i> object is
-          <i>newObj</i> prototype and returns true or false;
-        </li>
-        <li><i>newObj</i><b>.hasOwnProperty(</b><i>key</i><b>)</b> method returns a boolean indicating whether the
-          <i>newObj</i> object has the <i>key</i> property as its own property or inherited one;
-        </li>
-        <li><b>Object.keys(</b><i>newObj</i><b>)</b> method returns an array of own property keys of the <i>newObj</i>
-          object;</li>
-      </ul>
-      <p>When interpreter looks for non-existent property in the <i>newObj</i> object, it continues searching in the
-        object by reference from <i>newObj</i><b>.__ proto__</b>, that is, in the <i>protoObj</i> object, its prototype.
-        The <b>prototype</b> is a <b>storage</b> of object <b>properties</b> and <b>methods</b> for <b>functions</b> and
-        <b>classes</b>:
-      </p>
-      <ul>
-        <li><b>function</b> ClsName <b>(</b>{varName}<b>) {</b>// Operating with <b>this.</b>varName<b>}</b> - making a
-          constructor function <i>ClsName</i>; </li>
-        <li>const objName = <b>new</b> ClsName<b>()</b> - the <b>new</b> operator creates an empty object, then
-          calls the constructor function <i>ClsName</i> in the context of that empty object and makes the <i>objName</i>
-          object, which is <b>class instance</b> because it contains the data and behavior described by the class;
-        </li>
-        <li>ClsName<b>.prototype</b>.methodName = function () {\\Fn body} - <i>prototype</i> data property of the
-          function ClsName is used for adding by prototypal inheritance the method <i>metodName</i> to the class
-          <i>ClsName</i> (this approach is used to storage object methods);
-        </li>
-      </ul>
-      <h3>Classes</h3>
-      <p>Object literal syntax makes it possible to create a single object. However, often you need to create many
-        objects of the same type with the same set of properties, but different values and methods for interacting with
-        them. Classes are a special syntax for declaring function to create objects.</p>
-      <ul>
-        <li><b>class</b> ClsName <b>{</b>//Class body<b>}</b> - class <b>declaration</b> begins with the keyword
-          class, followed by the class name and curly braces, i.e. its body;</li>
-        <li>const objName = <b>new</b> ClsName<b>()</b> - the <b>new</b> operator creates an empty object, then
-          calls the constructor function <i>ClsName</i> in the context of that empty object and makes the <i>objName</i>
-          object, which is <b>class instance</b> because it contains the data and behavior described by the class;
-        </li>
-        <li>class ClsName {<b>constructor(</b>varName, ...<b>) {</b>this.popertyKey = varName; ...<b>}</b>} - the
-          class has a <i>constructor</i> <b>method</b>, that enables to add <b>public properties</b> to each instance
-          object;</li>
-        <li>class ClsName {constructor(<b>{varName, ...}</b>) {this.popertyKey = varName; ...}} -->
-          const objName = new ClsName(<b>{popertyKey: value, ...}</b>) - applys the <b>“Parameter Object”</b> pattern
-          to them, passing a single object with properties having logical names;</li>
-        <li>class ClsName {<b>methodName() {</b>\\Method body<b>}</b>} - functions that will be available to the
-          instance in its prototype are <b>class methods</b>;</li>
-        <li>class ClsName {<b>#</b>popertyKey = value; <b>#</b>metodName(){}} - <b>encapsulation</b> is a concept to
-          hide the internal details of a class, adding <b>#</b> to the <b>property</b> name or class <b>methods</b>
-          makes them <b>private</b> (can only be accessed from within the class);</li>
-        <li>getVarName() {return this.#popertyKey;} --> <b>get</b> varName() {return this.#popertyKey;} -
-          <b>declares</b> getter, wich is obgect's functionality,<br>
-          objName.getVarName() --> objName<b>.varName</b> - getter is <b>executed</b> when trying to get a
-          property value;
-        </li>
-        <li>changeVarName(newVarName) {this.#popertyKey = newVarName;} --> <b>set</b> varName(newVarName)
-          {this.#popertyKey = newVarName;} - <b>declares</b> setter, wich is obgect's functionality,<br>
-          objName.changeVarName(value) --> objName<b>.varName = value</b> - setter is <b>executed</b> when trying
-          to changea property value;<br>
-        </li>
-        <li>class ClsName {<b>static</b> <i>popertyKey</i> <b>=</b> value} - static <b>property</b> declaration whith
-          the keyword <i>static</i>, that are available only to the <i>ClsName</i> class, but not to its instances;
-        </li>
-        <li>class ClsName {<b>static</b> <i>methodName</i><b>() {}</b>} - static <b>method</b> declaration whith the
-          keyword <i>static</i>, when it is called, the keyword <i>this</i> refers to the class itself;
-        </li>
-        <li>class <i>Child</i> <b>extends</b> <i>Parent</i> {constructor() {super()} - <b>class inheritance</b>, when
-          one class (child, derived) inherits the properties and methods of another class (parent), is used for
-          declaration a base class that stores common characteristics and methods for a group of derived classes, which
-          inherit the properties and methods of the parent and, besides, add their own unique ones, private properties
-          and methods of the parent class are not inherited by the child class;</li>
-        <li>class Child extends Parent {<b>constructor(</b>{varName}<b>) {super(</b>varName<b>)}</b> - to call a
-          special function, <b>super(</b>arg<b>)</b>, wich is an alias for the parent class constructor, otherwise, when
-          trying to access <i>this</i> in the child class constructor, an error will be generated;</li>
-        <li><b>child class methods</b> will only be available to its instances;</li>
-        <li>const unique = new <b>Set()</b> - to store unique values of any type, <i>Set</i> object has metods
-          <b>.has()</b>, <b>.add()</b>, <b>.clear()</b>, <b>.delete()</b>.
-        </li>
-      </ul>
-    </section>
-    <section class="dom">
-      <a href="#goit">
-        <h2 id="dom">DOM (Lesson 11)</h2>
-      </a>
-      <h3>Document Object Model</h3>
-      <ul>
-        <li><b>Document Object Model</b> is a language-independent interface for work with HTML documents. It offers a
-          set of properties and methods to search for, create and delete elements, respond to user actions, and much
-          more. In other words, it serves as a link between the page and the programming language.</li>
-        <li><b>Browser Object Model</b> is a language-independent interface for work with browser tabs. It offers a set
-          of properties and methods to access directly the current tab and a number of browser functions. This model
-          includes an object to work with navigation history, location, and more./li>
-      </ul>
-      <p>According to the DOM model, each tag forms a separate <b>node element</b>, whereas each piece of text is a
-        <b>text element</b>. An HTML document is a hierarchical tree in which every element (except for the root) has
-        only one parent. Browser engines have a special piece of code called an <b>HTML parser</b> that is used to
-        convert HTML to DOM. After the DOM tree is ready, you can find elements using JavaScript and perform some
-        actions with them, since each element has an interface with many properties and methods.
-      </p>
-      <h3>Query for Elements, DOM Traversal</h3>
-      <p>Access to DOM begins with the <b>document object</b>, which is part of the global <i>window object</i> that is
-        available in the script when executed by the browser and from which you can access any elements. DOM tree
-        elements are hierarchically related to each other. To find in or navigate this hierarchy, is used methods or
-        elements properties:
-      </p>
-      <ul>
-        <li><i>elem</i><b>.querySelector(</b>selector<b>)</b> method - to find only one (most often unique) element,
-          returns the first element found within <i>elem</i> that matches the <i>selector</i> and <i>null</i> if nothing
-          is found:
-          <ul>
-            <li><b>'.className .nestedClassName'</b> - selector by <i>className</i>,</li>
-            <li><b>'#idName'</b> - selector by <i>idName</i>,</li>
-            <li><b>'tagName[data-attrName="attrValue"]'</b> - selector by <i>tagName</i>.</li>
-          </ul>
-        </li>
-        <li><i>elem</i><b>.querySelectorAll(</b>selector<b>)</b> method - to find a collection of elements, that is, to
-          get an array of references to elements with the same selector, returns a pseudo-array of all elements inside
-          <i>elem</i> that match the <i>selector</i>, if nothing is found, it will return an <i>empty array</i>.
-        </li>
-        <li><i>elem</i><b>.closest(</b>selector<b>)</b> method traverses the <i>elem</i> element and its
-          parents (heading toward the document root) until it finds a node that matches the specified CSS selector;</li>
-        <li><i>elem</i>.parentNode property selects the parent of <i>elem</i>, including text ones;</li>
-        <li><i>elem</i>.<b>parentElement</b> property selects the parent of <i>elem</i>;</li>
-        <li><i>elem</i>.childNodes property is a pseudo-array that stores all child elements, including text
-          ones;</li>
-        <li><i>elem</i><b>.children</b> property is a pseudo-array that stores only child element nodes;</li>
-        <li><i>elem</i>.firstChild property selects the first child element inside <i>elem</i>, including text
-          nodes;</li>
-        <li><i>elem</i><b>.firstElementChild</b> property selects the first child element node inside <i>elem</i>;
-        </li>
-        <li><i>elem</i>.lastChild property selects the last child element inside <i>elem</i>, including text
-          nodes;</li>
-        <li><i>elem</i><b>.lastElementChild</b> property selects the last child element node inside <i>elem</i>;</li>
-        <li><i>elem</i>.previousSibling property selects the element to the left of <i>elem</i> (its previous
-          sibling);
-        </li>
-        <li><i>elem</i><b>.previousElementSibling</b> property selects the element node to the left of <i>elem</i>
-          (its previous sibling);</li>
-        <li><i>elem</i>.nextSibling property selects the element to the right of <i>elem</i> (its next
-          sibling);</li>
-        <li><i>elem</i><b>.nextElementSibling</b> property selects the element node to the right of <i>elem</i> (its
-          next sibling);</li>
-        <li><i>elem</i><b>.childElementCount</b> read-only property returns the number of child elements of the
-          <i>elem</i>.
-        </li>
-        <li><i>elem</i><b>.clientWidth</b> and <i>elem</i><b>.clientHeight</b> stores width and height of the
-          <i>elem</i>;
-        </li>
-        <li><i>elem</i><b>.getBoundingClientRect()</b> method returns a DOMRect object whith size of an element and its
-          position relative to the viewport.
-        </li>
-      </ul>
-      <h3>Properties and Attributes</h3>
-      <ul>
-        <li><i>elemForm</i><b>.value</b> contains the current text content of <i>form elements</i>;</li>
-        <li><i>elemForm</i><b>.reset()</b> method - to clear the values of the <i>elemForm</i> form fields;</li>
-        <li><i>elemForm</i><b>.elements</b> - stores all children form-elements of the <i>elemForm</i> element;</li>
-        <li><i>elemForm</i><b>.elements</b>.formName - to get the <i>formName</i> form-element of the <i>elemForm</i>
-          element;</li>
-        <li><i>elemForm</i><b>.elements</b>.formName.value - to get the value of the <i>formName</i> form-element of the
-          <i>elemForm</i> element.
-        <li>const formData = new <b>FormData(</b>elemForm<b>)</b>; formData.forEach((<b>value</b>, <b>name</b>)
-          =>{\\value, name}) - to use class <i>FormData</i> to get the <i>formData</i> object of all names and values of
-          the <i>elemForm</i> form-element;</li>
-        <li><i>elem</i><b>.textContent</b> returns the text content inside <i>text elemets</i>, it is available for
-          reading and writing;</li>
 
-        <li><i>elem</i><b>.checked</b> stores the state (<b>true</b> / <b>false</b>) of a <i>checkbox</i> or <i>radio
-            button</i>;</li>
-        <li><i>elem</i><b>.disabled</b> stores the state (<b>true</b> / <b>false</b>) of a <i>button</i>;</li>
-        <li><i>elem</i><b>.name</b> stores the value specified in the name HTML attribute;</li>
-        <li><i>elem</i><b>.nodeName</b> returns the name of the current node as a string in upper-case;</li>
-        <li><i>elem</i><b>.attributes</b> property returns an object of all attributes of the element:
-          <ul>
-            <li><i>elem</i>.<b>hasAttribute(</b>attrName<b>)</b> checks for the presence of the
-              <i>attrName</i>, returns <i>true</i> or <i>false</i>;
-            <li><i>elem</i>.<b>getAttribute(</b>attrName<b>)</b> gets and returns the attribute <i>value</i>;
-            <li><i>elem</i>.<b>setAttribute(</b>attrName, value<b>)</b> sets an attribute;
-            <li><i>elem</i>.<b>removeAttribute(</b>attrName<b>)</b> removes an attribute;
-            </li>
-          </ul>
-        </li>
-        <li><i>elem</i><b>.src</b> is the path to the <i>&#60img></i> tag’s image;</li>
-        <li><i>elem</i><b>.href</b> property is a stringifier that returns a string containing the <i>whole URL</i>,
-          and allows the href to be updated;</li>
-        <li><i>elem</i><b>.style</b> property stores the <i>CSSStyleDeclaration</i> object that contains a list of all
-          properties defined only in the inline styles of the element, and not all CSS, is used to read and modify
-          inline styles:
-          <ul>
-            <li><i>elem.style</i><b>.textAlign</b>[ = 'value'];</li>
-            <li><i>elem.style</i><b>.backgroundColor</b>[ = 'value'];</li>
-            <li><i>elem.style</i><b>.fontSize</b>[ = 'value'];</li>
-          </ul>
-        <li><i>elem</i><b>.className</b> gets and sets the value of the class attribute of the <i>elem</i> element;
-        <li><i>elem</i><b>.classList</b> property stores an object with methods for work with the element’s classes:
-          <ul>
-            <li><i>elem.classList</i>.<b>contains(</b>cls<b>)</b> returns <i>true</i> or <i>false</i> depending on
-              whether the <i>elem</i> has the <i>cls</i> class;</li>
-            <li><i>elem.classList</i>.<b>add(</b>cls<b>)</b> adds the <i>cls</i> class to the list of the element’s
-              classes;</li>
-            <li><i>elem.classList</i>.<b>remove(</b>cls<b>)</b> removes the <i>cls</i> class from the list of the
-              element’s classes;</li>
-            <li><i>elem.classList</i>.<b>toggle(</b>cls<b>)</b> if there is no <i>cls</i> class, it adds this class,
-              otherwise it removes this class;</li>
-            <li><i>elem.classList</i>.<b>replace(</b>oldClass, newClass<b>)</b> replaces the existing <i>oldClass</i>
-              class with the specified <i>newClass</i>.</li>
-          </ul>
-        </li>
-      </ul>
+    <section class="article">
+      <h2>article</h2>
       <ul>
-        <li>&#60tagName <b>data-attrName</b>="<b>attrValue</b>">Save&#60/tagName> - to add an arbitrary attribute to a
-          tag and set its value;</li>
-        <li><i>elem</i><b>.dataset</b> - to get an object of all data-attributes of the <i>elem</i> element;</li>
-        <li><i>elem</i><b>.dataset</b>.attrName - to get the value of the <i>attrName</i> data-attribute of the
-          <i>elem</i> element, the <i>dataset</i> property is used.
-        </li>
-
+        <li> <a href="https://bootcamp.du.edu/blog/programming-skills/" target="_blank"
+            rel="noopener noreferrer nofollow">Skills <span>- interview</span></a> </li>
+        <li> <a href="https://dmitripavlutin.com/tag/interview/" target="_blank"
+            rel="noopener noreferrer nofollow">Pavlutin <span>- JS, React, TypeScrypt</span></a> </li>
+        <li> <a href="https://github.com/bardachov/dsa.js-data-structures-algorithms-javascript" target="_blank"
+            rel="noopener noreferrer nofollow">DSA in JS <span>- JS</span></a> </li>
+        <li> <a href="https://www.taniarascia.com/how-to-use-webpack/" target="_blank"
+            rel="noopener noreferrer nofollow">Set Up webpack 5 From Scratch</a> </li>
+        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
+        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
+        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
+        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
+        <!-- <li><a href="" target="_blank" rel="noopener noreferrer nofollow"></a></li> -->
       </ul>
-      <h3>Creating and Removing Elements</h3>
-      <ul>
-        <li>const el1 = document<b>.createElement(</b>'tagName'<b>)</b> - creates an element <i>tagName</i> and
-          returns a reference to it as the result of execution;</li>
-        <li>el1<b>.textContent = 'value'</b> - adds <i>value</i> content to the <i>tagName</i> element;</li>
-        <li><i>elem</i><b>.append(</b>el1, el2, ...<b>)</b> adds one or more <i>el</i> elements after all children of
-          the <i>elem</i> element;</li>
-        <li><i>elem</i><b>.prepend(</b>el1, el2, ...<b>)</b> adds one or more <i>el</i> elements before all children of
-          the <i>elem</i> element;
-        <li><i>elem</i><b>.after(</b>el1, el2, ...<b>)</b> adds one or more <i>el</i> elements after the <i>elem</i>
-          element;</li>
-        <li><i>elem</i><b>.before(</b>el1, el2, ...<b>)</b> adds one or more <i>el</i> elements before the <i>elem</i>
-          element;</li>
-        <li><i>elem</i><b>.remove()</b> - to remove the <i>elem</i> element.</li>
-      </ul>
-      <p>Modern browsers try to optimize page rendering without developer intervention. However, <b>DOM optimization</b>
-        is an expensive operation. <b>Repaint</b> occurs when changes have affected the styles that define the
-        appearance of the element, but not its geometry. <b>Reflow</b> occurs when changes affect the content, structure
-        of the document or the position of elements. All of the above operations block the browser.</p>
-      <ul>
-        <li><i>elem</i><b>.innerHTML</b>[ <b>+=</b> 'newValue'] property stores, writes and adds the content of an
-          element, including tags, as a string;</li>
-        <li><i>elem</i><b>.insertAdjacentHTML(</b>position, string<b>)</b> method for adding a string with HTML
-          tags before, after or inside an element, the <b>position</b> argument is a string, position relative to the
-          <i>elem</i> element, it takes one of the four values below:
-          <ul>
-            <li>'beforebegin' - before <i>elem</i>;</li>
-            <li>'afterbegin' - inside <i>elem</i>, before all children;</li>
-            <li>'beforeend' - inside <i>elem</i>, after all children;</li>
-            <li>'afterend' - after <i>elem.</i></li>
-          </ul>
-        </li>
-      </ul>
-      <h3>Adding Scripts</h3>
-      <p>Loading and executing the script specified in the &#60script> tag with no attributes will block HTML document
-        processing and DOM building. When the analyzer sees such a tag, the processing of the HTML document is suspended
-        and files of the script specified in the src attribute begin to load. After loading, the script is executed, and
-        only then HTML processing resumes. This is called a "blocking" script.</p>
-      <ul>
-        <li>The <b>defer</b> attribute instructs the browser to load the script file in the background, together with
-          HTML document processing and DOM building.The script will only be executed after the HTML document has been
-          processed and DOM has been built. The script will only be executed after the HTML document has been processed
-          and DOM has been built.</li>
-        <li>The <b>async</b> attribute does not block DOM building, but it is executed immediately after loading. This
-          means that such scripts can block DOM building, and they are executed in no particular order.</li>
-      </ul>
-    </section>
-    <section class="events">
-      <a href="#goit">
-        <h2 id="events">Events (Lesson 12)</h2>
-      </a>
-      <h3>Events</h3>
-      <p>An event is a signal from the browser that something has happened on a web page. In order for an element to
-        react to user actions, it needs an event listener (handler), that is, a function that will be called as soon as
-        the event occurs. </p>
-      <ul>
-        <li><i>elem</i><b>.addEventListener(</b>event, handler[, {\\options}]<b>)</b> - dds an event listener to the
-          <i>elem</i> element, where:
-          <ul>
-            <li><i>event</i> is event name, a string, for example 'click';</li>
-            <li><i>handler</i> is a callback that will be called when the event occurs;</li>
-            <li><i>options</i> is an optional parameter object with advanced options: <i>{once: true}</i> - removes the
-              event listener after its execution.</li>
-          </ul>
-        </li>
-        <li><i>elem</i><b>.removeEventListener(</b>event, handler[, {\\options}]<b>)</b> - removes an event listener
-          from the
-          <i>elem</i> element, it is need to pass a reference to the callback that was assigned in
-          <i>addEventListener()</i>;
-        </li>
-        <li><i>elem</i>.addEventListener(event, <b>objName.callbackName.bind(</b>objName<b>)</b>) - if the callback is a
-          function that uses <b>this</b>, by default the context inside it will refer to the <i>elem</i> element with
-          the listener.</li>
-      </ul>
-      <h3>Event Object</h3>
-      <p>Each <b>event</b> is an <b>object</b> that contains information about the event details, and it is
-        automatically passed as the first argument to the event handler. All events belong to the base <b>class
-          Event</b> with properties and methods:</p>
-      <ul>
-        <li><i>event</i><b>.type</b> property is event type;</li>
-        <li><i>event</i><b>.target</b> property is the element on which the event is occured;</li>
-        <li><i>event</i><b>.currentTarget</b> property is the element on which the event handler is executed;</li>
-        <li><i>event</i><b>.preventDefault()</b> method is to cancel the default browser action on the event object;
-        </li>
-        <li><i>event</i><b>.stopPropagation()</b> method impedes the event to go further;</li>
-        <li><i>event</i><b>.stopImmediatePropagation()</b> method is to completely stop event handling.</li>
-      </ul>
-      <h3>KeyboardEvent Object</h3>
-      <p>Unlike others, keyboard events are handled on the <i>document</i>, not on a specific element.
-        <b>KeyboardEvent</b> objects belong to the KeyboardEvent base class.
-      </p>
-      <ul>
-        <li><b>'keydown'</b> and <b>'keyup'</b> are two basic keyboard events;</li>
-        <li><i>event</i><b>.key</b> property returns the character generated by key pressing, adjusted for the state of
-          modifier keys, such as Shift, and the active language;</li>
-        <li><i>event</i><b>.code</b> property returns the code of a physical key on the keyboard and does not depend on
-          languages.</li>
-        <li><i>event</i><b>.ctrlKey</b>(<i>.altKey</i> | <i>.shiftkey</i> | <i>.metaKey</i>) property storing a
-          boolean value indicating whether a modifier key is pressed or not.</li>
-      </ul>
-      <h3>Form Events</h3>
-      <ul>
-        <li><b>'click'</b> event occurs when a pointing device button (such as a mouse's primary mouse button) is both
-          pressed and released while the pointer is located inside the element;</li>
-        <li><b>'submit'</b> event can be used to validate (check) a form before submitting, when you click on a button
-          with the type ="submit" attribute or press the Enter in any of its text fields;</li>
-        <li><b>'change'</b> event occurs after a form element has changed, useful for checkboxes and radiobuttons;</li>
-        <li><b>'input'</b> event occurs only in text fields and textarea, and it is generated every time the element
-          value changes, without waiting for focus to be lost;</li>
-        <li><b>'focus'</b> and <b>'blur'</b> events occur when an element is focused and when focus is lost, these two
-          events do not bubble;</li>
-        <li><b>'focusin'</b> and <b>'focusout'</b> events occur when an element is focused and when focus is lost, the
-          two events differ in that they bubble;</li>
-        <li><i>elem</i><b>.focus()</b> and <i>elem</i><b>.blur()</b> methods - to activate or cancel focus
-          programmatically for the <i>elem</i> element;</li>
-      </ul>
-      <h3>Other Events</h3>
-      <ul>
-        <li><b>'load'</b> event occurs when an element has been loaded;</li>
-        <li><b>'wheel'</b> event occurs when the user rotates a wheel button on a mouse;</li>
-        <li><b>'scroll'</b> event occurs when the visual viewport is scrolled, additional syntax: <b>onscroll</b> =
-          <b>(</b>event<b>)</b> =&#62 <b>{</b>\\do smth.<b>}</b>;
-        </li>
-        <li><b>window.scrollBy()</b> method scrolls to a particular set of coordinates in the document;</li>
-        <li><b>window.scrollTo()</b> method scrolls the document in the window by the given amount;</li>
-        <li><b>window.pageYOffset</b> property returns the number of pixels the document is currently scrolled
-          along the vertical axis.</li>
-      </ul>
-      <h3>IntersectionObserver API</h3>
-      <p>The IntersectionObserver() constructor creates and returns a new IntersectionObserver object: </p>
-      <span>const <b>io</b> = new <b>IntersectionObserver((</b><i>entries</i>, <i>observer</i><b>)</b> =&#62
-        <b>{</b><i>entries</i>.forEach(<i>entry</i> =&#62 {\\do smth.})<b>}</b>, <i>options</i><b>)</b></span>
-      <ul>
-        <li>const options ={<b>root</b>: element, <b>rootMargin</b>: '2px 3px' or '4% 5%', <b>threshold</b>: [0, ...
-          ,1]}</li>
-        <li>io<b>.observe(</b>elem<b>)</b> - tells the IntersectionObserver a target element to observe;</li>
-        <li>io<b>.unobserve(</b>elem<b>)</b> - ells the IntersectionObserver to stop observing a particular target
-          element;</li>
-        <li>io<b>.disconnect()</b> - stops the IntersectionObserver object from observing any target.</li>
-      </ul>
-    </section>
-    <section class="delegation">
-      <a href="#goit">
-        <h2 id="delegation">Event Delegation (Lesson 13)</h2>
-      </a>
-      <h3>Event Propagation and Delegation</h3>
-      <ul>
-        <li>Event <b>propagation</b> is a term describing the life cycle of an event, which includes three stages:
-          <b>capturing</b>, <b>targeting</b> and <b>bubbling</b>. If there is an event listener registered on the
-          outermost element, it will "catch" all clicks inside, because events will <i>bubble</i> up to that element.
-          Typically, the event will <i>bubble</i> up to the <i>window</i> element, calling all handlers on its way.
-        </li>
-        <li>Bubbling makes it possible to do one of the most useful tricks, event <b>delegation</b>. When there is a
-          group of elements with events that need to be handled in the same way, then one handler should be added to
-          their common ancestor, instead of adding a handler to each element.</li>
-      </ul>
-    </section>
-    <section class="throttle-debounce-lazyload">
-      <a href="#goit">
-        <h2 id="throttle-debounce-lazyload">Throttle/Debounce and Lazyload (Lesson 14)</h2>
-      </a>
-      <h3>Throttle and Debounce</h3>
-      <p><b>Throttle</b> and <b>Debounce</b> are two similar (but different in their behavior) techniques to control how
-        many times you allow a function to execute over time. Use their versions from the <b>Lodash</b> library.</p>
-      <ul>
-        <li><b>_.throttle(</b><i>func</i>, <i>N</i>, [{'trailing':true | leading':true}]<b>)</b> - controls the number
-          of times a <i>func</i> function can be called one time in <i>N</i> milliseconds;
-        </li>
-        <li><b>_.debounce(</b><i>func</i>, <i>N</i>, [{trailing:false, leading:true}]<b>)</b> - ensures
-          that the <i>func</i> function will only be called if there is a pause of <i>N</i> milliseconds between events,
-          <i>trailing</i> edge (at the end) mode is called by default.
-        </li>
-      </ul>
-      <h3>Lazy Loading</h3>
-      <p>Lazy loading is a technique that delays the loading of non-critical resources during page loading. Instead,
-        these non-critical resources are loaded only when needed. Modern browsers can do this without JavaScript, but
-        unfortunately not all of them do. To ensure cross-browser compatibility a number of existing JavaScript
-        libraries is used, such as <i><a href="https://github.com/aFarkas/lazysizes" target="_blank"
-            rel="noopener noreferrer">lazysizes</a></i>,
-        <i><a href="https://github.com/verlok/vanilla-lazyload" target="_blank"
-            rel="noopener noreferrer">vanilla-lazyload</a></i> and <i><a href="https://apoorv.pro/lozad.js/"
-            target="_blank" rel="noopener noreferrer">lozad.js</a></i>.
-      </p>
-      <ul>
-        <li>&#60img <b>loading</b>="lazy" /> - <i>HTML attribute</i> of the <i>&#60img></i> tag is supported natively in
-          all modern browsers except Safari, is used to lazy load below the fold images until the user scrolls down to
-          them and three values:
-          <ul>
-            <li><b>lazy</b> - the browser will lazy load the image;</li>
-            <li><b>eager</b> - the image will be loaded as soon as possible, that is, without lazy loading;</li>
-            <li><b>auto</b> - the default value whhen the browser decides whether to perform lazy loading or not.</li>
-          </ul>
-        </li>
-        <li> &#60img <b>class</b>="lazyload" <b>src</b>="path/to/lqip-placeholder.jpg"
-          <b>data-src</b>="path/to/my-image.jpg" /> - images that need lazy loading whith <b>lazysizes library</b>, set
-          the <i>lazyload class</i> and replace the src attribute with <i>data-src</i>, when the image has been loaded,
-          lazysizes adds <b>class</b>="lazyload<b>ed</b>" to the element.
-        </li>
-        <li>Boolean(<b>'loading' in HTMLImageElement.prototype</b>) - to check if browser supports natively lazy
-          loading. </li>
-      </ul>
-    </section>
-    <section class="modularity">
-      <a href="#goit">
-        <h2 id="modularity">Code Modularity (Lesson 15)</h2>
-      </a>
-      <h3>Node.js</h3>
-      <p>Node.js is a lightweight and efficient JavaScript runtime. It is built on the V8 JavaScript engine and written
-        in C++. The upshot of Node.js is the ability to execute JavaScript outside the browser. With this you can code
-        complete applications, such as back-end or browser-independent utilities.</p>
-      <ul>
-        <li><b>node -v</b> returns Node.js version</li>
-        <li><b>node</b> <i>file-name</i> runs <i>file-name</i> .js-file</li>
-        <li></li>
-      </ul>
-      <h3>Node Package Manager</h3>
-      <p><b>NPM</b> (node package manager) was created to install and manage Node.js tools (or packages). NPM has three
-        main components:</p>
-      <ul>
-        <li>Website <b>npmjs.com</b> - reading and searching through documentation.</li>
-        <li><b>Command-line-interface</b> (CLI) - runs from the terminal and provides a set of commandsfor working with
-          the registry and packages.</li>
-        <li><b>Registry</b> - a large public database of development tools (packages).</li>
-      </ul>
-      <h3>NPM commands</h3>
-      <ul>
-
-        <li>npm <b>init</b> [<b>-y</b>] initializes npm in the project and creates a package.json file</li>
-        <li>npm <b>i</b> or <b>install</b> installs all dependencies listed in package.json</li>
-        <li>npm <b>list --depth=0</b> displays in the terminal a list of locally installed packages with their version
-          numbers, without dependencies</li>
-        <li>npm <b>install</b> [<b>package-name</b>]<b>@version-name</b>] installs the package locally in the
-          node_modules folder
-          <ul>
-            <li><b>--save</b> (default value) adds a dependency that will be included in the final product, the
-              package will be installed locally in the node_modules folder, and an entry will be added to the
-              dependencies field in package.json
-            </li>
-            <li><b>-D</b> or <b>--save-dev</b> adds a development dependency that package will be installed locally in
-              the
-              node_modules folder, and an entry will be added to the devDependencies field in package.json</li>
-            <li><b>--global</b> adds a global dependency, tool is available for any project, the package will be
-              installed globally (on the system)</li>
-          </ul>
-        </li>
-        <li>npm <b>uninstall</b> [<b>package-name</b>] uninstalls the locally installed package and updates package.json
-        </li>
-        <li>npm <b>start</b>, npm <b>test</b> run the <i>start</i> (including <i>prestart</i> and <i>poststart</i>) or
-          <i>test</i> script located in package.json
-        </li>
-        <li>npm <b>run [</b>custom-script<b>]</b> runs a custom script located in package.json</li>
-        <li>npm <b>outdated</b> is used to search for updates, detecting compatible versions programmatically and
-          displaying a list of available updates</li>
-        <li>npm <b>update</b> [<b>package-name</b>] updates all packages to the most recent version possible</li>
-        <li>npm <b>cache clean</b> cleans cache from the .npm folder</li>
-        <li>npm <b>-v</b> returns NPM version</li>
-        <li><b>npx</b> runs file in <i>node_modules</i> directory</li>
-        <li><b>nvm</b> - node version manager</li>
-        <li>const moduleName = <b>require(</b>'moduleName'<b>)</b> function to get the package interface in Node.js code
-        </li>
-      </ul>
-      <h3>Code Modularity</h3>
-      <ul>
-        <li><b>Maintainability</b> - a well-designed module makes dependency on other code parts as low as possible,
-          this will help to expand the functionality of the application without disrupting its work.</li>
-        <li><b>Namespace</b> - modules avoid namespace pollution by creating a separate scope for variables.</li>
-        <li><b>Reuse</b> - a module can be reused over and over again without having to know anything about the
-          environment in which it is used</li>
-      </ul>
-      <p><b>ECMAScript Modules (ESM)</b> is a reusable piece of JS code that exports certain objects, making them
-        available to other modules. Export/import operations are implemented by <b>import</b> and <b>export</b>. ESM are
-        used together with module bundling tools such as <a href="https://webpack.js.org/" target="_blank"
-          rel="noopener noreferrer nofallow"><b>Webpack</b></a>, <a href="https://parceljs.org/" target="_blank"
-          rel="noopener noreferrer nofallow"><b>Parcel</b></a> and others. <b>Module
-          bundling</b> is the process of concatenating a group of modules and their dependencies into a file or a group
-        of files. </p>
-      <ul>
-        <li><b>export</b> (<b>const</b>/<b>function</b>) <i>entity-name</i></li>
-        <li><b>export {</b><i>entity-name1</i>, <i>entity-name2</i><b>}</b></li>
-        <li><b>import {</b><i>entity-name1[<b> as</b> new-entity-name ]</i>, <i>entity-name2</i><b>} from</b>
-          "<i>./path/to/module</i>"
-        </li>
-        <li><b>import * as</b> <i>myModule</i> <b>from</b> "<i>./path/to/module</i>"</li>
-      </ul>
-      <ul>
-        <li><b>export default</b> <i>entity-name</i>
-        <li><b>import</b> <i>entity-name</i> <b>from</b> "<i>./path/to/module</i>"</li>
-      </ul>
-      <h3>Webpack Basics</h3>
-      <p> <b>Webpack</b> is a JS module bundler, module dependency manager that takes the dependency tree and creates
-        one or more resulting files containing the entire project codebase. It manages the order of adding modules and
-        also bundles, minifies, packs, and much more. <br> <a href="https://www.taniarascia.com/how-to-use-webpack/"
-          target="_blank" rel="noopener noreferrer nofallow">Webpack Tutorial: How to Set Up webpack 5 From Scratc.</a>
-      </p>
-    </section>
-    <section class="webstorage">
-      <a href="#goit">
-        <h2 id="webstorage">Web Storage (Lesson 16)</h2>
-      </a>
-      <h3>JSON File Format</h3>
-      <p><b>JSON</b> (JavaScript Object Notation) is a modern text format for storing and transmitting structured data
-        in text form. The keys are always double-quoted strings. String values must also be enclosed in double quotes.
-        Property values can be of the following types: <i>string</i>, <i>number</i>, <i>object</i>, <i>array</i>,
-        <i>boolean</i> and <i>null</i>.
-      </p>
-      <ul>
-        <li><b>JSON.stringify()</b> method receives a value and converts it to JSON;</li>
-        <li><b>JSON.parse()</b> method gets a valid JavaScript value from JSON.</li>
-        <li><b>try {</b>// Code whith a runtime error<b>} catch (error) {</b>// Error handling<b>}</b> helps "catch” and
-          handle script execution errors, the variable error is an error object with properties:
-          <ul>
-            <li><b>name</b> - type of error;</li>
-            <li><b>message</b> - message with error details;</li>
-            <li><b>stack</b> - call stack at the time of error. It is used for debugging.</li>
-          </ul>
-        </li>
-      </ul>
-      <h3>Web Storage</h3>
-      <p>Web storage consists of <b>localStorage</b> and <b>sessionStorage</b>. It provides a way to store data in an
-        intuitive way, in the form of <i>key:value</i> pairs. Local and session storages are part of the browser, and
-        they are available as properties of the window object, have the same set of properties and methods, and differ
-        only in behavior:</p>
-      <ul>
-        <li>localStorage<b>.setItem(</b>"key", "value"<b>)</b> makes a new or updates an existing storage item;</li>
-        <li>localStorage<b>.getItem(</b>"key"<b>)</b> returns a value with the key key from the storage;</li>
-        <li>localStorage<b>.removeItem(</b>"key"<b>)</b> removes an item with the key key from the storage;</li>
-        <li>localStorage<b>.clear()</b> completely clears all items in the storage;</li>
-        <li>localStorage<b>.length</b> stores the number of items in the storage.</li>
-      </ul>
-      <p> const <i><b>save</b></i> = (key, value) => {<br>
-        <b>try {</b>const serializedState = JSON.stringify(value); localStorage.setItem(key,
-        serializedState);<b>}</b><br>
-        <b>catch (</b>error<b>) {</b>console.error("Set state error: ", error.message);<b>}</b>};<br>
-        const <i><b>load</b></i> = key => {<br>
-        <b>try {</b>const serializedState = localStorage.getItem(key); return serializedState === null ? undefined :
-        JSON.parse(serializedState);<b>}</b><br>
-        <b>catch (</b>error<b>) {</b>console.error("Get state error: ", error.message);<b>}</b>};<br>
-        <b>export default {</b><i><b>save</b></i>, <i><b>load</b></i>,<b>}</b>;
-      </p>
-    </section>
-    <section class="timers-time">
-      <a href="#goit">
-        <h2 id="timers-time">Timers and Time (Lesson 17)</h2>
-      </a>
-      <h3>Asynchrony</h3>
-      <p>Only one operation can be performed per unit of time because JavaScript is single-threaded.
-        Asynchronous programming is made possible through delayed function calls, where initializing an asynchronous
-        operation and processing its result are different actions.</p>
-      <h3>Timers, Date and Time</h3>
-      <ul>
-        <li>const timerId = <b>setTimeout(</b>callback, delay, arg1, arg2, ...<b>)</b> method serves to schedule a
-          function to run after
-          a specific time;</li>
-        <li><b>clearTimeout(</b>timerId<b>)</b> method is to cancel a function call inside a timeout;</li>
-        <li><b>setInterval(</b>callback, delay, arg1, arg2, ...<b>)</b> method is to repeat code over and over again at
-          a specified repetition interval;</li>
-        <li><b>clearInterval(</b>timerId<b>)</b> method is to cancel a function call inside a timeout;</li>
-        <li><b>Date.now()</b> method returns the number of milliseconds that have passed since midnight on January 1,
-          1970;</li>
-        <li>const date = new <b>Date()</b> - creating a date without arguments returns an object that stores the date
-          and time at its initialization time, when initializing a date with a single number, it represents the number
-          of milliseconds that have passed;</li>
-        <li><b>.getTime()</b> method returns the number of milliseconds that have passed since midnight on January 1,
-          1970;
-        </li>
-        <li><b>.set</b>/<b>.get</b>[<b>UTC</b>]<b>Date()</b> method returns day of month from 1 to 31;</li>
-        <li><b>.set</b>/<b>.get</b>[<b>UTC</b>]<b>Day()</b> method returns day of week from 0 to 6;</li>
-        <li><b>.set</b>/<b>.get</b>[<b>UTC</b>]<b>Month()</b> method returns month from 0 to 11;</li>
-        <li><b>.set</b>/<b>.get</b>[<b>UTC</b>]<b>FullYear()</b> method returns 4-digit year;</li>
-        <li><b>.set</b>/<b>.get</b>[<b>UTC</b>]<b>Hours()</b>, <b>.set</b>/<b>.get</b>[<b>UTC</b>]<b>Minutes()</b>,
-          <b>.set</b>/<b>.get</b>[<b>UTC</b>]<b>Seconds()</b>,
-          <b>.set</b>/<b>.get</b>[<b>UTC</b>]<b>Milliseconds()</b> methods return corresponding parameter;
-        </li>
-        <li><b>.to</b>[<b>UTC</b>]<b>String()</b>, <b>.to</b>[<b>UTC</b>]<b>DateString()</b>,
-          <b>.to</b>[<b>UTC</b>]<b>TimeString()</b>,
-          <b>.to</b>[<b>UTC</b>]<b>LocaleTimeString()</b> methods return the standard string representation, not
-          hard-coded
-          in the standard, but browser-dependent.
-        </li>
-      </ul>
-    </section>
-    <section class="promises">
-      <a href="#goit">
-        <h2 id="promises">Promises (Lesson 18)</h2>
-      </a>
-      <h3>Promises</h3>
-      <p><b>Promise</b> is an object representing the current state of an asynchronous operation. This is a wrapper for
-        a value unknown at the time the promise is created. It makes it possible to handle the results of asynchronous
-        operations as if they were synchronous: instead of the result of an asynchronous operation, a promise of the
-        future result is returned. When a promise is created, it is <b>pending</b>, after which it can be <b>settled</b>
-        successfully (<b>fulfilled</b>), returning a result (value), or with an error (<b>rejected</b>), returning a
-        reason. When a promise enters the fulfilled or rejected state, this is forever.</p>
-      <ul>
-        <li>const promise = new <b>Promise(</b>(resolve, reject) => {setTimeout(() => {if (isSuccess)
-          {resolve("Success");} reject("Error");}, 2000);}<b>)</b> - a
-          <i>promise</i> is created as an instance of the <i>Promise</i> class:
-          <ul>
-            <li><i>resolve(</i>value<i>)</i> is a function to be called upon successful operation, the value of the
-              fulfilled promise will be passed to it as an argument;</li>
-            <li><i>reject(</i>error<i>)</i> is a function to be called in case of an error, the value of the rejected
-              promise will be passed to it as an argument.</li>
-          </ul>
-        </li>
-        <li><b>.then(</b>onResolve[, onReject]<b>)</b> method takes two arguments - callbacks that will be called when
-          the
-          promise changes its state:
-          <ul>
-            <li><i>onResolve(</i>value<i>)</i> will be called when the promise is successful and will receive its result
-              as an argument;</li>
-            <li><i>onReject(</i>error<i>)</i> will be called when the promise throws an error and will receive it as an
-              argument.</li>
-          </ul>
-        </li>
-        <li><b>.catch(</b>onReject<b>)</b> method to "catch" errors, the callback will be called when the promise throws
-          an error and will receive it as an argument;</li>
-        <li><b>.finally(</b>onSettled<b>)</b> method to execute code after the promise is fulfilled or rejected,
-          regardless of the outcome;</li>
-      </ul>
-      <h3>Promise Class Methods</h3>
-      <ul>
-        <li>
-          <b>Promise.all(</b>[promise1, promise2, promise3, ...]<b>)</b> takes an array of promises, waits for them to
-          execute and returns a promise, if all promises are successful, the returned promise will go into the fulfilled
-          state, and its value will be an array of the results of each promise, if at least one of the promises is
-          rejected, the returned promise will go into the rejected state, and its value will be an error.
-        </li>
-        <li><b>Promise.allSettled(</b>[promise1, promise2, promise3, ...]<b>)</b> static method takes an iterable of
-          promises as input and returns a single Promise, this returned promise fulfills when all of the input's
-          promises settle (including when an empty iterable is passed), with an array of objects that describe the
-          outcome of each promise.</li>
-        <li><b>Promise.race(</b>[promise1, promise2, promise3, ...]<b>)</b> returns a fulfilled or rejected promise,
-          depending on the result of the “fastest” of all the promises passed, with a
-          value or reason for rejection.</li>
-        <li><b>Promise.resolve()</b> and <b>Promise.reject()</b> methods for creating instantly fulfilled or rejected
-          promises, they function in the same way as new Promise() except that you can specify a delay, with a shorter
-          syntax.</li>
-      </ul>
-    </section>
-    <section class="http-requests">
-      <a href="#goit">
-        <h2 id="http-requests">HTTP Requests (Lesson 19)</h2>
-      </a>
-      <h3>HTTP Protocol</h3>
-      <p><b>HyperText Transfer Protocol</b> is based on the client-server structure and the request-response model, in
-        which the client application initiates a connection, generates a request and sends it to the server, after which
-        the server processes this request, generates a response and sends it back to the client. They communicate
-        through a series of alternating HTTP requests and HTTP responses.</p>
-      <p><b>HyperText Transfer Protocol Secure</b> is an extension of the HTTP protocol in which all messages between
-        the client and the server are encrypted to improve security. It provides protection against eavesdropping
-        attacks. Data is transferred over SSL or TLS cryptographic protocols.</p>
-      <h3>REST API</h3>
-      <ul>
-        <li><b>API</b> (<b>Application Programming Interface</b>) is a set of well-defined communication rules between
-          various software components. The interface describes what you can ask the program to do and what you will get
-          as a result.</li>
-        <li><b>REST</b> (<b>Representational State Transfer</b>) is a back-end architecture style based on a number of
-          principles that describe how network resources are defined and addressed.</li>
-        <li><b>REST API</b> is a back-end built on the REST principle. It serves as a layer between the web application
-          and database. It has a standard interface for accessing resources. It works like a website: you send an HTTP
-          request from the client to the server, and in response, instead of an HTML page, you receive data in JSON
-          format.</li>
-      </ul>
-      <p>A REST service requires the client to make a request to add, retrieve or modify data. The server sends a
-        response to the client's request, which contains a <a href="https://httpstatuses.com/" target="_blank"
-          rel="noopener noreferrer">status code</a> to inform the client about the operation result. Such request can
-        consist of the following parts:</p>
-      <ul>
-        <li><b>HTTP methods</b> - determines what operation (CRUD) to perform to interact with back-end resources:
-          <ul>
-            <li><i>POST</i> - creating a new resource;</li>
-            <li><i>GET</i> - getting a set of resources or a single resource;</li>
-            <li><i>PUT</i> & <i>PATCH</i> - updating a resource by its identifier;</li>
-            <li><i>DELETE</i> - deleting a resource.</li>
-          </ul>
-        </li>
-        <li><b>HTTP headers</b> - enable the client to transfer additional request-related information:
-          <ul>
-            <li><i>Content-Type: application/json</i> - the type of resource that the client sends to the
-              server or the server sends to the client;</li>
-            <li><i>MIME types</i> are used to indicate the content of requests and responses, they consist of a type
-              and a subtype separated by a forward slash (<i>text/css</i>).</li>
-          </ul>
-        <li><b>Path</b> - the path to the resource.</li>
-        <li><b>Body</b> - request block containing data.</li>
-      </ul>
-      <h3>AJAX</h3>
-      <p>AJAX (Asynchronous JavaScript and XML) is a method of receiving or sending data, and then updating the
-        interface according to this data, without having to reload the page. A browser-built interface available on
-        the
-        window object that contains a set of properties and methods for sending, receiving and processing resources
-        from
-        the server.</p>
-      <ul>
-        <li><b>fetch(</b>url, options<b>)</b> method returns the promise which value is an object with additional
-          information about the server response status:<ul>
-            <li><i>url</i> is the path to the back-end data that needs to be retrieved, created or modified;</li>
-            <li><i>options</i> contains optional parameters of requests – methods (GET by default).</li>
-          </ul>
-        </li>
-        <li><b>.json()</b>, <b>.text()</b>, <b>.blob()</b> - depending on the type of received content, a different
-          method is used to transform the response body into
-          data.</li>
-        <li>.../users<b>?</b>_limit=7<b>&</b>_sort=name - query string parameter is a <b>name=value</b> pair and used
-          to
-          specify additional criteria for the back-end, <b>?</b> character marks the start of parameters, <b>&</b>
-          character separates parameters.</li>
-        <li>const searchParams = new <b>URLSearchParams(</b>{_limit: 5, _sort: "name",}<b>)</b> - special object with
-          <i>.toString()</i> method to specify parameters and their values.
-        </li>
-        <li>
-          .../users<b>?${</b>searchParams<b>}</b> - when interpolating a value in template strings, it is implicitly
-          converted to a string, so you do not need to call the <b>.toString()</b> method when creating a URL</i>
-        </li>
-      </ul>
-      <h3>CORS</h3>
-      <p>By default, an HTTP request can only be made within the current site. When trying to send a request to a
-        different domain, port or protocol, that is, to make a cross-domain request, the browser throws an error.
-        This browser policy is called CORS, <b>Cross-Origin Resource Sharing</b>, where Origin is the domain, port or
-        protocol. The browser is an intermediary between the JavaScript code and the back-end. It adds the Origin
-        header
-        with the correct value to each request and checks for the Access-Control-Allow-Origin header in the response.
-        If
-        the header is there and its value is correct, the original request will be executed and the JavaScript code
-        will
-        receive its result, otherwise there will be a CORS error.
-      </p>
-    </section>
-    <section class="pagination">
-      <a href="#goit">
-        <h2 id="pagination">Pagination (Lesson 20)</h2>
-      </a>
-      <h3>Pagination</h3>
-      <p>Рagination is a technique in which not the entire collection is returned at the first and each subsequent GET
-        request, but a certain part of it. Pagination is implemented on the back-end and used on the front-end by means
-        of special request parameters:</p>
-      <ul>
-        <li><b>&page=1</b> - the first parameter defines the number of items in the response from the back-end;</li>
-        <li><b>&per_page=20</b> - the second pagination parameter controls offset within the collection, by changing the
-          value of this parameter, you tell the back-end what next group of items you want to receive, and so on until
-          the collection runs out of items;</li>
-      </ul>
-    </section>
-    <section class="crud">
-      <a href="#goit">
-        <h2 id="crud">CRUD (Lesson 21)</h2>
-      </a>
-      <h3>Create--Read--Update--Delete</h3>
-      <p>
-        <b>fetch(</b>"https://...", <b>options)</b><br>
-        <b>.then(</b>response => {if (!response.ok) {throw new Error(response.statusText);} <b>return</b>
-        response.<b>json()</b>;}<b>)</b><br>
-        <b>.then(</b>data => {//data handling}<b>)</b><br>
-        <b>.catch(</b>error => {//error handling}<b>)</b>;
-      </p>
-      <p>
-        const <b>options</b> = <b>{</b><br>
-        <b>method</b>: "POST",<br>
-        <b>body</b>: JSON.stringify(valueToAdd),<br>
-        <b>headers</b>: {"Content-Type": "application/json; charset=UTF-8",},<b>}</b>;
-      </p>
-      <ul>
-        <li><b>Create</b>. The <b>POST</b> method is used to add a new resource. The <i>fetch()</i> method must send a
-          <i>POST</i> request to the server, having an object in the body,the database will automatically create the
-          identifier. Such request will result in an object added to the database.
-        </li>
-        <li><b>Read</b>. The <b>GET</b> HTTP method is used to get existing data. The <i>fetch()</i> method should send
-          a GET request without a body to the server.The <i>fetch()</i> method makes a <i>GET</i> request by default, so
-          it is not necessary to override the request options.</li>
-        <li><b>Update</b>. The <b>PUT</b> and <b>PATCH</b> methods are used to update existing data. Which method to use
-          will be specified in the back-end documentation. The <i>fetch()</i> method must send a request to the server,
-          having the object with fields to change in the body. The path indicates in which collection and which item
-          should be updated. If everything is fine, you will receive the updated object.</li>
-        <li><b>Delete</b>. The <b>DELETE</b> method is used to delete existing data. The <i>fetch()</i> method should
-          send the <i>DELETE</i> request without a body to the server. The path indicates in which collection and which
-          item to delete. </li>
-      </ul>
-    </section>
-    <section class="async-await">
-      <a href="#goit">
-        <h2 id="async-await">Asynchronous Functions (Lesson 22)</h2>
-      </a>
-      <h3>Syntax async/await</h3>
-      <p><b>Asynchronous functions (async/await)</b> is a convenient way to create asynchronous code that looks like
-        synchronous. The async/await syntax is based on promises, so it does not block the main program flow. Any
-        function can be asynchronous, be it an object method, class, callback, declaration or inline function.</p>
-      <ul>
-        <li>The <b>await</b> suspends the function until the promise is executed (<i>fulfilled</i> or <i>rejected</i>)
-          and can only be used in the body of the <b>async</b> function.
-        </li>
-        <li>If the promise is <i>fulfilled</i>, the <b>await</b> operator will return its <i>value</i>, if the promise
-          is
-          <i>rejected</i>, the <b>await</b> operator will throw an <i>error</i>.
-        </li>
-        <li>An <b>asynchronous function</b> always returns a <b>promise</b>, so any <i>return</i> value will be its
-          <i>value</i>, if you do not specify a return value, a promise with undefined will be returned.
-        </li>
-      </ul>
-      <p>
-        const fetchData = <b>async ()</b> => <b>{</b><br>
-        const response = <b>await</b> fetch("https://...");<br>
-        const data = <b>await</b> response.json();<br>
-        <b>return</b> data;<b>}</b>;<br>
-      </p>
-      <p><b>fetchData().then(</b>data => {//data handling}<b>)</b>
-      <h3>Handling errors</h3>
-      <ul>
-        <li>If the result of an asynchronous function (promise) is not used in outer code, errors are handled in the
-          function body by the <b>try...catch</b> construct:<br>
-          const fetchData = <b>async ()</b> => <b>{</b><br>
-          <b>try {</b><br>
-          const response = <b>await</b> fetch("https://...");<br>
-          const data = <b>await</b> response.json();<br>
-          <b>} catch (</b>error<b>) {</b><br>
-          console.log(error.message);<b>}</b>
-        </li>
-        <li>If the result of an asynchronous function (promise) is used in outer (global) code, that is, outside of
-          other
-          asynchronous functions, errors are handled by the catch() method’s callback:<br>
-          <b>fetchData().then(</b>data => {//data handling}<b>).catch(</b>error => {//error handling}<b>)</b>
-        </li>
-        <li>If the result of an asynchronous function is used in another asynchronous function, errors are handled by
-          thes <b>try...catch</b> construct.
-        </li>
-      </ul>
-      <h3>Parallel requests</h3>
-      <p>In case of completely independent requests so it is need to run them in <b>parallel</b>. For this, create an
-        array of promises, after which use the <b>Promise.all()</b> to wait for their execution.</p>
-      <span>
-        const <b>fetchUsers</b> = <b>async ()</b> => <b>{</b>const baseUrl = "https://..."; const userIds = [1, 2, 3];
-        <br>
-        const arrayOfPromises = userIds.map(<b>async userId</b> => <b>{</b>const response = await
-        fetch(`${baseUrl}/users/${userId}`); return response.json();<b>}</b>);<br>
-        const users = <b>await Promise.all(</b>arrayOfPromises); console.log(users<b>)</b>;<b>}</b>;
-      </span>
     </section>
   </main>
-
-  <footer> </footer>
+  <footer></footer>
 </body>
 
 </html>

@@ -1,16 +1,8 @@
 @mixin az {
-  outline: solid 1px red;
+  outline: solid 1px tomato;
 }
 
-@mixin font($family, $weight, $size, $height, $spacing) {
-  font-family: $family;
-  font-weight: $weight;
-  font-size: $size;
-  line-height: $height;
-  letter-spacing: $spacing;
-}
-
-@mixin titel {
+@mixin title {
   margin-bottom: 20px;
 
   text-transform: uppercase;

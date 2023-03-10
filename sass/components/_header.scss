@@ -1,0 +1,35 @@
+.nav {
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 0;
+
+    & li {
+      list-style: none;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.5;
+
+      @media screen and (min-width: 1024px) {
+        font-size: 22px;
+      }
+
+      & a {
+        color: black;
+
+        &:hover,
+        &:focus {
+          color: red;
+        }
+      }
+    }
+  }
+}
+
+// h2 {
+//   padding-left: 10px;
+
+//   @media screen and (min-width: 1024px) {
+//     padding-left: 30px;
+//   }
+// }
