@@ -27,3 +27,17 @@ h2 {
     font-weight: 400;
   }
 }
+
+.wrap {
+  display: flex;
+}
+
+.projects__list {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0;
+  list-style: none;
+  align-items: center;
+  font-weight: 600;
+  font-size: 18px;
+}
