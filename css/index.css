@@ -339,6 +339,15 @@ h2 span {
   display: -ms-flexbox;
   display: flex;
 }
+.wrap h3 {
+  padding-left: 40px;
+}
+.wrap__list {
+  font-weight: 600;
+}
+.wrap__list span {
+  font-weight: 400;
+}
 
 .projects__list {
   display: -webkit-box;
@@ -354,4 +363,7 @@ h2 span {
           align-items: center;
   font-weight: 600;
   font-size: 18px;
+}
+.projects__list h4 {
+  margin: 0;
 }/*# sourceMappingURL=index.css.map */

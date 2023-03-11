@@ -30,6 +30,18 @@ h2 {
 
 .wrap {
   display: flex;
+
+  & h3 {
+    padding-left: 40px;
+  }
+
+  &__list {
+    font-weight: 600;
+
+    & span {
+      font-weight: 400;
+    }
+  }
 }
 
 .projects__list {
@@ -40,4 +52,8 @@ h2 {
   align-items: center;
   font-weight: 600;
   font-size: 18px;
+
+  & h4 {
+    margin: 0;
+  }
 }
