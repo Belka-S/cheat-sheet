@@ -76,13 +76,12 @@
       </ul>
       <h3>Adding Script</h3>
       <p>To add a script to a web page, HTML files use the script tag. In its src attribute you should include a link
-        to
-        an external JavaScript file. The script should be added before the &#60body> closing tag, after all content.
+        to an external JavaScript file. The script should be added before the &#60body> closing tag, after all content.
       </p>
       <span><b>&#60script</b> src="./js/script.js" <i>type="module"</i><b>>&#60/script></b></span>
-      <p>In order to run your script in strict mode, it is enough to enter the following directive at the beginning of
-        the js-file. Another way to run script in strict mode to use attribute <b>type="module"</b>. Always write your
-        code in strict mode.</p>
+      In order to run your script in strict mode, it is enough to enter the following directive at the beginning of
+      the js-file. Another way to run script in strict mode to use attribute <b>type="module"</b>. Always write your
+      code in strict mode.</p>
       <ul>
         <li><b>export default</b> 'entity' - to export <i>entity</i>;</li>
         <li><b>import</b> varName <b>from</b> './module-name.js' - to import read-only live bindings which are
@@ -102,8 +101,7 @@
             <li>data has <b>properties</b>, for example, a string has a length. The syntax for accessing a property is
               very simple: use a dot - <b>entity.propertyName</b>.</li>
             <li>data has its own predefined methods, this is an action call. The syntax for calling a method is
-              similar,
-              but parentheses are added at the end - <b>entity.methodName()</b>.</li>
+              similar, but parentheses are added at the end - <b>entity.methodName()</b>.</li>
           </ul>
         </li>
       </ul>
@@ -157,7 +155,6 @@
           compared values to numbers.</li>
       </ul>
       <h3>Numbers</h3>
-
       <ul>
         <li><b>Number()</b> function - most operations and functions convert a value to a number automatically, use
           this function to do this explicitly;</li>
@@ -215,8 +212,7 @@
       <h3>Logical Operators</h3>
       <p>In logical operations, the types of operands are converted/cast to <i>true</i> or <i>false</i>. <b>Truthy</b>
         and <b>Falsy</b> are the terms used for those values that are converted to true or false in a logical
-        operation,
-        although they were not originally booleans. Values that are converted to false in logical conversion
+        operation, although they were not originally booleans. Values that are converted to false in logical conversion
         <b>0, NaN, null, undefined, empty string, false</b>.
       </p>
       <ul>
@@ -224,12 +220,10 @@
         <li>Logical AND <b>&&</b> - result will be <i>false</i>, since at least one of the operands is converted to
           false, in opposite returns last true value;</li>
         <li>Logical OR <b>||</b> - result will be <i>true</i>, since at least one of the operands is converted to
-          true,
-          in opposite returns last false value;</li>
+          true, in opposite returns last false value;</li>
         <li>Logical NOT <b>!</b> - replaces value with the <i>opposite</i>.</li>
         <li>Nullish coalescing operator <b>??</b> - returns its right-hand side operand when its left-hand side
-          operand
-          is <i>null</i> or <i>undefined</i>, and otherwise returns its left-hand side operand;</li>
+          operand is <i>null</i> or <i>undefined</i>, and otherwise returns its left-hand side operand;</li>
         <li>Logical OR assignment <b>||=</b> - (x ||= y) operator only assigns if x is falsy.</li>
       </ul>
     </section>
@@ -349,29 +343,23 @@
           <i>delimiter</i>, strArray = strArray.split(<b>/\s+/</b>) - unlimited space pattern;
         </li>
         <li><b>.join(</b><i>'delimiter'</i><b>)</b> method - joins the elements of an array into a string by joining
-          it
-          with <i>delimiter</i>;
+          it with <i>delimiter</i>;
         </li>
         <li><b>.indexOf(</b><i>value</i><b>)</b> method - returns the first index at which the element with
-          <i>value</i>
-          is found in the array;
+          <i>value</i> is found in the array;
         </li>
         <li><b>.includes(</b><i>value</i><b>)</b> method - checks if there is an element with <i>value</i> in the
-          array,
-          and it returns <i>true</i> or <i>false</i>;</li>
+          array, and it returns <i>true</i> or <i>false</i>;</li>
         <li><b>.push(</b><i>value1, value2, ...</i><b>)</b> method - adds one or more elements to the end of the
-          array,
-          without the need to specify the indices of the added elements;</li>
+          array, without the need to specify the indices of the added elements;</li>
         <li><b>.pop(</b><i>value</i><b>)</b> method - removes the last element from the end of the array and returns
-          the
-          removed element, if the array is empty, it returns <i>undefined</i>;</li>
+          the removed element, if the array is empty, it returns <i>undefined</i>;</li>
         <li><b>.unshift(</b><i>value1, value2, ...</i><b>)</b> method - adds one or more elements to the beginning of
           the array, without the need to specify the indices of the added elements;</li>
         <li><b>.shift(</b><i>value</i><b>)</b> method - removes one element from the beginning of the array and
           returns the removed element, if the array is empty, it returns <i>undefined</i>;</li>
         <li><b>.slice(</b><i>indexStart, indexEnd</i><b>)</b> method - returns a new array which is a partial copy
-          from
-          <i>indexStart</i> to, but not including, <i>indexEnd</i>;
+          from <i>indexStart</i> to, but not including, <i>indexEnd</i>;
         </li>
         <li><b>.splice(</b><i>index, num</i><b>)</b> method - <b>removal</b>, modifies the original array and returns
           an array containing the removed elements, where <i>index</i> indicates the position (index) of the first
@@ -404,16 +392,14 @@
       <h3>Function declaration, expression, calling</h3>
       <p><b>Function</b> is a subroutine, an independent piece of code designed to repeatedly execute a specific task
         with different initial values. <b><i>Function name</i></b> must be a verb answering the question "What to
-        do?".
-        If you need to declare a function with <b><i>parameters</i></b> other than <i>undefined</i>, it is enough to
-        specify the default value.</p>
+        do?". If you need to declare a function with <b><i>parameters</i></b> other than <i>undefined</i>, it is enough
+        to specify the default value.</p>
       <ul>
         <li>Function declaration <b>function</b> <i>functionName</i><b>(</b><i>parameters</i><b>) {</b><i>\\function
             body</i><b>}</b> - can be called before its creation;</li>
         <li>Function expression <b>const</b> <i>functionName</i> = <b>function(</b><i>parameters</i><b>)
             {</b><i>\\function body</i><b>}</b> - cannot be called before its creation, only after, as it is literally
-          a
-          const variable declaration;</li>
+          a const variable declaration;</li>
         <li>Function calling <b><i>functionName</i></b><b>(</b><i>arguments</i><b>)</b> - in parentheses you can pass
           <i><b>arguments</b></i>, i.e. values for the declared function <i><b>parameters</b></i>.
         </li>
@@ -451,8 +437,7 @@
       <ul>
         <li>Variables declared at the very top level, that is, outside of any constructs like <i>if</i>, <i>while</i>,
           <i>for</i> and <i>functions</i>, are in the <b>global scope</b>, and they are available everywhere after
-          they
-          are declared.
+          they are declared.
         </li>
         <li>Variables declared inside <i>if</i> and <i>for</i> statements, <i>functions</i> and other blocks of code
           enclosed in curly braces <i>{}</i> are in the <b>block scope</b>, and they are available only within this
@@ -460,8 +445,7 @@
         <li><b>Scope chain look-up</b> - the interpreter first tries to find a variable in the scope in which such
           variable was accessed. If there is no such variable in the local scope, then the interpreter goes out, one
           level per attempt, until it finds the necessary value or reaches the topmost scope (global) and realizes
-          that
-          no variable with such an identifier can be found, since it does not exist</li>
+          that no variable with such an identifier can be found, since it does not exist</li>
       </ul>
       <h3>Call Stack</h3>
       <p><b>Call stack</b> is a mechanism for keeping track of where the interpreter is located in the code that calls
@@ -480,16 +464,13 @@
         that is, they contain terms (<b>properties</b>) and their definitions (<b>values</b>). Objects can store not
         only data, but also functions for working with this data, i.e. methods. If the property value is a function,
         such property is called an <b>object method</b>. Such objects can be called <b>models</b>. They couple data
-        with
-        methods to work with that data.</p>
+        with methods to work with that data.</p>
       <ul>
         <li>const <b>object</b> = <b>{</b>propertyKey: value, ...<b>}</b> - object creation, property value can be
           another object in order to store nested and grouped data; </li>
         <li>const <b>object</b> = <b>{</b>variableName, ...<b>}</b> - shorthand object creation, when creating an
-          object
-          and you need to take the property value from a variable or function parameter of the same name as the
-          property;
-        </li>
+          object and you need to take the property value from a variable or function parameter of the same name as the
+          property; </li>
         <li>const <b>object</b> = <b>new</b> constructor(arguments) - creates an instance of a user-defined object
           type or of one of the built-in object types that has a <i>constructor</i> function, <b>constructor</b> data
           property of an <i>object</i> returns a reference to the constructor function that created the instance
@@ -515,8 +496,6 @@
           value of a <b>computed property</b> can be any valid expression;</li>
         <li><b>fnName:</b> function<b>() {</b>\\Body<b>}</b> <i>or</i> <b>fnName() {</b>\\Body<b>}</b> - to store
           function (<b>object method</b>).</li>
-
-        </li>
       </ul>
       <h3>Iteration</h3>
       <ul>
@@ -536,8 +515,7 @@
       <h3>Array of Objects</h3>
       <p>To iterate over an array of objects of the same type, use the standard <b>for...of</b> loop. To get property
         values of each object, use <b>dot</b> notation, since the set of properties and their names are the same in
-        each
-        object, only their values differ.</p>
+        each object, only their values differ.</p>
     </section>
     <section class="destructuring">
       <a href="#goit">
@@ -548,10 +526,7 @@
         <li><b>...</b> (spread) <b>passing arguments</b> - to spread a collection of elements from array, string or
           object to the places where a set of single values is expected;</li>
         <li><b>...</b> (spread) <b>creating a new array</b> - to create a copy of an array or "bond" an arbitrary
-          number
-          of arrays together to make a new one:<br>
-          <i>const copyOfArray = [<b>...</b>array]</i>;
-        </li>
+          number of arrays together to make a new one:<br> <i>const copyOfArray = [<b>...</b>array]</i>; </li>
         <li><b>...</b> (spread) <b>creating a new object</b> - to spread the properties of an arbitrary number of
           objects to a new one:<br>
           <i>const third = {propertyName: value,</i> <b>...</b><i>first,</i> <b>...</b><i>second }</i>, it is possible
@@ -560,12 +535,10 @@
           same;
         </li>
         <li><b>...</b> (rest) <b>collecting all function arguments</b> - to collect a group of independent elements
-          into
-          a new array;</li>
+          into a new array;</li>
         <li><b>...</b> (rest) <b>collecting part of function arguments</b> - to collect into an array only the
-          required
-          part of the arguments:<br>
-          <i>function fnName(firstNumber, secondNumber,</i> <b>...</b><i>otherArgs)</i>;
+          required part of the arguments:<br> <i>function fnName(firstNumber, secondNumber,</i>
+          <b>...</b><i>otherArgs)</i>;
         </li>
       </ul>
       <h3>Object Destructuring</h3>
@@ -606,21 +579,15 @@
       </ul>
       <h3>«Parameter Object» Pattern</h3>
       <p>If a function has more than two or three arguments, it is very easy to get confused about what is passed and
-        in
-        which order. The <b>parameter object pattern</b> solves this problem by replacing a set of parameters with
-        just
-        one, an object with named properties:</p>
+        in which order. The <b>parameter object pattern</b> solves this problem by replacing a set of parameters with
+        just one, an object with named properties:</p>
       <ul>
         <li><i>function fnName(<b>objectName</b>) {\\Function body}</i> - then, when calling, you pass one object with
           the necessary properties;</li>
         <li><i>function fnName(objectName) {<b>const {</b>varName1, varName2<b>} =</b> objectName; \\Function
-            body}</i>
-          - destructure the object in the <i>objectName</i> parameter;</li>
+            body}</i> - destructure the object in the <i>objectName</i> parameter;</li>
         <li><i>function fnName(<b>{</b>varName1, varName2<b>}</b>) {\\Function body}</i> - destructure the object in
-          the
-          <i>function
-            signature</i>.
-        </li>
+          the <i>function signature</i>. </li>
       </ul>
     </section>
     <section class="callbacks-arrow">
@@ -638,15 +605,13 @@
           higherOrderName<b>(</b>element, <b>callbackName)</b>;
         </li>
         <li><b>Higher-order</b> function is a function that takes other functions as parameters or returns a function
-          as
-          a result: <br>
+          as a result: <br>
           function <b>higherOrderName(</b>element, callback<b>) {</b>\\Logic whith element; callback(element);<b>}</b>
           <br>
           <b>higherOrderName(</b>element, callbackName<b>)</b>;
         </li>
         <li><b>Inline callback</b> is a function declared immediately when calling the function to which the callback
-          is
-          being passed and will be available only as a parameter value and nowhere else in the code:<br>
+          is being passed and will be available only as a parameter value and nowhere else in the code:<br>
           <b>higherOrderName(</b>element, function <b>callbackName(</b>element<b>) {</b>\\Logic whith
           element<b>}</b>;<b>)</b>;
         </li>
@@ -662,8 +627,7 @@
         <li>const arrowFn <b>= (</b>a, b, c<b>) => {return</b> a + b + c;<b>}</b> - <b><i>explicit</i></b> return when
           there are curly braces, and the function must return a value;</li>
         <li>const arrowFn <b>= (</b>a, b, c<b>) =></b> a + b + c - <b><i>implicit</i></b> return will return the
-          result
-          of expression;</li>
+          result of expression;</li>
         <li>const arrowFn <b>= (...args) => {</b>\\Fn body<b>}</b> - there is no local variable <i>arguments</i>
           inside, to collect all arguments into an array, the <b>rest</b> operation is used.</li>
       </ul>
@@ -681,14 +645,11 @@
         <h2 id="array-iterating">Array Iteration Methods <span>(Lesson 8)</span></h2>
       </a>
       <p>JavaScript has array methods that come from functional languages. Most of them are pure functions. They
-        create
-        a new array, populate it, applying the specified callback to the value of each element, and then return this
-        new
-        array. <b>Side-effect</b> function is a function that, during execution, can change or use global variables,
-        change the values of reference arguments, perform I/O operations, etc. <b>Pure</b> function is a function with
-        the result depending only on the values of the passed arguments and has no side effects, that is, it does not
-        change the values of the arguments.
-      </p>
+        create a new array, populate it, applying the specified callback to the value of each element, and then return
+        this new array. <b>Side-effect</b> function is a function that, during execution, can change or use global
+        variables, change the values of reference arguments, perform I/O operations, etc. <b>Pure</b> function is a
+        function with the result depending only on the values of the passed arguments and has no side effects, that is,
+        it does not change the values of the arguments. </p>
       <h3>Syntax</h3>
       <ul>
         <li>array.<b>method(</b>callbackFn[, thisArg]<b>)</b> - callback function;</li>
@@ -703,14 +664,12 @@
       <ul>
         <li><b>.forEach(</b><i>(element, index, array)</i> <b>=> {</b>//logic for each iteration<b>}</b>[,
           thisArg]<b>)</b> - executes a provided function once for each array element, returns nothing, execution of
-          the
-          <i>forEach</i> can't be interrupted;
+          the <i>forEach</i> can't be interrupted;
         </li>
         <li><b>.map()</b> method - returns a new array of the same length, can be used to change every element of an
           array;</li>
         <li><b>.flatMap()</b> method is similar to the <i>map()</i> method, but it is used in cases where the result
-          is
-          a multidimensional array that needs to be "flattened", tnew array is "flattened" by one (one nesting);</li>
+          is a multidimensional array that needs to be "flattened", tnew array is "flattened" by one (one nesting);</li>
         <li><b>.filter()</b> method - to copy array whith filtering, when more than one element from a collection
           should
           be selected using a specific criterion;</li>
@@ -730,14 +689,12 @@
           converting the values ​​to a string and comparing the ordinal numbers in the Unicode table;</li>
         <li><b>.reduce(</b>(accumulator, element, index, array) <b>=></b> {// Callback body}[, initialValue]<b>)</b> -
           to process each array element, storing the intermediate result as an accumulator, returns anything (most
-          often
-          returns accumulator).</li>
+          often returns accumulator).</li>
       </ul>
       <h3>Useful Patterns</h3>
       <ul>
         <li><b>.filter(</b>(element, index, array) <b>=></b> array.indexOf(element) <b>===</b> index<b>)</b> -
-          filtering
-          <b>unique</b> elements;
+          filtering <b>unique</b> elements;
         </li>
         <li><b>[...</b>numbers<b>].sort(</b>(a, b) <b>=></b> a <b>-</b> b<b>)</b> method - to copy an array of numbers
           and sort the <b>numbers</b> in <i>ascending</i> order;
@@ -751,9 +708,8 @@
       </ul>
       <h3>Method Chaining</h3>
       <p>The method chain can be of arbitrary length, but usually no more than 2-3 operations. First, iteration
-        methods
-        are used for relatively simple collection operations. Second, calling each subsequent method is an additional
-        array iteration, which, with a large number of elements, can affect performance.</p>
+        methods are used for relatively simple collection operations. Second, calling each subsequent method is an
+        additional array iteration, which, with a large number of elements, can affect performance.</p>
       <h3>Lodash Methods</h3>
       <ul>
         <li><b>&#60script src="</b>https://cdn.jsdelivr.net/npm/<b>lodash</b>@4.17.21/lodash.min.js<b>">&#60/script>
@@ -776,16 +732,13 @@
         </li>
         <li><b>_.sum(</b>array<b>)</b> - computes the sum of the values in array;</li>
         <li><b>_.sumBy(</b>array, [iteratee=_.identity]<b>)</b> - accepts iteratee which is invoked for each element
-          in
-          array to generate the value to be summed;</li>
+          in array to generate the value to be summed;</li>
         <li><b>_.uniq(</b>array<b>)</b> - reates a duplicate-free version of an array, using SameValueZero for
-          equality
-          comparisons, in which only the first occurrence of each element is kept;</li>
-        <li><b>_.uniqBy(</b>array, [iteratee=_.identity]<b>)</b> - accepts iteratee which is invoked for each element
-          in
+          equality comparisons, in which only the first occurrence of each element is kept;</li>
+        <li><b>_.uniqBy(</b>array, [iteratee=_.identity]<b>)</b> - accepts iteratee which is invoked for each element in
           array to generate the criterion by which uniqueness is computed;</li>
-        <li><b>_.minBy(</b>array, [iteratee=_.identity]<b>)</b> - accepts iteratee which is invoked
-          for each element in array to generate the criterion by which the value is ranked;</li>
+        <li><b>_.minBy(</b>array, [iteratee=_.identity]<b>)</b> - accepts iteratee which is invoked for each element in
+          array to generate the criterion by which the value is ranked;</li>
         <li><b>_.camelCase()</b>, <b>_.kebabCase()</b>, <b>_.lowerCase()</b>, <b>_.snakeCase()</b>,
           <b>_.startCase()</b>, <b>_.upperCase()</b> - converts string.
         </li>
@@ -800,21 +753,19 @@
         function, a reference to the <b>context</b> object of its call is written to <b>this</b>. Therefore, in the
         function body, you can access the properties and methods of this object. The <b>context</b> value inside a
         function (not arrow) is determined not at the time of its creation, but <b>at the time of calling</b>. That
-        is,
-        the value of this is determined by how the function is called, not where it was declared.</p>
+        is, the value of this is determined by how the function is called, not where it was declared.</p>
       <ul>
-        <li>In <b>the global scope</b>, in non-strict mode, this refers to the <b>window</b> object, in strict mode
-          the
+        <li>In <b>the global scope</b>, in non-strict mode, this refers to the <b>window</b> object, in strict mode the
           value of this in the global scope will be <b>undefined</b>.</li>
         <li>In <b>object method</b>, the context (<i>this</i>) will refer to the <b>object</b> that includes the
           method.
         </li>
         <li>In <b>callback functions</b> the context (<i>this</i>) is <b>not preserved</b>.</li>
         <li><b>Arrow functions</b> do not have their own this. The context inside an arrow is determined by the
-          <b>place
-            of its declaration</b>, not the call, and refers to the <b>parent function’s context</b>. Arrow functions
-          also ignore the presence of strict mode. If the arrow remembers the global context, <i>this</i> in it will
-          contain a reference to <i>window</i>, regardless of whether the script is executed in strict mode or not.
+          <b>place of its declaration</b>, not the call, and refers to the <b>parent function’s context</b>. Arrow
+          functions also ignore the presence of strict mode. If the arrow remembers the global context, <i>this</i> in
+          it will contain a reference to <i>window</i>, regardless of whether the script is executed in strict mode or
+          not.
         </li>
       </ul>
       <h3>Function Methods</h3>
@@ -863,8 +814,7 @@
       <h3>Prototypal Inheritance</h3>
       <p>OOP in JavaScript is built on prototypal inheritance. Objects can be chained so that a property not found in
         one object is automatically searched for in another. A special internal property, <b>[[Prototype]]</b>
-        (<b>__proto__</b>) for
-        functions and objects is used for prototypal inheritance.
+        (<b>__proto__</b>) for functions and objects is used for prototypal inheritance.
       </p>
       <ul>
         <li><b>Object.create(</b><i>protoObj</i>[, propertiesObject]<b>)</b> method creates and returns a new object
@@ -888,8 +838,7 @@
       </p>
       <ul>
         <li><b>function</b> ClsName <b>(</b>{varName}<b>) {</b>// Operating with <b>this.</b>varName<b>}</b> - making
-          a
-          constructor function <i>ClsName</i>; </li>
+          a constructor function <i>ClsName</i>; </li>
         <li>const objName = <b>new</b> ClsName<b>()</b> - the <b>new</b> operator creates an empty object, then
           calls the constructor function <i>ClsName</i> in the context of that empty object and makes the
           <i>objName</i>
@@ -943,13 +892,11 @@
         <li>class <i>Child</i> <b>extends</b> <i>Parent</i> {constructor() {super()} - <b>class inheritance</b>, when
           one class (child, derived) inherits the properties and methods of another class (parent), is used for
           declaration a base class that stores common characteristics and methods for a group of derived classes,
-          which
-          inherit the properties and methods of the parent and, besides, add their own unique ones, private properties
-          and methods of the parent class are not inherited by the child class;</li>
-        <li>class Child extends Parent {<b>constructor(</b>{varName}<b>) {super(</b>varName<b>)}</b> - to call a
-          special function, <b>super(</b>arg<b>)</b>, wich is an alias for the parent class constructor, otherwise,
-          when
-          trying to access <i>this</i> in the child class constructor, an error will be generated;</li>
+          which inherit the properties and methods of the parent and, besides, add their own unique ones, private
+          properties and methods of the parent class are not inherited by the child class;</li>
+        <li>class Child extends Parent {<b>constructor(</b>{varName}<b>) {super(</b>varName<b>)}</b> - to call a special
+          function, <b>super(</b>arg<b>)</b>, wich is an alias for the parent class constructor, otherwise,
+          when trying to access <i>this</i> in the child class constructor, an error will be generated;</li>
         <li><b>child class methods</b> will only be available to its instances;</li>
         <li>const unique = new <b>Set()</b> - to store unique values of any type, <i>Set</i> object has metods
           <b>.has()</b>, <b>.add()</b>, <b>.clear()</b>, <b>.delete()</b>.
@@ -966,8 +913,7 @@
           set of properties and methods to search for, create and delete elements, respond to user actions, and much
           more. In other words, it serves as a link between the page and the programming language.</li>
         <li><b>Browser Object Model</b> is a language-independent interface for work with browser tabs. It offers a
-          set
-          of properties and methods to access directly the current tab and a number of browser functions. This model
+          set of properties and methods to access directly the current tab and a number of browser functions. This model
           includes an object to work with navigation history, location, and more./li>
       </ul>
       <p>According to the DOM model, each tag forms a separate <b>node element</b>, whereas each piece of text is a
@@ -978,11 +924,9 @@
       </p>
       <h3>Query for Elements, DOM Traversal</h3>
       <p>Access to DOM begins with the <b>document object</b>, which is part of the global <i>window object</i> that
-        is
-        available in the script when executed by the browser and from which you can access any elements. DOM tree
+        is available in the script when executed by the browser and from which you can access any elements. DOM tree
         elements are hierarchically related to each other. To find in or navigate this hierarchy, is used methods or
-        elements properties:
-      </p>
+        elements properties: </p>
       <ul>
         <li><i>elem</i><b>.querySelector(</b>selector<b>)</b> method - to find only one (most often unique) element,
           returns the first element found within <i>elem</i> that matches the <i>selector</i> and <i>null</i> if
@@ -995,9 +939,8 @@
           </ul>
         </li>
         <li><i>elem</i><b>.querySelectorAll(</b>selector<b>)</b> method - to find a collection of elements, that is,
-          to
-          get an array of references to elements with the same selector, returns a pseudo-array of all elements inside
-          <i>elem</i> that match the <i>selector</i>, if nothing is found, it will return an <i>empty array</i>.
+          to get an array of references to elements with the same selector, returns a pseudo-array of all elements
+          inside <i>elem</i> that match the <i>selector</i>, if nothing is found, it will return an <i>empty array</i>.
         </li>
         <li><i>elem</i><b>.closest(</b>selector<b>)</b> method traverses the <i>elem</i> element and its
           parents (heading toward the document root) until it finds a node that matches the specified CSS selector;
@@ -1100,7 +1043,6 @@
         <li><i>elem</i><b>.dataset</b>.attrName - to get the value of the <i>attrName</i> data-attribute of the
           <i>elem</i> element, the <i>dataset</i> property is used.
         </li>
-
       </ul>
       <h3>Creating and Removing Elements</h3>
       <ul>
@@ -1110,8 +1052,7 @@
         <li><i>elem</i><b>.append(</b>el1, el2, ...<b>)</b> adds one or more <i>el</i> elements after all children of
           the <i>elem</i> element;</li>
         <li><i>elem</i><b>.prepend(</b>el1, el2, ...<b>)</b> adds one or more <i>el</i> elements before all children
-          of
-          the <i>elem</i> element;
+          of the <i>elem</i> element;
         <li><i>elem</i><b>.after(</b>el1, el2, ...<b>)</b> adds one or more <i>el</i> elements after the <i>elem</i>
           element;</li>
         <li><i>elem</i><b>.before(</b>el1, el2, ...<b>)</b> adds one or more <i>el</i> elements before the <i>elem</i>
@@ -1122,8 +1063,7 @@
           optimization</b>
         is an expensive operation. <b>Repaint</b> occurs when changes have affected the styles that define the
         appearance of the element, but not its geometry. <b>Reflow</b> occurs when changes affect the content,
-        structure
-        of the document or the position of elements. All of the above operations block the browser.</p>
+        structure of the document or the position of elements. All of the above operations block the browser.</p>
       <ul>
         <li><i>elem</i><b>.innerHTML</b>[ <b>+=</b> 'newValue'] property stores, writes and adds the content of an
           element, including tags, as a string;</li>
@@ -1141,16 +1081,13 @@
       <h3>Adding Scripts</h3>
       <p>Loading and executing the script specified in the &#60script> tag with no attributes will block HTML document
         processing and DOM building. When the analyzer sees such a tag, the processing of the HTML document is
-        suspended
-        and files of the script specified in the src attribute begin to load. After loading, the script is executed,
-        and
-        only then HTML processing resumes. This is called a "blocking" script.</p>
+        suspended and files of the script specified in the src attribute begin to load. After loading, the script is
+        executed, and only then HTML processing resumes. This is called a "blocking" script.</p>
       <ul>
         <li>The <b>defer</b> attribute instructs the browser to load the script file in the background, together with
           HTML document processing and DOM building.The script will only be executed after the HTML document has been
           processed and DOM has been built. The script will only be executed after the HTML document has been
-          processed
-          and DOM has been built.</li>
+          processed and DOM has been built.</li>
         <li>The <b>async</b> attribute does not block DOM building, but it is executed immediately after loading. This
           means that such scripts can block DOM building, and they are executed in no particular order.</li>
       </ul>
@@ -1162,8 +1099,7 @@
       <h3>Events</h3>
       <p>An event is a signal from the browser that something has happened on a web page. In order for an element to
         react to user actions, it needs an event listener (handler), that is, a function that will be called as soon
-        as
-        the event occurs. </p>
+        as the event occurs. </p>
       <ul>
         <li><i>elem</i><b>.addEventListener(</b>event, handler[, {\\options}]<b>)</b> - dds an event listener to the
           <i>elem</i> element, where:
@@ -1171,18 +1107,15 @@
             <li><i>event</i> is event name, a string, for example 'click';</li>
             <li><i>handler</i> is a callback that will be called when the event occurs;</li>
             <li><i>options</i> is an optional parameter object with advanced options: <i>{once: true}</i> - removes
-              the
-              event listener after its execution.</li>
+              the event listener after its execution.</li>
           </ul>
         </li>
         <li><i>elem</i><b>.removeEventListener(</b>event, handler[, {\\options}]<b>)</b> - removes an event listener
-          from the
-          <i>elem</i> element, it is need to pass a reference to the callback that was assigned in
+          from the <i>elem</i> element, it is need to pass a reference to the callback that was assigned in
           <i>addEventListener()</i>;
         </li>
         <li><i>elem</i>.addEventListener(event, <b>objName.callbackName.bind(</b>objName<b>)</b>) - if the callback is
-          a
-          function that uses <b>this</b>, by default the context inside it will refer to the <i>elem</i> element with
+          a function that uses <b>this</b>, by default the context inside it will refer to the <i>elem</i> element with
           the listener.</li>
       </ul>
       <h3>Event Object</h3>
@@ -1205,10 +1138,8 @@
       <ul>
         <li><b>'keydown'</b> and <b>'keyup'</b> are two basic keyboard events;</li>
         <li><i>event</i><b>.key</b> property returns the character generated by key pressing, adjusted for the state
-          of
-          modifier keys, such as Shift, and the active language;</li>
-        <li><i>event</i><b>.code</b> property returns the code of a physical key on the keyboard and does not depend
-          on
+          of modifier keys, such as Shift, and the active language;</li>
+        <li><i>event</i><b>.code</b> property returns the code of a physical key on the keyboard and does not depend on
           languages.</li>
         <li><i>event</i><b>.ctrlKey</b>(<i>.altKey</i> | <i>.shiftkey</i> | <i>.metaKey</i>) property storing a
           boolean value indicating whether a modifier key is pressed or not.</li>
@@ -1277,16 +1208,14 @@
       </a>
       <h3>Throttle and Debounce</h3>
       <p><b>Throttle</b> and <b>Debounce</b> are two similar (but different in their behavior) techniques to control
-        how
-        many times you allow a function to execute over time. Use their versions from the <b>Lodash</b> library.</p>
+        how many times you allow a function to execute over time. Use their versions from the <b>Lodash</b> library.</p>
       <ul>
         <li><b>_.throttle(</b><i>func</i>, <i>N</i>, [{'trailing':true | leading':true}]<b>)</b> - controls the number
           of times a <i>func</i> function can be called one time in <i>N</i> milliseconds;
         </li>
         <li><b>_.debounce(</b><i>func</i>, <i>N</i>, [{trailing:false, leading:true}]<b>)</b> - ensures
           that the <i>func</i> function will only be called if there is a pause of <i>N</i> milliseconds between
-          events,
-          <i>trailing</i> edge (at the end) mode is called by default.
+          events, <i>trailing</i> edge (at the end) mode is called by default.
         </li>
       </ul>
       <h3>Lazy Loading</h3>
@@ -1301,10 +1230,8 @@
       </p>
       <ul>
         <li>&#60img <b>loading</b>="lazy" /> - <i>HTML attribute</i> of the <i>&#60img></i> tag is supported natively
-          in
-          all modern browsers except Safari, is used to lazy load below the fold images until the user scrolls down to
-          them and three values:
-          <ul>
+          in all modern browsers except Safari, is used to lazy load below the fold images until the user scrolls down
+          to them and three values: <ul>
             <li><b>lazy</b> - the browser will lazy load the image;</li>
             <li><b>eager</b> - the image will be loaded as soon as possible, that is, without lazy loading;</li>
             <li><b>auto</b> - the default value whhen the browser decides whether to perform lazy loading or not.</li>
@@ -1312,10 +1239,8 @@
         </li>
         <li> &#60img <b>class</b>="lazyload" <b>src</b>="path/to/lqip-placeholder.jpg"
           <b>data-src</b>="path/to/my-image.jpg" /> - images that need lazy loading whith <b>lazysizes library</b>,
-          set
-          the <i>lazyload class</i> and replace the src attribute with <i>data-src</i>, when the image has been
-          loaded,
-          lazysizes adds <b>class</b>="lazyload<b>ed</b>" to the element.
+          set the <i>lazyload class</i> and replace the src attribute with <i>data-src</i>, when the image has been
+          loaded, lazysizes adds <b>class</b>="lazyload<b>ed</b>" to the element.
         </li>
         <li>Boolean(<b>'loading' in HTMLImageElement.prototype</b>) - to check if browser supports natively lazy
           loading. </li>
@@ -1361,8 +1286,7 @@
               dependencies field in package.json
             </li>
             <li><b>-D</b> or <b>--save-dev</b> adds a development dependency that package will be installed locally in
-              the
-              node_modules folder, and an entry will be added to the devDependencies field in package.json</li>
+              the node_modules folder, and an entry will be added to the devDependencies field in package.json</li>
             <li><b>--global</b> adds a global dependency, tool is available for any project, the package will be
               installed globally (on the system)</li>
           </ul>
@@ -1536,20 +1460,15 @@
           </ul>
         </li>
         <li><b>.then(</b>onResolve[, onReject]<b>)</b> method takes two arguments - callbacks that will be called when
-          the
-          promise changes its state:
-          <ul>
-            <li><i>onResolve(</i>value<i>)</i> will be called when the promise is successful and will receive its
-              result
+          the promise changes its state: <ul>
+            <li><i>onResolve(</i>value<i>)</i> will be called when the promise is successful and will receive its result
               as an argument;</li>
             <li><i>onReject(</i>error<i>)</i> will be called when the promise throws an error and will receive it as
-              an
-              argument.</li>
+              an argument.</li>
           </ul>
         </li>
         <li><b>.catch(</b>onReject<b>)</b> method to "catch" errors, the callback will be called when the promise
-          throws
-          an error and will receive it as an argument;</li>
+          throws an error and will receive it as an argument;</li>
         <li><b>.finally(</b>onSettled<b>)</b> method to execute code after the promise is fulfilled or rejected,
           regardless of the outcome;</li>
       </ul>
@@ -1558,17 +1477,16 @@
         <li>
           <b>Promise.all(</b>[promise1, promise2, promise3, ...]<b>)</b> takes an array of promises, waits for them to
           execute and returns a promise, if all promises are successful, the returned promise will go into the
-          fulfilled
-          state, and its value will be an array of the results of each promise, if at least one of the promises is
-          rejected, the returned promise will go into the rejected state, and its value will be an error.
+          fulfilled state, and its value will be an array of the results of each promise, if at least one of the
+          promises is rejected, the returned promise will go into the rejected state, and its value will be an error.
         </li>
         <li><b>Promise.allSettled(</b>[promise1, promise2, promise3, ...]<b>)</b> static method takes an iterable of
           promises as input and returns a single Promise, this returned promise fulfills when all of the input's
           promises settle (including when an empty iterable is passed), with an array of objects that describe the
           outcome of each promise.</li>
         <li><b>Promise.race(</b>[promise1, promise2, promise3, ...]<b>)</b> returns a fulfilled or rejected promise,
-          depending on the result of the “fastest” of all the promises passed, with a
-          value or reason for rejection.</li>
+          depending on the result of the “fastest” of all the promises passed, with a value or reason for rejection.
+        </li>
         <li><b>Promise.resolve()</b> and <b>Promise.reject()</b> methods for creating instantly fulfilled or rejected
           promises, they function in the same way as new Promise() except that you can specify a delay, with a shorter
           syntax.</li>
@@ -1581,8 +1499,7 @@
       <h3>HTTP Protocol</h3>
       <p><b>HyperText Transfer Protocol</b> is based on the client-server structure and the request-response model, in
         which the client application initiates a connection, generates a request and sends it to the server, after
-        which
-        the server processes this request, generates a response and sends it back to the client. They communicate
+        which the server processes this request, generates a response and sends it back to the client. They communicate
         through a series of alternating HTTP requests and HTTP responses.</p>
       <p><b>HyperText Transfer Protocol Secure</b> is an extension of the HTTP protocol in which all messages between
         the client and the server are encrypted to improve security. It provides protection against eavesdropping
@@ -1591,15 +1508,13 @@
       <ul>
         <li><b>API</b> (<b>Application Programming Interface</b>) is a set of well-defined communication rules between
           various software components. The interface describes what you can ask the program to do and what you will
-          get
-          as a result.</li>
+          get as a result.</li>
         <li><b>REST</b> (<b>Representational State Transfer</b>) is a back-end architecture style based on a number of
           principles that describe how network resources are defined and addressed.</li>
         <li><b>REST API</b> is a back-end built on the REST principle. It serves as a layer between the web
-          application
-          and database. It has a standard interface for accessing resources. It works like a website: you send an HTTP
-          request from the client to the server, and in response, instead of an HTML page, you receive data in JSON
-          format.</li>
+          application and database. It has a standard interface for accessing resources. It works like a website: you
+          send an HTTP request from the client to the server, and in response, instead of an HTML page, you receive data
+          in JSON format.</li>
       </ul>
       <p>A REST service requires the client to make a request to add, retrieve or modify data. The server sends a
         response to the client's request, which contains a <a href="https://httpstatuses.com/" target="_blank"
@@ -1627,10 +1542,8 @@
       <h3>AJAX</h3>
       <p>AJAX (Asynchronous JavaScript and XML) is a method of receiving or sending data, and then updating the
         interface according to this data, without having to reload the page. A browser-built interface available on
-        the
-        window object that contains a set of properties and methods for sending, receiving and processing resources
-        from
-        the server.</p>
+        the window object that contains a set of properties and methods for sending, receiving and processing resources
+        from the server.</p>
       <ul>
         <li><b>fetch(</b>url, options<b>)</b> method returns the promise which value is an object with additional
           information about the server response status:<ul>
@@ -1639,11 +1552,9 @@
           </ul>
         </li>
         <li><b>.json()</b>, <b>.text()</b>, <b>.blob()</b> - depending on the type of received content, a different
-          method is used to transform the response body into
-          data.</li>
+          method is used to transform the response body into data.</li>
         <li>.../users<b>?</b>_limit=7<b>&</b>_sort=name - query string parameter is a <b>name=value</b> pair and used
-          to
-          specify additional criteria for the back-end, <b>?</b> character marks the start of parameters, <b>&</b>
+          to specify additional criteria for the back-end, <b>?</b> character marks the start of parameters, <b>&</b>
           character separates parameters.</li>
         <li>const searchParams = new <b>URLSearchParams(</b>{_limit: 5, _sort: "name",}<b>)</b> - special object with
           <i>.toString()</i> method to specify parameters and their values.
@@ -1658,12 +1569,9 @@
         different domain, port or protocol, that is, to make a cross-domain request, the browser throws an error.
         This browser policy is called CORS, <b>Cross-Origin Resource Sharing</b>, where Origin is the domain, port or
         protocol. The browser is an intermediary between the JavaScript code and the back-end. It adds the Origin
-        header
-        with the correct value to each request and checks for the Access-Control-Allow-Origin header in the response.
-        If
-        the header is there and its value is correct, the original request will be executed and the JavaScript code
-        will
-        receive its result, otherwise there will be a CORS error.
+        header with the correct value to each request and checks for the Access-Control-Allow-Origin header in the
+        response. If the header is there and its value is correct, the original request will be executed and the
+        JavaScript code will receive its result, otherwise there will be a CORS error.
       </p>
     </section>
     <section class="pagination">
@@ -1673,14 +1581,12 @@
       <h3>Pagination</h3>
       <p>Рagination is a technique in which not the entire collection is returned at the first and each subsequent GET
         request, but a certain part of it. Pagination is implemented on the back-end and used on the front-end by
-        means
-        of special request parameters:</p>
+        means of special request parameters:</p>
       <ul>
         <li><b>&page=1</b> - the first parameter defines the number of items in the response from the back-end;</li>
         <li><b>&per_page=20</b> - the second pagination parameter controls offset within the collection, by changing
-          the
-          value of this parameter, you tell the back-end what next group of items you want to receive, and so on until
-          the collection runs out of items;</li>
+          the value of this parameter, you tell the back-end what next group of items you want to receive, and so on
+          until the collection runs out of items;</li>
       </ul>
     </section>
     <section class="crud">
@@ -1707,20 +1613,15 @@
           identifier. Such request will result in an object added to the database.
         </li>
         <li><b>Read</b>. The <b>GET</b> HTTP method is used to get existing data. The <i>fetch()</i> method should
-          send
-          a GET request without a body to the server.The <i>fetch()</i> method makes a <i>GET</i> request by default,
-          so
-          it is not necessary to override the request options.</li>
+          send a GET request without a body to the server.The <i>fetch()</i> method makes a <i>GET</i> request by
+          default, so it is not necessary to override the request options.</li>
         <li><b>Update</b>. The <b>PUT</b> and <b>PATCH</b> methods are used to update existing data. Which method to
-          use
-          will be specified in the back-end documentation. The <i>fetch()</i> method must send a request to the
-          server,
-          having the object with fields to change in the body. The path indicates in which collection and which item
-          should be updated. If everything is fine, you will receive the updated object.</li>
+          use will be specified in the back-end documentation. The <i>fetch()</i> method must send a request to the
+          server, having the object with fields to change in the body. The path indicates in which collection and which
+          item should be updated. If everything is fine, you will receive the updated object.</li>
         <li><b>Delete</b>. The <b>DELETE</b> method is used to delete existing data. The <i>fetch()</i> method should
           send the <i>DELETE</i> request without a body to the server. The path indicates in which collection and
-          which
-          item to delete. </li>
+          which item to delete. </li>
       </ul>
     </section>
     <section class="async-await">
@@ -1736,8 +1637,7 @@
           and can only be used in the body of the <b>async</b> function.
         </li>
         <li>If the promise is <i>fulfilled</i>, the <b>await</b> operator will return its <i>value</i>, if the promise
-          is
-          <i>rejected</i>, the <b>await</b> operator will throw an <i>error</i>.
+          is <i>rejected</i>, the <b>await</b> operator will throw an <i>error</i>.
         </li>
         <li>An <b>asynchronous function</b> always returns a <b>promise</b>, so any <i>return</i> value will be its
           <i>value</i>, if you do not specify a return value, a promise with undefined will be returned.
@@ -1762,8 +1662,7 @@
           console.log(error.message);<b>}</b>
         </li>
         <li>If the result of an asynchronous function (promise) is used in outer (global) code, that is, outside of
-          other
-          asynchronous functions, errors are handled by the catch() method’s callback:<br>
+          other asynchronous functions, errors are handled by the catch() method’s callback:<br>
           <b>fetchData().then(</b>data => {//data handling}<b>).catch(</b>error => {//error handling}<b>)</b>
         </li>
         <li>If the result of an asynchronous function is used in another asynchronous function, errors are handled by
