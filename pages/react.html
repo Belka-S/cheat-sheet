@@ -50,8 +50,9 @@
                 <a href="https://www.youtube.com/watch?v=XRs3v6pNOH8" target="_blank">R02.1
                   <span>components-stylization-modules</span></a>
                 <a href="https://www.youtube.com/watch?v=S9-zFqxeEr8" target="_blank">R02.2
-                  <span>stylization-emotion</span></a>
-                <a href="" target="_blank">N02 <span></span></a>
+                  <span>emotion</span></a>
+                <a href="https://www.youtube.com/watch?v=zA0IXdx-yAw" target="_blank">N02
+                  <span>styled-components</span></a>
                 <a href="https://youtu.be/AwVqHVwuTTg" target="_blank">N02 <span></span></a>
                 <a href="https://youtu.be/PmJkyFJ9nhs" target="_blank">X02 <span></span></a>
               </div>
@@ -177,7 +178,7 @@
       <h3>React Library</h3>
       <p>React is a library for creating user interface elements, HTML markup can be rendered on the server
         (<a href="https://nextjs.org/" target="_blank" rel="noopener noreferrer">Next.js</a>), write native
-        (<a href="https://facebook.github.io/react-native/" target="_blank" rel="noopener noreferrer"> React Native</a>)
+        (<a href="https://facebook.github.io/react-native/" target="_blank" rel="noopener noreferrer">React Native</a>)
         or desktop (<a href="Electron" target="_blank" rel="noopener noreferrer">Electron</a>) applications. <b>Browser
           DOM</b> is a tree representation of an HTML document, where each element of the document is represented as a
         DOM node. <b>Virtual DOM</b> is an abstraction, a lightweight copy of a real DOM tree as a JSON object. In
@@ -274,6 +275,7 @@
           <b>:</b> "No unread messages."}&#60/p>
         </li>
         <li><b>switch case</b>: <br>
+          {(() => { <br>
           <b>switch</b> (status) {
           <b>case</b> 'warning':
           return
@@ -282,7 +284,8 @@
           return
           &#60Error text={text} />;
           default:
-          return null;}
+          return null;} <br>
+          })()}
         </li>
       </ul>
       <h3>Collections</h3>
@@ -342,11 +345,6 @@
         used to solve most problems related to many classes that are specified according to certain conditions. Of
         course JavaScript provides a rich syntax, but in most cases you write unproductive solutions or poorly readable
         code. The library standardizes this process and makes it more convenient through thoughtful syntax.</p>
-      <h3>Preprocessor SASS</h3>
-      <p>In order to add the ability to use SASS, install its compiler in the project (<b>npm install sass</b>), but the
-        ability to compose components makes them less useful, as it replaces concepts such as mixins, functions,
-        nesting, and others. It is not recommended to use the same CSS classes in different components, there is
-        component composition for this.</p>
       <h3>CSS Modules</h3>
       <p>CSS modules are not an official specification, they are not implemented in browsers. This is a process that is
         started at the build stage of a project, as a result of which class names are replaced with unique ones. This
@@ -384,10 +382,14 @@
           );
           };
         </li>
+        <li>
+          In order to add the ability to use <b>preprocessor SASS</b>, install its compiler in the project
+          (<b>npm install sass</b>), but the ability to compose components makes them less useful, as it replaces
+          concepts.</li>
       </ul>
-      <h3>Library @emotion</h3>
+      <h3>Librarys @emotion and styled-components</h3>
       <p>
-        Install to start <b>@emotion/react</b> and <b>@emotion/styled</b>. Syntax:
+        Install to start <b>@emotion/react</b> <b>@emotion/styled</b> or <b>styled-components</b> . Syntax:
       <ul>
         <li>fileName<b>.styled.js</b> - to make stiles in the same file directory;</li>
         <li>import <b>styled</b> from '@emotion/styled' - to import <i>styled</i> object;</li>
@@ -396,8 +398,16 @@
           <b>`</b> - to make style-function, supports nested selectors, <b>&</b>-sign is optional;
         </li>
         <li>import { <b>Container</b> } from './path' <br>
-          &#60<b>Container type={type}</b>>\\Inner HTML&#60/<b>Container</b>> - to apply styles.
+          &#60<b>Container</b> type={type}>\\Inner HTML&#60/<b>Container</b>> - to apply styles;
         </li>
+        <li>import { <b>createGlobalStyle</b> } from 'styled-components';<br>
+          export const GlobalStyle = createGlobalStyle`\\CSS-styles` <br>
+          &#60<b>GlobalStyle</b> /> - to apply global styling;
+        </li>
+        <li>import { <b>ThemeProvider</b> } from 'styled-components'; <br>
+          const <b>theme</b> = {\\Object}; - to make global theme constants in index.js;
+        </li>
+        <li>npm <b>install</b> modern-normalize and <b>import</b> 'modern-normalize' - to normalize styles.</li>
       </ul>
       </p>
       <h3>Style normalization</h3>
@@ -409,7 +419,6 @@
           rel="noopener noreferrer">sanitize.css</a>) with normalization best practices. In addition to standardizing
         the appearance of elements, it can be useful to reset or add some of the global element styles.
       </p>
-
       <p>
         src/<b>index.js</b> <br>
         import "./index.css"; <br>
