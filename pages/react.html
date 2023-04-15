@@ -452,16 +452,126 @@
       </span>
 
     </section>
-
     <section class="eventa-states">
       <a href="#goit">
         <h2 id="eventa-states">Events and States <span>(Lesson 3)</span></h2>
       </a>
+      <h3>Class Components</h3>
+      <p>To add dynamics, components are created as regular ES6 classes, so all rules apply: constructor, methods,
+        context (this). You must declare a mandatory render() method, which is called by default and returns JSX markup.
+      </p>
+      <span>
+        <b>import</b> React, <b>{</b> Component <b>}</b> from "react"; <br>
+
+        <b>class</b> MyClassComponent <b>extends</b> Component {
+        static defaultProps = {};
+        static propTypes = {}; <br>
+        <b>render</b>() {
+        <b>return</b> &#60div>Class Component&#60/div>;
+        } }
+      </span>
+      <h3>Events</h3>
+      <p>For a native browser event, React creates a <i>SyntheticEvent Object</i> wrapper object with an identical
+        interface. Event props are no exception and are named using camelCase. For example <b>onClick</b>,
+        <b>onChange</b>, <b>onSubmit</b>, <b>onMouseEnter</b>. The event prop is passed a reference to the callback
+        function that will be called when the event occurs. Event handlers receive an instance of <i>SyntheticEvent
+          Object</i>.
+      </p>
+      <span>&#60button <b>onClick</b>=<b>{</b>event=> console.log(event)<b>}</b>>Click Me&#60/button></span>
+      <h3>Internal state of the component</h3>
+      <p>The <b>state</b> object is a class property that should not be changed directly by the developer. The data in
+        <b>state</b> controls what is displayed in the interface. The data stored in the state should be information
+        that will be updated by the component methods. Every time the state of the component (or props) changes, the
+        <b>render()</b> method is called.
+      </p>
+      <ul>
+        <li><b>Initial state from props.</b> Sometimes the initial state depends on the passed props, for example, the
+          initial value of our counter. In this case, you must explicitly declare the props parameter in the constructor
+          and pass it to the super(props) call. Then this.props will be available in the constructor.</li>
+        <li><b>Changing the state of a component.</b> The built-in <b>setState(</b>updater, callback<b>)</b> method is
+          used to update the state. This approach is used when the new state is not calculated based on the previous
+          one. That is, when something new is written to the state, overwriting the existing one.</li>
+        <li><b>How the state is updated.</b> When calling <b>setState()</b>, you do not need to pass all the properties
+          stored in the state. It is enough to specify only that part (slice) of the state that we want to change in
+          this operation. React then takes the current state and the object that was passed to <i>setState()</i>,
+          concatenating them as follows.</li>
+        <li><b>State update asynchrony.</b> The <b>setState()</b> method registers an asynchronous state update
+          operation that is queued for updates. React does not change the state for every call to <b>setState()</b>, but
+          can combine multiple calls into one update to improve performance. Because of this, accessing this.state, in
+          synchronous code, after calling this method will return the value before the update. Therefore, you cannot
+          rely on the current state when calculating the next one, which depends on the previous one at the time of the
+          update. This may lead to errors. Therefore, there is a second way to update the state.</li>
+        <li><b>setState with function.</b> This approach is used when a new value is calculated based on the previous
+          state. The <b>setState()</b> method, as the first argument, can take not an object, but a function that should
+          return the object with which we want to update the state. The current state and props, at the time of
+          asynchronous execution of the function passed to setState(), will be passed to it as arguments <b>state</b>
+          and <b>props</b>. <br>
+          <b>setState(</b>(state, props) => {
+          return {};
+          }, callback<b>)</b>;
+        </li>
+        <li><b>Lifting state.</b> Since React uses a one-way data flow from top to bottom, in order to change the state
+          of the parent on an event in the child, the following callback pattern is used.
+          <ul>
+            <li>The parent has a state and a method that changes it.</li>
+            <li>The child, in the form of a prop, is forwarded the method of the parent that changes the state of the
+              parent.</li>
+            <li>In the child there is a call of the method transferred to it.</li>
+            <li>When this method is called, the state of the parent is changed.</li>
+            <li>There is a re-render of a subtree of components of the parent.</li>
+          </ul>
+        </li>
+        <li><b>Internal data types of the class component.</b>
+          <ul>
+            <li><i>static data</i> - static properties and methods that need to be accessed without an instance.</li>
+            <li><i>this.state.data</i> - dynamic data changed by component methods, state.</li>
+            <li><i>this.data</i> - data that will be different for each instance.</li>
+            <li><i>const DATA</i> - constants, data that does not change and is the same for all instances.</li>
+          </ul>
+        </li>
+      </ul>
     </section>
     <section class="forms">
       <a href="#goit">
         <h2 id="forms">Forms <span>(Lesson 4)</span></h2>
       </a>
+      <h3>Uncontrolled elements</h3>
+      <p>The main purpose of any form is to get user data. To do this, during the submission, you can get the values of
+        the fields from its <b>elements</b> property or using <b>FormData</b>. This technique is appropriate to use when
+        the form field data is needed only during its submission.</p>
+      <h3>Controlled elements</h3>
+      <p>If the values of the form elements need to be retrieved at the time of the field change and do something
+        dynamically, they must be controlled. That is, the values of all fields must be in <b>state</b>. The field in
+        <b>state</b> defines the <b>value</b> of the value attribute of the field. The <b>onChange</b> event is passed a
+        method that changes the field in the state.
+      </p>
+      <h3>Generate the Id of the form elements</h3>
+      <p><b>Accessibility</b> (a11y) is a very important topic in today's web. The <b>for</b> HTML attribute of the
+        <b>label</b> tag helps assistive technology and other assistive technologies. In React, it is represented by the
+        <b>htmlFor</b> jsx attribute. To generate unique identifiers for form elements, the following approach is used:
+        for each element instance, when it is initialized, a set of unique identifiers is created and stored on the
+        instance. Thus, we get unique id between different forms.
+      </p>
+      <h3>Checkboxes</h3>
+      <p>Working with checkboxes is simple and straightforward. A checkbox can have only 2 states: true or false.
+      <ul>
+        <li>The name of the attribute to which the current value from <b>state</b> is passed. For checkboxes, this is
+          <b>checked</b>, and we pass a boolean there.
+        </li>
+        <li>When handling the <b>onChange</b> event, to get the value, in the event object, we access the
+          <b>event.target.checked</b> property.
+        </li>
+        <li>If the checkbox must store a <b>value</b>, it can also be hung on the value attribute and read from the
+          event object.</li>
+      </ul>
+      </p>
+      <h3>Radio buttons</h3>
+      <p>Unlike the usual grouping by the value of the <b>name</b> attribute, in React a radio button is just an
+        interface element that knows if it is selected and c an ask the form to change the selection. Usually radio
+        buttons have both a <b>checked</b> attribute and a <b>value</b> attribute.</p>
+      <h3>Select</h3>
+      <p>There is a select, there are options, the select has <b>value</b> and <b>onChange</b>.
+      </p>
     </section>
     <section class="lifecycle">
       <a href="#goit">
