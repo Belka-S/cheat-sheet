@@ -59,16 +59,17 @@
             </a></li>
           <li><a href="#eventa-states">Events and States <span>(Lesson 3)</span>
               <div>
-                <a href="" target="_blank">R03 <span></span></a>
-                <a href="" target="_blank">N03 <span></span></a>
+                <a href="https://www.youtube.com/watch?v=8XLLAQy7Dn0" target="_blank">R03 <span>events-states</span></a>
+                <a href="https://www.youtube.com/watch?v=vJ9yjWuPrrM" target="_blank">N03 <span></span></a>
                 <a href="https://youtu.be/6r99-pQzOZU" target="_blank">N03 <span></span></a>
                 <a href="https://youtu.be/dDBx1OLZNYs" target="_blank">X03 <span></span></a>
               </div>
             </a></li>
           <li><a href="#forms">Forms <span>(Lesson 4)</span>
               <div>
-                <a href="" target="_blank">R04 <span></span></a>
-                <a href="" target="_blank">N04 <span></span></a>
+                <a href="https://www.youtube.com/watch?v=0nwx0xTBhrQ" target="_blank">R04.1 <span>forms</span></a>
+                <a href="https://www.youtube.com/watch?v=hZNiA0CE7qw" target="_blank">R04.2 <span>formik-yup</span></a>
+                <a href="https://www.youtube.com/watch?v=n9M2rDafvlY" target="_blank">N04 <span></span></a>
                 <a href="https://youtu.be/aTGi4zOG2ME" target="_blank">N04 <span></span></a>
                 <a href="https://youtu.be/c4V77zAJMGQ" target="_blank">X04 <span></span></a>
               </div>
@@ -125,6 +126,7 @@
               <div>
                 <a href="" target="_blank">R11 <span></span></a>
                 <a href="" target="_blank">N11 <span></span></a>
+                <a href="https://www.youtube.com/watch?v=nFGTwGg8mc4" target="_blank">N11 <span></span></a>
                 <a href="https://youtu.be/JKFc73R-idI" target="_blank">X11 <span></span></a>
               </div>
             </a></li>
@@ -132,6 +134,7 @@
               <div>
                 <a href="" target="_blank">R12 <span></span></a>
                 <a href="" target="_blank">N12 <span></span></a>
+                <a href="https://www.youtube.com/watch?v=1OcSD1qmJoY" target="_blank">N12 <span></span></a>
                 <a href="https://youtu.be/To6zzghMr_I" target="_blank">X12 <span></span></a>
               </div>
             </a></li>
@@ -139,6 +142,7 @@
               <div>
                 <a href="" target="_blank">R13 <span></span></a>
                 <a href="" target="_blank">N13 <span></span></a>
+                <a href="https://www.youtube.com/watch?v=KkrMjqmg0lk" target="_blank">N13 <span></span></a>
                 <a href="" target="_blank">X13 <span></span></a>
               </div>
             </a></li>
@@ -146,6 +150,7 @@
               <div>
                 <a href="" target="_blank">R14 <span></span></a>
                 <a href="" target="_blank">N14 <span></span></a>
+                <a href="https://www.youtube.com/watch?v=Q9eOMFwuxlQ" target="_blank">N14 <span></span></a>
                 <a href="" target="_blank">X14 <span></span></a>
               </div>
             </a></li>
@@ -153,6 +158,7 @@
               <div>
                 <a href="" target="_blank">R15-16 <span></span></a>
                 <a href="" target="_blank">N15-16 <span></span></a>
+                <a href="https://www.youtube.com/watch?v=yc8W6-nZc5M" target="_blank">N15-16 <span></span></a>
                 <a href="" target="_blank">X15-16 <span></span></a>
               </div>
             </a></li>
@@ -160,6 +166,7 @@
               <div>
                 <a href="" target="_blank">RaDD <span></span></a>
                 <a href="" target="_blank">NaDD <span></span></a>
+                <a href="https://www.youtube.com/watch?v=8TnJ37TSbkI" target="_blank">NaDD <span></span></a>
                 <a href="" target="_blank">XaDD <span></span></a>
               </div>
             </a></li>
@@ -339,7 +346,14 @@
         <b> import "./Alert.css"</b>;
         const Alert = ({ children }) => {
         return &#60p <b>className</b>="<b>alert</b>">{children}&#60/p>;
-        };</span>
+        };</span> <br>
+      <p>
+        <b>import</b> classNames from 'classnames' <br>
+        className=(<b>classNames(</b>baseName, {activeName: true}<b>)</b>) - to show/hide <b>activeName</b> on
+        true/false value.
+      </p>
+
+
       <h3>Library clsx</h3>
       <p>The <a href="https://www.npmjs.com/package/clsx" target="_blank" rel="noopener noreferrer">clsx library</a> is
         used to solve most problems related to many classes that are specified according to certain conditions. Of
@@ -385,7 +399,9 @@
         <li>
           In order to add the ability to use <b>preprocessor SASS</b>, install its compiler in the project
           (<b>npm install sass</b>), but the ability to compose components makes them less useful, as it replaces
-          concepts.</li>
+          concepts. <br>
+          Create <b>.env</b> and put in it <b>SASS_PATH=src</b> to use <b>@import</b> 'styles/index.scss'.
+        </li>
       </ul>
       <h3>Librarys @emotion and styled-components</h3>
       <p>
@@ -461,14 +477,14 @@
         context (this). You must declare a mandatory render() method, which is called by default and returns JSX markup.
       </p>
       <span>
-        <b>import</b> React, <b>{</b> Component <b>}</b> from "react"; <br>
+        import <b>React</b> from "react"; <br>
 
-        <b>class</b> MyClassComponent <b>extends</b> Component {
+        <b>class</b> MyClassComponent <b>extends</b> React.Component <b>{</b>
         static defaultProps = {};
         static propTypes = {}; <br>
         <b>render</b>() {
-        <b>return</b> &#60div>Class Component&#60/div>;
-        } }
+        return &#60div>Class Component&#60/div>;
+        } <b>}</b>
       </span>
       <h3>Events</h3>
       <p>For a native browser event, React creates a <i>SyntheticEvent Object</i> wrapper object with an identical
@@ -477,7 +493,8 @@
         function that will be called when the event occurs. Event handlers receive an instance of <i>SyntheticEvent
           Object</i>.
       </p>
-      <span>&#60button <b>onClick</b>=<b>{</b>event=> console.log(event)<b>}</b>>Click Me&#60/button></span>
+      <span><b>handleOnClick</b> = <b>(</b>event<b>) =></b> {console.log(event); console.log(this);}</span> <br>
+      <span>&#60button <b>onClick</b>=<b>{</b>this.handleOnClick<b>}</b>>Click Me&#60/button></span>
       <h3>Internal state of the component</h3>
       <p>The <b>state</b> object is a class property that should not be changed directly by the developer. The data in
         <b>state</b> controls what is displayed in the interface. The data stored in the state should be information
@@ -487,31 +504,73 @@
       <ul>
         <li><b>Initial state from props.</b> Sometimes the initial state depends on the passed props, for example, the
           initial value of our counter. In this case, you must explicitly declare the props parameter in the constructor
-          and pass it to the super(props) call. Then this.props will be available in the constructor.</li>
-        <li><b>Changing the state of a component.</b> The built-in <b>setState(</b>updater, callback<b>)</b> method is
-          used to update the state. This approach is used when the new state is not calculated based on the previous
-          one. That is, when something new is written to the state, overwriting the existing one.</li>
-        <li><b>How the state is updated.</b> When calling <b>setState()</b>, you do not need to pass all the properties
-          stored in the state. It is enough to specify only that part (slice) of the state that we want to change in
-          this operation. React then takes the current state and the object that was passed to <i>setState()</i>,
-          concatenating them as follows.</li>
-        <li><b>State update asynchrony.</b> The <b>setState()</b> method registers an asynchronous state update
-          operation that is queued for updates. React does not change the state for every call to <b>setState()</b>, but
-          can combine multiple calls into one update to improve performance. Because of this, accessing this.state, in
-          synchronous code, after calling this method will return the value before the update. Therefore, you cannot
-          rely on the current state when calculating the next one, which depends on the previous one at the time of the
-          update. This may lead to errors. Therefore, there is a second way to update the state.</li>
-        <li><b>setState with function.</b> This approach is used when a new value is calculated based on the previous
-          state. The <b>setState()</b> method, as the first argument, can take not an object, but a function that should
-          return the object with which we want to update the state. The current state and props, at the time of
-          asynchronous execution of the function passed to setState(), will be passed to it as arguments <b>state</b>
-          and <b>props</b>. <br>
-          <b>setState(</b>(state, props) => {
-          return {};
-          }, callback<b>)</b>;
+          and pass it to the super(props) call. Then this.props will be available in the constructor. <br>
+          <b>constructor() {</b>
+          super();
+          this.<b>state</b> = {
+          value: 0,
+          };
+          <b>}</b>
+          <p>Since Babel is used under the hood, we can skip the tedious constructor declaration and specify the state
+            as a public property of the class, the transpiler will do the rest for us. <br>
+            <b>static</b> defaultProps = { initialValue: 0, };<br>
+            <b>state</b> = <b>{</b> value: this.props.initialValue, <b>}</b>; <br>
+            &#60Counter <b>initialValue</b>=<b>{</b>10<b>}</b> />
+          </p>
         </li>
-        <li><b>Lifting state.</b> Since React uses a one-way data flow from top to bottom, in order to change the state
-          of the parent on an event in the child, the following callback pattern is used.
+        <li>
+          <p>
+            <b>Changing the state of a component.</b> The built-in <b>setState(</b>updater, callback<b>)</b> method is
+            used to update the state. This approach is used when the new state is not calculated based on the previous
+            one. That is, when something new is written to the state, overwriting the existing one. <br>
+            this<b>.setState(</b>{value: newValue}<b>)</b>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>How the state is updated.</b> When calling <b>setState()</b>, you do not need to pass all the properties
+            stored in the state. It is enough to specify only that part (slice) of the state that we want to change in
+            this operation. React then takes the current state and the object that was passed to <i>setState()</i>,
+            concatenating them as follows. <br>
+            const <b>nextState</b> = <b>{</b> ...currentState, ...updateSlice <b>}</b>;
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>State update asynchrony.</b> The <b>setState()</b> method registers an asynchronous state update
+            operation that is queued for updates. React does not change the state for every call to <b>setState()</b>,
+            but
+            can combine multiple calls into one update to improve performance. Because of this, accessing
+            <b>this.state</b>, in synchronous code, after calling this method will return the value before the update.
+            Therefore, you cannot rely on the current state when calculating the next one, which depends on the previous
+            one at the time of the update. This may lead to errors. <br>
+            this.setState(<b>prevState</b> => <b>(</b>{ value: <b>prevState</b>.value + 1 }; <b>)</b> );
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>setState with function.</b> This approach is used when a new value is calculated based on the previous
+            state. The <b>setState()</b> method, as the first argument, can take not an object, but a function that
+            should
+            return the object with which we want to update the state. The current state and props, at the time of
+            asynchronous execution of the function passed to setState(), will be passed to it as arguments <b>state</b>
+            and <b>props</b>. <br>
+            <b>setState(</b>(state, props) => {
+            return {};
+            }, callback<b>)</b>;
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Lifting state.</b> Since React uses a one-way data flow from top to bottom, in order to change the state
+            of the parent on an event in the child, the following callback pattern is used. <br>
+            const Button = ({ <b>changeMessage</b>, label }) => (
+            &#60button type="button" onClick={<b>changeMessage</b>}>
+            {label}
+            &#60/button>
+            );<br>
+            &#60Button label="Change message" <b>changeMessage</b>={this.updateMessage} />
+
           <ul>
             <li>The parent has a state and a method that changes it.</li>
             <li>The child, in the form of a prop, is forwarded the method of the parent that changes the state of the
@@ -520,14 +579,18 @@
             <li>When this method is called, the state of the parent is changed.</li>
             <li>There is a re-render of a subtree of components of the parent.</li>
           </ul>
+          </p>
         </li>
-        <li><b>Internal data types of the class component.</b>
+        <li>
+          <p>
+            <b>Internal data types of the class component.</b>
           <ul>
             <li><i>static data</i> - static properties and methods that need to be accessed without an instance.</li>
             <li><i>this.state.data</i> - dynamic data changed by component methods, state.</li>
             <li><i>this.data</i> - data that will be different for each instance.</li>
             <li><i>const DATA</i> - constants, data that does not change and is the same for all instances.</li>
           </ul>
+          </p>
         </li>
       </ul>
     </section>
@@ -543,17 +606,47 @@
       <p>If the values of the form elements need to be retrieved at the time of the field change and do something
         dynamically, they must be controlled. That is, the values of all fields must be in <b>state</b>. The field in
         <b>state</b> defines the <b>value</b> of the value attribute of the field. The <b>onChange</b> event is passed a
-        method that changes the field in the state.
+        method that changes the field in the state. <br>
+        class <b>App</b> extends Component <b>{</b>
+        <b>state</b> = <b>{</b>
+        inputValue: "",
+        <b>}</b>;<br>
+        <b>handleChange</b> = evt => <b>{</b>
+        this.<b>setState</b>({ inputValue: evt.target.value });
+        <b>}</b>; <br>
+        <b>render( ) {</b>
+        const { inputValue } = this.state;
+        return (
+        &#60input type="text" <b>value</b>={inputValue} <b>onChange</b>={this.handleChange} />
+        );
+        <b>}</b>
+        <b>}</b>
       </p>
+      <h3>Complex shapes</h3>
+      <p>A very useful pattern for the callback function passed to onChange. <br>
+        handleChange = evt => {
+        const { <b>name</b>, <b>value</b> } = evt.target;
+        this.setState({ [<b>name</b>]: <b>value</b> });
+        };</p>
       <h3>Generate the Id of the form elements</h3>
       <p><b>Accessibility</b> (a11y) is a very important topic in today's web. The <b>for</b> HTML attribute of the
         <b>label</b> tag helps assistive technology and other assistive technologies. In React, it is represented by the
         <b>htmlFor</b> jsx attribute. To generate unique identifiers for form elements, the following approach is used:
-        for each element instance, when it is initialized, a set of unique identifiers is created and stored on the
-        instance. Thus, we get unique id between different forms.
+        for each element instance, when it is initialized, a set of unique identifiers is created (<a
+          href="https://www.npmjs.com/package/shortid" target="_blank" rel="noopener noreferrer">shortid</a>) and stored
+        on the instance.
       </p>
       <h3>Checkboxes</h3>
-      <p>Working with checkboxes is simple and straightforward. A checkbox can have only 2 states: true or false.
+      <p>Working with checkboxes is simple and straightforward. A checkbox can have only 2 states: true or false. <br>
+        <b>state</b> = <b>{</b>
+        ...INITIAL_STATE,
+        <b>}</b>; <br>
+
+        <b>handleChange</b> = evt => <b>{</b>
+        const { name, value, type, checked } = evt.target;
+        this.<b>setState(</b>{ [name]: type === "checkbox" ? checked : value }<b>)</b>;
+        <b>}</b>;<br>
+      </p>
       <ul>
         <li>The name of the attribute to which the current value from <b>state</b> is passed. For checkboxes, this is
           <b>checked</b>, and we pass a boolean there.
@@ -564,11 +657,17 @@
         <li>If the checkbox must store a <b>value</b>, it can also be hung on the value attribute and read from the
           event object.</li>
       </ul>
+      <p>
+        this.setState(<b>prevState</b> => <b>(</b>{todos: prevState.todos.map(<b>todo</b> => <br>
+        todo.id === todoId <b>?</b> {...todo, completed: !todo.completed} <b>:</b> todo, ), }<b>)</b>)
       </p>
       <h3>Radio buttons</h3>
       <p>Unlike the usual grouping by the value of the <b>name</b> attribute, in React a radio button is just an
         interface element that knows if it is selected and c an ask the form to change the selection. Usually radio
-        buttons have both a <b>checked</b> attribute and a <b>value</b> attribute.</p>
+        buttons have both a <b>checked</b> attribute and a <b>value</b> attribute. <br>
+        &#60input type="radio" <b>checked</b>=<b>{</b>this.state.gender==="male"<b>}</b> <b>value</b>="male"
+        onChage={this.handleGenderChange} />
+      </p>
       <h3>Select</h3>
       <p>There is a select, there are options, the select has <b>value</b> and <b>onChange</b>.
       </p>
