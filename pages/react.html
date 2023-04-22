@@ -57,9 +57,9 @@
                 <a href="https://youtu.be/PmJkyFJ9nhs" target="_blank">X02 <span></span></a>
               </div>
             </a></li>
-          <li><a href="#eventa-states">Events and States <span>(Lesson 3)</span>
+          <li><a href="#eventa-state">Events and State <span>(Lesson 3)</span>
               <div>
-                <a href="https://www.youtube.com/watch?v=8XLLAQy7Dn0" target="_blank">R03 <span>events-states</span></a>
+                <a href="https://www.youtube.com/watch?v=8XLLAQy7Dn0" target="_blank">R03 <span>events-state</span></a>
                 <a href="https://www.youtube.com/watch?v=vJ9yjWuPrrM" target="_blank">N03 <span></span></a>
                 <a href="https://youtu.be/6r99-pQzOZU" target="_blank">N03 <span></span></a>
                 <a href="https://youtu.be/dDBx1OLZNYs" target="_blank">X03 <span></span></a>
@@ -468,9 +468,9 @@
       </span>
 
     </section>
-    <section class="eventa-states">
+    <section class="eventa-state">
       <a href="#goit">
-        <h2 id="eventa-states">Events and States <span>(Lesson 3)</span></h2>
+        <h2 id="eventa-state">Events and State <span>(Lesson 3)</span></h2>
       </a>
       <h3>Class Components</h3>
       <p>To add dynamics, components are created as regular ES6 classes, so all rules apply: constructor, methods,
@@ -676,11 +676,105 @@
       <a href="#goit">
         <h2 id="lifecycle">Lifecycle <span>(Lesson 5)</h2>
       </a>
+      <h3>Lifecycle</h3>
+      <p>There are several lifecycle stages - mounting, updation and unmounting. During each of them, methods inherited
+        from <i>React.Component</i> are called on the component class. There are seven lifecycle methods in total, not
+        counting render and constructor. In practice, in most everyday tasks, three are used: <b>componentDidMount</b>,
+        <b>componentDidUpdate</b> и <b>componentWillUnmount</b>.
+      </p>
+      <h3>Mounting stage</h3>
+      <p>The following methods are called in this order when the component is instantiated and added to the DOM.</p>
+      <ul>
+        <li><b>constructor() {}</b> - called when the component is instantiated, before the component is placed in the
+          DOM, initializes the initial state of the component, binds context in methods;
+        </li>
+        <li>static <i>getDerivedStateFromProps(</i>nextProps, prevState<i>) {}</i> - method is rarely used in practice,
+          called before <i>render()</i>, on mount, and before all subsequent calls to render, i.e. after updating
+          <i>state</i> or <i>props</i>, an be used to set <i>state</i> depending on <i>props</i> each time they change,
+          no access to <i>this</i>;
+        </li>
+        <li><b>render() {}</b> - allows to declaratively describe the interface, returns the result of JSX expressions,
+          Virtual DOM subtree, can't call <i>setState()</i>;</li>
+        <li><b>componentDidMount() {}</b> - called immediately after the component is mounted in the DOM, making HTTP
+          requests, hanging custom event listeners and performing operations with the DOM tree, calling
+          <i>setState()</i> in this method will cause a re-render.
+        </li>
+      </ul>
+      <h3>Update stage</h3>
+      <p>An update can be triggered by a change in the <i>state</i> of the component itself or the <i>props</i> passed
+        to it. On update, the component needs to be re-rendered, which leads to the following methods being called.</p>
+      <ul>
+        <li><b>shouldComponentUpdate(</b>nextProps, nextState<b>) {}</b> - called before re-rendering an already mounted
+          component, allows to compare current and previous state and props by returning true or false telling React if
+          the component needs to be updated, if it returns false then <i>render()</i> and <i>componentDidUpdate()</i>
+          will not happen</li>
+        <li><b>getSnapshotBeforeUpdate(</b>prevProps, prevState<b>) {}</b> - method is rarely used in practice, called
+          before any changes are ready to be added to the DOM, can be used to get pre-update DOM values, such as the
+          current scroll position or the size of the element before the update, what this method returns will be passed
+          as the third <i>snapshot</i> parameter to <i>componentDidUpdate()</i>;</i></li>
+        <li><b>componentDidUpdate(</b>prevProps, prevState, snapshot<b>) {}</b> - called immediately after updating the
+          component in the DOM, not called when the component is initially rendered, it is possible to call
+          <i>setState()</i>, making sure to wrap it in a condition to check.
+        </li>
+      </ul>
+      <h3>Unmounting stage</h3>
+      <p>At some point, the component will be removed from the DOM. This calls the <b>componentWillUnmount() {}</b>
+        method. It is called before the element is unmounted and removed from the DOM, great for cleaning up after
+        yourself: listeners, timers, HTTP requests. Otherwise there will be memory leaks.</p>
+      <h3>Handling render errors</h3>
+      <p>The <b>componentDidCatch(</b>error, info<b>) {}</b> method fires on an error in a child component and allows
+        parent components to catch errors in children by displaying a fallback interface. As a result, when an error
+        occurs, the interface does not crash. It catches errors only in children, but not in the parent itself,
+        <b>error</b> - result of <i>toString()</i> error object, <b>info</b> - an object describing the stack trace.
+      </p>
     </section>
+
     <section class="requests">
       <a href="#goit">
         <h2 id="requests">HTTP-requests <span>(Lesson 6)</h2>
       </a>
+      <h3>HTTP Requests</h3>
+      <p>The <b>componentDidMount</b> and <b>componentDidUpdate</b> lifecycle methods are ideal for HTTP requests.
+        When <b>componentDidMount()</b> is called, the component has already been rendered to the DOM and is ready for
+        a subsequent state update. When <b>componentDidUpdate()</b> is called, the props or the state of the component
+        have changed, and it may be necessary to make a new request, comparing them first, so as not to loop the
+        component's render. Anything can be used for an HTTP request: <b>XMLHTTPRequest</b>, <b>fetch</b>, <b>axios</b>,
+        <b>superagent</b>, etc.
+      </p>
+      <span>
+        async <b>componentDidMount() {</b>
+        const response = await axios.get("/search?query=react");<br>
+        <b>this.setState(</b>{ articles: response.data.hits }<b>)</b>;
+        <b>}</b>
+      </span>
+      <h3>Loading indicator / Error handling</h3>
+      <p>
+        While we are waiting for a response to the HTTP request, we show the download walker. As soon as the answer
+        comes, hide the indicator. To do this, at the start of the request, set <b>isLoading</b> to <i>true</i>, and on
+        a successful response or error, set it to <i>false</i>.
+      </p>
+      <p>To make clear if something went wrong add the error storage property to the state. When using promises, the
+        catch block is used to handle errors, if it is executed, then an error has occurred. We move the loading
+        indicator setting to the finally block so as not to duplicate the code that will be executed anyway. </p>
+      <span>
+        async <b>componentDidMount() {</b>
+        this.<b>setState(</b>{ isLoading: true }<b>)</b>;<br>
+        <b>try {</b>
+        const response = await axios.get("/search?query=react");
+        this.<b>setState(</b>{ articles: response.data.hits }<b>)</b>;<b>}</b><br>
+        <b>catch (</b>error<b>) {</b>
+        this.<b>setState(</b>{ error }<b>)</b>;<b>}</b><br>
+        <b>finally {</b>
+        this.<b>setState(</b>{ isLoading: false }<b>)</b>;<b>}}</b>
+      </span>
+      <h3>Separation of responsibility</h3>
+      <p>It is not a good practice to store HTTP request related code directly in the component, <b>services</b> folder
+        will store a file with functions for HTTP requests.</p>
+      <span>
+        export const fetchData = <b>async</b> searchQuery => {<br>
+        const response = <b>axios.get(</b>`/search?query=${searchQuery}`<b>)</b>;<br>
+        <b>return</b> response.data.hits; };
+      </span>
     </section>
     <section class="hooks">
       <a href="#goit">
