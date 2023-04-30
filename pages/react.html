@@ -57,7 +57,7 @@
                 <a href="https://youtu.be/PmJkyFJ9nhs" target="_blank">X02 <span></span></a>
               </div>
             </a></li>
-          <li><a href="#eventa-state">Events and State <span>(Lesson 3)</span>
+          <li><a href="#events-state">Events and State <span>(Lesson 3)</span>
               <div>
                 <a href="https://www.youtube.com/watch?v=8XLLAQy7Dn0" target="_blank">R03 <span>events-state</span></a>
                 <a href="https://www.youtube.com/watch?v=vJ9yjWuPrrM" target="_blank">N03 <span>events-state</span></a>
@@ -96,7 +96,8 @@
             </a></li>
           <li><a href="#hooks">React Hooks <span>(Lesson 7)</span>
               <div>
-                <a href="" target="_blank">R07 <span></span></a>
+                <a href="https://www.youtube.com/watch?v=6Pt4DY3Tlfs" target="_blank">R07.01 <span>hooks</span></a>
+                <a href="https://www.youtube.com/watch?v=R5PR4z65Stc" target="_blank">R07.02 <span>hooks</span></a>
                 <a href="" target="_blank">N07 <span></span></a>
                 <a href="https://youtu.be/uCIxCfmhOss" target="_blank">N07 <span></span></a>
                 <a href="https://youtu.be/P6rJ2lFvcrc" target="_blank">X07 <span></span></a>
@@ -104,7 +105,8 @@
             </a></li>
           <li><a href="#context-refs">Context and Refs <span>(Lesson 8)</span>
               <div>
-                <a href="" target="_blank">R08 <span></span></a>
+                <a href="https://www.youtube.com/watch?v=Ovbji4uY0yk" target="_blank">R08.01 <span>pagination</span></a>
+                <a href="https://www.youtube.com/watch?v=UIk2-oFTCc4" target="_blank">R08.02 <span>load-more</span></a>
                 <a href="" target="_blank">N08 <span></span></a>
                 <a href="https://youtu.be/d_1MkQn2gEc" target="_blank">N08 <span></span></a>
                 <a href="https://youtu.be/k6rWrySB9Tg" target="_blank">X08 <span></span></a>
@@ -286,7 +288,7 @@
           <b>:</b> "No unread messages."}&#60/p>
         </li>
         <li><b>switch case</b>: <br>
-          {(() => { <br>
+          {(( ) => { <br>
           <b>switch</b> (status) {
           <b>case</b> 'warning':
           return
@@ -296,11 +298,12 @@
           &#60Error text={text} />;
           default:
           return null;} <br>
-          })()}
+          })( )}
         </li>
       </ul>
       <h3>Collections</h3>
-      <p>In order to render a collection of elements of the same type, the <i>Array.prototype</i><b>.map()</b> method is
+      <p>In order to render a collection of elements of the same type, the <i>Array.prototype</i><b>.map( )</b> method
+        is
         used, the callback function of which, for each element of the collection, returns JSX markup. <b>Key</b> is a
         special string prop that must be set when creating collection elements. Elements within a collection must be
         provided with keys in order to have a stable identity. React uses keys to determine which elements in the
@@ -325,7 +328,7 @@
         borderRadius: 4,
         backgroundColor: "gray",
         }; <br>
-        const App = () => {
+        const App = ( ) => {
         return (
         &#60>
         &#60p <b>style</b>={<b>alertStyles</b>}>Please update your email!&#60/p>
@@ -472,13 +475,14 @@
       </span>
 
     </section>
-    <section class="eventa-state">
+    <section class="events-state">
       <a href="#goit">
-        <h2 id="eventa-state">Events and State <span>(Lesson 3)</span></h2>
+        <h2 id="events-state">Events and State <span>(Lesson 3)</span></h2>
       </a>
       <h3>Class Components</h3>
       <p>To add dynamics, components are created as regular ES6 classes, so all rules apply: constructor, methods,
-        context (this). You must declare a mandatory render() method, which is called by default and returns JSX markup.
+        context (this). You must declare a mandatory render( ) method, which is called by default and returns JSX
+        markup.
       </p>
       <span>
         import <b>React</b> from "react"; <br>
@@ -486,7 +490,7 @@
         <b>class</b> MyClassComponent <b>extends</b> React.Component <b>{</b>
         static defaultProps = {};
         static propTypes = {}; <br>
-        <b>render</b>() {
+        <b>render</b>( ) {
         return &#60div>Class Component&#60/div>;
         } <b>}</b>
       </span>
@@ -503,14 +507,14 @@
       <p>The <b>state</b> object is a class property that should not be changed directly by the developer. The data in
         <b>state</b> controls what is displayed in the interface. The data stored in the state should be information
         that will be updated by the component methods. Every time the state of the component (or props) changes, the
-        <b>render()</b> method is called.
+        <b>render( )</b> method is called.
       </p>
       <ul>
         <li><b>Initial state from props.</b> Sometimes the initial state depends on the passed props, for example, the
           initial value of our counter. In this case, you must explicitly declare the props parameter in the constructor
           and pass it to the super(props) call. Then this.props will be available in the constructor. <br>
-          <b>constructor() {</b>
-          super();
+          <b>constructor( ) {</b>
+          super( );
           this.<b>state</b> = {
           value: 0,
           };
@@ -532,17 +536,17 @@
         </li>
         <li>
           <p>
-            <b>How the state is updated.</b> When calling <b>setState()</b>, you do not need to pass all the properties
+            <b>How the state is updated.</b> When calling <b>setState( )</b>, you do not need to pass all the properties
             stored in the state. It is enough to specify only that part (slice) of the state that we want to change in
-            this operation. React then takes the current state and the object that was passed to <i>setState()</i>,
+            this operation. React then takes the current state and the object that was passed to <i>setState( )</i>,
             concatenating them as follows. <br>
             const <b>nextState</b> = <b>{</b> ...currentState, ...updateSlice <b>}</b>;
           </p>
         </li>
         <li>
           <p>
-            <b>State update asynchrony.</b> The <b>setState()</b> method registers an asynchronous state update
-            operation that is queued for updates. React does not change the state for every call to <b>setState()</b>,
+            <b>State update asynchrony.</b> The <b>setState( )</b> method registers an asynchronous state update
+            operation that is queued for updates. React does not change the state for every call to <b>setState( )</b>,
             but
             can combine multiple calls into one update to improve performance. Because of this, accessing
             <b>this.state</b>, in synchronous code, after calling this method will return the value before the update.
@@ -554,10 +558,10 @@
         <li>
           <p>
             <b>setState with function.</b> This approach is used when a new value is calculated based on the previous
-            state. The <b>setState()</b> method, as the first argument, can take not an object, but a function that
+            state. The <b>setState( )</b> method, as the first argument, can take not an object, but a function that
             should
             return the object with which we want to update the state. The current state and props, at the time of
-            asynchronous execution of the function passed to setState(), will be passed to it as arguments <b>state</b>
+            asynchronous execution of the function passed to setState( ), will be passed to it as arguments <b>state</b>
             and <b>props</b>. <br>
             <b>setState(</b>(state, props) => {
             return {};
@@ -689,19 +693,19 @@
       <h3>Mounting stage</h3>
       <p>The following methods are called in this order when the component is instantiated and added to the DOM.</p>
       <ul>
-        <li><b>constructor() {}</b> - called when the component is instantiated, before the component is placed in the
+        <li><b>constructor( ) {}</b> - called when the component is instantiated, before the component is placed in the
           DOM, initializes the initial state of the component, binds context in methods;
         </li>
         <li>static <i>getDerivedStateFromProps(</i>nextProps, prevState<i>) {}</i> - method is rarely used in practice,
-          called before <i>render()</i>, on mount, and before all subsequent calls to render, i.e. after updating
+          called before <i>render( )</i>, on mount, and before all subsequent calls to render, i.e. after updating
           <i>state</i> or <i>props</i>, an be used to set <i>state</i> depending on <i>props</i> each time they change,
           no access to <i>this</i>;
         </li>
-        <li><b>render() {}</b> - allows to declaratively describe the interface, returns the result of JSX expressions,
-          Virtual DOM subtree, can't call <i>setState()</i>;</li>
-        <li><b>componentDidMount() {}</b> - called immediately after the component is mounted in the DOM, making HTTP
+        <li><b>render( ) {}</b> - allows to declaratively describe the interface, returns the result of JSX expressions,
+          Virtual DOM subtree, can't call <i>setState( )</i>;</li>
+        <li><b>componentDidMount( ) {}</b> - called immediately after the component is mounted in the DOM, making HTTP
           requests, hanging custom event listeners and performing operations with the DOM tree, calling
-          <i>setState()</i> in this method will cause a re-render.
+          <i>setState( )</i> in this method will cause a re-render.
         </li>
       </ul>
       <h3>Update stage</h3>
@@ -710,26 +714,26 @@
       <ul>
         <li><b>shouldComponentUpdate(</b>nextProps, nextState<b>) {}</b> - called before re-rendering an already mounted
           component, allows to compare current and previous state and props by returning true or false telling React if
-          the component needs to be updated, if it returns false then <i>render()</i> and <i>componentDidUpdate()</i>
+          the component needs to be updated, if it returns false then <i>render( )</i> and <i>componentDidUpdate( )</i>
           will not happen</li>
         <li><b>getSnapshotBeforeUpdate(</b>prevProps, prevState<b>) {}</b> - method is rarely used in practice, called
           before any changes are ready to be added to the DOM, can be used to get pre-update DOM values, such as the
           current scroll position or the size of the element before the update, what this method returns will be passed
-          as the third <i>snapshot</i> parameter to <i>componentDidUpdate()</i>;</i></li>
+          as the third <i>snapshot</i> parameter to <i>componentDidUpdate( )</i>;</i></li>
         <li><b>componentDidUpdate(</b>prevProps, prevState, snapshot<b>) {}</b> - called immediately after updating the
           component in the DOM, not called when the component is initially rendered, it is possible to call
-          <i>setState()</i>, making sure to wrap it in a condition to check.
+          <i>setState( )</i>, making sure to wrap it in a condition to check.
         </li>
       </ul>
       <h3>Unmounting stage</h3>
-      <p>At some point, the component will be removed from the DOM. This calls the <b>componentWillUnmount() {}</b>
+      <p>At some point, the component will be removed from the DOM. This calls the <b>componentWillUnmount( ) {}</b>
         method. It is called before the element is unmounted and removed from the DOM, great for cleaning up after
         yourself: listeners, timers, HTTP requests. Otherwise there will be memory leaks.</p>
       <h3>Handling render errors</h3>
       <p>The <b>componentDidCatch(</b>error, info<b>) {}</b> method fires on an error in a child component and allows
         parent components to catch errors in children by displaying a fallback interface. As a result, when an error
         occurs, the interface does not crash. It catches errors only in children, but not in the parent itself,
-        <b>error</b> - result of <i>toString()</i> error object, <b>info</b> - an object describing the stack trace.
+        <b>error</b> - result of <i>toString( )</i> error object, <b>info</b> - an object describing the stack trace.
       </p>
     </section>
 
@@ -739,14 +743,14 @@
       </a>
       <h3>HTTP Requests</h3>
       <p>The <b>componentDidMount</b> and <b>componentDidUpdate</b> lifecycle methods are ideal for HTTP requests.
-        When <b>componentDidMount()</b> is called, the component has already been rendered to the DOM and is ready for
-        a subsequent state update. When <b>componentDidUpdate()</b> is called, the props or the state of the component
+        When <b>componentDidMount( )</b> is called, the component has already been rendered to the DOM and is ready for
+        a subsequent state update. When <b>componentDidUpdate( )</b> is called, the props or the state of the component
         have changed, and it may be necessary to make a new request, comparing them first, so as not to loop the
         component's render. Anything can be used for an HTTP request: <b>XMLHTTPRequest</b>, <b>fetch</b>, <b>axios</b>,
         <b>superagent</b>, etc.
       </p>
       <span>
-        async <b>componentDidMount() {</b>
+        async <b>componentDidMount( ) {</b>
         const response = await axios.get("/search?query=react");<br>
         <b>this.setState(</b>{ articles: response.data.hits }<b>)</b>;
         <b>}</b>
@@ -761,7 +765,7 @@
         catch block is used to handle errors, if it is executed, then an error has occurred. We move the loading
         indicator setting to the finally block so as not to duplicate the code that will be executed anyway. </p>
       <span>
-        async <b>componentDidMount() {</b>
+        async <b>componentDidMount( ) {</b>
         this.<b>setState(</b>{ isLoading: true }<b>)</b>;<br>
         <b>try {</b>
         const response = await axios.get("/search?query=react");
@@ -784,27 +788,165 @@
       <a href="#goit">
         <h2 id="hooks">React Hooks <span>(Lesson 7)</h2>
       </a>
-
-
-
+      <h3>Difference with classes</h3>
+      <p>In a class component, we can create only one common state, and in a functional one, as many as we like, and
+        they will be independent of each other. Any hooks can only be called at the top level of a function component.
+        That is, outside of loops, conditions, nested functions, etc.</p>
+      <h3>Hook useState</h3>
+      <p> The <b>useState</b> hook returns an array of two elements: the first is the current state value, the second is
+        a function to change it, which can be used anywhere, for example, in an event handler. Calling the
+        <b>useState</b> hook creates a state and a method that will change its value. As a parameter, the hook takes the
+        initial state. Any type of data can be stored in the state.
+      </p>
+      <ul>
+        <li>import { <b>useState</b> } from "react";</li>
+        <li>const [<b>value</b>, <b>setValue</b>] = <b>useState(</b>//initial state<b>)</b>;</li>
+        <li>&#60button type="button" onClick={( )=> <b>setValue(</b>value + 1<b>)</b>}</li>
+      </ul>
+      <h3>Hook useEffect</h3>
+      <p>Lifecycle methods are used to perform some operations at different stages of the component's life. Using the
+        <b>useEffect</b> hook in function components, you can perform all these "effects" by simulating the work of
+        three life cycle methods - <i>componentDidMount</i>, <i>componentDidUpdate</i>, <i>componentWillUnmount</i>,
+        combining them into one API.
+      </p>
+      <ul>
+        <li>import { <b>useEffect</b> } from "react";</li>
+        <li><b>useEffect(</b>callback, deps<b>)</b>:
+          <ul>
+            <li><b>callback</b> - a function inside which all the logic of the effect is executed. For example, requests
+              to the server, setting event handlers for a document, etc.</li>
+            <li><b>ependencies</b> - an array of variables, if any of them changes, the effect will be launched and the
+              callback will be executed.</li>
+          </ul>
+        </li>
+        <li>useEffect(( ) => { //do smth. }, <b>[ ]</b>) - similar to <b>componentDidMount</b>, the <i>useEffect</i>
+          hook
+          is fired not only when the elements of the dependency array change, but also immediately after the
+          component is mounted. If we specify an empty array as the second argument, the callback will run at the
+          component's mounting stage, and never again;</li>
+        <li>useEffect(( ) => { console.log(value); }, <b>[value]</b>) - similar to <b>componentDidUpdate</b>, which is
+          launched only when certain values change, it is also launched at the mounting stage;</li>
+        <li>useEffect(( ) => { //do smth. <b>return ( )</b> => <b>{</b> //cleanup }; <b>}</b>, <b>[ ]</b>) - similar to
+          <b>componentWillUnmount</b>, tocan remove event handlers, stop timers, and cancel HTTP requests we return the
+          cleanup function from useEffect with the necessary code.
+        </li>
+      </ul>
+      <h3>Custom Hooks</h3>
+      <p>Creating your own hooks is the process of extracting component logic into reusable functions. This will make
+        the project code cleaner and easier to maintain. It's better to use the built-in React hooks or ready-made hooks
+        from libraries like <a href="https://github.com/streamich/react-use" target="_blank"
+          rel="noopener noreferrer">react-use</a>. A hook is simply a function whose name necessarily begins with
+        the prefix <b>use</b>. A custom hook can take any arguments and return anything, there are no rules, it depends
+        on the implementation.
+      </p>
+      <span>
+        // src/hooks/<b>useToggle</b>.js <br />
+        export const useToggle = (initialState = false) => { <br />
+        const [isOpen, setIsOpen] = useState(initialState); <br />
+        const open = ( ) => setIsOpen(true); <br />
+        const close = ( ) => setIsOpen(false); <br />
+        const toggle = ( ) => setIsOpen(isOpen => !isOpen); <br />
+        return { isOpen, open, close, toggle }; };
+      </span>
     </section>
     <section class="context-refs">
       <a href="#goit">
         <h2 id="context-refs">Context and Refs <span>(Lesson 8)</span></h2>
       </a>
-
-
-
+      <h3>Context</h3>
+      <p>Data is passed from top to bottom via props, but this can be inconvenient for certain global data that is
+        required by many components at different levels in the application. Context provides a way to pass data deep
+        down the component tree without having to explicitly pass props to intermediate components manually at each
+        level.</p>
+      <ul>
+        <li>Function <b>createContext( )</b> reates a context object containing a pair of components:
+          <i>&#60Context.Provider></i> and <i>&#60Context.Consumer></i>, <i>defaultValue</i> argument is used by the
+          consumer if it does not have a corresponding provider above it in the tree:
+          <p>
+            import { <b>createContext</b> } from "react"; <br>
+            const MyContext = <b>createContext(</b>defaultValue<b>)</b>;
+          </p>
+        </li>
+        <li>The <b>&#60Provider></b> component allows consumers to subscribe to context changes regardless of nesting
+          depth, used to create and pass a context, accepts prop value - the value of the context, which will be passed
+          to the child-consumers of this context:
+          <p>
+            &#60MyContext.<b>Provider</b> value={/* context value */}> <br>
+            &#60App /> <br>
+            &#60/MyContext.<b>Provider</b>
+        </li>
+        </p>
+      </ul>
+      <h3>Hook useContext</h3>
+      <p>The <b>useContext( )</b> hook allows you to access the current context value. Gets the current context from the
+        closest matching <i>&#60Provider></i> above in the tree, expects a single argument - a link to the created
+        context, returns the context value of the nearest provider for this context higher in the tree:
+      <p>
+        import { createContext, <b>useContext</b> } from "react"; <br>
+        const contextValue = <b>useContext(</b>MyContext<b>)</b>; <br>
+      </p>
+      export const <b>useMyContext</b> = () => useContext(MyContext); - import and use this hook in components.</p>
+      <h3>Hook useRef</h3>
+      <p>Refs allow direct access to DOM nodes or React elements from a component's template. They are used when it is
+        necessary to access the imperative methods and properties of an element (element focus on event, text selection,
+        control of media content playback).
+      </p>
+      <ul>
+        <li>Refs are created by the <b>useRef( )</b> hook and attached to React elements using the <b>ref</b> attribute,
+          which will store a reference to the DOM element:
+          <p>
+            import { <b>useRef</b> } from "react"; <br>
+            const App = ( ) => { const btnRef = <b>useRef( )</b>; <br>
+            return &#60button <b>ref</b>=<b>{</b>btnRef<b>}</b>>Button&#60/button>; };
+          </p>
+        </li>
+        <li>React sets the <i>current property</i> to a reference to the DOM element when the component <i>is
+            mounted</i> and <i>null when unmounted</i>, so the value of the ref is only available <b>after mounting</b>.
+        </li>
+        <li><b>Refs</b> are <b>not state</b>, meaning they are not reactive, so changing the value of a ref does not
+          affect component updates or cause a re-render. Refs can also be used as storage for arbitrary values that do
+          not change between renders of a component and do not affect it.</li>
+        <li>When using <i>refs</i> on a component, the <i>ref</i> prop is not automatically passed. The
+          <b>forwardRef</b> function automatically passes the props received by the parent component to its
+          children. This approach allows you to get a link in the parent component to a DOM element inside another
+          component. For example, you create a gallery, so you can get links to DOM elements from outside and work with
+          their properties, for example, use the <i>Element.getBoundingClientRect( )</i> method and the like. <br>
+          <p>
+            import { <b>forwardRef</b>, useRef, useEffect } from "react"; <br>
+            const CustomButton = <b>forwardRef(</b>(props, ref) => ( &#60button ref={ref}>{props.children}&#60/button>
+            )<b>)</b>;
+          </p>
+        </li>
+      </ul>
+      <h3>Hook useMemo</h3>
+      <p>The <b>useMemo()</b> hook uses the concept of memoization, that is, it returns a stored (cached) result of the
+        calculation. This can improve application performance if used to prevent expensive calculations on every render.
+        The hook takes two arguments - an anonymous function that should return a <b>value</b> (compute), which will be
+        memoized, and an array of <b>dependencies</b> (deps).
+      </p>
+      <span>const memoizedValue = React.<b>useMemo(</b> ( ) => computeExpensiveValue(a, b), [a, b] <b>)</b>;</span>
     </section>
     <section class="routing-one">
       <a href="#goit">
         <h2 id="routing-one">Routing part 1 <span>(Lesson 9)</span></h2>
       </a>
+
+
+
+
+
+
     </section>
     <section class="routing-two">
       <a href="#goit">
         <h2 id="routing-two">Routing part 2 <span>(Lesson 10)</span></h2>
       </a>
+
+
+
+
+
+
     </section>
     <section class="redux">
       <a href="#goit">
