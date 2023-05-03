@@ -98,14 +98,14 @@
               <div>
                 <a href="https://www.youtube.com/watch?v=6Pt4DY3Tlfs" target="_blank">R07.01 <span>hooks</span></a>
                 <a href="https://www.youtube.com/watch?v=R5PR4z65Stc" target="_blank">R07.02 <span>hooks</span></a>
-                <a href="" target="_blank">N07 <span></span></a>
+                <a href="https://www.youtube.com/watch?v=tLnyu28yODM" target="_blank">N07 <span>hooks</span></a>
                 <a href="https://youtu.be/uCIxCfmhOss" target="_blank">N07 <span></span></a>
                 <a href="https://youtu.be/P6rJ2lFvcrc" target="_blank">X07 <span></span></a>
               </div>
             </a></li>
           <li><a href="#context-refs">Context and Refs <span>(Lesson 8)</span>
               <div>
-                <a href="https://www.youtube.com/watch?v=Ovbji4uY0yk" target="_blank">R08.01 <span>pagination</span></a>
+                <a href="https://www.youtube.com/watch?v=Ovbji4uY0yk" target="_blank">R08.01 <span>hooks</span></a>
                 <a href="https://www.youtube.com/watch?v=UIk2-oFTCc4" target="_blank">R08.02 <span>load-more</span></a>
                 <a href="" target="_blank">N08 <span></span></a>
                 <a href="https://youtu.be/d_1MkQn2gEc" target="_blank">N08 <span></span></a>
@@ -800,34 +800,39 @@
       </p>
       <ul>
         <li>import { <b>useState</b> } from "react";</li>
-        <li>const [<b>value</b>, <b>setValue</b>] = <b>useState(</b>//initial state<b>)</b>;</li>
-        <li>&#60button type="button" onClick={( )=> <b>setValue(</b>value + 1<b>)</b>}</li>
+        <li>const [<b>value</b>, <b>setValue</b>] = <b>useState(</b>( ) <b>=></b> localStorage.getItem(LS_KEY) ??
+          null<b>)</b> - <b>lazy state initialization</b> (synchronous code only);
+        </li>
+        <li>&#60button type="button" onClick={( )=> <b>setValue(</b><i>prevState</i> <b>=></b> <i>prevState</i> +
+          1<b>)</b>}</li>
       </ul>
-      <h3>Hook useEffect</h3>
+      <h3>Hooks useEffect and useLayoutEffect</h3>
       <p>Lifecycle methods are used to perform some operations at different stages of the component's life. Using the
         <b>useEffect</b> hook in function components, you can perform all these "effects" by simulating the work of
         three life cycle methods - <i>componentDidMount</i>, <i>componentDidUpdate</i>, <i>componentWillUnmount</i>,
-        combining them into one API.
+        combining them into one API. The <b>useLayoutEffect</b> perform the layout measurements before the browser
+        repaints the screen.
       </p>
       <ul>
         <li>import { <b>useEffect</b> } from "react";</li>
         <li><b>useEffect(</b>callback, deps<b>)</b>:
           <ul>
-            <li><b>callback</b> - a function inside which all the logic of the effect is executed. For example, requests
-              to the server, setting event handlers for a document, etc.</li>
-            <li><b>ependencies</b> - an array of variables, if any of them changes, the effect will be launched and the
+            <li><i>callback</i> - a function with the logic of the effect is executed (requests to the server, setting
+              event handlers for a document, etc.);</li>
+            <li><i>dependencies</i> - an array of variables, if any of them changes, the effect will be launched and the
               callback will be executed.</li>
           </ul>
         </li>
         <li>useEffect(( ) => { //do smth. }, <b>[ ]</b>) - similar to <b>componentDidMount</b>, the <i>useEffect</i>
-          hook
-          is fired not only when the elements of the dependency array change, but also immediately after the
+          hook is fired not only when the elements of the dependency array change, but also immediately after the
           component is mounted. If we specify an empty array as the second argument, the callback will run at the
           component's mounting stage, and never again;</li>
-        <li>useEffect(( ) => { console.log(value); }, <b>[value]</b>) - similar to <b>componentDidUpdate</b>, which is
-          launched only when certain values change, it is also launched at the mounting stage;</li>
+        <li>useEffect(( ) => { console.log(value); }, <b>[</b>value<b>]</b>) - similar to <b>componentDidUpdate</b>,
+          which is
+          launched only when certain values change, it is also launched at the mounting stage;
+        </li>
         <li>useEffect(( ) => { //do smth. <b>return ( )</b> => <b>{</b> //cleanup }; <b>}</b>, <b>[ ]</b>) - similar to
-          <b>componentWillUnmount</b>, tocan remove event handlers, stop timers, and cancel HTTP requests we return the
+          <b>componentWillUnmount</b>, to remove event handlers, stop timers, and cancel HTTP requests we return the
           cleanup function from useEffect with the necessary code.
         </li>
       </ul>
@@ -922,9 +927,47 @@
       <p>The <b>useMemo()</b> hook uses the concept of memoization, that is, it returns a stored (cached) result of the
         calculation. This can improve application performance if used to prevent expensive calculations on every render.
         The hook takes two arguments - an anonymous function that should return a <b>value</b> (compute), which will be
-        memoized, and an array of <b>dependencies</b> (deps).
+        memoized, and an array of <b>dependencies</b> (deps):
       </p>
-      <span>const memoizedValue = React.<b>useMemo(</b> ( ) => computeExpensiveValue(a, b), [a, b] <b>)</b>;</span>
+      <span>
+        import { <b>useMemo</b> } from 'react'; <br>
+        const memoizedValue = <b>useMemo(</b> ( ) => computeExpensiveValue(a, b), [a, b] <b>)</b>;
+      </span>
+      <p>The method <b>memo( )</b> uses the concept of memoization for components, wich is similar to
+        <b>PureComponent</b>:
+      </p>
+      <span>
+        import { <b>memo</b> } from 'react'; <br>
+        export default <b>memo(</b>Navigation<b>)</b>; <br>
+        export <b>memo(</b>function MyFunction ( ) { ... }<b>)</b>;
+      </span>
+
+      <h3>Hook useReducer</h3>
+      <p>Components with many state updates spread across many event handlers can get overwhelming. To consolidate all
+        the state update logic outside your component in a single function, called a <b>reducer</b>.</p>
+      <ul>
+        <li><b>reducer</b> function specifies how the state gets updated. It must be pure, should take the state
+          and action as arguments, and should return the next state. State and action can be of any types.</li>
+        <li><b>initialArg</b> is the value from which the initial state is calculated, can be a value of any type.</li>
+        <li><b>init</b> function should return the initial state, if it’s not specified, the initial state is set
+          to initialArg, otherwise, the initial state is set to the result of calling <b>init(</b>initialArg<b>)</b>.
+        </li>
+        <li><b>action</b> can be a value of any type, it is usually an object with a type property identifying it and,
+          optionally, other properties with additional information.
+        </li>
+        <li><b>dispatch</b> function updats the state to a different value and trigger a re-render, it takes the
+          <b>action</b> as the only argument.
+        </li>
+      </ul>
+      <span>
+        import { <b>useReducer</b> } from 'react'; <br>
+        function <b>reducer(</b>state, action<b>)</b> { return { ...state, ...action }; } <br>
+        function <b>init( )</b> { return { status: IDLE } //to set lazy inizialisation of <i>initialState</i> } <br>
+        function MyComponent( ) { const [state, dispatch] = <b>useReducer(</b>reducer, { status: IDLE }, init<b>)</b>;
+        //... <br>
+        dispatch({ status: RESOLVED })
+        }
+      </span>
     </section>
     <section class="routing-one">
       <a href="#goit">
