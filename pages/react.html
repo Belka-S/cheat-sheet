@@ -107,24 +107,23 @@
               <div>
                 <a href="https://www.youtube.com/watch?v=Ovbji4uY0yk" target="_blank">R08.01 <span>hooks</span></a>
                 <a href="https://www.youtube.com/watch?v=UIk2-oFTCc4" target="_blank">R08.02 <span>load-more</span></a>
-                <a href="" target="_blank">N08 <span></span></a>
+                <a href="https://www.youtube.com/watch?v=SM5tmcO1YTs" target="_blank">N08
+                  <span>useRef-AbortController-useMemo-useCallback</span></a>
                 <a href="https://youtu.be/d_1MkQn2gEc" target="_blank">N08 <span></span></a>
                 <a href="https://youtu.be/k6rWrySB9Tg" target="_blank">X08 <span></span></a>
               </div>
             </a></li>
           <li><a href="#routing-one">Routing part 1 <span>(Lesson 9)</span>
               <div>
-                <a href="" target="_blank">R09 <span></span></a>
+                <a href="https://youtu.be/xlibkp-dmGs" target="_blank">R09 <span>routing</span></a>
                 <a href="" target="_blank">N09 <span></span></a>
-                <a href="https://youtu.be/xlibkp-dmGs" target="_blank">N09 <span></span></a>
                 <a href="https://youtu.be/WhsQzgTZFQM" target="_blank">X09 <span></span></a>
               </div>
             </a></li>
           <li><a href="#routing-two">Routing part 2 <span>(Lesson 10)</span>
               <div>
-                <a href="" target="_blank">R10 <span></span></a>
+                <a href="https://youtu.be/RILcHxnva6Q" target="_blank">R10 <span>routing</span></a>
                 <a href="" target="_blank">N10 <span></span></a>
-                <a href="https://youtu.be/RILcHxnva6Q" target="_blank">N10 <span></span></a>
                 <a href="https://youtu.be/RhNRukwQ9t0" target="_blank">X10 <span></span></a>
               </div>
             </a></li>
@@ -924,7 +923,7 @@
         </li>
       </ul>
       <h3>Hook useMemo</h3>
-      <p>The <b>useMemo()</b> hook uses the concept of memoization, that is, it returns a stored (cached) result of the
+      <p>The <b>useMemo( )</b> hook uses the concept of memoization, that is, it returns a stored (cached) result of the
         calculation. This can improve application performance if used to prevent expensive calculations on every render.
         The hook takes two arguments - an anonymous function that should return a <b>value</b> (compute), which will be
         memoized, and an array of <b>dependencies</b> (deps):
@@ -961,7 +960,12 @@
       </ul>
       <span>
         import { <b>useReducer</b> } from 'react'; <br>
-        function <b>reducer(</b>state, action<b>)</b> { return { ...state, ...action }; } <br>
+        const action = {type: 'resolved', load: {status: RESOLVED}}; <br>
+        function <b>reducer(</b>state, action<b>)</b> {
+        switch (action.type){ <br>
+        case 'resolved': return { ...state, ...action }; <br>
+        case 'error': return { ...state, ...action }; <br>
+        } } <br>
         function <b>init( )</b> { return { status: IDLE } //to set lazy inizialisation of <i>initialState</i> } <br>
         function MyComponent( ) { const [state, dispatch] = <b>useReducer(</b>reducer, { status: IDLE }, init<b>)</b>;
         //... <br>
@@ -973,23 +977,197 @@
       <a href="#goit">
         <h2 id="routing-one">Routing part 1 <span>(Lesson 9)</span></h2>
       </a>
-
-
-
-
-
-
+      <h3>Routing in React</h3>
+      <p>Navigation history describes how we navigate the routes (links) of the application in current browser tab and
+        how those transitions are stored and handled.There is a history stack. Using HTML5 History API properties and
+        methods we can go back and forth through the user's history and manipulate its contents. Any URL
+        <b>https://mysite.com/books/e3q76gm9lzk?category=adventure&status=unread#comments</b> can consist of:
+      </p>
+      <ul>
+        <li><b>https://</b> - protocol;</li>
+        <li><b>mysite.com/</b> - host;</li>
+        <li><b>books/e3q76gm9lzk</b> - the path where we are in the application;</li>
+        <li><b>e3q76gm9lzk</b> - url parameter, can be dynamic or static;</li>
+        <li><b>?</b> - the symbol of the beginning of the query string;</li>
+        <li><b>?category=adventure&status=unread</b> - query string;</li>
+        <li><b>category=adventure</b> - parameter=value pair;</li>
+        <li><b>&</b> - symbol "AND", separates parameters of the query string;</li>
+        <li><b>#comments</b> - anchor (hash), defines position on the page.
+        </li>
+      </ul>
+      <h3>React Router</h3>
+      <p>React doesn't have a built-in routing module, so the <b><a href="https://reactrouter.com/en/main"
+            target="_blank" rel="noopener noreferrer">React Router</a></b>, a routing library for React. It
+        provides a set of components and hooks for creating routing, managing history user navigation and displaying
+        different components depending on current URL value:</p>
+      <ul>
+        <li>&#60<b>BrowserRouter</b>> &#60App /> &#60/<b>BrowserRouter</b>> component creates a router and a history
+          object navigation to synchronize the interface with the URL, using React context passes information about the
+          current state of the navigation history to all descendants.</li>
+        <li>&#60<b>Route</b> path="/about" element={&#60<b>About</b> />} /> component allows you to associate a specific
+          URL to some component.</li>
+        <li>&#60<b>Routes</b>> //... &#60/<b>Routes</b>> - a group of routes must be wrapped by the &#60Routes>
+          component, even if there is only one route.</li>
+        <li>&#60Route path="*" element={&#60<b>NotFound</b> />} /> - navigation error page.</li>
+        <li>
+          &#60<b>nav</b>> &#60<b>NavLink</b> to="/">Home&#60/<b>NavLink</b>> &#60<b>Link</b> to="/about">About&#60/Link>
+          &#60/<b>nav</b>> - to create links <i>&#60Link></i> and <i>&#60NavLink></i> components are used, the
+          <i>&#60NavLink></i> component differs only in that it can have additional styles if the current URL matches
+          the value of props <b>to</b>, by default the <b>.active</b> class is added to the active link element.
+        </li>
+        <li>
+          &#60Route path="<b>/products/:productId</b>" element={&#60ProductDetails />} /> - to declare one route with a
+          dynamic parameter a colon (<b> : </b>) is used before the parameter name, the value of a URL parameter must be
+          unique within the collection, so the most commonly used are object identifiers that the database sets (numbers
+          or strings).
+        </li>
+        <li>import { <b>useParams</b> } from "react-router-dom"; const <b>{</b> genreId, authorName <b>}</b> =
+          <b>useParams( )</b>; - hook returns an object containing all dynamic parameters of the current URL
+          <b>/books/:genreId/:authorName</b>.
+        </li>
+        <li>
+          The syntax of the declaration nested routes allow to describe the logic of "subpages"
+          <b>/about/mission</b> and <b>/about/team</b>, relative paths are written without the leading character
+          (<b> / </b>). If the current URL in the browser address bar matches the value of the <b>props path</b> nested
+          route, &#60<b>Outlet</b>> will render its component, otherwise it render null.
+          <ul>
+            <li>
+              &#60<b>Route</b> path="<b>/about</b>" element={&#60About />}> <br>
+              &#60Route path="<b>mission</b>" element={&#60Mission />} /> <br>
+              &#60Route path="<b>team</b>" element={&#60Team />} /> <br>
+              &#60/<b>Route</b>>
+            </li>
+            <li>
+              import { Link, <b>Outlet</b> } from "react-router-dom"; <br>
+              export const About = () => { return ( &#60div> <br>
+              &#60Link to="<b>mission</b>">Read about our mission&#60/Link> <br>
+              &#60Link to="<b>team</b>">Get to know the team&#60/Link> <br>
+              &#60<b>Outlet</b> />
+              &#60/div> ); };
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h3>Index routes</h3>
+      <p>In order to render a component &#60Home> to the same route on which its parent is rendered, you need to make an
+        <b>index</b> route:
+      </p>
+      &#60Routes> <br>
+      &#60<b>Route</b> path="/" element={&#60<b>SharedLayout</b> />}> <br>
+      &#60Route <b>index</b> element={&#60<b>Home /</b>>} /> <br>
+      &#60Route path="about" element={&#60About />}> <br>
+      &#60Route path="mission" element={&#60Mission />} /> <br>
+      &#60/<b>Route</b>> <br>
+      &#60/Routes> <br>
     </section>
     <section class="routing-two">
       <a href="#goit">
         <h2 id="routing-two">Routing part 2 <span>(Lesson 10)</span></h2>
       </a>
-
-
-
-
-
-
+      <h3>Imperative navigation</h3>
+      <p>React Router allows you to navigate not only when you click on Link, but also by a specific user action, event,
+        or effect. For example, when button, after a form is submitted, by the result of an HTTP request, and so on.
+        The <b>replace</b> property, by default <b>false</b>, controls how a new record will be added to the history
+        stack.</p>
+      <ul>
+        <li>import { <b>useNavigate</b> } from "react-router-dom"; <br>
+          const <b>navigate</b> = useNavigate(); <b>navigate(</b>"/path", { replace: true }<b>)</b> - imperative way;
+        </li>
+        <li>import { <b>Navigate</b> } from "react-router-dom"; <br>
+          &#60<b>Navigate</b> to="/path" replace /> - declarative way performs navigation at the time of rendering.
+        </li>
+      </ul>
+      <h3>Query string</h3>
+      <p>The query string is added to the main URL, begins with ( <b>?</b> ) and contains one or more parameters in
+        key-value format, separated by ( <b>&</b> ).</p>
+      <ul>
+        <li>const [searchParams, setSearchParams] = <b>useSearchParams()</b>; - hook, which is a wrapper on top of the
+          built-in browser class URLSearchParams. To get the values of the parameters there is a method
+          URLSearchParams<b>.get(</b>key<b>)</b></li>
+        <li>const [<b>searchParams</b>] = useSearchParams(); <br>
+          const <b>params</b> = useMemo( () => Object.<b>fromEntries(</b>[...searchParams]), [searchParams]<b> )</b>;
+          <br>
+          const { name, maxPrice, inStock } = <b>params</b>; - a way to convert an instance of the class
+          <i>URLSearchParams</i>
+          into a normal object with properties.
+        </li>
+        <li>onChange={e => <b>setSearchParams(</b>{ name: e.target.value }<b>)</b>} - to change parameters pass an
+          object of new parameters, that will completely replace the current query string. If the query string changes,
+          the useSearchParams hook will return the new parameters and the component is updated.
+        </li>
+      </ul>
+      <h3>Location object</h3>
+      <p>Each entry in the navigation history stack is described by a <b>location</b> object with a standard set of
+        properties that store complete information about URL. When a user clicks on links and navigates through the
+        application, the current location changes and a new history record is added.</p>
+      <ul>
+        <li><b>pathname</b> - the string containing part of the URL from the initial ( <b>/</b> ) and up to the symbol (
+          <b>?</b> ).
+        </li>
+        <li><b>search</b> - contains the whole query string. </li>
+        <li>
+          <b>hash</b> - a string containing part of the URL from the end of the query string and the symbol ( <b>#</b>
+          ), followed by the URL fragment identifier.
+        </li>
+        <li>
+          <b>state</b> - an arbitrary value that contains additional information, related to the location, but is not
+          shown in the URL. It is set by developer. Used for transferring data between routes.
+        </li>
+        <li>
+          <b>key</b> - a unique identifier string associated with this location. The service property, which value is
+          set automatically for each new record in the navigation history.
+        </li>
+      </ul>
+      <p>The <b>state</b> property of a location object allows to transfer arbitrary data when navigating from one route
+        to another. To do this we use the props state component <b>Link</b> and pass an object with the property from -
+        where the user: </p>
+      <span>&#60Link to="/products/h-1" <b>state={</b>{ from: "/dashboard?name=hoodie" }<b>}</b>>product
+        h-1&#60/Link></span>
+      <p>Hook <b>useLocation</b> returns a location object representing the current URL every time we take a new route
+        or update part of the current URL. The value of the props <b>state</b> will be available on the route
+        <b>location</b> object where was navigated to. Use the hook <b>useLocation</b> hook to get the location object
+        and refer to its state property:
+      </p>
+      <span>const location = <b>useLocation( )</b>; <br>
+        &#60Link to="/product/h-1" state={{ from: <b>location</b> }}>product h-1&#60/Link> <br>
+        const backPath = useRef(<b>location.state?.from</b> ?? '/home');<br>
+        &#60Link to={<b>backPath</b>.current}>Back to products&#60/Link>
+      </span>
+      <h3>Code splitting</h3>
+      <p>Split the project into smaller files and download them only when needed. This is the concept of code splitting.
+        Going to a new page - the necessary code for displaying its components is loaded. This approach is called
+        <b>route-centric</b> code partitioning. You can optimize the loading of individual, very large page components
+        that are not needed until a certain user action. This approach is called <b>component-centric</b> code
+        partitioning.
+      </p>
+      <ul>
+        <li><b>import(</b>"path/to/MyComponent"<b>).then(</b>module => console.log(module)<b>)</b> - ES2020
+          specification has added the ability to dynamically import a module, it uses <b>import( )</b> function, which
+          returns a promise whose value is the module file.</li>
+        <li>
+          React provides an API to specify which code should be allocated to a separate file, load and render only when
+          necessary. The React<b>.lazy( )</b> function is responsible for loading the component asynchronously, and
+          <b>Suspends</b> its display until the loading is complete (use <b>export default</b>):
+          <p>
+            import { <b>lazy</b>, <b>Suspense</b> } from "react"; <br>
+            const MyComponent = <b>lazy(</b>( ) => <b>import(</b>"path/to/MyComponent"<b>)</b><b>)</b>; <b>export
+              default</b> MyComponent; <br>
+            const App = ( ) => ( <br>
+            &#60<b>Suspense</b> fallback={&#60div>Loading...&#60/div>}> <br>
+            &#60Routes>
+            &#60Route path="/some-path" element={&#60MyComponent />} />
+            &#60/Routes> <br>
+            &#60/<b>Suspense</b>>
+            );
+          </p>
+        </li>
+        <li>
+          <p>When using the <b>shared layout</b> technique, put Suspense directly inside the SharedLayout component:</p>
+          &#60<b>Suspense</b> fallback={&#60div>Loading...&#60/div>}> <br>
+          &#60Outlet /> <br>
+          &#60/<b>Suspense</b>>
+        </li>
+      </ul>
     </section>
     <section class="redux">
       <a href="#goit">
