@@ -116,14 +116,14 @@
           <li><a href="#routing-one">Routing part 1 <span>(Lesson 9)</span>
               <div>
                 <a href="https://youtu.be/xlibkp-dmGs" target="_blank">R09 <span>routing</span></a>
-                <a href="" target="_blank">N09 <span></span></a>
+                <a href="https://www.youtube.com/watch?v=8dGFQvv3hog" target="_blank">N09 <span></span></a>
                 <a href="https://youtu.be/WhsQzgTZFQM" target="_blank">X09 <span></span></a>
               </div>
             </a></li>
           <li><a href="#routing-two">Routing part 2 <span>(Lesson 10)</span>
               <div>
                 <a href="https://youtu.be/RILcHxnva6Q" target="_blank">R10 <span>routing</span></a>
-                <a href="" target="_blank">N10 <span></span></a>
+                <a href="https://www.youtube.com/watch?v=7ajSWrCmZEY" target="_blank">N10 <span></span></a>
                 <a href="https://youtu.be/RhNRukwQ9t0" target="_blank">X10 <span></span></a>
               </div>
             </a></li>
@@ -889,7 +889,7 @@
         import { createContext, <b>useContext</b> } from "react"; <br>
         const contextValue = <b>useContext(</b>MyContext<b>)</b>; <br>
       </p>
-      export const <b>useMyContext</b> = () => useContext(MyContext); - import and use this hook in components.</p>
+      export const <b>useMyContext</b> = ( ) => useContext(MyContext); - import and use this hook in components.</p>
       <h3>Hook useRef</h3>
       <p>Refs allow direct access to DOM nodes or React elements from a component's template. They are used when it is
         necessary to access the imperative methods and properties of an element (element focus on event, text selection,
@@ -1039,7 +1039,7 @@
             </li>
             <li>
               import { Link, <b>Outlet</b> } from "react-router-dom"; <br>
-              export const About = () => { return ( &#60div> <br>
+              export const About = ( ) => { return ( &#60div> <br>
               &#60Link to="<b>mission</b>">Read about our mission&#60/Link> <br>
               &#60Link to="<b>team</b>">Get to know the team&#60/Link> <br>
               &#60<b>Outlet</b> />
@@ -1071,7 +1071,7 @@
         stack.</p>
       <ul>
         <li>import { <b>useNavigate</b> } from "react-router-dom"; <br>
-          const <b>navigate</b> = useNavigate(); <b>navigate(</b>"/path", { replace: true }<b>)</b> - imperative way;
+          const <b>navigate</b> = useNavigate( ); <b>navigate(</b>"/path", { replace: true }<b>)</b> - imperative way;
         </li>
         <li>import { <b>Navigate</b> } from "react-router-dom"; <br>
           &#60<b>Navigate</b> to="/path" replace /> - declarative way performs navigation at the time of rendering.
@@ -1081,15 +1081,14 @@
       <p>The query string is added to the main URL, begins with ( <b>?</b> ) and contains one or more parameters in
         key-value format, separated by ( <b>&</b> ).</p>
       <ul>
-        <li>const [searchParams, setSearchParams] = <b>useSearchParams()</b>; - hook, which is a wrapper on top of the
+        <li>const [searchParams, setSearchParams] = <b>useSearchParams( )</b>; - hook, which is a wrapper on top of the
           built-in browser class URLSearchParams. To get the values of the parameters there is a method
           URLSearchParams<b>.get(</b>key<b>)</b></li>
-        <li>const [<b>searchParams</b>] = useSearchParams(); <br>
-          const <b>params</b> = useMemo( () => Object.<b>fromEntries(</b>[...searchParams]), [searchParams]<b> )</b>;
+        <li>const [<b>searchParams</b>] = useSearchParams( ); <br>
+          const <b>params</b> = useMemo( ( ) => Object.<b>fromEntries(</b>[...searchParams]<b>)</b>, [searchParams] );
           <br>
           const { name, maxPrice, inStock } = <b>params</b>; - a way to convert an instance of the class
-          <i>URLSearchParams</i>
-          into a normal object with properties.
+          <i>URLSearchParams</i> into a normal object with properties.
         </li>
         <li>onChange={e => <b>setSearchParams(</b>{ name: e.target.value }<b>)</b>} - to change parameters pass an
           object of new parameters, that will completely replace the current query string. If the query string changes,
