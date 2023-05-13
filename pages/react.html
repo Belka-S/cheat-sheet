@@ -129,16 +129,21 @@
             </a></li>
           <li><a href="#redux">Redux Fundamentals <span>(Lesson 11)</span>
               <div>
-                <a href="" target="_blank">R11 <span></span></a>
+                <a href="https://www.youtube.com/watch?v=_BoGAAzaHE4" target="_blank">R11 <span>redux</span></a>
                 <a href="" target="_blank">N11 <span></span></a>
+                <a href="https://www.youtube.com/watch?v=z1oI3Azccf4" target="_blank">N11 <span></span></a>
                 <a href="https://www.youtube.com/watch?v=nFGTwGg8mc4" target="_blank">N11 <span></span></a>
                 <a href="https://youtu.be/JKFc73R-idI" target="_blank">X11 <span></span></a>
               </div>
             </a></li>
           <li><a href="#redux-toolkit">Redux Toolkit <span>(Lesson 12)</span>
               <div>
-                <a href="" target="_blank">R12 <span></span></a>
+                <a href="https://www.youtube.com/watch?v=JVDHbKtrZFU" target="_blank">R12.1
+                  <span>redux-toolkit</span></a>
+                <a href="https://www.youtube.com/watch?v=ZnvgouJBkTM" target="_blank">R12.2
+                  <span>redux-persist</span></a>
                 <a href="" target="_blank">N12 <span></span></a>
+                <a href="https://www.youtube.com/watch?v=NZhbHHbS1aA" target="_blank">N12 <span></span></a>
                 <a href="https://www.youtube.com/watch?v=1OcSD1qmJoY" target="_blank">N12 <span></span></a>
                 <a href="https://youtu.be/To6zzghMr_I" target="_blank">X12 <span></span></a>
               </div>
@@ -1172,11 +1177,221 @@
       <a href="#goit">
         <h2 id="redux">Redux Fundamentals <span>(Lesson 11)</h2>
       </a>
+      <h3>State management</h3>
+      <p>State management libraries standardize the storage and handling of application state, thereby simplifying the
+        development process. <b>Redux</b> is one of the most popular application state management libraries. Redux
+        solves this problem by creating a <b>store</b> (storage, store), which is responsible for centralized storage of
+        all state and provides a set of rules and methods for changing it. It remains for the components to call methods
+        to update the data and subscribe to updates.</p>
+      <ul>
+        <li>In order to separate the Redux logic from the component code, it will be enough to make a <b>src/redux</b>
+          folder with several files (<i>actions.js, reducer.js, constants.js, selectors.js, store.js</i>). </li>
+        <li>npm install <b>redux</b> - a set of functions for creating a <b>store</b>, working with the application
+          <b>state</b> and sending <b>actions</b> to the project.
+        </li>
+        <li>npm install <b>react-redux</b> - a set of components and hooks that connect React and Redux store
+          components.
+        </li>
+      </ul>
+      <h3>Store</h3>
+      <p><b>createStore(</b>reducer, preloadedState, enhancer<b>)</b> - function that takes several parameters and
+        returns a new store object, that contains the complete application state, state access methods, and action
+        dispatch methods:</p>
+      <ul>
+        <li><b>reducer</b> - function with Redux state change logic. Required parameter.</li>
+        <li><b>preloadedState</b> - the initial state of the application. It must be an object of the same shape as at
+          least part of the state. Optional parameter.</li>
+        <li><b>enhancer</b> - a function to enhance the capabilities of the store. Optional parameter.</li>
+      </ul>
+      <p>The React Redux library has a <b>Provider</b> component that expects the <b>store</b> prop of the same name. In
+        order for any component in the application to use the store, we wrap the entire component tree with Provider.
+      </p>
+      <span>
+        import { <b>Provider</b> } from "react-redux"; <br>
+        import { <b>store</b> } from "./redux/store"; <br>
+        &#60<b>Provider store={</b>store<b>}</b>>
+        &#60App />
+        &#60/<b>Provide</b>r>
+      </span>
+      <h3>Redux DevTools</h3>
+      <p><a href="https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd"
+          target="_blank" rel="noopener noreferrer"><b>Developer Tools</b></a> is a browser extension that adds a handy
+        visual interface for debugging application state changes and following the flow of data in Redux, from action
+        dispatch to state changes. Next, install a library that will allow you to initialize the Redux DevTools logic
+        and associate it with the extension in the developer tools.</p>
+      <span>npm install <b>@redux-devtools/extension</b> <br>
+        // src/redux/<b>store.js</b> <br>
+        import { <b>createStore</b> } from "redux"; <br>
+        import { <b>devToolsEnhancer</b> } from "@redux-devtools/extension"; <br>
+        const <b>rootReducer</b> = <b>(</b>state = initialState, action<b>)</b> => {return state;}; <br>
+        const <b>enhancer</b> = devToolsEnhancer( ); <br>
+        export const <b>store</b> = <b>createStore(</b><i>rootReducer, enhancer</i><b>)</b>; <br>
+      </span>
+      <h3>Store subscription</h3>
+      <p>In order to receive data from the store, components must subscribe to the parts of the Redux state they need.
+        To do this, the React Redux library has a hook <b>useSelector(</b>selector<b>)</b>. It takes as an argument a
+        function that declares a single <b>state</b> parameter - the entire Redux state object, which will be
+        automatically passed to the function by the <i>useSelector</i> hook.</p>
+      <span>
+        import { <b>useSelector</b> } from "react-redux"; <br>
+        const MyComponent = ( ) => { const value = <b>useSelector(</b>state => state.some.value<b>)</b>; };
+      </span>
+      <p>The same selector can be used in multiple places in the application, resulting in code duplication. To avoid
+        this and structure the code even more, all selector functions are declared in a separate file, for example in
+        src/redux/<b>selectors.js</b> and then imported into the components.</p>
+      <span>export const getTasks = <b>state</b> => <b>state</b>.tasks;</span>
+
+      <p>The Object<b>.freeze()</b> method in order to “freeze” values object and prevent it from being accidentally
+        changed by reference in import places.</p>
+      <h3>Actions</h3>
+      <p><b>Actions</b> are objects that pass data from components to the store, thereby signaling what event has
+        occurred in the interface. They are the only source of information for the store. Actions must have a mandatory
+        <b>type</b> property - a string that describes the type of event in the interface. The structure of the object
+        can be arbitrary, however, data is usually passed in the optional <b>payload</b> property. One of the most
+        popular conventions for composing an action type is to use two parts in the value of the <b>type</b> field in
+        the format <b>domain/eventName</b>.
+      </p>
+      <span>const <b>action</b> = <b>{type</b>: "tasks/deleteTask", <b>payload</b>: "Task id",<b>}</b>;</span>
+      <ul>
+        <li>
+          <p><b>Action generator</b> is a function that take arguments, then create and return actions with the
+            same <b>type</b> property value but different <b>payload</b>.</p>
+          const <b>deleteTask</b> = taskId => { return { type: "tasks/deleteTask", payload: taskId, } };
+        </li>
+        <li>
+          <p></p>In order to notify the store that some event has occurred in the interface, you need to send an action.
+          To do this, the React Redux library has a hook <b>useDispatch( )</b>, which returns a link to the
+          <b>dispatch</b> action dispatch function from the object we created earlier Redux store.</p>
+          import { <b>useDispatch</b> } from "react-redux"; <br>
+          export const Task = ({ task }) => { const <b>dispatch</b> = <b>useDispatch()</b>; <br>
+          const handleDelete = () => <b>dispatch(</b>deleteTask(task.id)<b>)</b>; <br>
+          return (// Markup ...); };
+        </li>
+      </ul>
+      <h3>Reducers</h3>
+      <p>A function <b>reducer</b> takes the current state and an action as arguments and returns the new state. The
+        reducer determines how the state of the application changes in response to actions sent to the store. There will
+        always be only one<b> root reducer</b> in the application, which must be passed to <b>createStore</b> when
+        creating the store. This reducer is responsible for processing all dispatched actions and calculating the new
+        state. When initializing a store (the <b>@@INIT</b> action in Redux DevTools), all reducers are passed
+        <b>undefined</b> as the state value. Therefore, each reducer needs to provide a default value for the
+        <b>state</b> parameter.
+      </p>
+      <span>
+        export const <b>rootReducer</b> = <b>(state</b> = initialState, <b>action)</b> => <b>{</b> <br>
+        <b>switch</b>(action.type) { <br>
+        <b>case</b> "tasks/addTask": { // ... } <br>
+        <b>default</b>: { // ... } <br>
+        <b>return</b> state; } <b>}</b>;
+      </span>
+      <p>The <b>reducer</b> must be a <b>pure function</b>. Given arguments, it must compute the next state and return
+        it. No side effects. No mutations. Just calculating a new version of the state.The store creation file
+        src/redux/<b>store.js</b> code imports and uses the <b>root reducer</b>:</p>
+      <span> import { createStore } from
+        "redux"; <br>
+        import { devToolsEnhancer } from "@redux-devtools/extension"; <br>
+        import { <b>rootReducer</b> } from "./reducer"; <br>
+        const enhancer = devToolsEnhancer(); <br>
+        export const <b>store</b> = createStore(<b>rootReducer</b>, enhancer);
+      </span>
+      <h3>Composition of reducers</h3>
+      <p>Reducers are usually divided into several smaller ones to make the code easier to understand and maintain.
+        Typically, reducers are split based on the parts of the Redux state they update. Each reducer will only be
+        responsible for its own portion of the Redux state, so the state update code will be much simpler. In sach case
+        the root reducer must call other reducers and pass the necessary state part and action to them. This is the
+        <b>composition of reducers</b>.
+      </p>
+      <span>
+        export const <b>rootReducer</b> = (state = {}, action) => { return { <br>
+        tasks: <b>tasksReducer</b>(state.tasks, action),<br>
+        filters: <b>filtersReducer</b>(state.filters, action), }; }; </span>
+      <p>In order not to create a root reducer manually, the Redux library has a <b>combineReducers</b> function that
+        does the same thing, but more concisely.</p>
+      <span>
+        import { <b>combineReducers</b> } from "redux"; <br>
+        export const rootReducer = <b>combineReducers</b>({ <br>
+        tasks: <b>tasksReducer</b>, filters: <b>filtersReducer</b>,}); </span>
     </section>
     <section class="redux-toolkit">
       <a href="#goit">
         <h2 id="redux-toolkit">Redux Toolkit <span>(Lesson 12)</h2>
       </a>
+      <h3>Development with Redux Toolkit</h3>
+      <p><a href="https://redux-toolkit.js.org/" target="_blank" rel="noopener noreferrer"><b>Redux Toolkit</b></a> is
+        the
+        official library for efficient Redux development that aims to standardize and simplify writing Redux logic. It
+        includes utilities to simplify basic tasks. Such as setting up a store, creating actions and reducers, immutable
+        data updates, provides a standard set of settings for the store and includes the most commonly used libraries
+        from the Redux ecosystem. Using the Redux Toolkit, there is no need to add the redux package to the project. It
+        is enough to install <b>@reduxjs/toolkit</b> to write the Redux logic and <b>react-redux</b> to communicate the
+        store with the components. To initialize the creation of application startup files using Create React App,
+        without a pre-made project template the official template is used.</p>
+      <span>
+        npm install <b>@reduxjs/toolkit react-redux</b> <br>
+        npx <b>create-react-app my-app --template redux</b>
+      </span>
+      <ul>
+        <li>
+          <p><b>configureStore(</b>options<b>)</b> function that wraps the original <i>createStore()</i>, expects an
+            options object as the only argument, and configures some useful development tools as part of the store
+            creation process.</p>
+          src/redux/<b>store.js</b> <br>
+          import { <b>configureStore</b> } from "@reduxjs/toolkit"; <br>
+          import { tasksReducer, filtersReducer } from "./reducer"; <br>
+          export const store = <b>configureStore(</b>{ reducer: { tasks: tasksReducer, filters: filtersReducer, },
+          }<b>)</b>;
+        </li>
+        <li>
+          <p><b>createAction(</b>type, prepareAction<b>)</b> function simplifies the process of declaring actions. It
+            takes a string describing the <b>type</b> of action as an argument and returns the action generator. f you
+            need to write additional logic for creating a <b>payload</b> value, you can pass a second, optional argument
+            to prepareAction - the action creation function.</p>
+          src/redux/<b>actions.js</b> <br>
+          import { <b>createAction</b>, nanoid } from "@reduxjs/toolkit"; <br>
+          export const addTask = <b>createAction(</b>"tasks/addTask", text => { <br>
+          return { payload: { text, id: nanoid(), completed: false, }, }; }<b>)</b>;
+        </li>
+        <li>
+          <p><b>createReducer(</b>initialState, actionsMap<b>)</b> function expects the <b>initialState</b> of the
+            reducer as its first argument, and as its second argument a property object of a special format, where each
+            key is an action type and the value is a reducer function for that type. That is, each <b>case</b> becomes
+            the <b>key</b> of the object for which its own mini-reducer is written. </p>
+          src/redux/<b>reducer.js</b> <br> export const
+          tasksReducer = <b>createReducer(</b>initialState, { <br>
+          [addTask]: (state, action) => { return [...state, action.payload]; },}<b>)</b>;
+        </li>
+        <li>
+          <p><b>createSlice(</b>name, initialState, reducers<b>)</b> function is an add-on to <i>createAction()</i> and
+            <i>createReducer()</i> that standardizes and further simplifies the slice declaration. It takes a settings
+            parameter, creates and returns action types, action generators, and a reducer. Let's analyze the creation of
+            a slice using the example of a task list. The <b>name</b> property defines the slice name that will be added
+            when creating actions as a prefix to the reducer names declared in the <b>reducers</b> property. The
+            <b>initialState</b> value for this slice of state. This may also be a "lazy initializer" function, which
+            should return an initial state value when called.
+          </p>
+          src/redux/<b>filtersSlice.js</b> <br>
+          import { <b>createSlice</b> } from "@reduxjs/toolkit"; <br>
+          import { statusFilters } from "./constants"; <br>
+          const filtersSlice = <b>createSlice(</b>{ <br>
+          <b>name</b>: "filters", <br>
+          <b>initialState</b>: { status: statusFilters.all, }, <br>
+          <b>reducers</b>: { setStatusFilter(state, action) { state.status = action.payload; }, }, }<b>)</b>; <br>
+          export const { setStatusFilter } = filtersSlice.actions; <br>
+          export const filtersReducer = filtersSlice.reducer;
+        </li>
+        <li>
+          <p>src/redux/<b>store.js</b> creation file have to be changed with th whole file structure
+            (<i>filtersSlice.js, tasksSlice.js, constants.js, selectors.js, store.js</i>).</p>
+          import { <b>tasksReducer</b> } from "./tasksSlice"; <br>
+          import { <b>filtersReducer</b> } from "./filtersSlice"; <br>
+          export const store = <b>configureStore(</b>{ reducer: { tasks: <b>tasksReducer</b>, filters:
+          <b>filtersReducer</b>, }, }<b>)</b>;
+        </li>
+      </ul>
+      <p>The Redux Toolkit uses the <a href="https://immerjs.github.io/immer/" target="_blank"
+          rel="noopener noreferrer"><b>Immer library</b></a> under the hood, which greatly simplifies the state logic,
+        allowing us to write state update code in the reducer as if we were directly changing condition. In fact, the
+        reducers get a copy of the state, and Immer converts all mutations into equivalent update operations.</p>
     </section>
     <section class="async-redux">
       <a href="#goit">

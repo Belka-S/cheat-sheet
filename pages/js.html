@@ -262,7 +262,7 @@
             <li>data has <b>properties</b>, for example, a string has a length. The syntax for accessing a property is
               very simple: use a dot - <b>entity.propertyName</b>.</li>
             <li>data has its own predefined methods, this is an action call. The syntax for calling a method is
-              similar, but parentheses are added at the end - <b>entity.methodName()</b>.</li>
+              similar, but parentheses are added at the end - <b>entity.methodName( )</b>.</li>
           </ul>
         </li>
       </ul>
@@ -298,9 +298,9 @@
       </ul>
       <h3>User Input</h3>
       <ul>
-        <li>data <i>output</i> methods are <b>console.log()</b> and <b>alert()</b>, the <i>alert()</i> method displays
+        <li>data <i>output</i> methods are <b>console.log( )</b> and <b>alert( )</b>, the <i>alert( )</i> method displays
           a modal window, with a text corresponding to the value of the variable (or literal) in parentheses;</li>
-        <li>data <i>get from the user</i> methods are <b>prompt()</b> and <b>confirm()</b>, as a result of their
+        <li>data <i>get from the user</i> methods are <b>prompt( )</b> and <b>confirm( )</b>, as a result of their
           execution, they return what was entered by the user, it can be written to a variable for further use
           (<i>prompt</i> always returns a string).</li>
       </ul>
@@ -317,35 +317,35 @@
       </ul>
       <h3>Numbers</h3>
       <ul>
-        <li><b>Number()</b> function - most operations and functions convert a value to a number automatically, use
+        <li><b>Number( )</b> function - most operations and functions convert a value to a number automatically, use
           this function to do this explicitly;</li>
-        <li><b>Number.parseInt()</b> method - parses an integer from the string;</li>
-        <li><b>Number.parseFloat()</b> method - parses a fractional number from the string;</li>
-        <li><b>Number.isNaN()</b> method - checks if the entered value is NaN or not;</li>
-        <li><b>.toFixed()</b> method - to add and round the result to a certain decimal place;</li>
-        <li><b>Math.floor()</b> method - returns the smallest integer less than or equal to the specified one;</li>
-        <li><b>Math.ceil()</b> method - returns the largest integer greater than or equal to the specified number;
+        <li><b>Number.parseInt( )</b> method - parses an integer from the string;</li>
+        <li><b>Number.parseFloat( )</b> method - parses a fractional number from the string;</li>
+        <li><b>Number.isNaN( )</b> method - checks if the entered value is NaN or not;</li>
+        <li><b>.toFixed( )</b> method - to add and round the result to a certain decimal place;</li>
+        <li><b>Math.floor( )</b> method - returns the smallest integer less than or equal to the specified one;</li>
+        <li><b>Math.ceil( )</b> method - returns the largest integer greater than or equal to the specified number;
         </li>
-        <li><b>Math.round()</b> method - returns the value of a number rounded to the nearest integer;</li>
-        <li><b>Math.max()</b> method - returns the largest number from a set;</li>
-        <li><b>Math.min()</b> method - returns the smallest number from a set;</li>
+        <li><b>Math.round( )</b> method - returns the value of a number rounded to the nearest integer;</li>
+        <li><b>Math.max( )</b> method - returns the largest number from a set;</li>
+        <li><b>Math.min( )</b> method - returns the smallest number from a set;</li>
         <li><b>Math.pow(</b>base, exponent<b>)</b> method - exponentiation;</li>
-        <li><b>Math.random()</b> method - returns a pseudo-random number in the range (0, 1).</li>
+        <li><b>Math.random( )</b> method - returns a pseudo-random number in the range (0, 1).</li>
       </ul>
       <h3>Strings</h3>
       <p>The content of a string cannot be changed, only read.</p>
       <ul>
-        <li><b>String()</b> function - to convert a value to a string;</li>
+        <li><b>String( )</b> function - to convert a value to a string;</li>
         <li>If you apply the <b>+</b> operator to a string and any other data type, the result of this addition is a
           string. This operation is called <b>concatenation</b>, or string addition. Template strings are an
           alternative
           to concatenation with more convenient syntax, they may contain placeholders with the dollar sign and curly
           braces - <b>${</b><i>expression</i><b>}</b></li>
         <li><b>.length</b> property - to get the number of characters of a string;</li>
-        <li><b>.toLowerCase()</b> method return a new string in the lower case without modifying the original
+        <li><b>.toLowerCase( )</b> method return a new string in the lower case without modifying the original
           string;
         </li>
-        <li><b>.toUpperCase()</b> method return a new string in the upper case without modifying the original
+        <li><b>.toUpperCase( )</b> method return a new string in the upper case without modifying the original
           string;</li>
         <li><b>.indexOf(</b>'searchValue'[, fromIndex]<b>)</b> method returns the position (index) of the first
           substring match, or <b>-1</b> if nothing is found;</li>
@@ -367,7 +367,7 @@
           UTF-16 code unit located at the specified offset;</li>
         <li><b>.substring(</b>indexStart[, indexEnd]<b>)</b> method returns the part of the string between the start
           and end indexes, or to the end of the string.</li>
-        <li><b>.trim()</b> method removes whitespace from both ends of a string and returns a new string, without
+        <li><b>.trim( )</b> method removes whitespace from both ends of a string and returns a new string, without
           modifying the original string.</li>
       </ul>
       <h3>Logical Operators</h3>
@@ -377,7 +377,7 @@
         <b>0, NaN, null, undefined, empty string, false</b>.
       </p>
       <ul>
-        <li><b>Boolean()</b> function - to convert a value to logical <i>true</i> or <i>false</i>;</li>
+        <li><b>Boolean( )</b> function - to convert a value to logical <i>true</i> or <i>false</i>;</li>
         <li>Logical AND <b>&&</b> - result will be <i>false</i>, since at least one of the operands is converted to
           false, in opposite returns last true value;</li>
         <li>Logical OR <b>||</b> - result will be <i>true</i>, since at least one of the operands is converted to
@@ -456,8 +456,8 @@
       <h3>Array</h3>
       <p>Is a data structure for storing and manipulating collections of indexed values.</p>
       <ul>
-        <li><b>Array.from()</b> method creates an array from a pseudo-array:
-          <i>function createArray() {const newArray =</i> <b>Array.from(</b>arguments<b>)</b><i>; return
+        <li><b>Array.from( )</b> method creates an array from a pseudo-array:
+          <i>function createArray( ) {const newArray =</i> <b>Array.from(</b>arguments<b>)</b><i>; return
             newArray};</i>
         </li>
         <li><b>const</b> <i>arrayName</i> = <b>[</b><i>element1, element2, element3</i><b>]</b> - declared with the
@@ -539,7 +539,7 @@
         <li><b>.concat(</b><i>arrayName1, arrayName2, ...</i><b>)</b> method - consolidates two or more arrays into
           one;
         </li>
-        <li><b>.reverse()</b> method - reverses an array;</li>
+        <li><b>.reverse( )</b> method - reverses an array;</li>
         <li><b>.flat(</b>depth<b>)</b> method - creates a new array with all sub-array elements concatenated into it
           recursively up to the specified depth;</li>
         <li><b>.at(</b>index<b>)</b> method - takes an integer value and returns the item at that index, allowing for
@@ -574,7 +574,7 @@
         <li><b>arguments</b> can be accessed using the special variable, which is only available inside the function
           and
           stores all arguments as a pseudo-array:<br>
-          <i>function multiply() {let total = 1; for (const</i> varName <i>of</i> <b>arguments</b>)<i>
+          <i>function multiply( ) {let total = 1; for (const</i> varName <i>of</i> <b>arguments</b>)<i>
             total *= varName;</i> <i>return total;}</i>
         </li>
         <li><b>rest parameter</b> syntax allows a function to accept an indefinite number of arguments as an
@@ -658,7 +658,7 @@
         <li>const <i>object = {</i> <b>[variableName]</b><i>: value, ...}</i> - to <b>add</b> objects property with a
           name that you do not know, as it is stored as the value of a variable or as the result of a function, the
           value of a <b>computed property</b> can be any valid expression;</li>
-        <li><b>fnName:</b> function<b>() {</b>\\Body<b>}</b> <i>or</i> <b>fnName() {</b>\\Body<b>}</b> - to store
+        <li><b>fnName:</b> function<b>( ) {</b>\\Body<b>}</b> <i>or</i> <b>fnName( ) {</b>\\Body<b>}</b> - to store
           function (<b>object method</b>).</li>
       </ul>
       <h3>Iteration</h3>
@@ -787,7 +787,7 @@
         <li>const arrowFn <b>= (</b>param1, param2, param3<b>) => {</b>\\Fn body<b>}</b> - several parameters;
         </li>
         <li>const arrowFn <b>=</b> param1 <b>=> {</b>\\Fn body<b>}</b> - one parameter;</li>
-        <li>const arrowFn <b>= () => {</b>\\Fn body<b>}</b> - no parameters;</li>
+        <li>const arrowFn <b>= ( ) => {</b>\\Fn body<b>}</b> - no parameters;</li>
         <li>const arrowFn <b>= (</b>a, b, c<b>) => {return</b> a + b + c;<b>}</b> - <b><i>explicit</i></b> return when
           there are curly braces, and the function must return a value;</li>
         <li>const arrowFn <b>= (</b>a, b, c<b>) =></b> a + b + c - <b><i>implicit</i></b> return will return the
@@ -830,26 +830,26 @@
           thisArg]<b>)</b> - executes a provided function once for each array element, returns nothing, execution of
           the <i>forEach</i> can't be interrupted;
         </li>
-        <li><b>.map()</b> method - returns a new array of the same length, can be used to change every element of an
+        <li><b>.map( )</b> method - returns a new array of the same length, can be used to change every element of an
           array;</li>
-        <li><b>.flatMap()</b> method is similar to the <i>map()</i> method, but it is used in cases where the result
+        <li><b>.flatMap( )</b> method is similar to the <i>map( )</i> method, but it is used in cases where the result
           is a multidimensional array that needs to be "flattened", tnew array is "flattened" by one (one nesting);</li>
-        <li><b>.filter()</b> method - to copy array whith filtering, when more than one element from a collection
+        <li><b>.filter( )</b> method - to copy array whith filtering, when more than one element from a collection
           should
           be selected using a specific criterion;</li>
-        <li><b>.find()</b> method - to find and return the first matching element, after which the array iteration
+        <li><b>.find( )</b> method - to find and return the first matching element, after which the array iteration
           stops;</li>
-        <li><b>.findLast()</b> method - to find and return the last matching element, after which the array iteration
+        <li><b>.findLast( )</b> method - to find and return the last matching element, after which the array iteration
           stops;</li>
-        <li><b>.findIndex()</b> method - to find and return the index of the <i>first</i> element that satisfies a
+        <li><b>.findIndex( )</b> method - to find and return the index of the <i>first</i> element that satisfies a
           condition, that is, when the callback returns true;</li>
-        <li><b>.every()</b> method - returns <i>true</i> if all array elements satisfy a condition, otherwise returns
+        <li><b>.every( )</b> method - returns <i>true</i> if all array elements satisfy a condition, otherwise returns
           <i>false</i>;
         </li>
-        <li><b>.some()</b> method - returns <i>true</i> if at least one array element satisfies a condition, otherwise
+        <li><b>.some( )</b> method - returns <i>true</i> if at least one array element satisfies a condition, otherwise
           returns <i>false</i></i>;
         </li>
-        <li><b>.sort()</b> method - to sort the elements of an <i><b>original</b></i> array, sorting occurs by
+        <li><b>.sort( )</b> method - to sort the elements of an <i><b>original</b></i> array, sorting occurs by
           converting the values ​​to a string and comparing the ordinal numbers in the Unicode table;</li>
         <li><b>.reduce(</b>(accumulator, element, index, array) <b>=></b> {// Callback body}[, initialValue]<b>)</b> -
           to process each array element, storing the intermediate result as an accumulator, returns anything (most
@@ -903,8 +903,8 @@
           array to generate the criterion by which uniqueness is computed;</li>
         <li><b>_.minBy(</b>array, [iteratee=_.identity]<b>)</b> - accepts iteratee which is invoked for each element in
           array to generate the criterion by which the value is ranked;</li>
-        <li><b>_.camelCase()</b>, <b>_.kebabCase()</b>, <b>_.lowerCase()</b>, <b>_.snakeCase()</b>,
-          <b>_.startCase()</b>, <b>_.upperCase()</b> - converts string.
+        <li><b>_.camelCase( )</b>, <b>_.kebabCase( )</b>, <b>_.lowerCase( )</b>, <b>_.snakeCase( )</b>,
+          <b>_.startCase( )</b>, <b>_.upperCase( )</b> - converts string.
         </li>
       </ul>
     </section>
@@ -1003,12 +1003,12 @@
       <ul>
         <li><b>function</b> ClsName <b>(</b>{varName}<b>) {</b>// Operating with <b>this.</b>varName<b>}</b> - making
           a constructor function <i>ClsName</i>; </li>
-        <li>const objName = <b>new</b> ClsName<b>()</b> - the <b>new</b> operator creates an empty object, then
+        <li>const objName = <b>new</b> ClsName<b>( )</b> - the <b>new</b> operator creates an empty object, then
           calls the constructor function <i>ClsName</i> in the context of that empty object and makes the
           <i>objName</i>
           object, which is <b>class instance</b> because it contains the data and behavior described by the class;
         </li>
-        <li>ClsName<b>.prototype</b>.methodName = function () {\\Fn body} - <i>prototype</i> data property of the
+        <li>ClsName<b>.prototype</b>.methodName = function ( ) {\\Fn body} - <i>prototype</i> data property of the
           function ClsName is used for adding by prototypal inheritance the method <i>metodName</i> to the class
           <i>ClsName</i> (this approach is used to storage object methods);
         </li>
@@ -1021,7 +1021,7 @@
       <ul>
         <li><b>class</b> ClsName <b>{</b>//Class body<b>}</b> - class <b>declaration</b> begins with the keyword
           class, followed by the class name and curly braces, i.e. its body;</li>
-        <li>const objName = <b>new</b> ClsName<b>()</b> - the <b>new</b> operator creates an empty object, then
+        <li>const objName = <b>new</b> ClsName<b>( )</b> - the <b>new</b> operator creates an empty object, then
           calls the constructor function <i>ClsName</i> in the context of that empty object and makes the
           <i>objName</i>
           object, which is <b>class instance</b> because it contains the data and behavior described by the class;
@@ -1032,14 +1032,14 @@
         <li>class ClsName {constructor(<b>{varName, ...}</b>) {this.popertyKey = varName; ...}} -->
           const objName = new ClsName(<b>{popertyKey: value, ...}</b>) - applys the <b>“Parameter Object”</b> pattern
           to them, passing a single object with properties having logical names;</li>
-        <li>class ClsName {<b>methodName() {</b>\\Method body<b>}</b>} - functions that will be available to the
+        <li>class ClsName {<b>methodName( ) {</b>\\Method body<b>}</b>} - functions that will be available to the
           instance in its prototype are <b>class methods</b>;</li>
-        <li>class ClsName {<b>#</b>popertyKey = value; <b>#</b>metodName(){}} - <b>encapsulation</b> is a concept to
+        <li>class ClsName {<b>#</b>popertyKey = value; <b>#</b>metodName( ){}} - <b>encapsulation</b> is a concept to
           hide the internal details of a class, adding <b>#</b> to the <b>property</b> name or class <b>methods</b>
           makes them <b>private</b> (can only be accessed from within the class);</li>
-        <li>getVarName() {return this.#popertyKey;} --> <b>get</b> varName() {return this.#popertyKey;} -
+        <li>getVarName( ) {return this.#popertyKey;} --> <b>get</b> varName( ) {return this.#popertyKey;} -
           <b>declares</b> getter, wich is obgect's functionality,<br>
-          objName.getVarName() --> objName<b>.varName</b> - getter is <b>executed</b> when trying to get a
+          objName.getVarName( ) --> objName<b>.varName</b> - getter is <b>executed</b> when trying to get a
           property value;
         </li>
         <li>changeVarName(newVarName) {this.#popertyKey = newVarName;} --> <b>set</b> varName(newVarName)
@@ -1050,10 +1050,10 @@
         <li>class ClsName {<b>static</b> <i>popertyKey</i> <b>=</b> value} - static <b>property</b> declaration whith
           the keyword <i>static</i>, that are available only to the <i>ClsName</i> class, but not to its instances;
         </li>
-        <li>class ClsName {<b>static</b> <i>methodName</i><b>() {}</b>} - static <b>method</b> declaration whith the
+        <li>class ClsName {<b>static</b> <i>methodName</i><b>( ) {}</b>} - static <b>method</b> declaration whith the
           keyword <i>static</i>, when it is called, the keyword <i>this</i> refers to the class itself;
         </li>
-        <li>class <i>Child</i> <b>extends</b> <i>Parent</i> {constructor() {super()} - <b>class inheritance</b>, when
+        <li>class <i>Child</i> <b>extends</b> <i>Parent</i> {constructor( ) {super( )} - <b>class inheritance</b>, when
           one class (child, derived) inherits the properties and methods of another class (parent), is used for
           declaration a base class that stores common characteristics and methods for a group of derived classes,
           which inherit the properties and methods of the parent and, besides, add their own unique ones, private
@@ -1062,8 +1062,8 @@
           function, <b>super(</b>arg<b>)</b>, wich is an alias for the parent class constructor, otherwise,
           when trying to access <i>this</i> in the child class constructor, an error will be generated;</li>
         <li><b>child class methods</b> will only be available to its instances;</li>
-        <li>const unique = new <b>Set()</b> - to store unique values of any type, <i>Set</i> object has metods
-          <b>.has()</b>, <b>.add()</b>, <b>.clear()</b>, <b>.delete()</b>.
+        <li>const unique = new <b>Set( )</b> - to store unique values of any type, <i>Set</i> object has metods
+          <b>.has( )</b>, <b>.add( )</b>, <b>.clear( )</b>, <b>.delete( )</b>.
         </li>
       </ul>
     </section>
@@ -1136,7 +1136,7 @@
         <li><i>elem</i><b>.clientWidth</b> and <i>elem</i><b>.clientHeight</b> stores width and height of the
           <i>elem</i>;
         </li>
-        <li><i>elem</i><b>.getBoundingClientRect()</b> method returns a DOMRect object whith size of an element and
+        <li><i>elem</i><b>.getBoundingClientRect( )</b> method returns a DOMRect object whith size of an element and
           its
           position relative to the viewport.
         </li>
@@ -1144,7 +1144,7 @@
       <h3>Properties and Attributes</h3>
       <ul>
         <li><i>elemForm</i><b>.value</b> contains the current text content of <i>form elements</i>;</li>
-        <li><i>elemForm</i><b>.reset()</b> method - to clear the values of the <i>elemForm</i> form fields;</li>
+        <li><i>elemForm</i><b>.reset( )</b> method - to clear the values of the <i>elemForm</i> form fields;</li>
         <li><i>elemForm</i><b>.elements</b> - stores all children form-elements of the <i>elemForm</i> element;</li>
         <li><i>elemForm</i><b>.elements</b>.formName - to get the <i>formName</i> form-element of the <i>elemForm</i>
           element;</li>
@@ -1221,7 +1221,7 @@
           element;</li>
         <li><i>elem</i><b>.before(</b>el1, el2, ...<b>)</b> adds one or more <i>el</i> elements before the <i>elem</i>
           element;</li>
-        <li><i>elem</i><b>.remove()</b> - to remove the <i>elem</i> element.</li>
+        <li><i>elem</i><b>.remove( )</b> - to remove the <i>elem</i> element.</li>
       </ul>
       <p>Modern browsers try to optimize page rendering without developer intervention. However, <b>DOM
           optimization</b>
@@ -1276,7 +1276,7 @@
         </li>
         <li><i>elem</i><b>.removeEventListener(</b>event, handler[, {\\options}]<b>)</b> - removes an event listener
           from the <i>elem</i> element, it is need to pass a reference to the callback that was assigned in
-          <i>addEventListener()</i>;
+          <i>addEventListener( )</i>;
         </li>
         <li><i>elem</i>.addEventListener(event, <b>objName.callbackName.bind(</b>objName<b>)</b>) - if the callback is
           a function that uses <b>this</b>, by default the context inside it will refer to the <i>elem</i> element with
@@ -1290,10 +1290,10 @@
         <li><i>event</i><b>.type</b> property is event type;</li>
         <li><i>event</i><b>.target</b> property is the element on which the event is occured;</li>
         <li><i>event</i><b>.currentTarget</b> property is the element on which the event handler is executed;</li>
-        <li><i>event</i><b>.preventDefault()</b> method is to cancel the default browser action on the event object;
+        <li><i>event</i><b>.preventDefault( )</b> method is to cancel the default browser action on the event object;
         </li>
-        <li><i>event</i><b>.stopPropagation()</b> method impedes the event to go further;</li>
-        <li><i>event</i><b>.stopImmediatePropagation()</b> method is to completely stop event handling.</li>
+        <li><i>event</i><b>.stopPropagation( )</b> method impedes the event to go further;</li>
+        <li><i>event</i><b>.stopImmediatePropagation( )</b> method is to completely stop event handling.</li>
       </ul>
       <h3>KeyboardEvent Object</h3>
       <p>Unlike others, keyboard events are handled on the <i>document</i>, not on a specific element.
@@ -1322,7 +1322,7 @@
           events do not bubble;</li>
         <li><b>'focusin'</b> and <b>'focusout'</b> events occur when an element is focused and when focus is lost, the
           two events differ in that they bubble;</li>
-        <li><i>elem</i><b>.focus()</b> and <i>elem</i><b>.blur()</b> methods - to activate or cancel focus
+        <li><i>elem</i><b>.focus( )</b> and <i>elem</i><b>.blur( )</b> methods - to activate or cancel focus
           programmatically for the <i>elem</i> element;</li>
       </ul>
       <h3>Other Events</h3>
@@ -1333,22 +1333,24 @@
         <li><b>'scroll'</b> event occurs when the visual viewport is scrolled, additional syntax: <b>onscroll</b> =
           <b>(</b>event<b>)</b> => <b>{</b>\\do smth.<b>}</b>;
         </li>
-        <li><b>window.scrollBy()</b> method scrolls to a particular set of coordinates in the document;</li>
-        <li><b>window.scrollTo()</b> method scrolls the document in the window by the given amount;</li>
+        <li><b>window.scrollBy(</b>X, Y<b>)</b> method scrolls to a particular set of coordinates in the document;</li>
+        <li><b>window.scrollTo(</b>{top: 1000, behavior: "smooth"}<b>)</b> method scrolls the document in the window by
+          the
+          given amount;</li>
         <li><b>window.pageYOffset</b> property returns the number of pixels the document is currently scrolled
           along the vertical axis.</li>
       </ul>
       <h3>IntersectionObserver API</h3>
-      <p>The IntersectionObserver() constructor creates and returns a new IntersectionObserver object: </p>
+      <p>The IntersectionObserver( ) constructor creates and returns a new IntersectionObserver object: </p>
       <span>const <b>io</b> = new <b>IntersectionObserver((</b><i>entries</i>, <i>observer</i><b>)</b> =&#62
         <b>{</b><i>entries</i>.forEach(<i>entry</i> =&#62 {\\do smth.})<b>}</b>, <i>options</i><b>)</b></span>
       <ul>
         <li>const options ={<b>root</b>: element, <b>rootMargin</b>: '2px 3px' or '4% 5%', <b>threshold</b>: [0, ...
           ,1]}</li>
         <li>io<b>.observe(</b>elem<b>)</b> - tells the IntersectionObserver a target element to observe;</li>
-        <li>io<b>.unobserve(</b>elem<b>)</b> - ells the IntersectionObserver to stop observing a particular target
+        <li>io<b>.unobserve(</b>elem<b>)</b> - tells the IntersectionObserver to stop observing a particular target
           element;</li>
-        <li>io<b>.disconnect()</b> - stops the IntersectionObserver object from observing any target.</li>
+        <li>io<b>.disconnect( )</b> - stops the IntersectionObserver object from observing any target.</li>
       </ul>
     </section>
     <section class="delegation">
@@ -1522,8 +1524,8 @@
         <i>boolean</i> and <i>null</i>.
       </p>
       <ul>
-        <li><b>JSON.stringify()</b> method receives a value and converts it to JSON;</li>
-        <li><b>JSON.parse()</b> method gets a valid JavaScript value from JSON.</li>
+        <li><b>JSON.stringify( )</b> method receives a value and converts it to JSON;</li>
+        <li><b>JSON.parse( )</b> method gets a valid JavaScript value from JSON.</li>
         <li><b>try {</b>// Code whith a runtime error<b>} catch (error) {</b>// Error handling<b>}</b> helps "catch”
           and
           handle script execution errors, the variable error is an error object with properties:
@@ -1543,7 +1545,7 @@
         <li>localStorage<b>.setItem(</b>"key", "value"<b>)</b> makes a new or updates an existing storage item;</li>
         <li>localStorage<b>.getItem(</b>"key"<b>)</b> returns a value with the key key from the storage;</li>
         <li>localStorage<b>.removeItem(</b>"key"<b>)</b> removes an item with the key key from the storage;</li>
-        <li>localStorage<b>.clear()</b> completely clears all items in the storage;</li>
+        <li>localStorage<b>.clear( )</b> completely clears all items in the storage;</li>
         <li>localStorage<b>.length</b> stores the number of items in the storage.</li>
       </ul>
       <p> const <i><b>save</b></i> = (key, value) => {<br>
@@ -1575,25 +1577,25 @@
           at
           a specified repetition interval;</li>
         <li><b>clearInterval(</b>timerId<b>)</b> method is to cancel a function call inside a timeout;</li>
-        <li><b>Date.now()</b> method returns the number of milliseconds that have passed since midnight on January 1,
+        <li><b>Date.now( )</b> method returns the number of milliseconds that have passed since midnight on January 1,
           1970;</li>
-        <li>const date = new <b>Date()</b> - creating a date without arguments returns an object that stores the date
+        <li>const date = new <b>Date( )</b> - creating a date without arguments returns an object that stores the date
           and time at its initialization time, when initializing a date with a single number, it represents the number
           of milliseconds that have passed;</li>
-        <li><b>.getTime()</b> method returns the number of milliseconds that have passed since midnight on January 1,
+        <li><b>.getTime( )</b> method returns the number of milliseconds that have passed since midnight on January 1,
           1970;
         </li>
-        <li><b>.set</b>/<b>.get</b>[<b>UTC</b>]<b>Date()</b> method returns day of month from 1 to 31;</li>
-        <li><b>.set</b>/<b>.get</b>[<b>UTC</b>]<b>Day()</b> method returns day of week from 0 to 6;</li>
-        <li><b>.set</b>/<b>.get</b>[<b>UTC</b>]<b>Month()</b> method returns month from 0 to 11;</li>
-        <li><b>.set</b>/<b>.get</b>[<b>UTC</b>]<b>FullYear()</b> method returns 4-digit year;</li>
-        <li><b>.set</b>/<b>.get</b>[<b>UTC</b>]<b>Hours()</b>, <b>.set</b>/<b>.get</b>[<b>UTC</b>]<b>Minutes()</b>,
-          <b>.set</b>/<b>.get</b>[<b>UTC</b>]<b>Seconds()</b>,
-          <b>.set</b>/<b>.get</b>[<b>UTC</b>]<b>Milliseconds()</b> methods return corresponding parameter;
+        <li><b>.set</b>/<b>.get</b>[<b>UTC</b>]<b>Date( )</b> method returns day of month from 1 to 31;</li>
+        <li><b>.set</b>/<b>.get</b>[<b>UTC</b>]<b>Day( )</b> method returns day of week from 0 to 6;</li>
+        <li><b>.set</b>/<b>.get</b>[<b>UTC</b>]<b>Month( )</b> method returns month from 0 to 11;</li>
+        <li><b>.set</b>/<b>.get</b>[<b>UTC</b>]<b>FullYear( )</b> method returns 4-digit year;</li>
+        <li><b>.set</b>/<b>.get</b>[<b>UTC</b>]<b>Hours( )</b>, <b>.set</b>/<b>.get</b>[<b>UTC</b>]<b>Minutes( )</b>,
+          <b>.set</b>/<b>.get</b>[<b>UTC</b>]<b>Seconds( )</b>,
+          <b>.set</b>/<b>.get</b>[<b>UTC</b>]<b>Milliseconds( )</b> methods return corresponding parameter;
         </li>
-        <li><b>.to</b>[<b>UTC</b>]<b>String()</b>, <b>.to</b>[<b>UTC</b>]<b>DateString()</b>,
-          <b>.to</b>[<b>UTC</b>]<b>TimeString()</b>,
-          <b>.to</b>[<b>UTC</b>]<b>LocaleTimeString()</b> methods return the standard string representation, not
+        <li><b>.to</b>[<b>UTC</b>]<b>String( )</b>, <b>.to</b>[<b>UTC</b>]<b>DateString( )</b>,
+          <b>.to</b>[<b>UTC</b>]<b>TimeString( )</b>,
+          <b>.to</b>[<b>UTC</b>]<b>LocaleTimeString( )</b> methods return the standard string representation, not
           hard-coded
           in the standard, but browser-dependent.
         </li>
@@ -1614,7 +1616,7 @@
         reason. When a promise enters the fulfilled or rejected state, this is forever.
       </p>
       <ul>
-        <li>const promise = new <b>Promise(</b>(resolve, reject) => {setTimeout(() => {if (isSuccess)
+        <li>const promise = new <b>Promise(</b>(resolve, reject) => {setTimeout(( ) => {if (isSuccess)
           {resolve("Success");} reject("Error");}, 2000);}<b>)</b> - a
           <i>promise</i> is created as an instance of the <i>Promise</i> class:
           <ul>
@@ -1652,8 +1654,8 @@
         <li><b>Promise.race(</b>[promise1, promise2, promise3, ...]<b>)</b> returns a fulfilled or rejected promise,
           depending on the result of the “fastest” of all the promises passed, with a value or reason for rejection.
         </li>
-        <li><b>Promise.resolve()</b> and <b>Promise.reject()</b> methods for creating instantly fulfilled or rejected
-          promises, they function in the same way as new Promise() except that you can specify a delay, with a shorter
+        <li><b>Promise.resolve( )</b> and <b>Promise.reject( )</b> methods for creating instantly fulfilled or rejected
+          promises, they function in the same way as new Promise( ) except that you can specify a delay, with a shorter
           syntax.</li>
       </ul>
     </section>
@@ -1716,17 +1718,17 @@
             <li><i>options</i> contains optional parameters of requests – methods (GET by default).</li>
           </ul>
         </li>
-        <li><b>.json()</b>, <b>.text()</b>, <b>.blob()</b> - depending on the type of received content, a different
+        <li><b>.json( )</b>, <b>.text( )</b>, <b>.blob( )</b> - depending on the type of received content, a different
           method is used to transform the response body into data.</li>
         <li>.../users<b>?</b>_limit=7<b>&</b>_sort=name - query string parameter is a <b>name=value</b> pair and used
           to specify additional criteria for the back-end, <b>?</b> character marks the start of parameters, <b>&</b>
           character separates parameters.</li>
         <li>const searchParams = new <b>URLSearchParams(</b>{_limit: 5, _sort: "name",}<b>)</b> - special object with
-          <i>.toString()</i> method to specify parameters and their values.
+          <i>.toString( )</i> method to specify parameters and their values.
         </li>
         <li>
           .../users<b>?${</b>searchParams<b>}</b> - when interpolating a value in template strings, it is implicitly
-          converted to a string, so you do not need to call the <b>.toString()</b> method when creating a URL</i>
+          converted to a string, so you do not need to call the <b>.toString( )</b> method when creating a URL</i>
         </li>
       </ul>
       <h3>CORS</h3>
@@ -1762,7 +1764,7 @@
       <p>
         <b>fetch(</b>"https://...", <b>options)</b><br>
         <b>.then(</b>response => {if (!response.ok) {throw new Error(response.statusText);} <b>return</b>
-        response.<b>json()</b>;}<b>)</b><br>
+        response.<b>json( )</b>;}<b>)</b><br>
         <b>.then(</b>data => {//data handling}<b>)</b><br>
         <b>.catch(</b>error => {//error handling}<b>)</b>;
       </p>
@@ -1773,18 +1775,18 @@
         <b>headers</b>: {"Content-Type": "application/json; charset=UTF-8",},<b>}</b>;
       </p>
       <ul>
-        <li><b>Create</b>. The <b>POST</b> method is used to add a new resource. The <i>fetch()</i> method must send a
+        <li><b>Create</b>. The <b>POST</b> method is used to add a new resource. The <i>fetch( )</i> method must send a
           <i>POST</i> request to the server, having an object in the body,the database will automatically create the
           identifier. Such request will result in an object added to the database.
         </li>
-        <li><b>Read</b>. The <b>GET</b> HTTP method is used to get existing data. The <i>fetch()</i> method should
-          send a GET request without a body to the server.The <i>fetch()</i> method makes a <i>GET</i> request by
+        <li><b>Read</b>. The <b>GET</b> HTTP method is used to get existing data. The <i>fetch( )</i> method should
+          send a GET request without a body to the server.The <i>fetch( )</i> method makes a <i>GET</i> request by
           default, so it is not necessary to override the request options.</li>
         <li><b>Update</b>. The <b>PUT</b> and <b>PATCH</b> methods are used to update existing data. Which method to
-          use will be specified in the back-end documentation. The <i>fetch()</i> method must send a request to the
+          use will be specified in the back-end documentation. The <i>fetch( )</i> method must send a request to the
           server, having the object with fields to change in the body. The path indicates in which collection and which
           item should be updated. If everything is fine, you will receive the updated object.</li>
-        <li><b>Delete</b>. The <b>DELETE</b> method is used to delete existing data. The <i>fetch()</i> method should
+        <li><b>Delete</b>. The <b>DELETE</b> method is used to delete existing data. The <i>fetch( )</i> method should
           send the <i>DELETE</i> request without a body to the server. The path indicates in which collection and
           which item to delete. </li>
       </ul>
@@ -1809,26 +1811,26 @@
         </li>
       </ul>
       <p>
-        const fetchData = <b>async ()</b> => <b>{</b><br>
+        const fetchData = <b>async ( )</b> => <b>{</b><br>
         const response = <b>await</b> fetch("https://...");<br>
-        const data = <b>await</b> response.json();<br>
+        const data = <b>await</b> response.json( );<br>
         <b>return</b> data;<b>}</b>;<br>
       </p>
-      <p><b>fetchData().then(</b>data => {//data handling}<b>)</b>
+      <p><b>fetchData( ).then(</b>data => {//data handling}<b>)</b>
       <h3>Handling errors</h3>
       <ul>
         <li>If the result of an asynchronous function (promise) is not used in outer code, errors are handled in the
           function body by the <b>try...catch</b> construct:<br>
-          const fetchData = <b>async ()</b> => <b>{</b><br>
+          const fetchData = <b>async ( )</b> => <b>{</b><br>
           <b>try {</b><br>
           const response = <b>await</b> fetch("https://...");<br>
-          const data = <b>await</b> response.json();<br>
+          const data = <b>await</b> response.json( );<br>
           <b>} catch (</b>error<b>) {</b><br>
           console.log(error.message);<b>}</b>
         </li>
         <li>If the result of an asynchronous function (promise) is used in outer (global) code, that is, outside of
-          other asynchronous functions, errors are handled by the catch() method’s callback:<br>
-          <b>fetchData().then(</b>data => {//data handling}<b>).catch(</b>error => {//error handling}<b>)</b>
+          other asynchronous functions, errors are handled by the catch( ) method’s callback:<br>
+          <b>fetchData( ).then(</b>data => {//data handling}<b>).catch(</b>error => {//error handling}<b>)</b>
         </li>
         <li>If the result of an asynchronous function is used in another asynchronous function, errors are handled by
           thes <b>try...catch</b> construct.
@@ -1836,12 +1838,12 @@
       </ul>
       <h3>Parallel requests</h3>
       <p>In case of completely independent requests so it is need to run them in <b>parallel</b>. For this, create an
-        array of promises, after which use the <b>Promise.all()</b> to wait for their execution.</p>
+        array of promises, after which use the <b>Promise.all( )</b> to wait for their execution.</p>
       <span>
-        const <b>fetchUsers</b> = <b>async ()</b> => <b>{</b>const baseUrl = "https://..."; const userIds = [1, 2, 3];
+        const <b>fetchUsers</b> = <b>async ( )</b> => <b>{</b>const baseUrl = "https://..."; const userIds = [1, 2, 3];
         <br>
         const arrayOfPromises = userIds.map(<b>async userId</b> => <b>{</b>const response = await
-        fetch(`${baseUrl}/users/${userId}`); return response.json();<b>}</b>);<br>
+        fetch(`${baseUrl}/users/${userId}`); return response.json( );<b>}</b>);<br>
         const users = <b>await Promise.all(</b>arrayOfPromises); console.log(users<b>)</b>;<b>}</b>;
       </span>
     </section>

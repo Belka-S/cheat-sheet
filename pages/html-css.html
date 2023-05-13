@@ -353,7 +353,7 @@
       <p><b>RGB</b> - by mixing red, green and blue in different proportions, you can get any other color.</p>
       <p><b>Hexadecimal</b> - based on the hexadecimal notation of a number (0 - the smallest fraction of color, f - is
         the largest fraction of color).</p>
-      <p><b>Color transparency</b> - main way to add transparency to a color is with the rgba() function.</p>
+      <p><b>Color transparency</b> - main way to add transparency to a color is with the rgba( ) function.</p>
       <h3>Style cascade</h3>
       <p>Cascading is a mechanism that controls the final property values of an element when multiple CSS rules are
         applied to it. The specificity value consists of four ranks.</p>
@@ -372,7 +372,7 @@
       <p>Variable declaration begins with a double dash -- followed by its name in arbitrary notation <i>:root
           {--brand-color: #3f51b5;},</i> <b>:root</b> selector is more specific then the <b>&#60html></b> element.
       </p>
-      <p>To get access to the value of a variable, the built-in <i>var()</i> function is used. Variables can be
+      <p>To get access to the value of a variable, the built-in <i>var( )</i> function is used. Variables can be
         overridden
         locally with other values. To do this, you need to declare a variable with the same name.</p>
     </section>
@@ -1066,7 +1066,7 @@
       <ul>
         <li><b>variables</b> - are only useable within the selector nesting level in which they are defined, declaring a
           variable is the $ sign before the name and its value after the colon.</li>
-        <li><b>addition, subtraction, multiplication, division</b> - unlike the in calc() function, you cannot mix unit
+        <li><b>addition, subtraction, multiplication, division</b> - unlike the in calc( ) function, you cannot mix unit
           types in preprocessors.</li>
         <li><b>@extend</b> - is used inheriting (extending) already existing styles.
           <ul>
@@ -1089,7 +1089,7 @@
           <i>dog</i>, <i>cat</i>, <i>bird</i> - list of animals.
         </li>
         <li><b>maps (dictonaries)</b> - allows us to store a set of related information in the format <i>$colors:
-            ('primary': #8e3329, 'accent': #d98328)</i>. The built-in SASS function <b>map-get()</b> is used to get the
+            ('primary': #8e3329, 'accent': #d98328)</i>. The built-in SASS function <b>map-get( )</b> is used to get the
           property value <i>body {background-color: map-get($colors, 'primary');}</i>.</li>
         <li><b>vendor prefixes</b> - special prefixes used by browser developers (vendors) for experimental CSS
           properties and values that are either not yet accepted into the standard, or not yet fully implemented into
