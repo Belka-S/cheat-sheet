@@ -1343,7 +1343,7 @@
         </li>
         <li>
           <p><b>createAction(</b>type, prepareAction<b>)</b> function simplifies the process of declaring actions. It
-            takes a string describing the <b>type</b> of action as an argument and returns the action generator. f you
+            takes a string describing the <b>type</b> of action as an argument and returns the action generator. If you
             need to write additional logic for creating a <b>payload</b> value, you can pass a second, optional argument
             to prepareAction - the action creation function.</p>
           src/redux/<b>actions.js</b> <br>
@@ -1356,8 +1356,9 @@
             reducer as its first argument, and as its second argument a property object of a special format, where each
             key is an action type and the value is a reducer function for that type. That is, each <b>case</b> becomes
             the <b>key</b> of the object for which its own mini-reducer is written. </p>
-          src/redux/<b>reducer.js</b> <br> export const
-          tasksReducer = <b>createReducer(</b>initialState, { <br>
+          src/redux/<b>reducer.js</b> <br>
+          import { <b>createReducer</b> } from "@reduxjs/toolkit"; <br>
+          export const tasksReducer = <b>createReducer(</b>initialState, { <br>
           [addTask]: (state, action) => { return [...state, action.payload]; },}<b>)</b>;
         </li>
         <li>
@@ -1405,8 +1406,9 @@
       <p>Basic usage involves adding <b>persistReducer</b> and <b>persistStore</b> to your setup.</p>
       <span>
         import { <b>persistStore</b>, <b>persistReducer</b> } from 'redux-persist' <br>
+        import <b>storage</b> from 'redux-persist/lib/storage' <br>
         import { FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist' <br>
-        const <b>persistConfig</b> = <b>{</b> key: 'root', storage, blacklist:['name'] <b>}</b> <br>
+        const <b>persistConfig</b> = <b>{</b> key: 'root', <b>storage</b>, blacklist: ['name'] <b>}</b> <br>
         const persistedReducer = <b>persistReducer(</b>persistConfig, rootReducer<b>)</b> <br>
 
         export const <b>store</b> = <b>configureStore(</b>{<br>
