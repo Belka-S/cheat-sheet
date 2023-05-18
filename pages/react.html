@@ -1192,16 +1192,17 @@
         <li>npm install <b>react-redux</b> - a set of components and hooks that connect React and Redux store
           components.
         </li>
+        <li>npm install <b>@redux-devtools/extension</b> - a browser extension Developer Tools.</li>
       </ul>
       <h3>Store</h3>
-      <p><b>createStore(</b>reducer, preloadedState, enhancer<b>)</b> - function that takes several parameters and
+      <p>The function <b>createStore(</b>reducer, preloadedState, enhancer<b>)</b> that takes several parameters and
         returns a new store object, that contains the complete application state, state access methods, and action
         dispatch methods:</p>
       <ul>
-        <li><b>reducer</b> - function with Redux state change logic. Required parameter.</li>
-        <li><b>preloadedState</b> - the initial state of the application. It must be an object of the same shape as at
-          least part of the state. Optional parameter.</li>
-        <li><b>enhancer</b> - a function to enhance the capabilities of the store. Optional parameter.</li>
+        <li><i>reducer</i> - function with Redux state change logic (required parameter).</li>
+        <li><i>preloadedState</i> - the initial state of the application. It must be an object of the same shape as at
+          least part of the state (optional parameter).</li>
+        <li><i>enhancer</i> - a function to enhance the capabilities of the store (optional parameter).</li>
       </ul>
       <p>The React Redux library has a <b>Provider</b> component that expects the <b>store</b> prop of the same name. In
         order for any component in the application to use the store, we wrap the entire component tree with Provider.
@@ -1213,19 +1214,18 @@
         &#60App />
         &#60/<b>Provide</b>r>
       </span>
-      <h3>Redux DevTools</h3>
       <p><a href="https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd"
           target="_blank" rel="noopener noreferrer"><b>Developer Tools</b></a> is a browser extension that adds a handy
         visual interface for debugging application state changes and following the flow of data in Redux, from action
         dispatch to state changes. Next, install a library that will allow you to initialize the Redux DevTools logic
         and associate it with the extension in the developer tools.</p>
-      <span>npm install <b>@redux-devtools/extension</b> <br>
+      <span>
         // src/redux/<b>store.js</b> <br>
         import { <b>createStore</b> } from "redux"; <br>
         import { <b>devToolsEnhancer</b> } from "@redux-devtools/extension"; <br>
         const <b>rootReducer</b> = <b>(</b>state = initialState, action<b>)</b> => {return state;}; <br>
         const <b>enhancer</b> = devToolsEnhancer( ); <br>
-        export const <b>store</b> = <b>createStore(</b><i>rootReducer, enhancer</i><b>)</b>; <br>
+        export const <b>store</b> = <b>createStore(</b>rootReducer, enhancer<b>)</b>; <br>
       </span>
       <h3>Store subscription</h3>
       <p>In order to receive data from the store, components must subscribe to the parts of the Redux state they need.
@@ -1279,21 +1279,12 @@
       </p>
       <span>
         export const <b>rootReducer</b> = <b>(state</b> = initialState, <b>action)</b> => <b>{</b> <br>
-        <b>switch</b>(action.type) { <br>
+        <b>switch</b> (action.type) { <br>
         <b>case</b> "tasks/addTask": { // ... } <br>
-        <b>default</b>: { // ... } <br>
-        <b>return</b> state; } <b>}</b>;
+        <b>default</b>: return state; } <b>}</b>;
       </span>
       <p>The <b>reducer</b> must be a <b>pure function</b>. Given arguments, it must compute the next state and return
-        it. No side effects. No mutations. Just calculating a new version of the state.The store creation file
-        src/redux/<b>store.js</b> code imports and uses the <b>root reducer</b>:</p>
-      <span> import { createStore } from
-        "redux"; <br>
-        import { devToolsEnhancer } from "@redux-devtools/extension"; <br>
-        import { <b>rootReducer</b> } from "./reducer"; <br>
-        const enhancer = devToolsEnhancer(); <br>
-        export const <b>store</b> = createStore(<b>rootReducer</b>, enhancer);
-      </span>
+        it. No side effects. No mutations. Just calculating a new version of the state.</p>
       <h3>Composition of reducers</h3>
       <p>Reducers are usually divided into several smaller ones to make the code easier to understand and maintain.
         Typically, reducers are split based on the parts of the Redux state they update. Each reducer will only be
@@ -1318,15 +1309,13 @@
       </a>
       <h3>Development with Redux Toolkit</h3>
       <p><a href="https://redux-toolkit.js.org/" target="_blank" rel="noopener noreferrer"><b>Redux Toolkit</b></a> is
-        the
-        official library for efficient Redux development that aims to standardize and simplify writing Redux logic. It
-        includes utilities to simplify basic tasks. Such as setting up a store, creating actions and reducers, immutable
-        data updates, provides a standard set of settings for the store and includes the most commonly used libraries
-        from the Redux ecosystem. Using the Redux Toolkit, there is no need to add the redux package to the project. It
-        is enough to install <b>@reduxjs/toolkit</b> to write the Redux logic and <b>react-redux</b> to communicate the
-        store with the components. To initialize the creation of application startup files using Create React App,
-        without a pre-made project template the official template is used.</p>
-      <span>
+        the official library for efficient Redux development that aims to standardize and simplify writing Redux logic.
+        It includes utilities to simplify basic tasks. Such as setting up a store, creating actions and reducers,
+        immutable data updates, provides a standard set of settings for the store and includes the most commonly used
+        libraries from the Redux ecosystem. Using the Redux Toolkit, there is no need to add the redux package to the
+        project. It is enough to install <b>@reduxjs/toolkit</b> to write the Redux logic and <b>react-redux</b> to
+        communicate the store with the components. To initialize the creation of application startup files using Create
+        React App, without a pre-made project template the official template is used.</p> <span>
         npm install <b>@reduxjs/toolkit react-redux</b> <br>
         npx <b>create-react-app my-app --template redux</b>
       </span>
