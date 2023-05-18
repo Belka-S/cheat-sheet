@@ -1356,7 +1356,7 @@
             reducer as its first argument, and as its second argument a property object of a special format, where each
             key is an action type and the value is a reducer function for that type. That is, each <b>case</b> becomes
             the <b>key</b> of the object for which its own mini-reducer is written. </p>
-          src/redux/<b>reducer.js</b> <br>
+          src/redux/<b>taskReducer.js</b> <br>
           import { <b>createReducer</b> } from "@reduxjs/toolkit"; <br>
           export const tasksReducer = <b>createReducer(</b>initialState, { <br>
           [addTask]: (state, action) => { return [...state, action.payload]; },}<b>)</b>;
