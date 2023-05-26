@@ -1504,9 +1504,9 @@
     </section>
     <section class="selector">
       <a href="#goit">
-        <h2 id="selector">Selector optimization <span>(Lesson 14)</span></h2>
+        <h2 id="selector">Optimization <span>(Lesson 14)</span></h2>
       </a>
-      <h3>Optimization</h3>
+      <h3>Selector optimization</h3>
       <p>The <b>createSelector</b> function is used to memoize the selector, which takes an array of selectors whose
         values are needed for the following subsequent calculations, and a converter function in which all
         calculations.Repeated calculations are performed only if the value of some parameters, otherwise the result of
@@ -1527,14 +1527,64 @@
         <b>[</b>inputSelector1, inputSelector2, inputSelector3<b>]</b>, <br>
         <b>(</b>result1, result2, result3<b>) => {</b> // do calculations and return result <b>} )</b>;
       </span>
+      <h3>RTK Query</h3>
+      <p><b>RTK Query</b> is an advanced data fetching and caching tool, designed to simplify common cases for loading
+        data in a web application. RTK Query itself is built on top of the Redux Toolkit core, and leverages RTK's APIs
+        like <b>createSlice</b> and <b>createAsyncThunk</b> to implement its capabilities.</p>
+      <span>
+        <p> import { <b>createApi</b>, <b>fetchBaseQuery</b> } from '@reduxjs/toolkit/query/react';</p>
+
+        export const contactsAPI = <b>createApi(</b>{ <br>
+        <b>reducerPath</b>: 'contactsAPI', <br>
+        <b>baseQuery</b>: fetchBaseQuery({ baseUrl: 'https://6469c172183682d61445c3b7.mockapi.io', }), <br>
+        <b>tagTypes</b>: ['Contact'], <br>
+        <b>endpoints</b>: builder => ({ <br>
+        <b>getContacts</b>: builder.query({ <br>
+        query: ( ) => '/contacts', <br>
+        providesTags: ['Contact'], <br>
+        }), <br>
+        <b>addContact</b>: builder.mutation({ <br>
+        query: contact => ({ url: '/contacts', method: 'POST', body: contact }), <br>
+        invalidatesTags: ['Contact'], <br>
+        }), <br>
+        <b>deleteContact</b>: builder.mutation({ <br>
+        query: id => ({ url: `/contacts/${id}`, method: 'DELETE' }), <br>
+        invalidatesTags: ['Contact'], <br>
+        }), }), }<b>)</b>; <br>
+        export const { <b>useGetContactsQuery</b>, <b>useAddContactMutation</b>, <b>useDeleteContactMutation</b>, } =
+        contactsAPI;
+      </span>
     </section>
     <section class="users">
       <a href="#goit">
         <h2 id="users">Users <span>(Lesson 15-16)</span></h2>
       </a>
-
-
-
+      <h3>Access rights</h3>
+      <p>The vast majority of applications allow the user to create an account, which allows the frontend and backend to
+        differentiate between users. In addition, the application may have closed routes that are only available to
+        registered users. Once authenticated, the user is allowed to request and receive some data. The right to access
+        the resource is determined by the presence of some unique value in the request (<b>token</b>).</p>
+      <ul>
+        <li><b>Authentication</b> is the process of checking user credentials (login/password).</li>
+        <li><b>Authorization</b> is a verification of the user's rights to access certain resources. The permission can
+          be a unique value, which the frontend sends with each HTTP request to the backend.</li>
+      </ul>
+      <p>One of the authorization mechanisms is JWT (<b>JSON Web Token</b>). The tokens provide a means of authorization
+        for each request from the frontend to the backend. The tokens are created on the backend based on a secret key
+        that is stored on the server, and some unique data for the user, such as mail, etc. Each token is a unique
+        encrypted string that contains three blocks: header, payload and signature. If an attacker tries to tamper with
+        the data token will become invalid.</p>
+      <h3>Portals</h3>
+      <p>Portals provide a method of rendering child elements to a DOM Node, which is outside the DOM hierarchy of the
+        parent component. Despite the fact that the portal can be placed anywhere in the DOM tree, it behaves like any
+        other child React element. Props and contexts continue to function normally.</p>
+      <span>
+        ReactDOM<b>.createPortal(</b>child, container<b>)</b>;
+      </span>
+      <ul>
+        <li><i>child</i> - a Virtual DOM sub-tree of any complexity;</li>
+        <li><i>container</i> - the DOM Node, where the first argument will be redirected to.</li>
+      </ul>
     </section>
   </main>
 
