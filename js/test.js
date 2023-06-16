@@ -1,3 +1,8 @@
+const date = new Date();
+
+console.log(`Today is ${date.getDate()}.${date.getMonth()}.${date.getFullYear()}`);
+
+
 // '🍎'--------------------'🍎' Variables and Types (Lesson 1) '🍎'--------------------'🍎'
 
 // The six values ​​that are converted by Boolean() to `false`:

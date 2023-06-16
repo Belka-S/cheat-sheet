@@ -40,68 +40,68 @@
         <ul class="goit__contents">
           <li><a href="#basics">The Basics <span>(Lesson 1)</span>
               <div>
-                <a href="" target="_blank">R01 <span></span></a>
-                <a href="" target="_blank">Y01 <span></span></a>
+                <a href="https://www.youtube.com/watch?v=_AsCNHqJVlQ" target="_blank">L01 <span>node-basics</span></a>
+                <a href="" target="_blank">M01 <span></span></a>
               </div>
             </a></li>
           <li><a href="#apps">Creating Console Applications <span>(Lesson 2)</span></a>
             <div>
-              <a href="" target="_blank">R02 <span></span></a>
-              <a href="" target="_blank">Y02 <span></span></a>
+              <a href="https://youtu.be/y5g5K4wAda4" target="_blank">L02 <span>console-app</span></a>
+              <a href="" target="_blank">M02 <span></span></a>
             </div>
           </li>
           <li><a href="#express">The Framework Express <span>(Lesson 3)</span></a>
             <div>
-              <a href="" target="_blank">R03 <span></span></a>
-              <a href="" target="_blank">Y03 <span></span></a>
+              <a href="" target="_blank">L03 <span></span></a>
+              <a href="" target="_blank">M03 <span></span></a>
             </div>
           </li>
           <li><a href="#restapi">REST API <span>(Lesson 4)</span></a>
             <div>
-              <a href="" target="_blank">R04 <span></span></a>
-              <a href="" target="_blank">Y04 <span></span></a>
+              <a href="" target="_blank">L04 <span></span></a>
+              <a href="" target="_blank">M04 <span></span></a>
             </div>
           </li>
           <li><a href="#mondo">The MongoDB Database <span>(Lesson 5)</span></a>
             <div>
-              <a href="" target="_blank">R05 <span></span></a>
-              <a href="" target="_blank">Y05 <span></span></a>
+              <a href="" target="_blank">L05 <span></span></a>
+              <a href="" target="_blank">M05 <span></span></a>
             </div>
           </li>
           <li><a href="#mongoose">ODM Mongoose <span>(Lesson 6)</span></a>
             <div>
-              <a href="" target="_blank">R06 <span></span></a>
-              <a href="" target="_blank">Y06 <span></span></a>
+              <a href="" target="_blank">L06 <span></span></a>
+              <a href="" target="_blank">M06 <span></span></a>
             </div>
           </li>
           <li><a href="#auth">Authentication and authorization <span>(Lesson 7-8)</span></a>
             <div>
-              <a href="" target="_blank">R7-8 <span></span></a>
-              <a href="" target="_blank">Y7-8 <span></span></a>
+              <a href="" target="_blank">L7-8 <span></span></a>
+              <a href="" target="_blank">M7-8 <span></span></a>
             </div>
           </li>
           <li><a href="#files">Work with files <span>(Lesson 9)</span></a>
             <div>
-              <a href="" target="_blank">R09 <span></span></a>
-              <a href="" target="_blank">Y09 <span></span></a>
+              <a href="" target="_blank">L09 <span></span></a>
+              <a href="" target="_blank">M09 <span></span></a>
             </div>
           </li>
           <li><a href="#testing">Testing of Applications <span>(Lesson 10)</span></a>
             <div>
-              <a href="" target="_blank">R10 <span></span></a>
-              <a href="" target="_blank">Y10 <span></span></a>
+              <a href="" target="_blank">L10 <span></span></a>
+              <a href="" target="_blank">M10 <span></span></a>
             </div>
           </li>
           <li><a href="#email-docker">Work with email and Docker <span>(Lesson 11)</span></a>
             <div>
-              <a href="" target="_blank">R11 <span></span></a>
-              <a href="" target="_blank">Y11 <span></span></a>
+              <a href="" target="_blank">L11 <span></span></a>
+              <a href="" target="_blank">M11 <span></span></a>
             </div>
           </li>
           <li><a href="#websockets">Websockets <span>(Lesson 12)</span></a>
             <div>
-              <a href="" target="_blank">R12 <span></span></a>
-              <a href="" target="_blank">Y12 <span></span></a>
+              <a href="" target="_blank">L12 <span></span></a>
+              <a href="" target="_blank">M12 <span></span></a>
             </div>
           </li>
         </ul>
@@ -111,6 +111,79 @@
       <a href="#goit">
         <h2 id="basics">The Basics <span>(Lesson 1)</span></h2>
       </a>
+      <h3>Global variables</h3>
+      <ul>
+        <li><b>Global</b> object is analogous to the window object from the browser;</li>
+        <li>global<b>.foo</b> = 3; - to make a variable global in Node.js, you must declare it as a property of the
+          <b>global</b> object;
+        </li>
+        <li><b>Buffer</b> class is used when the object is used for operations with binary data;</li>
+        <li><b>Process</b> class is used when process object, most of the data is located here;</li>
+        <li>process<b>.argv</b> property contains an array of command line arguments;</li>
+        <li>process<b>.cwd()</b> returns the current working directory;</li>
+        <li>process<b>.chdir()</b> changes to another directory;</li>
+        <li>process<b>.exit()</b> exits the process with the code specified as an argument: 0, which is a success code;
+          any number is an error code;</li>
+        <li>process<b>.nextTick(</b>fn<b>)</b> is an important method that will schedule the execution of the specified
+          function in such a way that the specified function will be executed after the end of the current phase (the
+          currently executing code), but before the start of the next phase of the event loop.</li>
+      </ul>
+      <h3>Modules</h3>
+      <p>To connect third-party modules to your project in Node.js, there is a convenient <b>NPM module management
+          system</b>. In essence, this is a public repository of additional software modules created using Node.js.</p>
+      <ul>
+        <li><b>npm install</b> module_name [switches] - to install module;</li>
+        <li><b>-S</b> or <b>--save</b> - the module is installed as a main dependency (module is necessary for the
+          normal functioning of the program);</li>
+        <li><b>-D</b> or <b>--save-dev</b> - means that the module will be installed as an additional dependency</li>
+      </ul>
+      <p>Modules fall into three categories:</p>
+      <ul>
+        <li><b>Core</b> modules, such as <i>fs</i> and <i>os</i>, are provided by the Node.</li>
+        <li><b>File</b> modules are when you create a file with an exported function that assigns something (function,
+          object, etc.) to the module.exports property, and then that file is used in other files in your program.</li>
+        <li><b>npm</b> modules are regular file modules that reside in a special folder called node_modules. When you
+          use the require function, Node determines the type of the module from the passed string.</li>
+      </ul>
+      <h3>CommonJS modules</h3>
+      <p>Structurally, a CommonJS module is a ready-to-use piece of JavaScript code that exports special objects
+        available for use in any code that needs it as a dependency. The two main kinds of CommonJS modules are the
+        <b>exports object</b>, which contains what a given module wants to make available to other parts of the system,
+        and the <b>require function</b>, which is used by some modules to import the exports object from others.
+      </p>
+      <ul>
+        <li>module<b>.exports</b> – an object responsible for what exactly the module will export;</li>
+        <li><b>require</b> method used to include modules is not global and will be local to each module.</li>
+
+      </ul>
+      <h3>ECMAScript modules</h3>
+      <p>Starting with version 6.x, Node.js also supports connecting modules according to the ECMAScript standard. But
+        fully importing modules has only worked since version 14.x. The first way is to give the files a <b>.mjs</b>
+        extension so that we can use ECMAScript modules. The second wayis to set<b> "type": "module"</b>, in the
+        <b>package.json</b> file.
+      </p>
+      <h3>Working with Files</h3>
+      <p>The FileSystem module is responsible for working with files in Node.js. Module initialization is as follows:
+      </p>
+      <ul>
+        <li>const <b>fs</b> = require(<b>'fs'</b>)<b>.promises</b>;</li>
+        <li>const <b>fs</b> = require(<b>'fs/promises'</b>);</li>
+      </ul>
+      <p>The most used functions for basic file operations are as follows:</p>
+      <ul>
+        <li>fs<b>.readFile(</b>filename, [options]<b>)</b> - read file;</li>
+        <li>fs<b>.writeFile(</b>filename, data, [options]<b>)</b> - write file;</li>
+        <li>fs<b>.appendFile(</b>filename, data, [options]<b>)</b>- append to file;</li>
+        <li>fs<b>.rename(</b>oldPath, newPath<b>)</b> - rename file;</li>
+        <li>fs<b>.unlink(</b>path, callback<b>)</b> - delete file.</li>
+      </ul>
+      <p>When dealing with files, we never forget to handle errors. The data parameter in the readFile function contains
+        the already mentioned object of the <b>Buffer</b> type, containing the sequence of bytes read, i.e. raw data.
+        The easiest way to work with data as a string is to convert data using the <b>toString()</b> method:</p>
+      <span>
+        fs<b>.readFile(</b>'readme.txt'<b>)</b><b>.then(</b>data => console.log(data<b>.toString(
+          )</b>)<b>)</b><b>.catch(</b>error => console.log(error.message)<b>)</b>;
+      </span>
     </section>
 
     <section class="apps">
