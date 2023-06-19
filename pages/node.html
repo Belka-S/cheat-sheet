@@ -117,12 +117,14 @@
         <li>global<b>.foo</b> = 3; - to make a variable global in Node.js, you must declare it as a property of the
           <b>global</b> object;
         </li>
+        <li><b>__filename</b> – a file name of an executable script;</li>
+        <li><b>__dirname</b> – an absolute path to the executable script;</li>
         <li><b>Buffer</b> class is used when the object is used for operations with binary data;</li>
         <li><b>Process</b> class is used when process object, most of the data is located here;</li>
         <li>process<b>.argv</b> property contains an array of command line arguments;</li>
-        <li>process<b>.cwd()</b> returns the current working directory;</li>
-        <li>process<b>.chdir()</b> changes to another directory;</li>
-        <li>process<b>.exit()</b> exits the process with the code specified as an argument: 0, which is a success code;
+        <li>process<b>.cwd( )</b> returns the current working directory;</li>
+        <li>process<b>.chdir( )</b> changes to another directory;</li>
+        <li>process<b>.exit( )</b> exits the process with the code specified as an argument: 0, which is a success code;
           any number is an error code;</li>
         <li>process<b>.nextTick(</b>fn<b>)</b> is an important method that will schedule the execution of the specified
           function in such a way that the specified function will be executed after the end of the current phase (the
@@ -179,7 +181,7 @@
       </ul>
       <p>When dealing with files, we never forget to handle errors. The data parameter in the readFile function contains
         the already mentioned object of the <b>Buffer</b> type, containing the sequence of bytes read, i.e. raw data.
-        The easiest way to work with data as a string is to convert data using the <b>toString()</b> method:</p>
+        The easiest way to work with data as a string is to convert data using the <b>toString( )</b> method:</p>
       <span>
         fs<b>.readFile(</b>'readme.txt'<b>)</b><b>.then(</b>data => console.log(data<b>.toString(
           )</b>)<b>)</b><b>.catch(</b>error => console.log(error.message)<b>)</b>;
@@ -190,6 +192,57 @@
       <a href="#goit">
         <h2 id="apps">Creating Console Applications <span>(Lesson 2)</span></h2>
       </a>
+      <h3>CLI applications</h3>
+      <p>The traditional way to manage a console application (CLI applications) is to pass parameters from the console
+        line when it is launched. The parameters passed when starting the script are available in the process.args
+        array. To process all kinds of combinations of parameters and their formats <a
+          href="https://github.com/tj/commander.js#common-option-types-boolean-and-value"><b>program</b></a> or
+        <b>yargs</b> modules are usually used:
+      </p>
+      <ul>
+        <li>
+          const { <b>program</b> } = require(<b>'commander'</b>); <br>
+          program<b>.option(</b>'--action &#60type>'<b>).option(</b>'--id &#60type>'<b>).option(</b>'--name
+          &#60type>'<b>)</b> <br>
+          program<b>.parse(</b>process.argv<b>)</b>; <br>
+          const optionsObgect = program<b>.opts( )</b>; <br>
+          <p>
+            Options are defined with the <b>.option( )</b> method, also serving as documentation for the options. Each
+            option can have a short flag (single character) and a long name, separated by a comma or space or vertical
+            bar ('|'). The first argument to <b>.parse(</b>[//array of strings], { <b>from: 'user'</b> }<b>)</b> is the
+            array to parse, f the arguments follow different conventions than node you can pass a <b>from</b> option in
+            the second parameter. The parsed options can be accessed by calling <b>.opts( )</b> on a Command object, and
+            are passed to the action handler. The two most used option types are a boolean option, and an option which
+            takes its value from the following argument (declared with angle brackets like <b>--expect
+              &#60</b>value<b>></b>). To specify an option which may be used as a boolean option but may optionally take
+            an option-argument (declared with square brackets like <b>--optional [</b>value<b>]</b>). You may specify a
+            required option using <b>.requiredOption( ).</b> </p>
+        </li>
+        <li>
+          const <b>yargs</b> = require(<b>'yargs'</b>); <br>
+          const { <b>hideBin</b> } = require(<b>'yargs/helpers'</b>); <br>
+          const arr = <b>hideBin(</b>process.argv<b>)</b>; <br>
+          const { <b>argv</b>: optionsObgect } = <b>yargs(</b>arr<b>)</b>;
+        </li>
+      </ul>
+      <p>To use interactive question-and-answer console input, the standard Node.js <b>readline</b> module is used:</p>
+      <ul>
+        <li>
+          const <b>readline</b> = require(<b>'readline'</b>); <br>
+          const <b>rl</b> = readline<b>.createInterface(</b>{
+          <b>input:</b> process.stdin, <b>output:</b> process.stdout, }<b>)</b>;
+        </li>
+        <li>rl<b>.on('line', cmd</b> => { console.log(`You just typed: ${<b>cmd</b>}`<b>)</b>;
+          }) - each input line is processed through the line event;</li>
+        <li>rl<b>.question(</b>'Who are you?', <b>answer</b> => { console.log(`Nice to meet you ${<b>answer</b>}`);
+          }<b>)</b> - to ask the user a question and get an answer;</li>
+        <li>rl<b>.pause( )</b> - to block the input;</li>
+        <li>rl<b>.close( )</b> - to close the readline interface.</li>
+      </ul>
+
+
+
+
     </section>
 
     <section class="express">
