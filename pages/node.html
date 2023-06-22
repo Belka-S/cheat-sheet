@@ -52,7 +52,7 @@
           </li>
           <li><a href="#express">The Framework Express <span>(Lesson 3)</span></a>
             <div>
-              <a href="" target="_blank">L03 <span></span></a>
+              <a href="https://www.youtube.com/watch?v=q8B3wdyUbcU" target="_blank">L03 <span>express</span></a>
               <a href="" target="_blank">M03 <span></span></a>
             </div>
           </li>
@@ -239,6 +239,7 @@
         <li>rl<b>.pause( )</b> - to block the input;</li>
         <li>rl<b>.close( )</b> - to close the readline interface.</li>
       </ul>
+      
 
 
 
@@ -249,12 +250,126 @@
       <a href="#goit">
         <h2 id="express">The Framework Express <span>(Lesson 3)</span></h2>
       </a>
-    </section>
+      <h3>Introduction to Express</h3>
+      <p><a href="https://expressjs.com/" target="_blank"><b>Express</b></a> is a minimalistic and flexible web
+        framework for Node.js applications that provides a rich set of features for mobile and web applications. It has
+        many HTTP utility methods and middleware at its disposal to create a robust API or website.</p>
 
+      <span>const <b>express</b> = require(<b>'express'</b>); <br>
+        const <b>app</b> = <b>express( )</b>; <br>
+        app<b>.listen(</b>3001, ( ) => console.log('Server is running!')<b>)</b>;</span>
+      <p>To process requests(routes) Express has a number of built-in functions. The route definition, according to the
+        documentation, has the following structure: app.<b>METHOD</b>(<b>PATH</b>, <b>HANDLER</b>). </p>
+      <ul>
+        <li><b>app</b> - an express application instance;</li>
+        <li><b>METHOD</b> — an HTTP request method (GET, POST, PUT, PATCH, DELETE);</li>
+        <li><b>PATH</b> — a path to the server, in our case it is the site root '/';</li>
+        <li><b>HANDLER</b> - a function to be executed when the route is matched.</li>
+      </ul>
+      <p>The <i>HANDLER</i> function takes two parameters, a <b>req</b> (request) and a <b>res</b> (response) object.
+        Route definitions can contain regular expressions or special wildcards such as <b>?</b> (the previous character
+        may occur 1 time or be absent), <b>+</b> (the previous character can occur 1 or more times), <b>*</b> (any
+        number of characters can appear in place of this character) and <b>( )</b>.
+
+      </p>
+      <span>app<b>.get(</b>'/', (<b>req</b>, <b>res</b>) => { <br>
+        console.log(req<b>.url</b>, req<b>.method</b>); <br>
+        res<b>.send(</b>'&#60h2>Home Page&#60/h2>'<b>)</b>;
+        }<b>)</b>;</span>
+      <h3>Middleware</h3>
+      <p><b>Middleware</b> are functions that have access to the <b>request</b> object, the <b>response</b> object, and
+        the <b>next</b> middleware function in the application's request-response cycle. The middleware functions
+        execute some code, make changes to the objects of <b>req</b> and <b>resp</b>, may complete the
+        request-response cycle and abort the processing of the request, call the next intermediate processing function
+        from the stack by executing the <b>next( )</b> function.</p>
+      <ul>
+        <li>app<b>.use(</b>(<b>req</b>, <b>res</b>, <b>next</b>) => { const <b>{</b> method, url <b>}</b> = <b>req</b>;
+          <br>
+          const date = moment( ).format('DD-MM-YYYY_hh:mm:ss'); <br>
+          fs.appendFile('./data/server.log', `${method} ${url} ${date}\n`); <br>
+          <b>next( )</b>;
+          }<b>)</b>;
+        </li>
+        <li>app<b>.use(</b>(<b>res</b>, <b>req</b>) => {
+          res<b>.status(</b>404)<b>.json(</b>{ error: 'Not found' }<b>)</b>;
+          }<b>)</b>;</li>
+        <li>const cors = require('cors'); <br>
+          app<b>.use(</b>cors()<b>)</b>; - to allows CORS requests;
+        </li>
+        <li>const contactsRouter = require('./routes/api/contacts'); <br>
+          app<b>.use(</b>'/api/contacts', contactsRouter<b>)</b>;
+        </li>
+        <li>app<b>.use(</b>express.json()<b>)</b>; - to transform JSON body.</li>
+      </ul>
+      <h3>Passing data to a server</h3>
+      <ul>
+        <li>
+          <p><b>Passing a parameter to the URL</b> <br>
+            app.get('/contact/:<b>id</b>', (<b>req</b>, res) => {
+            const { <b>id</b> } = <b>req.params</b>; });
+          </p>
+        </li>
+        <li>
+          <p><b>Using GET request parameters</b> <br>
+            http://localhost:3000/contacts?skip=0&limit=10, the result of such a request is in the <b>req.query</b>
+            object;
+          </p>
+        </li>
+        <li>
+          <p><b>Submit via forms</b> <br>
+            app<b>.use(</b>express<b>.urlencoded(</b>{ extended: false }<b>))</b> - to create a form data parser; <br>
+            app.post('/login', (<b>req</b>, res, next) => {
+            const { email, password } = <b>req.body</b>;
+            });
+          </p>
+        </li>
+        <li>
+          <p><b>JSON Pass</b> <br>
+            app<b>.use(</b>express<b>.json())</b> - to connect the JSON parser in the application;<br>
+            app.post('/login', (<b>req</b>, res, next) => {
+            const { email, password } = <b>req.body</b>;
+            });
+          </p>
+        </li>
+      </ul>
+      <h3>Application Routing</h3>
+      <p>With the <b>express.Router</b> class, you can create modular, mountable route handlers. The Router instance is
+        a complex system of middleware and routing. Express supports a large number of <b>routing methods</b>
+        corresponding to HTTP methods (<b>get</b>, <b>post</b>, <b>put</b>, <b>delete</b>, <b>patch</b>).</p>
+      <span>
+        const <b>express</b> = require(<b>'express'</b>); <br>
+        const <b>router</b> = express<b>.Router( )</b>; <br>
+        const contacts = require('../../data/contacts.json'); <br>
+        <b>router</b>.get('/', (req, res) => {
+        res.json(contacts); });
+      </span>
+      <p>The methods on the <b>response</b> object (res) can send a response to the client and complete the
+        request-response cycle:</p>
+      <ul>
+        <li>res<b>.download( )</b> - file upload prompt;</li>
+        <li>res<b>.end( )</b> - completing the response process;</li>
+        <li>res<b>.json( )</b> - sending a JSON response;</li>
+        <li>res<b>.jsonp( )</b> - sending a JSON response with JSONP support;</li>
+        <li>res<b>.redirect( )</b> - response redirect;</li>
+        <li>res<b>.render( )</b> - view template output;</li>
+        <li>res<b>.send( )</b> - ending different types of response;</li>
+        <li>res<b>.sendFile( )</b> - sending a file as an octet stream.</li>
+      </ul>
+      <p>The app<b>.route( )</b> method allows you to create chained route handlers for a particular route path.</p>
+    </section>
     <section class="restapi">
       <a href="#goit">
         <h2 id="restapi">REST API <span>(Lesson 4)</span></h2>
       </a>
+
+
+
+
+
+
+
+
+
     </section>
 
     <section class="mondo">
