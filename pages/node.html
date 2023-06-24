@@ -40,26 +40,26 @@
         <ul class="goit__contents">
           <li><a href="#basics">The Basics <span>(Lesson 1)</span>
               <div>
-                <a href="https://www.youtube.com/watch?v=_AsCNHqJVlQ" target="_blank">L01 <span>node-basics</span></a>
-                <a href="" target="_blank">M01 <span></span></a>
+                <a href="https://youtu.be/_AsCNHqJVlQ" target="_blank">L01 <span>node-basics</span></a>
+                <a href="https://youtu.be/ULja_vtUbGg" target="_blank">M01 <span></span></a>
               </div>
             </a></li>
           <li><a href="#apps">Creating Console Applications <span>(Lesson 2)</span></a>
             <div>
               <a href="https://youtu.be/y5g5K4wAda4" target="_blank">L02 <span>console-app</span></a>
-              <a href="" target="_blank">M02 <span></span></a>
+              <a href="https://youtu.be/8gMSXOoykVs" target="_blank">M02 <span></span></a>
             </div>
           </li>
           <li><a href="#express">The Framework Express <span>(Lesson 3)</span></a>
             <div>
-              <a href="https://www.youtube.com/watch?v=q8B3wdyUbcU" target="_blank">L03 <span>express</span></a>
-              <a href="" target="_blank">M03 <span></span></a>
+              <a href="https://youtu.be/2ayBNKGC8hs" target="_blank">L03 <span>express</span></a>
+              <a href="https://youtu.be/q8B3wdyUbcU" target="_blank">M03 <span></span></a>
             </div>
           </li>
           <li><a href="#restapi">REST API <span>(Lesson 4)</span></a>
             <div>
-              <a href="" target="_blank">L04 <span></span></a>
-              <a href="" target="_blank">M04 <span></span></a>
+              <a href="https://youtu.be/mh5kKeEojjA" target="_blank">L04 <span>rest-api</span></a>
+              <a href="https://youtu.be/rHvd6ZxZH6I" target="_blank">M04 <span></span></a>
             </div>
           </li>
           <li><a href="#mondo">The MongoDB Database <span>(Lesson 5)</span></a>
@@ -239,7 +239,7 @@
         <li>rl<b>.pause( )</b> - to block the input;</li>
         <li>rl<b>.close( )</b> - to close the readline interface.</li>
       </ul>
-      
+
 
 
 
@@ -294,12 +294,16 @@
           res<b>.status(</b>404)<b>.json(</b>{ error: 'Not found' }<b>)</b>;
           }<b>)</b>;</li>
         <li>const cors = require('cors'); <br>
-          app<b>.use(</b>cors()<b>)</b>; - to allows CORS requests;
+          app<b>.use(</b>cors( )<b>)</b>; - <i>to allows CORS requests</i>;
         </li>
         <li>const contactsRouter = require('./routes/api/contacts'); <br>
           app<b>.use(</b>'/api/contacts', contactsRouter<b>)</b>;
         </li>
-        <li>app<b>.use(</b>express.json()<b>)</b>; - to transform JSON body.</li>
+        <li>app<b>.use(</b>express.json( )<b>)</b>; - <i>to transform JSON body</i>;</li>
+        <li>app<b>.use(</b>(<b>err</b>, <b>req</b>, <b>res</b>, <b>next</b>) => { <br>
+          const { status = 500, code, message = 'Server error!' } = <b>err</b>; <br>
+          res.status(status).json({ message: err.message });
+          }<b>)</b></li>
       </ul>
       <h3>Passing data to a server</h3>
       <ul>
@@ -361,15 +365,180 @@
       <a href="#goit">
         <h2 id="restapi">REST API <span>(Lesson 4)</span></h2>
       </a>
+      <h3>MVC application</h3>
+      <p>The Express framework introduces its application <a href="https://expressjs.com/en/starter/generator.html"
+          target="_blank" rel="noopener noreferrer">generator</a>. The generator focuses on Model-View-Controller
+        application architecture.</p>
+      <span>npx express-generator --view=ejs <i>projectName</i> - to install new rpoject;</span>
+      <ul>
+        <li>
+          <p><b>Routes connection:</b> <br>
+            const indexRouter = require('./routes/index'); <br>
+            const usersRouter = require('./routes/users'); <br>
+            app.use('/', indexRouter); <br>
+            app.use('/users', usersRouter);
+          </p>
+        </li>
+        <li>
+          <p><b>Templates connection:</b> <br>
+            app.set('views', path.join(__dirname, 'views')); <br>
+            app.set('view engine', 'ejs');
+          </p>
+        </li>
+        <li>
+          <p><b>Middleware connection:</b> <br>
+            app.use(logger('dev')); <br>
+            app.use(express.json()); <br>
+            app.use(express.urlencoded({ extended: false })); <br>
+            app.use(cookieParser());
+          </p>
+        </li>
+        <li>
+          <p><b>Processing of static resources:</b> <br>
+            app.use(express.static(path.join(__dirname, 'public')))
+          </p>
+        </li>
+        <li>
+          <p><b>Error handling:</b> <br>
+            app.use((req, res, next) => { next(createError(404)); }); <i>or</i><br>
+            app.use((req, res) => { res.status(404).json({ message: 'Not found' });}); <br>
+            app.use((err, req, res, next) => { <br>
+            const { status = 500, code, message = 'Server error!' } = err; <br>
+            res.status(status).json({ message: err.message });
+            });
 
-
-
-
-
-
-
-
-
+          </p>
+        </li>
+      </ul>
+      <h3>Environment Variables</h3>
+      <p><b>Environment variables</b> areused to access secret data, such as secret words for cookie or jwt, url
+        database connection, and so on. They ares are local variables that are available to our application. These
+        variables are created using the <b>dotenv</b> module. This module loads environment variables from a <b>.env</b>
+        file. After we connect the module in our application and it adds environment variables to the <b>process.env</b>
+        object, from there, without showing the values of these variables, we can use them in the application. We must
+        add the <b>.env</b> file to the <b>.gitignore</b> file
+      </p>
+      <ul>
+        <li>npm install <b>dotenv</b> - to install module;</li>
+        <li>require(<b>'dotenv'</b>)<b>.config()</b> - add in <b>app.js</b> to configure;</li>
+        <li><b>.env</b> file in the root directory of application and add variables: <br>
+          <b>SECRET_KEY</b>=123456 <br>
+          <b>NODE_ENV</b>=development
+        </li>
+        <li>any variables added to the <b>.env</b> file will now be available in the application's <b>app.js</b> file:
+          <br>
+          process.env<b>.SECRET_KEY</b>; <br>
+          process.env<b>.NODE_ENV</b>;
+        </li>
+      </ul>
+      <h3>Logging</h3>
+      <p>To log requests to the server the <a href="https://www.npmjs.com/package/morgan" target="_blank"
+          rel="noopener noreferrer"><b>morgan</b></a> module is used, it is called as a middleware function. There are
+        five predefined formats (<i>combined</i>, <i>common</i>, <i>dev</i>, <i>short</i>, <i>tiny</i>) and custom log
+        formats.
+      </p>
+      <span>
+        const <i>morgan</i> = require(<b>'morgan'</b>); <br>
+        app<b>.use(</b>logger(<b>'dev'</b>)<b>)</b>
+      </span>
+      <h3>RESTful Architectural Constraints</h3>
+      <p><b>REST</b> (REpresentational State Transfer). It is a set of design principles for increasing the scalability
+        and flexibility of network communications. A RESTful system must be flexible for different use cases, scale to
+        support a large number of users and components, and adapt over time. It is any network that satisfies the next
+        constraints.</p>
+      <ul>
+        <li><b>Client-Server.</b> The network must be composed of clients and servers. A RESTful system must work in a
+          client-server model.</li>
+        <li><b>Stateless.</b> Servers and clients don't need to keep track of each other's state.</li>
+        <li><b>Single Interface.</b> When a system has identifiers for each resource, manipulates them by sending
+          representations from the client to the server, and has messages that are informative and consist of
+          hypermedia, it is said to have a single interface. </li>
+        <li><b>Caching.</b> Refers to the restriction that server responses must be marked as cacheable or
+          non-cacheable.</li>
+        <li><b>Multi-layer</b> (<b>Multi-Level</b>) <b>System</b>. There can be more components than just servers
+          and clients. This means that there can be more than one level in the system. However, each component is
+          limited to only see and interact with the next layer.</li>
+        <li><b>Code on Request</b> (optional). Refers to the server's ability to send executable code to the client.
+        </li>
+      </ul>
+      <h3>Basic HTTP Methods</h3>
+      <p>Idempotent is a property of an object or operation, when the operation is applied to the object again, to give
+        the same result as the first time. The main or most commonly used HTTP methods are GET / POST / PUT / DELETE.
+      </p>
+      <ul>
+        <li><b>GET</b> method used to get (or read) a representation of a resource. If the address is successful, the
+          <b>GET</b> method returns an <b>XML</b> or <b>JSON</b> representation of the resource, combined with an HTTP
+          <b>200</b> (OK) status code. On failure, <b>404</b> (NOT FOUND) or <b>400</b> (BAD REQUEST) is returned.
+        </li>
+        <li><b>POST</b> method is used to create new resources or nested resources. When a new resource is created, the
+          <b>POST</b> request sends a view, and the service takes responsibility for assigning an <b>ID</b> to the new
+          resource. If the resource is successfully created, the HTTP code <b>201</b> Create is returned, and a Location
+          header can be set with the address of the created resource.
+        </li>
+        <li><b>PUT</b> (<b>PATCH</b>) method is used to update a resource. The request body when sending a <b>PUT</b>
+          request to an existing URL resource must contain the updated data of the original resource (in full, or only
+          the updated part - <b>PATCH</b>). A successful update returns <b>200</b> (or <b>204</b> if no content was
+          passed in the response body).</li>
+        <li><b>DELETE</b> method is used to delete a resource identified by a specific URL (ID). Upon successful
+          deletion of the resource, a <b>200</b> (OK) HTTP code is returned, along with a response body containing the
+          details of the deleted resource. It is also possible to use the HTTP code <b>204</b> (NO CONTENT) without a
+          response body.</li>
+      </ul>
+      <h3>HTTP response codes</h3>
+      <p>Any response from the server must indicate an HTTP status code. It indicates whether a particular HTTP request
+        was successfully completed. <a href="https://developer.mozilla.org/ru/docs/Web/HTTP/Status" target="_blank"
+          rel="noopener noreferrer"><b>HTTP codes</b></a> are divided into five groups:</p>
+      <ol>
+        <li><b>Information 100 - 199</b> <br>
+          100: Continue</li>
+        <li><b>Successful 200 - 299</b> <br>
+          200: OK <br>
+          201: Created <br>
+          202: Accepted <br>
+          204: No Content
+        </li>
+        <li><b>Redirects 300 - 399</b> <br>
+          301: Moved Permanently <br>
+          307: Temporary Redirect
+        </li>
+        <li><b>Client errors 400 - 499</b> <br>
+          400: Bad Request <br>
+          401: Unauthorized <br>
+          403: Forbidden <br>
+          404: Not Found
+        </li>
+        <li><b>Server errors 500 - 599</b> <br>
+          500: Internal Server Error <br>
+          501: Not Implemented <br>
+          502: Bad Gateway <br>
+          503: Service Unavailable <br>
+          504: Gateway Timeout
+        </li>
+      </ol>
+      <h3>CORS</h3>
+      <p><b>Cross-Origin Resource Sharing</b> (CORS) is a mechanism that, using HTTP headers, gives the browser
+        permission to download resources from a specific origin in response to a web application request received from a
+        different origin. For security reasons, all browsers stop all HTTP cross requests that are made by client-side
+        JavaScript. The CORS mechanism makes secure cross-requests and data transfers between web browsers and web
+        servers. For Node.js, this is the CORS module available through the NPM registry.</p>
+      <span>
+        const <b>cors</b> = require(<b>'cors'</b>); <br>
+        app<b>.use(</b>cors()<b>)</b>;
+      </span>
+      <p>In the cors middlewarefunction, we can pass a config object argument with the properties. The default
+        configuration is equivalent to:</p>
+      <span><b>{</b>
+        <b>origin</b>: '*',
+        <b>methods</b>: 'GET, HEAD, PUT, PATCH, POST, DELETE',
+        <b>preflightContinue</b>: false,
+        <b>optionsSuccessStatus</b>: 204
+        <b>}</b></span>
+      <h3>Creating URL for REST API</h3>
+      <p>When resources are named correctly, the API is intuitive and easy to use. Often the end URLs for a resource
+        request are referred to as <b>API endpoints</b>. you need to use plural nouns to describe base URLs -
+        <i>users</i>, <i>contacts</i>. You should also use the more specific and clear names <i>news</i>, <i>videos</i>
+        rather than the abstract <i>items</i> or <i>elements</i>.
+      </p>
     </section>
 
     <section class="mondo">
