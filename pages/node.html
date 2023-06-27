@@ -27,6 +27,7 @@
         <li><a href="" target="_blank" rel="noopener noreferrer nofollow">GoIT</a></li>
         <li><a href="https://github.com/Belka-S?tab=repositories" target="_blank"
             rel="noopener noreferrer nofollow">GitHub</a></li>
+        <li><a href="https://dashboard.render.com/" target="_blank">Render</a></li>
         <li><a href="https://chat.openai.com/chat" target="_blank" rel="noopener noreferrer nofollow">OpenAI</a></li>
       </ul>
     </nav>
@@ -48,30 +49,35 @@
             <div>
               <a href="https://youtu.be/y5g5K4wAda4" target="_blank">L02 <span>console-app</span></a>
               <a href="https://youtu.be/8gMSXOoykVs" target="_blank">M02 <span></span></a>
+              <a href="https://youtu.be/4DQtvF3Vt6Y" target="_blank">N02 <span></span></a>
             </div>
           </li>
           <li><a href="#express">The Framework Express <span>(Lesson 3)</span></a>
             <div>
               <a href="https://youtu.be/2ayBNKGC8hs" target="_blank">L03 <span>express</span></a>
               <a href="https://youtu.be/q8B3wdyUbcU" target="_blank">M03 <span></span></a>
+              <a href="https://youtu.be/H3F_mwyr1mM" target="_blank">N03 <span></span></a>
             </div>
           </li>
           <li><a href="#restapi">REST API <span>(Lesson 4)</span></a>
             <div>
               <a href="https://youtu.be/mh5kKeEojjA" target="_blank">L04 <span>rest-api</span></a>
               <a href="https://youtu.be/rHvd6ZxZH6I" target="_blank">M04 <span></span></a>
+              <a href="https://youtu.be/uo3UIEljo04" target="_blank">N04 <span></span></a>
             </div>
           </li>
-          <li><a href="#mondo">The MongoDB Database <span>(Lesson 5)</span></a>
+          <li><a href="#mongo">The MongoDB Database <span>(Lesson 5)</span></a>
             <div>
-              <a href="" target="_blank">L05 <span></span></a>
-              <a href="" target="_blank">M05 <span></span></a>
+              <a href="https://youtu.be/GxAWZIVmWR8" target="_blank">L05 <span>mongo-db</span></a>
+              <a href="https://youtu.be/gQpWd0AdSNk" target="_blank">M05 <span></span></a>
+              <a href="https://youtu.be/txyGjivTB90" target="_blank">N05 <span></span></a>
             </div>
           </li>
           <li><a href="#mongoose">ODM Mongoose <span>(Lesson 6)</span></a>
             <div>
-              <a href="" target="_blank">L06 <span></span></a>
-              <a href="" target="_blank">M06 <span></span></a>
+              <a href="https://youtu.be/wAA02CBZ7wg" target="_blank">L06 <span>mongoose</span></a>
+              <a href="https://youtu.be/ptECPvMUfkk" target="_blank">M06 <span></span></a>
+              <!-- <a href="" target="_blank">N06 <span></span></a> -->
             </div>
           </li>
           <li><a href="#auth">Authentication and authorization <span>(Lesson 7-8)</span></a>
@@ -84,24 +90,28 @@
             <div>
               <a href="" target="_blank">L09 <span></span></a>
               <a href="" target="_blank">M09 <span></span></a>
+              <a href="https://youtu.be/mj-CtNDsfGM" target="_blank">N09 <span></span></a>
             </div>
           </li>
           <li><a href="#testing">Testing of Applications <span>(Lesson 10)</span></a>
             <div>
               <a href="" target="_blank">L10 <span></span></a>
               <a href="" target="_blank">M10 <span></span></a>
+              <a href="https://youtu.be/sAg3-PsyQ-E" target="_blank">N10 <span></span></a>
             </div>
           </li>
           <li><a href="#email-docker">Work with email and Docker <span>(Lesson 11)</span></a>
             <div>
               <a href="" target="_blank">L11 <span></span></a>
               <a href="" target="_blank">M11 <span></span></a>
+              <a href="https://youtu.be/LMGAUEJA7O0" target="_blank">N11 <span></span></a>
             </div>
           </li>
           <li><a href="#websockets">Websockets <span>(Lesson 12)</span></a>
             <div>
               <a href="" target="_blank">L12 <span></span></a>
               <a href="" target="_blank">M12 <span></span></a>
+              <a href="https://youtu.be/gFFTlhpQ-jc" target="_blank">N12 <span></span></a>
             </div>
           </li>
         </ul>
@@ -239,11 +249,6 @@
         <li>rl<b>.pause( )</b> - to block the input;</li>
         <li>rl<b>.close( )</b> - to close the readline interface.</li>
       </ul>
-
-
-
-
-
     </section>
 
     <section class="express">
@@ -305,6 +310,14 @@
           res.status(status).json({ message: err.message });
           }<b>)</b></li>
       </ul>
+      <p><b>Validation</b> can be added in middleware function using <a href="https://github.com/hapijs/joi"
+          target="_blank" rel="noopener noreferrer"><b>Joi</b></a> validator.</p>
+      <span>const <b>Joi</b> = require(<b>'joi'</b>); <br>
+        const schema = <b>Joi</b>.object( { <br>
+        name: <b>Joi</b>.string( ).required( ), <br>
+        email: <b>Joi</b>.string( ).email( ).required( ), }); <br>
+        const { <b>error</b> } = schema.<b>validate(</b>req.body<b>)</b>;
+      </span>
       <h3>Passing data to a server</h3>
       <ul>
         <li>
@@ -329,7 +342,7 @@
         </li>
         <li>
           <p><b>JSON Pass</b> <br>
-            app<b>.use(</b>express<b>.json())</b> - to connect the JSON parser in the application;<br>
+            app<b>.use(</b>express<b>.json( ))</b> - to connect the JSON parser in the application;<br>
             app.post('/login', (<b>req</b>, res, next) => {
             const { email, password } = <b>req.body</b>;
             });
@@ -388,9 +401,9 @@
         <li>
           <p><b>Middleware connection:</b> <br>
             app.use(logger('dev')); <br>
-            app.use(express.json()); <br>
+            app.use(express.json( )); <br>
             app.use(express.urlencoded({ extended: false })); <br>
-            app.use(cookieParser());
+            app.use(cookieParser( ));
           </p>
         </li>
         <li>
@@ -420,15 +433,14 @@
       </p>
       <ul>
         <li>npm install <b>dotenv</b> - to install module;</li>
-        <li>require(<b>'dotenv'</b>)<b>.config()</b> - add in <b>app.js</b> to configure;</li>
+        <li>require(<b>'dotenv'</b>)<b></b>.config( ) - add in <b>app.js</b> to configure;</li>
         <li><b>.env</b> file in the root directory of application and add variables: <br>
           <b>SECRET_KEY</b>=123456 <br>
           <b>NODE_ENV</b>=development
         </li>
         <li>any variables added to the <b>.env</b> file will now be available in the application's <b>app.js</b> file:
           <br>
-          process.env<b>.SECRET_KEY</b>; <br>
-          process.env<b>.NODE_ENV</b>;
+          const {<b>SECRET_KEY</b>, <b>NODE_ENV</b>} = process<b>.env</b>
         </li>
       </ul>
       <h3>Logging</h3>
@@ -523,7 +535,7 @@
         servers. For Node.js, this is the CORS module available through the NPM registry.</p>
       <span>
         const <b>cors</b> = require(<b>'cors'</b>); <br>
-        app<b>.use(</b>cors()<b>)</b>;
+        app<b>.use(</b>cors( )<b>)</b>;
       </span>
       <p>In the cors middlewarefunction, we can pass a config object argument with the properties. The default
         configuration is equivalent to:</p>
@@ -541,22 +553,109 @@
       </p>
     </section>
 
-    <section class="mondo">
+    <section class="mongo">
       <a href="#goit">
-        <h2 id="mondo">The MongoDB Database <span>(Lesson 5)</span></h2>
+        <h2 id="mongo">The MongoDB Database <span>(Lesson 5)</span></h2>
       </a>
+      <h3>MongoDB Basics</h3>
+      <p>MongoDB is a non-relational NoSQL database. The database is based on a document model - data objects are stored
+        as individual documents in a collection. Data in MongoDB is grouped into collections. A collection is a group of
+        documents that have the same purpose. A collection is similar to a table in an SQL database, but differs in that
+        there is no strict schema for the collection and the documents of the collection can have different structures.
+        <a href="https://www.mongodb.com/atlas/database" target="_blank" rel="noopener noreferrer"><b>MongoDB
+            Atlas</b></a> is a cloud-hosted variant of the MongoDB service and multi-cloud developer data platform.
+        There are many graphical MongoDB management tools. These tools increase the productivity of our MongoDB
+        development and administration tasks.
+      </p>
+      <ul>
+        <li><a href="https://www.mongodb.com/products/compass" target="_blank" rel="noopener noreferrer"><b>MongoDB
+              Compass</b></a> is a graphical interface for MongoDB from the company itself. It has good data
+          visualization and has full CRUD functionality.</li>
+        <li><a href="https://robomongo.org/" target="_blank" rel="noopener noreferrer"><b>Robo 3T</b></a> is a popular
+          free GUI for MongoDB enthusiasts. This lightweight open source tool has cross-platform support and also embeds
+          the Mongo shell into its interface to provide both shell-based and GUI-based interaction.</li>
+      </ul>
     </section>
 
     <section class="mongoose">
       <a href="#goit">
         <h2 id="mongoose">ODM Mongoose <span>(Lesson 6)</span></h2>
       </a>
+      <h3>Mongoose</h3>
+      <p>Mongoose introduces a special ODM (Object Data Modeling) library for working with MongoDB. Most often, the
+        Mongoose library serves as a convenient tool for applying a structured schema to a collection in MongoDB.</p>
+      <span>const <b>mongoose</b> = require(<b>'mongoose'</b>); <br>
+        mongoose<b>.connect(</b>process.env.DB_HOST<b>).then(</b>app.listen(PORT))<b>.catch(</b>err => {
+        console.log(err); process.exit(1); }<b>)</b>;
+      </span>
+      <h3>Document Schema</h3>
+      <p>In ODM (Objct Data Modeling) Mongoose data can be described with a specific schema.</p>
+      <span>
+        const { <b>Schema</b>, <b>model</b> } = require(<b>'mongoose'</b>); <br>
+        const <b>schema</b> = new <b>Schema(</b> { <br>
+        <b>phone</b>: {
+        type: String,
+        match: /^\(\d{3}\) \d{3}-\d{4}$/,
+        required: true,
+        unique: true,
+        }, <br>
+        <b>favorite</b>: { type: Boolean, default: false }, <br>
+        <b>group</b>: {
+        type: String,
+        enum: groupList,
+        required: [true, `Set group`],
+        },
+        }, <br>
+        { <b>versionKey</b>: false, <b>timestamps</b>: true },
+        <b>)</b>; <br>
+
+        const Contact = <b>model(</b>'contact', schema<b>)</b>;
+      </span>
+      <p>The schema contains the metadata of the objects (<i>String</i>, <i>Number</i>, <i>Date</i>, <i>Buffer</i>,
+        <i>Boolean</i>, <i>Mixed</i>, <i>Objectid</i>, <i>Array</i>). Built-in validation rules that can be specified in
+        the schema (<i>required</i>, <i>unique</i>, <i>min</i>, <i>max</i>, <i>minlength</i>, <i>maxlength</i>,
+        <i>enum</i>, <i>match</i>). If a certain field is frequently used when searching for documents, you can assign
+        an <i>index</i> to it. Indexing fields allows you to quickly search through these fields. In the schemas that
+        the Mongoose module defines, it is possible to add methods. This makes it possible to call predefined methods
+        using an object of type Document. To add a method to an object of type <i>Schema</i>, assign a function to the
+        <i>Schema.methods</i> property. A typical use case is to create a function that returns the user's full name,
+        encrypts the user's password, and so on.
+      </p>
+      <h3>Data Operations (CRUD)</h3>
+      <ol>
+        <li>Create <br>
+          <b>.create(</b>req.body<b>)</b>
+        </li>
+        <li>Read <br>
+          <b>.find(</b>[query], [options]<b>)</b> <br>
+          <b>.findOne(</b>[query], [options]<b>)</b> <br>
+          <b>.findById(</b>req.params.id<b>)</b>
+        </li>
+        <li>Update <br>
+          <b>.findByIdAndUpdate(</b>id, req.body, { new: true }<b>)</b> <br>
+          <b>.findOneAndUpdate(</b>[query], [update], [options]<b>)</b>;
+        </li>
+        <li>Delete <br>
+          <b>.findByIdAndDelete(</b>req.params.id<b>)</b> <br>
+          <b>.findOneAndRemove(</b>[query], [options]<b>)</b>
+        </li>
+      </ol>
     </section>
 
     <section class="auth">
       <a href="#goit">
         <h2 id="auth">Authentication and authorization <span>(Lesson 7-8)</span></h2>
       </a>
+
+
+
+
+
+
+
+
+
+
     </section>
 
     <section class="files">
