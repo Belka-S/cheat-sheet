@@ -89,7 +89,8 @@
               <a href="https://youtu.be/gS0cjVI72Ok" target="_blank">L08 <span>auth</span></a>
               <a href="https://youtu.be/CBN8_aKnzSU" target="_blank">M07 <span></span></a>
               <a href="https://youtu.be/vO7q4boT-Gw" target="_blank">M08 <span></span></a>
-              <a href="https://youtu.be/oo4RKkY1KTk" target="_blank">N07 <span></span></a>
+              <a href="https://youtu.be/oo4RKkY1KTk" target="_blank">N07.1 <span></span></a>
+              <a href="https://youtu.be/pxqd-X3yxyE" target="_blank">N07.2 <span></span></a>
               <a href="https://youtu.be/ff2nn5sZKxk" target="_blank">N08 <span></span></a>
 
             </div>
@@ -319,8 +320,8 @@
           res.status(status).json({ message: err.message });
           }<b>)</b></li>
       </ul>
-      <p><b>Validation</b> can be added in middleware function using <a href="https://github.com/hapijs/joi"
-          target="_blank" rel="noopener noreferrer"><b>Joi</b></a> validator.</p>
+      <p>To validate sent data <b>validation</b> can be added in middleware function using <a
+          href="https://github.com/hapijs/joi" target="_blank" rel="noopener noreferrer"><b>Joi</b></a> validator.</p>
       <span>const <b>Joi</b> = require(<b>'joi'</b>); <br>
         const schema = <b>Joi</b>.object( { <br>
         name: <b>Joi</b>.string( ).required( ), <br>
@@ -526,7 +527,8 @@
           400: Bad Request <br>
           401: Unauthorized <br>
           403: Forbidden <br>
-          404: Not Found
+          404: Not Found <br>
+          409: Conflict
         </li>
         <li><b>Server errors 500 - 599</b> <br>
           500: Internal Server Error <br>
@@ -536,6 +538,26 @@
           504: Gateway Timeout
         </li>
       </ol>
+      <span>
+        <b>helpers</b>/HttpError.js <br>
+        const errorMessage = {
+        400: 'Bad Request',
+        401: 'Unauthorized',
+        403: 'Forbidden',
+        404: 'Not Found',
+        409: 'Conflict', <br>
+        500: 'Internal Server Error',
+        501: 'Not Implemented',
+        502: 'Bad Gateway',
+        503: 'Service Unavailable',
+        504: 'Gateway Timeout',
+        }; <br>
+
+        const <b>HttpError</b> = <b>(</b>status, message = errorMessage[status]<b>) => {</b> <br>
+        const <b>error</b> = new Error(message);
+        error<b>.status</b> = status;
+        <b>return</b> error; <b>}</b>;
+      </span>
       <h3>CORS</h3>
       <p><b>Cross-Origin Resource Sharing</b> (CORS) is a mechanism that, using HTTP headers, gives the browser
         permission to download resources from a specific origin in response to a web application request received from a
@@ -655,13 +677,188 @@
       <a href="#goit">
         <h2 id="auth">Authentication and authorization <span>(Lesson 7-8)</span></h2>
       </a>
+      <h3>JSON Web Tokens</h3>
+      <p><b>JSON Web Token</b> (<a href="https://jwt.io/" target="_blank" rel="noopener noreferrer">JWT</a>) in its
+        simplest form is a secure URL string containing an encoded JSON object. The token contains three parts
+        (<i>header, payload, signature</i>), which are separated by a dot "." JWT is an open industry standard, fully
+        described in RFC 7519. To create jwt tokens is used the npm package
+        <a href="https://www.npmjs.com/package/jsonwebtoken" target="_blank"
+          rel="noopener noreferrer"><b>jsonwebtoken</b></a>, which will encrypt and decrypt jwt tokens.
+      </p>
+      <span>
+        const <b>jwt</b> = require(<b>'jsonwebtoken'</b>); <br>
+        const <b>payload</b> = { id: 123456, username: 'Larson' }; <br>
+        const { <b>SECRET_KEY</b> } = process.env; <br>
+        const <b>token</b> = jwt<b>.sign(</b>payload, SECRET_KEY, { expiresIn: '23h' }<b>)</b>; <br>
+        await User.findByIdAndUpdate(user._id, { <b>token</b> }); <br>
+        const { id } = jwt<b>.verify(</b>token, SECRET_KEY<b>)</b>;
+      </span>
+      <h3>Authentication with JWT</h3>
+      <p>Authentication using JWT, which is mainly used when developing API, which in turn will be used by a web
+        application on some modern framework like React, Angular, Vue.js or a similar front-end framework. The web
+        application will send a jwt token with each request, which means we do not use a session as in the previous
+        local strategy, but simply put a token in every request we make to the API.</p>
+      <ul>
+        <li>
+          <p>
+            <b>app.js</b> <br>
+            app.use('/api/auth', <b>authRouter</b>);
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>routes</b>/api/auth.js <br>
+            router.post(<b>'/register'</b>, validateBody(schemas<b>.registerSchema</b>),
+            ctrlWrapper(auth<b>.register</b>)); <br>
+            router.post(<b>'/login'</b>, validateBody(schemas<b>.loginSchema</b>), ctrlWrapper(auth<b>.login</b>)); <br>
+            router.get(<b>'/current'</b>, authenticate, ctrlWrapper(auth<b>.getCurrent</b>)); <br>
+            router.post(<b>'/logout'</b>, authenticate, ctrlWrapper(auth<b>.logout</b>));
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>routes</b>/api/contacts.js <br>
+            router.use(<b>authenticate</b>); <br>
+            router.get(<b>'/'</b>, ctrlWrapper(contacts<b>.getAll</b>)); <br>
+            router.get(<b>'/:id'</b>, isValidId, ctrlWrapper(contacts<b>.getById</b>)); <br>
+            router.post(<b>'/'</b>, validateBody(schemas.addSchema), ctrlWrapper(contacts<b>.add</b>));
+            <br>
+            router.put(<b>'/:id'</b>, isValidId, validateBody(schemas.addSchema),
+            ctrlWrapper(contacts<b>.updateById</b>)); <br>
+            router.patch( <b>'/:id/favorite'</b>, isValidId, validateBody(schemas.updateFavoriteSchema),
+            ctrlWrapper(contacts<b>.updateFavoriteById</b>)); <br>
+            router.delete(<b>'/:id'</b>, isValidId, ctrlWrapper(contacts<b>.removeById</b>));
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>models</b>/user.js <br>
+            const <b>userSchema</b> = new <b>Schema( {</b> <br>
+            <b>name</b>: { type: String, required: true, minlength: 3, unique: true, }, <br>
+            <b>email</b>: { type: String, match: emailRegex, required: true, unique: true, }, <br>
+            <b>password</b>: { type: String, required: true, minlength: 6, }, <br>
+            <b>token</b>: { type: String, default: null, }, <br>
+            }, { <b>versionKey</b>: false, <b>timestamps</b>: true }, <b>)</b>; <br>
 
+          <p>userSchema<b>.post(</b>'save', mongooseError<b>)</b>;</p>
 
+          const <b>loginSchema</b> = Joi.object({ // ... }); <br>
+          const <b>registerSchema</b> = Joi.object({ <br>
+          name: Joi.string( ).min(3).required( ), <br>
+          email: Joi.string( ).pattern(emailRegex).message('Invalid email!').required( ), <br>
+          password: Joi.string( ).min(6).required( ), }); <br>
+          <p>
+            const <b>schemas</b> = { registerSchema, loginSchema }; <br>
+            const <b>User</b> = model(<b>'user'</b>, <b>userSchema</b>);
+          </p>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>models</b>/contact.js <br>
+            const <b>contactSchema</b> = new <b>Schema</b> ( { ...,
+            <b>owner</b>: { type: Schema.Types.ObjectId, ref: <b>'user'</b>, required: true } } <b>)</b>;
+        </li>
+        <li>
+          <p>
+            <b>controllers</b>/auth.js <br>
+            const <b>bcrypt</b> = require(<b>'bcryptjs'</b>); <br>
+            const <b>jwt</b> = require(<b>'jsonwebtoken'</b>); <br>
+            const { <b>User</b> } = require('../models/user'); <br>
+            const { <b>HttpError</b> } = require('../helpers');
+          <ul>
+            <li>
+              const <b>register</b> = <b>async (</b>req, res<b>) => {</b> <br>
+              const { name, email, password } = req.body; <br>
+              if (await User.findOne({ <b>name</b> })) throw HttpError(409, 'Name already exists'); <br>
+              if (await User.findOne({ <b>email</b> })) throw HttpError(409, 'Email already exists'); <br>
+              const <b>hashPassword</b> = await <b>bcrypt.hash(</b>password, 10<b>)</b>; <br>
+              const <b>newUser</b> = await User<b>.create(</b>{ ...req.body, password: hashPassword }<b>)</b>; <br>
+              res.status(201).json({ name: newUser.name, email: newUser.email }); <b>}</b>;
+            </li>
+            <li>
+              const <b>login</b> = <b>async (</b>req, res<b>) => {</b> <br>
+              const { email, password } = req.body; <br>
+              const <b>user</b> = await User.findOne({ email });
+              if (<b>!user</b>) throw HttpError(401, 'User or password invalid'); <br>
 
+              const <b>isMatch</b> = await <b>bcrypt.compare(</b>password, user.password<b>)</b>;
+              if (<b>!isMatch</b>) throw HttpError(401, 'User or password invalid'); <br>
 
+              const <b>token</b> = <b>jwt</b>.sign({ id: user._id }, SECRET_KEY, { expiresIn: '23h' }); <br>
+              await User.findByIdAndUpdate(user._id, { <b>token</b> }); <br>
+              res.json({ token }); <b>}</b>;
+            </li>
+            <li>
+              const <b>getCurrent</b> = <b>async (</b>req, res<b>) => {</b>
+              const { name, email } = req.user;
+              res.json({ <b>name</b>, <b>email</b> }); <b>}</b>;
+            </li>
+            <li>
+              const <b>logout</b> = <b>async (</b>req, res<b>) => {</b>
+              await User.findByIdAndUpdate(req.user._id, { <b>token</b>: null });
+              res.status(204); <b>}</b>;
+            </li>
+          </ul>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>helpers</b>/mongooseError.js <br>
+            const <b>isUnuqueConflict</b> = ({ <b>name</b>, <b>code</b> }) =>
+            name === <b>'MongoServerError'</b> && code === <b>11000</b>; <br>
 
-
-
+            const <b>mongooseError</b> = <b>(</b>error, data, next<b>) => {</b>
+            error<b>.status</b> = isUnuqueConflict(error) ? <b>409</b> : <b>400</b>;
+            next( ); <b>}</b>;
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>helpers</b>/ctrlWrapper.js <br>
+            const <b>ctrlWrapper</b> = ctrl <b>=> {</b> <br>
+            return <b>async (</b>req, res, next<b>) => {</b> <br>
+            <b>try</b> { await ctrl(req, res, next); } <br>
+            <b>catch</b> (error) { next(error); } <b>}</b>; <b>}</b>;
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>middlewares</b>/isValidId.js <br>
+            const <b>isValidId</b> = <b>(</b>req, res, next<b>) => {</b>
+            const { id } = req.params; <br>
+            <b>if</b> (!isValidObjectId(id)) { next(HttpError(400)); } <br>
+            next( ); <b>}</b>;
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>middlewares</b>/validateBody.js <br>
+            const <b>validateBody</b> = schema <b>=> {</b> <br>
+            <b>return (</b>req, res, next) <b>=> {</b>
+            const { error } = schema.validate(req.body); <br>
+            <b>if</b> (error) { next(HttpError(400, error.message)); } <br>
+            next( ); <b>}</b>; <b>}</b>;
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>middlewares</b>/authenticate.js <br>
+            const <b>authenticate</b> = <b>async (</b>req, res, next<b>) => {</b> <br>
+            const { authorization = '' } = req.headers; <br>
+            const [<b>bearer</b>, <b>token</b>] = authorization.split(' '); <br>
+            <b>if (</b>bearer !== <b>'Bearer'</b><b>) {</b> next(HttpError(401)); <b>}</b> <br>
+            <b>try {</b> <br>
+            const { id } = <b>jwt.verify(</b>token, SECRET_KEY<b>)</b>; <br>
+            const <b>user</b> = await User<b>.findById(</b>id<b>)</b>; <br>
+            <b>if (</b>!user || !user.token || user.token !== token<b>) {</b> next(HttpError(401)); <b>}</b> <br>
+            req.user = user; <br>
+            next( ); <br>
+            <b>} catch {</b> <br>
+            next(HttpError(401)); <b>} }</b>;
+          </p>
+        </li>
+      </ul>
 
 
 
