@@ -60,6 +60,7 @@
               <a href="https://youtu.be/2ayBNKGC8hs" target="_blank">L03 <span>express</span></a>
               <a href="https://youtu.be/q8B3wdyUbcU" target="_blank">M03 <span></span></a>
               <a href="https://youtu.be/dI4TLiKvayM" target="_blank">N03 <span></span></a>
+              <a href="https://youtu.be/hwc8q1D3C5Y" target="_blank">blended <span></span></a>
             </div>
           </li>
           <li><a href="#restapi">REST API <span>(Lesson 4)</span></a>
@@ -92,20 +93,21 @@
               <a href="https://youtu.be/oo4RKkY1KTk" target="_blank">N07.1 <span></span></a>
               <a href="https://youtu.be/pxqd-X3yxyE" target="_blank">N07.2 <span></span></a>
               <a href="https://youtu.be/ff2nn5sZKxk" target="_blank">N08 <span></span></a>
-
+              <a href="https://youtu.be/oQaoymCOW8o" target="_blank">swagger-google <span></span></a>
             </div>
           </li>
           <li><a href="#files">Work with files <span>(Lesson 9)</span></a>
             <div>
-              <a href="" target="_blank">L09 <span></span></a>
-              <a href="" target="_blank">M09 <span></span></a>
+              <a href="https://youtu.be/EAdvI-FWhY0" target="_blank">L09 <span>files</span></a>
+              <a href="https://youtu.be/-wBe9YSWeGw" target="_blank">N09 <span>cloudinary</span></a>
+              <a href="https://youtu.be/8jgNO3WBe0E" target="_blank">M09 <span></span></a>
               <a href="https://youtu.be/4olABZwhb68" target="_blank">N09 <span></span></a>
             </div>
           </li>
           <li><a href="#testing">Testing of Applications <span>(Lesson 10)</span></a>
             <div>
-              <a href="" target="_blank">L10 <span></span></a>
-              <a href="" target="_blank">M10 <span></span></a>
+              <a href="https://youtu.be/AqyO6IuT1x8" target="_blank">L10 <span>testing</span></a>
+              <a href="https://youtu.be/_HZBWy3UFew" target="_blank">M10 <span></span></a>
               <a href="https://youtu.be/vvkl2Z-L4ss" target="_blank">N10 <span></span></a>
             </div>
           </li>
@@ -859,27 +861,81 @@
           </p>
         </li>
       </ul>
-
-
-
     </section>
 
     <section class="files">
       <a href="#goit">
         <h2 id="files">Work with files <span>(Lesson 9)</span></h2>
       </a>
+      <h3>File upload</h3>
+      <p>The HTML form sent to the server by the browser must be encoded. If we don't specify an encoding method, the
+        default is <i> application/x-www-form-urlencoded</i>. But if it becomes necessary to upload files to the server,
+        the task becomes a little more difficult. We need to use the <i>multipart/form-data encoding</i> type to send
+        files. There are <a href="https://github.com/expressjs/multer" target="_blank"
+          rel="noopener noreferrer"><b>Multer</b></a> and <a href="https://github.com/node-formidable/formidable"
+          target="_blank" rel="noopener noreferrer"><b>Formidable</b></a> packages for uploading files to the server.
+        After we process the form, we need to return the response to the browser. We can send the HTML or JSON directly
+        to the browser or client. Or we can use mainly two response codes (302 or 303). <b>Multer</b> is an Express
+        framework middleware that is used when uploading files to process <i>multipart/form-data</i>. Multer adds a body
+        object and a file (or files) object inside the request object. The body object contains the values of
+        the form's text fields, the <b>file</b> object (<b>files</b>) contains the file or files uploaded via the form.
+      </p>
+      <span>
+        app.js <br>
+        app.use(express<b>.static(</b>'public'<b>)</b>);
+      </span>
+      <p>
+        <b>middlewares</b>/upload.js <br>
+        const <b>multer</b> = require(<b>'multer'</b>); <br>
+        const multerConfig = multer<b>.diskStorage(</b>{ <br>
+        <b>destination</b>: path.join(__dirname, '..', 'temp'), <br>
+        <b>filename</b>: (req, file, cb) => { cb(null, file.originalname); }, <br>
+        <b>limits</b>: { fileSize: 2048 }, }<b>)</b>; <br>
+        const upload = <b>multer(</b>{ storage: multerConfig }<b>)</b>;
+      </p>
+      <span>
+        <b>routes</b>/api/users.js <br>
+        router.patch('/avatars', authenticate, <b>upload.single(</b>'avatar'<b>)</b>, ctrlWrapper(users.updateAvatar));
+      </span>
     </section>
 
     <section class="testing">
       <a href="#goit">
         <h2 id="testing">Testing of Applications <span>(Lesson 10)</span></h2>
       </a>
+      <h3>Technology stack for unit testing</h3>
+      <p>A large application always has a high probability of errors. Without testing, the application is often checked
+        manually, and if the application is old and has vast functionality, then sometimes it looks like a black box.
+        This is where automated testing of application functionality comes to the rescue. Testing is when we write code
+        that automatically checks for errors when we make changes to our application. Accordingly, the approach of
+        writing tests are divided into two types: <b>Code first</b> and <b>Test first</b>. The testing pyramid is used
+        to distribute tests across application tiers. The bottom of the pyramid is covered by <b>unit tests</b>. They
+        are written primarily by developers and cover atomic components such as classes, methods, and functions. Then go
+        an <b>integration tests</b> to check if the new implemented functionality has broken the application code. At
+        the top there are<b> UI</b> and <b>manual tests</b>.
+      </p>
+      <h3>Jest</h3>
+      <p>Testing libraries are special tools that help in the testing process. The <a href="https://jestjs.io/"
+          target="_blank" rel="noopener noreferrer"><b>Jest</b></a> library will cover any task that may arise when
+        testing our application. It is a command line tool built on top of Jasmine, another popular testing library.
+        Jest is developed by Facebook, and Jest is often used alongside React. The <b>describe</b> command defines a set
+        of tests. It is used as a container for the test suite. The <b>test</b> (or <b>it</b>) command is used for a
+        single test or otherwise a test case. Other constructs such as <b>beforeAll</b>, <b>afterAll</b>,
+        <b>beforeEach</b> and <b>afterEach</b>, as the name suggests, are executed before or after a test suite or test
+        case. Tests must contain at least one <i>describe</i> and <i>test</i> commands.
+      </p>
     </section>
 
     <section class="email-docker">
       <a href="#goit">
         <h2 id="email-docker">Work with email and Docker <span>(Lesson 11)</span></h2>
       </a>
+
+
+
+
+
+
     </section>
 
     <section class="websockets">
