@@ -113,14 +113,18 @@
           </li>
           <li><a href="#email-docker">Work with email and Docker <span>(Lesson 11)</span></a>
             <div>
-              <a href="" target="_blank">L11 <span></span></a>
-              <a href="" target="_blank">M11 <span></span></a>
+              <a href="https://youtu.be/SCemq9kxBGc" target="_blank">L11 <span>email</span></a>
+              <a href="https://youtu.be/n9uCgUzfeRQ?list=PLqKQF2ojwm3l6OE4-tjLBhUNtJXLebHXP" target="_blank">X11.1
+                <span>docker</span></a>
+              <a href="https://www.youtube.com/watch?v=O8N1lvkIjig" target="_blank">X11.2
+                <span></span></a>
+              <a href="https://youtu.be/20_j03Yhh_A" target="_blank">M11 <span></span></a>
               <a href="https://youtu.be/GiAlVWuSSXE" target="_blank">N11 <span></span></a>
             </div>
           </li>
           <li><a href="#websockets">Websockets <span>(Lesson 12)</span></a>
             <div>
-              <a href="" target="_blank">L12 <span></span></a>
+              <a href="https://youtu.be/mu8hRCQFB8Y" target="_blank">L12 <span>websockets</span></a>
               <a href="" target="_blank">M12 <span></span></a>
               <a href="https://youtu.be/vXq9gz1Szls" target="_blank">N12 <span></span></a>
               <a href="https://youtu.be/o75CeRMl6jU" target="_blank">QA <span></span></a>
@@ -930,12 +934,114 @@
       <a href="#goit">
         <h2 id="email-docker">Work with email and Docker <span>(Lesson 11)</span></h2>
       </a>
+      <h3>Nodemailer Package</h3>
+      <p>const <b>nodemailerCofig</b> = <b>{</b> <br>
+        <b>host</b>: 'smtp.meta.ua', <b>port</b>: '465', <b>secure</b>: true, <br>
+        <b>auth</b>: { user: 'it.dev@meta.ua', pass: META_PASS, }, <b>}</b>; <br>
+      </p>
+      <span>
+        const <b>transporter</b> = nodemailer<b>.createTransport(</b>nodemailerCofig<b>)</b>; <br>
+        await transporter<b>.sendMail(</b>{
+        <b>from</b>: 'it.test@meta.ua',
+        <b>to</b>: 'noresponse@gmail.com',
+        <b>subject</b>: 'test',
+        <b>text</b>: 'Hello, World!',
+        }<b>)</b>;
+      </span>
 
+      <h3>Docker</h3>
+      <p>The core function of <a href="https://hub.docker.com/" target="_blank"
+          rel="noopener noreferrer"><b>Docker</b></a> is to build, ship, and run software anywhere Docker exists. For
+        the user, most often Docker is a command line program that they run. The <a
+          href="https://hub.docker.com/r/portainer/portainer-ce" target="_blank"
+          rel="noopener noreferrer"><b>Portainer</b></a> allows you to manage all your orchestrator resources
+        (containers, images, volumes, networks and more) through a ‘smart’ GUI and/or an extensive API. </p>
+      <ul>
+        <li>docker <b>login</b> - to login in Dockerhub;</li>
+        <li>docker <b>version</b> - to verify that the Docker version;</li>
+        <li>docker <b>pull</b> image:tag - to download on Dockerhub Docker-image;</li>
+        <li>docker <b>push</b> image:tag - to upload Docker-image;</li>
+        <li>docker <b>run</b> [options] image:tag [command, args] - to run a Docker image as a container, where
+          arguments:
+          <ul>
+            <li><b>--rm</b> - removes container after stop;</li>
+            <li><b>--name</b> - creates name for container;</li>
+            <li><b>-d</b> - switches the command from interactive mode;</li>
+            <li><b>-p</b> 80:3000 - defines ports;</li>
+            <li><b>-e</b>VAR_NAME - to define ENV manually;</li>
+          </ul>
+        </li>
+        <li>docker <b>ps</b> [options] - to list running containers, where arguments:
+          <ul>
+            <li><b>--all</b> - to list containers;</li>
+          </ul>
+        </li>
+        <li>docker <b>rm</b> - removes container;</li>
+        <li>docker <b>rmi</b> - removes image;</li>
+        <li>docker <b>container prune</b> - removes all container;</li>
+        <li>docker <b>tag</b> imageID name[:tag] - to name container;</li>
+        <li>docker <b>images</b> - to list images;</li>
+        <li>docker <b>image</b> [options] - to work with image, where arguments:
+          <ul>
+            <li><b>inspect</b> imageID - to inspect image;</li>
+            <li><b>ls</b> - to list images;</li>
+          </ul>
+        </li>
+        <li>docker <b>commit</b> [options] container [repository:tag] - to create a new image with all the changes made
+          in the container;</li>
+        <li>docker <b>build</b> [options] path - to create a new image, where arguments:
+          <ul>
+            <li><b>-t</b> name[:tag] - to name container;</li>
+          </ul>
+        </li>
+      </ul>
+      <p>To make a new image a Dockerfile in the same folder as the file package.json with the following
+        contents must be created:</p>
+      <ul>
+        <li><b>FROM</b> node:17.9.1</li>
+        <li><b>WORKDIR</b> /app</li>
+        <li><b>COPY</b> package.json /app</li>
+        <li><b>RUN</b> npm install</li>
+        <li><b>COPY</b> . .</li>
+        <li><b>ENV</b> PORT=3000</li>
+        <li><b>ENV</b> SECRET_KEY qweqweasdasd</li>
+        <li><b>EXPOSE</b> $PORT</li>
+        <li><b>CMD</b> ["npm", "start"]</li>
+      </ul>
+      <p>To ignoring COPY some files <b>.dockignore</b> file must be created:</p>
+      <span>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ <b>⁣⁣⁣⁣Dockerfile</b> <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ <b>⁣⁣⁣⁣node_modules</b> <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣<b>⁣.git</b> <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣<b>⁣.env</b>
 
-
-
-
-
+      </span>
+      <p>To run a Docker image as a container you can install <a href="https://docs.docker.com/compose/" target="_blank"
+          rel="noopener noreferrer"><b>Docker Compose</b></a> and use <b>docker-compose.yml</b> file with command
+        <i>docker-compose up [-d]</i> to run:
+      </p>
+      <span>
+        <b>version</b>:"0.1" <br>
+        <b>services</b>: <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣srviceName: <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣<b>image</b>: imageName <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣<b>container_name</b>: containerName <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣<b>volumes</b>: 'volumesNames' <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣<b>environment</b>: <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣⁣- 'SECRET_KEY=qweasd' <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣- 'PORT=3001' <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣<b>ports</b>: <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣⁣- '80:PORT' <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣⁣- '443:443' <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣<b>restart</b>: unless-stopped [always] / [no] / [on-failure] <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣<b>networks</b>: <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣⁣default: <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣⁣driver: bridge <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣name: webnet <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ <b>⁣⁣⁣depends_on</b>: <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣⁣- srviceName_1 <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣⁣- srviceName_2
+      </span>
     </section>
 
     <section class="websockets">
