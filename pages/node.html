@@ -131,7 +131,17 @@
               <a href="https://youtu.be/o75CeRMl6jU" target="_blank">QA <span></span></a>
             </div>
           </li>
+          <li><a href="#extra">Extra Materials<span>(Additional)</span></a>
+            <div>
+              <a href="https://youtu.be/ivDjWYcKDZI" target="_blank">EM <span>MERN</span></a>
+              <a href="" target="_blank">EM <span></span></a>
+              <a href="" target="_blank">EM <span></span></a>
+              <a href="" target="_blank">EM <span></span></a>
+            </div>
+          </li>
         </ul>
+
+
       </div>
     </section>
     <section class="basics">
@@ -1050,6 +1060,89 @@
       <a href="#goit">
         <h2 id="websockets">Websockets <span>(Lesson 12)</span></h2>
       </a>
+      <h3>Module ws</h3>
+      <p>WebSocket is a bidirectional communication protocol that characterizes the full duplex nature of communication.
+        It establishes one, and only one, connection between a client and a server, the server and client can send text
+        messages through it, and the transfer occurs immediately. In order to start working with web sockets, you need
+        only two things - a browser that supports <b>WebSocket</b>, and a server that implements this technology. On the
+        server, you need to install the appropriate module:</p>
+      <span>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣const <b>ws</b> = <b>new</b> require(<b>'ws'</b>); <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣const <b>wsServer</b> = <b>new</b> ws<b>.Server(</b>{ port: 8080 }<b>)</b>;
+        <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣wsServer<b>.on(</b>'connection', ws => { ws<b>.send(</b>'Welcome'<b>)</b>;
+        console.log('New connection'); }<b>)</b>;
+      </span>
+      <p>Then you need to write a small client - a web page hosted on a regular web server:</p>
+      <span>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣&#60script> <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣const <b>ws</b> = new <b>WebSocket(</b>"ws://localhost:4000"<b>)</b> <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ws<b>.onopen</b> = ( ) => <b>{</b> console.log('Connected'); <b>}</b>;<br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ws<b>.onmessage</b> = e => <b>{</b> console.log(e.data); <b>}</b>;
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣setTimeout(( ) => { ws<b>.send(</b>'Great to see you!'<b>)</b>; }, 2000)
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣&#60/script>
+      </span>
+      <h3>Socket.io</h3>
+      <p>This library provides real-time and event-based two-way communication.</p>
+      <span>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣const { <b>Server</b> } = require(<b>'socket.io'</b>);<br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣const { <b>createServer</b> } = require(<b>'http'</b>); <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣const <b>httpServer</b> = createServer(); <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣const <b>io</b> = new <b>Server(</b>httpServer, { cors: { origin: '*' } }<b>)</b>; <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣io<b>.on(</b><b>'connection'</b>, socket => {console.log('Connected!'<b>)</b>;
+        socket<b>.emit(</b>'message', 'User connected!'); }<b>)</b>; <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣http<b>.listen(</b>3000, ( ) => { console.log('Listening on *:3000'); }<b>)</b>;
+      </span>
+
+      <p>In the frontend we will place the <b>App.js</b> file, which will be our client part:</p>
+      <span>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣import <b>io</b> from <b>'socket.io-client'</b>; <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣const <b>socket</b> = io<b>.connect(</b>'http://localhost:3001'<b>)</b>; <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣socket<b>.on(</b>'message', data => { console.log(data); }<b>)</b>; <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣socket<b>.emit(</b>'message', 'User connected!')<b>)</b>;
+      </span>
+      <p>The idea of ​​building socket.io applications is that both its parts - server and client - have the same
+        properties and methods, but they have a different list of event handlers.</p>
+      <ul>
+        <li>The server events:
+          <ul>
+            <li><b>connection</b> - the event occurs when a connection is established with the client;</li>
+            <li><b>message</b> - the event occurs when a message is received from the client;</li>
+            <li><b>disconnect</b> - disconnection;</li>
+            <li><b>anything</b> - to create custom events.</li>
+          </ul>
+        </li>
+        <li>The browser part events:
+          <ul>
+            <li><b>connecting</b> - the event occurs in the process of establishing a connection with the server;
+            </li>
+            <li><b>connect_failed</b> - the event occurs when a connection attempt fails;</li>
+            <li><b>connect</b> - the event occurs when a connection is established with the server;</li>
+            <li><b>message</b> - the event occurs when a message is received from the server;</li>
+            <li><b>disconnect</b> - the event occurs when the connection to the server is disconnected;</li>
+            <li><b>reconnecting</b> (may occur repeatedly) - the event occurs when an attempt is made to restore the
+              connection;</li>
+            <li><b>reconnect</b> - the event occurs when the connection is restored;</li>
+            <li><b>error</b> - error events;</li>
+            <li><b>anything</b> - any event.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+
+    <section class="websockets">
+      <a href="#goit">
+        <h2 id="extra">Extra Materials <span>(Additional)</span></h2>
+      </a>
+
+
+
+
+
+
+
+      ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣
     </section>
   </main>
 

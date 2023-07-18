@@ -28,7 +28,7 @@
             rel="noopener noreferrer nofollow">GoIT</a></li>
         <li><a href="https://github.com/Belka-S?tab=repositories" target="_blank"
             rel="noopener noreferrer nofollow">GitHub</a></li>
-                  <li><a href="https://dashboard.render.com/" target="_blank">Render</a></li>
+        <li><a href="https://dashboard.render.com/" target="_blank">Render</a></li>
         <li><a href="https://chat.openai.com/chat" target="_blank" rel="noopener noreferrer nofollow">OpenAI</a></li>
       </ul>
     </nav>
@@ -931,11 +931,12 @@
           </p>
         </li>
       </ul>
-      <h3>Hook useMemo</h3>
-      <p>The <b>useMemo( )</b> hook uses the concept of memoization, that is, it returns a stored (cached) result of the
-        calculation. This can improve application performance if used to prevent expensive calculations on every render.
-        The hook takes two arguments - an anonymous function that should return a <b>value</b> (compute), which will be
-        memoized, and an array of <b>dependencies</b> (deps):
+      <h3>Hooks useMemo, useCallback</h3>
+      <p>The <b>useMemo( )</b> and <b>useCallback( )</b> hook uses the concept of memoization, that is, they return a
+        stored (cached) result. This can improve application performance if used to prevent expensive calculations on
+        every render. The hook <i>useCallback</i> caches a function definition between re-renders The hooks take two
+        arguments - an anonymous function that should return a <b>value</b> (compute), which will be memoized, and an
+        array of <b>dependencies</b> (deps):
       </p>
       <span>
         import { <b>useMemo</b> } from 'react'; <br>
