@@ -131,12 +131,12 @@
               <a href="https://youtu.be/o75CeRMl6jU" target="_blank">QA <span></span></a>
             </div>
           </li>
-          <li><a href="#extra">Extra Materials<span>(Additional)</span></a>
+          <li><a href="#extra">Extra Materials <span>(Additional)</span></a>
             <div>
               <a href="https://youtu.be/ivDjWYcKDZI" target="_blank">EM <span>MERN</span></a>
-              <a href="" target="_blank">EM <span></span></a>
-              <a href="" target="_blank">EM <span></span></a>
-              <a href="" target="_blank">EM <span></span></a>
+              <a href="https://youtu.be/p3RFMEixUOE" target="_blank">EM <span>PostgreSQL</span></a>
+              <a href="https://youtu.be/Hej48pi_lOc" target="_blank">EM <span>MySQL</span></a>
+              <!-- <a href="" target="_blank">EM <span></span></a> -->
             </div>
           </li>
         </ul>
@@ -1135,17 +1135,149 @@
       <a href="#goit">
         <h2 id="extra">Extra Materials <span>(Additional)</span></h2>
       </a>
-
-
-
-
-
-
-
-      ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣
+      <h3>Template Engines. EJS</h3>
+      <p>Templating is closely related to the <b>MVC concept</b>, which is the separation of logic, data, and
+        presentation. In MVC applications, the user requests the desired resource on the server, then the controller or
+        router requests application data from the model (database) and passes this data to the view (template), which
+        performs the final data formatting for the end user. MVC views are implemented using templating languages. When
+        using templating, the view passes values to the template obtained from the model and specifies a template file
+        that defines how those values are displayed. <b>EJS</b> templating engine is quite popular and is characterized
+        by fast compilation and rendering. Uses simple template tags: <b>&#60% %></b> for data substitution. There is
+        static template caching. And most importantly, it corresponds to the Express View system and easily connects to
+        the Express framework. During rendering, EJS escapes all special characters in context values and replaces them
+        with HTML entity codes.</p>
+      <ul>
+        <li><b>&#60%</b> - for control flow, no output, mostly JavaScript helper code;</li>
+        <li><b>&#60%_</b> - whitespace slurping removes all spaces before it;</li>
+        <li><b>&#60%=</b> - output value to template (escaped HTML);</li>
+        <li><b>&#60%-</b> - outputs unescaped value to template, unsafe operation use it with care;</li>
+        <li><b>&#60%#</b> - comment tag, no execution, no output;</li>
+        <li><b>&#60%%</b> - outputs literal &#60%;</li>
+        <li><b>%></b> - simple end tag that closes all previous tags;</li>
+        <li><b>_%></b> - end tag Whitespace Slurping, removes all spaces after it.</li>
+      </ul>
+      <h3>Server State</h3>
+      <p>The HTTP protocol does not save the state of the request, and when you navigate through the pages of the site,
+        the server cannot know that this is the same user. And here there is a certain problem - it is not possible to
+        log into the site, save the site settings when switching between pages, etc. That's what cookies and sessions
+        are for, allowing you to save user state over HTTP.</p>
+      <ul>
+        <li><b>Working with cookies.</b> The meaning of a cookie is quite simple: the server sends a piece of
+          information up to 4 kb, and the browser stores it
+          on the client side as a file. There is a certain period of time for storing this file. As for the stored
+          information, it
+          is often just some kind of unique identifier for the user. To work with cookies, there is a module <a
+            href="https://github.com/expressjs/cookie-parser" target="_blank"
+            rel="noopener noreferrer"><b>cookie-parser</b></a>. It allows you to receive cookie data that the
+          browser stores from the user of the site. The <i>cookie-parser</i> module
+          supports parsing regular and signed cookies. By default, normal unsigned cookies are used, which we will
+          access
+          on the server through the <b>req.cookies</b> object. To work with signed cookies, when connecting the module,
+          we
+          need to pass a secret string. </li>
+        <li><b>Working with session.</b> The <b>session</b> is a more convenient way to save state for the server. To
+          implement a session, you need to store some kind of label on the client side, otherwise the server simply will
+          not understand that the requests come from the same client. This means that a cookie with a unique identifier
+          is just right for us and the server using the identifier will be able to implement the session. The <a
+            href="https://github.com/expressjs/session" target="_blank"
+            rel="noopener noreferrer"><b>express-session</b></a> provides us with an API to implement a session. </li>
+      </ul>
+      <h3>MongoDB Array Operations</h3>
+      <ul>
+        <li><b>$in</b> operator defines an array of possible expressions and looks for those keys whose value is in the
+          array;</li>
+        <li><b>$nin</b> operator works in the opposite way - it defines an array of possible expressions and looks for
+          those keys whose
+          value is not in this array;</li>
+        <li><b>$all</b> operator is similar to <i>$in</i>, it also defines an array of possible expressions, but
+          requires the documents to have the entire set of expressions to be defined;</li>
+        <li><b>$size</b> operator is used to find documents in which arrays have a number of elements equal to the value
+          of <i>$size</i>;</li>
+        <li><b>$push</b> operator adds values to an array;</li>
+        <li><b>$addToSet</b> operator adds data if it is not already in the array;</li>
+        <li><b>$pop</b> operator allows you to remove an element from an array;</li>
+        <li><b>$pull</b> operator removes by value;</li>
+        <li><b>$pullAll</b> perator to remove not one value, but several at once.</li>
+      </ul>
+      <h3>MongoDB Driver</h3>
+      <p>The <b>MongoDB Node.js driver</b> allows you to interact with MongoDB databases from Node.js applications. We
+        need a driver to connect to the database and execute queries. The MongoDB module exports
+        <b>MongoClient</b>, it is used to connect to the MongoDB database, perform operations, and close the
+        connection to that cluster. We also export the <b>ObjectId</b>.
+      </p>
+      <span>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ npm install <b>mongodb</b> <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ const { <b>MongoClient</b>, <b>ObjectId</b> } = require(<b>'mongodb'</b>); <br>
+        ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣ ⁣⁣⁣ ⁣⁣⁣ ⁣⁣⁣ const <b>client</b> = await new <b>MongoClient(</b>DB_HOST, {
+        useUnifiedTopology: true, }<b>).connect( )</b>;</span>
+      <h3>Passport to Authentication</h3>
+      <p>Being a middleware, <b>Passport</b> is easy to set up in any Express-based web application just like we
+        would set up any other Express middleware such as: body parser, cookie handling, session handling, etc. Passport
+        provides over 500 authentication mechanisms to choose from; ranging from simple login and password, to using
+        social network authentication providers. All of these strategies are independent of each other and are packaged
+        as separate node modules that are not enabled by default when installing the Passport middleware.</p>
+      <h3>Fundamentals of SQL</h3>
+      <p>Database (DB) — is a set of one or more data tables. Each table contains information in 1 or more columns
+        (fields). One data item (record) — it is one row in the table. The main tool for communicating with relational
+        databases — <b>SQL</b> (Structured Query Language).</p>
+      <ul>
+        <li><b>Key</b> — a unique field that uniquely identifies a record.</li>
+        <li><b>Primary key</b> — a unique key that is not repeated in the table.</li>
+        <li><b>Foreign key</b> — a reference to a unique key that DOES NOT REPEAT in its table.</li>
+        <li>Relationships:</li>
+        <ul>
+          <li><b>one to one</b> — tables are linked one to one when one row (record) of table A corresponds to one row
+            of table B, and one record of table B corresponds to one record of table A;</li>
+          <li><b>one to many</b> — this relationship in relational databases is realized when one row of table A can own
+            or correspond to several records in table B, but only one record of table A can correspond to a record from
+            table B. Example: a user can have several phone numbers;</li>
+          <li><b>many to many</b> — implemented in the case when several records from table A can correspond to several
+            records from table B, and at the same time several records from table B correspond to several records from
+            table A;</li>
+          <li><b>many to one</b> — the reverse situation is one-to-many, only now tables A and B must be swapped.</li>
+        </ul>
+      </ul>
+      <p><b>ER-model</b> (Entity-relationship) — a data model that allows you to describe the conceptual schemas of the
+        subject area. The ER model is used in high-level (conceptual) database design. With its help, you can highlight
+        the key entities and designate the relationships that can be established between these entities. Basic SQL
+        statements:</p>
+      <ol>
+        <li>Data Definition Language (<b>DDL</b>) operators:
+          <ul>
+            <li><b>CREATE</b> creates a database object (the database itself, table, view, user, etc.),</li>
+            <li><b>ALTER</b> changes an object,</li>
+            <li><b>DROP</b> deletes an object;</li>
+          </ul>
+        </li>
+        <li>Data Manipulation Language (<b>DML</b>):
+          <ul>
+            <li><b>SELECT</b> selects data that satisfies the given conditions,</li>
+            <li><b>INSERT</b> adds new data,</li>
+            <li><b>UPDATE</b> changes existing data,</li>
+            <li><b>DELETE</b> deletes data;</li>
+          </ul>
+        </li>
+        <li>Operators for defining data access (Data Control Language, <b>DCL</b>):
+          <ul>
+            <li><b>GRANT</b> grants the user (group) permissions for certain operations with the object,</li>
+            <li><b>REVOKE</b> revokes previously issued permissions,</li>
+          </ul>
+        </li>
+        <li>Transaction Control Language (<b>TCL</b>) statements:
+          <ul>
+            <li><b>COMMIT</b> applies the transaction</li>
+            <li><b>ROLLBACK</b> rolls back all changes made in the context of the current transaction</li>
+            <li><b>SAVEPOINT</b> divides the transaction into smaller sections</li>
+          </ul>
+        </li>
+      </ol>
+      <p>There are <a href="https://www.heidisql.com/" target="_blank" rel="noopener noreferrer"><b>HeidiSQL</b></a> and
+        <a href="https://dbeaver.io/" target="_blank" rel="noopener noreferrer"><b>DBeaver</b></a> for working with
+        SQL databases, Docker to run the <a href="https://hub.docker.com/_/postgres" target="_blank"
+          rel="noopener noreferrer"><b>PostgreSQL</b></a> database.
+      </p>
     </section>
   </main>
-
   <footer></footer>
 </body>
 
