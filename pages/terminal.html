@@ -47,7 +47,8 @@
         <li><b>touch</b> <i>file-name</i> - makes file</li>
         <li><b>mkdir</b> <i>directory-name</i> - makes directory</li>
         <li><b>mv</b> <i>old-name new-name</i> - renames, removes files or directories</li>
-        <li><b>rm</b> [<b>-rf</b>] <i>name</i> - deletes files or directories</li>
+        <li><b>rm</b> [<b>-f</b>] <i>name</i> - deletes files or directories [forced]</li>
+        <li><b>rm</b> [<b>-R</b>] <i>name</i> - deletes directories and nested data</li>
         <li><b>git clone</b> <i>https://link</i> - clones repository from GitHub</li>
         <li><b>git remote -v</b> - checks connections between local files and GitHub</li>
         <li><b>git remote add origin</b> <i>https://link</i> - add connections between local files and GitHub</li>
@@ -72,8 +73,10 @@
         <li><b>git merge</b> - merges fetched changes in all branches</li>
         <li><b>git merge</b> <i>branch-name</i> - merges ‘branch-name’ in current brunch</li>
         <li><b>git merge --abort</b> - canceles merge brunches</li>
-        <li><b>git pull</b> - pulles changes for current brunch from GitHub</li>
-        <li><b>git pull origin</b> <i>branch-name</i> - pulles changes on ‘branch-name’ from GitHub</li>
+        <li><b>git pull</b> - pulls changes for current brunch from GitHub</li>
+        <li><b>git pull origin</b> <i>branch-name</i> - pulls changes on ‘branch-name’ from GitHub</li>
+        <li><b>git pull</b> <i>dir-path</i> <i>branch-name</i> <b>--allow-unrelated-histories</b> - pulls branch from
+          lockal repo and save commits history</li>
 
         <li><b>git log</b> [<b>--oneline</b>] - shows commits history (q - exit)</li>
         <li><b>git reset --soft</b> <i>commit-name</i> - reset commits hustory</li>
@@ -81,7 +84,7 @@
         <li><b>git init</b> - initialize new repository</li>
         <li><b>git diff</b> - shows changes from last commit (q - exit)</li>
         <li><b>git stash</b> - saves local changes in temp boofer</li>
-        <li><b>git stash apply</b> - pulles local changes from temp boofer</li>
+        <li><b>git stash apply</b> - pulls local changes from temp boofer</li>
         <li><b>npx browserslist@latest --update-db</b> - update</li>
         <p>
           <li>
