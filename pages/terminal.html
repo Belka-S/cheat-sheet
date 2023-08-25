@@ -55,9 +55,9 @@
         <li><b>git remote set-url origin</b> <i>https://link</i> - sets connections</li>
         <li><b>git add .</b> - saves local changes in all files</li>
         <li><b>git commit -m</b> <i>“commit-name”</i> - adds signature to changes</li>
-        <li><b>git commit -am</b> <i>“commit-name”</i> - saves local changes add signature</li>
+        <!-- <li><b>git commit -am</b> <i>“commit-name”</i> - saves local changes add signature</li> -->
         <li><b>git status</b> <i>branch-name</i> - tracks files</li>
-        <li><b>git branch -d</b> - deleetes ‘branch-name’</li>
+        <li><b>git branch -d</b> <i>branch-name</i> - deleetes ‘branch-name’</li>
         <li><b>git branch -m</b> <i>branch-name</i> - changes name on ‘branch-name’</li>
         <li><b>git checkout</b> <i>branch-name</i> - goes to ‘branch-name’ or saved commit</li>
         <li><b>git checkout -b</b> <i>branch-name</i> - makes and goes to local ‘branch-name’</li>
@@ -77,6 +77,10 @@
         <li><b>git pull origin</b> <i>branch-name</i> - pulls changes on ‘branch-name’ from GitHub</li>
         <li><b>git pull</b> <i>dir-path</i> <i>branch-name</i> <b>--allow-unrelated-histories</b> - pulls branch from
           lockal repo and save commits history</li>
+        <li><b>git remote add workflow</b> <i>https://link</i> - create workflow</li>
+        <li><b>git fetch workflow</b> - fetches workflow data from GitHub</li>
+        <li><b>git checkout -b</b> <i>branch-name</i> <b>workflow/branch-name</b> - makes of ‘workflow/branch-name’ and
+          goes to local ‘branch-name’</li>
 
         <li><b>git log</b> [<b>--oneline</b>] - shows commits history (q - exit)</li>
         <li><b>git reset --soft</b> <i>commit-name</i> - reset commits hustory</li>
