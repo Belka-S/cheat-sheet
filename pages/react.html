@@ -417,14 +417,20 @@
           </span>
         </li>
         <li><b>Selector composition</b> is one of the key features of CSS modules, which allows you to create a class
-          that inherits the styles of another class without duplicating them. The composes property must precede other
-          rules so that styles can be overridden if necessary. <br>
-          <span>
+          that inherits the styles of another class without duplicating them. The <b>composes</b> property must precede
+          other rules so that styles can be overridden if necessary.
+          <p>
+            src/components/<b>Alert.module.css</b> <br>
+            .alert { margin: 8px; padding: 12px 16px; } <br>
+            .info { <b>composes</b>: <i>alert</i>; background-color: blue; }
+          </p>
+          <p>
+            src/components/<b>Alert.js</b> <br>
             <b>import</b> css from "./Alert<b>.module.css</b>"; <br>
             const Alert = ({ <b>variant</b>, children }) => {
             return &#60p className={css[<b>variant</b>]}>{children}&#60/p>;
             };
-          </span>
+          </p>
         </li>
         <li><b>Library clsx</b> is to compose the final value of the className property. <br>
           <b>import</b> clsx from "<b>clsx</b>"; <br>
