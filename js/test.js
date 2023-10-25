@@ -2,7 +2,6 @@ const date = new Date();
 
 console.log(`Today is ${date.getDate()}.${date.getMonth()}.${date.getFullYear()}`);
 
-
 // '🍎'--------------------'🍎' Variables and Types (Lesson 1) '🍎'--------------------'🍎'
 
 // The six values ​​that are converted by Boolean() to `false`:
@@ -2543,3 +2542,24 @@ console.log(`Today is ${date.getDate()}.${date.getMonth()}.${date.getFullYear()}
 // '🍎'--------------------'🍎' Pagination (Lesson 20) '🍎'--------------------'🍎'
 // '🍎'--------------------'🍎' CRUD (Lesson 21) '🍎'--------------------'🍎'
 // '🍎'--------------------'🍎' Syntax async/await (Lesson 22) '🍎'--------------------'🍎'
+
+function computeClosestToZero(number) {
+  const positive: number[] = [];
+  const negative: number[] = [];
+
+  for (let index: number = 0; index < ts.length; index += 1) {
+    if (ts[index] > 0) {
+      positive.push(ts[index]);
+    } else {
+      negative.push(ts[index]);
+    }
+  }
+
+  const resultArr = [Math.min(...positive), Math.max(...negative)];
+
+  const closest = resultArr[0] > -resultArr[1] ? resultArr[1] : resultArr[0];
+
+  return ts.length ? closest : 0;
+}
+
+console.log('computeClosestToZero([1, -3, 3, 2]): ', computeClosestToZero([1, -3, 0, 3, 2]));
