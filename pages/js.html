@@ -1606,6 +1606,20 @@
           hard-coded
           in the standard, but browser-dependent.
         </li>
+        <li>new Date(2023-04-21T04:48:10.244Z)<b>.toLocaleDateString(</b><i>'en-US'</i></b>, {
+          day: <i>'numeric'</i>,
+          month: <i>'short'</i>,
+          year: <i>'2-digit'</i>,
+          }<b>)</b> method to format dates in modern browsers, where:</li>
+        <ul>
+          <li><b>en-US</b> - 9/3/2021, 5:56:58 PM</li>
+          <li><b>en-AU</b> - 03/09/2021, 5:56:58 pm</li>
+          <li><b>en-GB</b> - 03/09/2021, 17:56:58</li>
+          <li><b>es-CL</b> - 03-09-2021 17:56:58</li>
+          <li><b>ro-RO</b> - 03.09.2021, 17:56:58</li>
+          <li><b>es-ZA</b> - 2021/09/03, 17:56:58</li>
+          <li><b>en-CA</b> - 2021-09-03, 5:56:58 p.m.</li>
+        </ul>
       </ul>
     </section>
     <section class="promises">
