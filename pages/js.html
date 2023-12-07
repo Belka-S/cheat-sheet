@@ -247,11 +247,7 @@
       In order to run your script in strict mode, it is enough to enter the following directive at the beginning of
       the js-file. Another way to run script in strict mode to use attribute <b>type="module"</b>. Always write your
       code in strict mode.</p>
-      <ul>
-        <li><b>export default</b> 'entity' - to export <i>entity</i>;</li>
-        <li><b>import</b> varName <b>from</b> './module-name.js' - to import read-only live bindings which are
-          exported by another module.</li>
-      </ul>
+
       <h3>Syntax Basics</h3>
       <ul>
         <li><b>Statement</b> is a related set of words and symbols from the syntax of a language that combines to
@@ -276,11 +272,11 @@
       <ul>
         <li><b>const</b> declaration creates block-scoped constants, the value of it can't be changed through
           reassignment;</li>
-        <li><b>let</b> declaration declares a block-scoped local variable, he value of it can be changed through
+        <li><b>let</b> declaration declares a block-scoped local variable, the value of it can be changed through
           reassignment, latter can only be accessed after its declaration is reached;
         </li>
         <li><b>var</b> statement declares a function-scoped or globally-scoped variable, optionally initializing it to
-          a value, latter can be accessed before its declaration is reached;</li>
+          a value, latter can be accessed before its declaration is reached.</li>
       </ul>
       <p><b>Undefined</b> is a variable that has been declared with the keyword let, but has not been initialized with
         a value.<br><b>Undeclared</b> or not defined is a variable that has not been declared in the available scope.
@@ -614,7 +610,7 @@
         <li><b>Scope chain look-up</b> - the interpreter first tries to find a variable in the scope in which such
           variable was accessed. If there is no such variable in the local scope, then the interpreter goes out, one
           level per attempt, until it finds the necessary value or reaches the topmost scope (global) and realizes
-          that no variable with such an identifier can be found, since it does not exist</li>
+          that no variable with such an identifier can be found, since it does not exist.</li>
       </ul>
       <h3>Call Stack</h3>
       <p><b>Call stack</b> is a mechanism for keeping track of where the interpreter is located in the code that calls
@@ -654,7 +650,7 @@
           property value;</li>
         <li><b>delete</b> <i>object.propertyKey</i> or <b>delete</b> <i>object[propertyKey]</i> - removes a property
           from an object;</li>
-        <li>object<b>["propertyKey"]</b> - to access a value of the proherty;</li>
+        <li>object<b>["propertyKey"]</b> - to access a value of the property;</li>
         <li>object<b>[variableName]</b> - to access a value of the property with a name that you do not know, as it is
           stored as the value of a variable;</li>
         <li><b>[variableName]</b> - to access a property with a name that you do not know, as it is stored as the
@@ -669,15 +665,13 @@
       <h3>Iteration</h3>
       <ul>
         <li>
-          <b>for (</b><i>const key</i> <b>in</b> <i>objectName</i><b>) {</b> _ _ _ to iterate over objects,<br>
-          <i>key</i>; _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ to access properties,<br>
-          <i>objectName</i><b>[</b><i>key</i><b>]</b>;<b>}</b> _ _ _ _ _ _ _ _ _ _ _ to access values of the
-          proherties;<br>
+          <b>for (</b><i>const key</i> <b>in</b> <i>objectName</i><b>) {</b><i>key</i>;
+          <i>objectName</i><b>[</b><i>key</i><b>]</b>;<b>}</b> to iterate over objects.
         </li>
-        <li><b>.hasOwnProperty(</b><i>key</i><b>)</b> method - returns a boolean indicating whether the object has the
+        <li><b>.hasOwnProperty(</b><i>key</i><b>)</b> method returns a boolean indicating whether the object has the
           specified property as its own property or inherited one;</li>
-        <li><b>Object.keys(</b><i>object</i><b>)</b> method - returns an array of own property keys of an object;</li>
-        <li><b>Object.values(</b><i>object</i><b>)</b> method - returns an array of its own property values</li>
+        <li><b>Object.keys(</b><i>object</i><b>)</b> method returns an array of own property keys of an object;</li>
+        <li><b>Object.values(</b><i>object</i><b>)</b> method returns an array of its own property values;</li>
         <li><b>Object.entries(</b><i>object</i><b>)</b> method returns an array, with each element as another array of
           the propertyName and the value of this property;</li>
         <li><b>Object.fromEntries(</b><i>[ ['foo', 'bar'], ['baz', 42], ]</i><b>)</b> static method transforms a list of
@@ -767,7 +761,7 @@
       </a>
       <h3>Callbacks</h3>
       <p>Callbacks are used to process user actions on the page, process requests to the server, execute unknown
-        functions, etc. and intended for deferred execution.Any function can assume an arbitrary number of callbacks.
+        functions, etc. and intended for deferred execution. Any function can assume an arbitrary number of callbacks.
       </p>
       <ul>
         <li><b>Callback</b> is a function that is passed as an argument to another function, and the latter calls such
@@ -817,8 +811,8 @@
       </a>
       <p>JavaScript has array methods that come from functional languages. Most of them are pure functions. They
         create a new array, populate it, applying the specified callback to the value of each element, and then return
-        this new array. <b>Side-effect</b> function is a function that, during execution, can change or use global
-        variables, change the values of reference arguments, perform I/O operations, etc. <b>Pure</b> function is a
+        this new array. <b>Side-effect function</b> is a function that, during execution, can change or use global
+        variables, change the values of reference arguments, perform I/O operations, etc. <b>Pure function</b> is a
         function with the result depending only on the values of the passed arguments and has no side effects, that is,
         it does not change the values of the arguments. </p>
       <h3>Syntax</h3>
@@ -840,7 +834,7 @@
         <li><b>.map( )</b> method - returns a new array of the same length, can be used to change every element of an
           array;</li>
         <li><b>.flatMap( )</b> method is similar to the <i>map( )</i> method, but it is used in cases where the result
-          is a multidimensional array that needs to be "flattened", tnew array is "flattened" by one (one nesting);</li>
+          is a multidimensional array that needs to be "flattened", new array is "flattened" by one (one nesting);</li>
         <li><b>.filter( )</b> method - to copy array whith filtering, when more than one element from a collection
           should
           be selected using a specific criterion;</li>
@@ -1085,7 +1079,7 @@
           more. In other words, it serves as a link between the page and the programming language.</li>
         <li><b>Browser Object Model</b> is a language-independent interface for work with browser tabs. It offers a
           set of properties and methods to access directly the current tab and a number of browser functions. This model
-          includes an object to work with navigation history, location, and more./li>
+          includes an object to work with navigation history, location, and more.</li>
       </ul>
       <p>According to the DOM model, each tag forms a separate <b>node element</b>, whereas each piece of text is a
         <b>text element</b>. An HTML document is a hierarchical tree in which every element (except for the root) has
@@ -1272,7 +1266,7 @@
         react to user actions, it needs an event listener (handler), that is, a function that will be called as soon
         as the event occurs. </p>
       <ul>
-        <li><i>elem</i><b>.addEventListener(</b>event, handler[, {\\options}]<b>)</b> - dds an event listener to the
+        <li><i>elem</i><b>.addEventListener(</b>event, handler[, {\\options}]<b>)</b> - ads an event listener to the
           <i>elem</i> element, where:
           <ul>
             <li><i>event</i> is event name, a string, for example 'click';</li>
@@ -1323,7 +1317,7 @@
           with the type ="submit" attribute or press the Enter in any of its text fields;</li>
         <li><b>'change'</b> event occurs after a form element has changed, useful for checkboxes and radiobuttons;
         </li>
-        <li><b>'input'</b> event occurs only in text fields and textarea, and it is generated every time the element
+        <li><b>'input'</b> event occurs only in text fields and textareas, and it is generated every time the element
           value changes, without waiting for focus to be lost;</li>
         <li><b>'focus'</b> and <b>'blur'</b> events occur when an element is focused and when focus is lost, these two
           events do not bubble;</li>
@@ -1384,8 +1378,8 @@
       <p><b>Throttle</b> and <b>Debounce</b> are two similar (but different in their behavior) techniques to control
         how many times you allow a function to execute over time. Use their versions from the <b>Lodash</b> library.</p>
       <ul>
-        <li><b>_.throttle(</b><i>func</i>, <i>N</i>, [{'trailing':true | leading':true}]<b>)</b> - controls the number
-          of times a <i>func</i> function can be called one time in <i>N</i> milliseconds;
+        <li><b>_.throttle(</b><i>func</i>, <i>N</i>, [{'trailing':true, leading':true}]<b>)</b> - controls the number
+          of times a <i>func</i> function can be called in <i>N</i> milliseconds;
         </li>
         <li><b>_.debounce(</b><i>func</i>, <i>N</i>, [{trailing:false, leading:true}]<b>)</b> - ensures
           that the <i>func</i> function will only be called if there is a pause of <i>N</i> milliseconds between
@@ -1489,7 +1483,7 @@
           this will help to expand the functionality of the application without disrupting its work.</li>
         <li><b>Namespace</b> - modules avoid namespace pollution by creating a separate scope for variables.</li>
         <li><b>Reuse</b> - a module can be reused over and over again without having to know anything about the
-          environment in which it is used</li>
+          environment in which it is used.</li>
       </ul>
       <p><b>ECMAScript Modules (ESM)</b> is a reusable piece of JS code that exports certain objects, making them
         available to other modules. Export/import operations are implemented by <b>import</b> and <b>export</b>. ESM
@@ -1498,8 +1492,7 @@
           rel="noopener noreferrer nofallow"><b>Webpack</b></a>, <a href="https://parceljs.org/" target="_blank"
           rel="noopener noreferrer nofallow"><b>Parcel</b></a> and others. <b>Module
           bundling</b> is the process of concatenating a group of modules and their dependencies into a file or a
-        group
-        of files. </p>
+        group of files.</p>
       <ul>
         <li><b>export</b> (<b>const</b>/<b>function</b>) <i>entity-name</i></li>
         <li><b>export {</b><i>entity-name1</i>, <i>entity-name2</i><b>}</b></li>
@@ -1511,6 +1504,10 @@
       <ul>
         <li><b>export default</b> <i>entity-name</i>
         <li><b>import</b> <i>entity-name</i> <b>from</b> "<i>./path/to/module</i>"</li>
+      </ul>
+      <ul>
+        <li><b>export * as</b> <i>myModule</i> <b>from</b> "<i>./path/to/module</i>"</li>
+        <li><b>export *</b> <b>from</b> "<i>./path/to/module</i>"</li>
       </ul>
       <h3>Webpack Basics</h3>
       <p> <b>Webpack</b> is a JS module bundler, module dependency manager that takes the dependency tree and creates
@@ -1545,7 +1542,7 @@
       </ul>
       <h3>Web Storage</h3>
       <p>Web storage consists of <b>localStorage</b> and <b>sessionStorage</b>. It provides a way to store data in an
-        intuitive way, in the form of <i>key:value</i> pairs. Local and session storages are part of the browser, and
+        intuitive way, in the form of <i>key: value</i> pairs. Local and session storages are part of the browser, and
         they are available as properties of the window object, have the same set of properties and methods, and differ
         only in behavior:</p>
       <ul>
@@ -1647,7 +1644,7 @@
               promise will be passed to it as an argument.</li>
           </ul>
         </li>
-        <li><b>.then(</b>onResolve[, onReject]<b>)</b> method takes two arguments - callbacks that will be called when
+        <li><b>.then(</b>onResolve[, onReject]<b>)</b> method takes two arguments - callback that will be called when
           the promise changes its state: <ul>
             <li><i>onResolve(</i>value<i>)</i> will be called when the promise is successful and will receive its result
               as an argument;</li>
