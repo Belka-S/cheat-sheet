@@ -36,72 +36,44 @@
   <main class="container">
     <section>
       <div class="goit">
-        <h2><a href="https://www.edu.goit.global/learn/6420780/13876542/13876544/textbook" target="_blank"
+        <h2><a href="https://www.typescriptlang.org/docs/" target="_blank"
             rel="noopener noreferrer nofollow">TypeScript</a></h2>
         <ul class="goit__contents">
-          <a href="https://youtu.be/0lCPZwDCOd0" target="_blank">React TS (Repeta)</a>
-          <span><-----></span><a href="https://youtu.be/V8tefDOdw2w" target="_blank">TS-1 (Melnik)</a>
-          <span><-----></span><a href="https://youtu.be/h2IBxOaUIf0" target="_blank">TS-2 (Melnik)</a>
-          <span><-----></span><a href="https://youtu.be/Em3j7rdM3SA" target="_blank">TS-3 (Melnik)</a>
-          <li><a href="https://www.youtube.com/watch?v=92qcfeWxtnY" target="_blank">React TS</a>
-            <span><-----></span>
-            <a href="https://youtu.be/j-LxLzYgpX4" target="_blank">React TS</a>
-            <span><-----></span>
-            <a href="https://www.youtube.com/playlist?list=PLGS5TF12xmz81204LuIeraH9YFUEfFSgd" target="_blank"
-              rel="noopener noreferrer">TS</a>
-            <span><-----></span>
-            <a href="https://youtu.be/30LWjhZzg50" target="_blank" rel="noopener noreferrer">4h TS</a>
-            <span><-----></span>
-            <a href="https://youtu.be/gieEQFIfgYc" target="_blank" rel="noopener noreferrer">8h TS</a>
-          </li>
-          <li><a href="#basics"> <span>(Lesson 1)</span>
+          <li><a href="#basics">Basics <span>(Lesson 1)</span>
               <div>
-
-
-                <a href="" target="_blank">1 <span></span></a>
+                <a href="https://youtu.be/0lCPZwDCOd0" target="_blank">React TS (Repeta)</a>
+                <a href="https://www.youtube.com/watch?v=92qcfeWxtnY" target="_blank">React TS</a>
+                <a href="https://youtu.be/j-LxLzYgpX4" target="_blank">React TS</a>
+                <a href="https://www.youtube.com/playlist?list=PLGS5TF12xmz81204LuIeraH9YFUEfFSgd" target="_blank"
+                  rel="noopener noreferrer">TS</a>
+                <a href="https://youtu.be/30LWjhZzg50" target="_blank" rel="noopener noreferrer">4h TS</a>
+                <a href="https://youtu.be/gieEQFIfgYc" target="_blank" rel="noopener noreferrer">8h TS</a>
 
               </div>
             </a></li>
-          <li><a href="#apps"> <span>(Lesson 2)</span></a>
+          <li><a href="#types">Types <span>(Lesson 2)</span></a>
             <div>
-              <a href="" target="_blank">2 <span></span></a>
-
+              <a href="https://youtu.be/V8tefDOdw2w" target="_blank">TS-1 (Melnik)</a>
             </div>
           </li>
-          <li><a href="#express"> <span>(Lesson 3)</span></a>
+          <li><a href="#oop">OOP <span>(Lesson 3)</span></a>
             <div>
-              <a href="" target="_blank">3 <span></span></a>
-
+              <a href="https://youtu.be/h2IBxOaUIf0" target="_blank">TS-2 (Melnik)</a>
             </div>
           </li>
-          <li><a href="#restapi"> <span>(Lesson 4)</span></a>
+          <li><a href="#react">React <span>(Lesson 4)</span></a>
             <div>
-              <a href="" target="_blank">4 <span></span></a>
-
+              <a href="https://youtu.be/Em3j7rdM3SA" target="_blank">TS-3 (Melnik)</a>
             </div>
           </li>
-          <li><a href="#mondo"> <span>(Lesson 5)</span></a>
+          <li><a href="#decorators">Decorators <span>(Lesson 5)</span></a>
             <div>
-              <a href="" target="_blank">5 <span></span></a>
-
+              <a href="" target="_blank">1-Node <span></span></a>
             </div>
           </li>
-          <li><a href="#mongoose"> <span>(Lesson 6)</span></a>
+          <li><a href="#nodejs">Node.js <span>(Lesson 6)</span></a>
             <div>
-              <a href="" target="_blank">6 <span></span></a>
-
-            </div>
-          </li>
-          <li><a href="#auth"> <span>(Lesson 7)</span></a>
-            <div>
-              <a href="" target="_blank">7 <span></span></a>
-
-            </div>
-          </li>
-          <li><a href="#files"> <span>(Lesson 9)</span></a>
-            <div>
-              <a href="" target="_blank">8 <span></span></a>
-
+              <a href="" target="_blank">2-Node <span></span></a>
             </div>
           </li>
         </ul>
@@ -109,52 +81,336 @@
     </section>
     <section class="basics">
       <a href="#goit">
-        <h2 id="basics"> <span>(Lesson 1)</span></h2>
+        <h2 id="basics">Basics <span>(Lesson 1)</span></h2>
       </a>
+
+      <h3>Install</h3>
+      <ul>
+        <li><b>npm install -g typescript</b> - install</li>
+        <li><b>tsc [-w]</b> - run a compile based on a backwards look through the fs for a tsconfig.json</li>
+      </ul>
+
+      <a href="https://www.typescriptlang.org/tsconfig" target="_blank" rel="noopener noreferrer">
+        <h3>tsconfig.json</h3>
+      </a>
+      <span>
+        "compilerOptions": { <br>
+        "rootDir": "./src", <br>
+        "outDir": "./dist", <br>
+        "allowJs": false, <br>
+        "allowSyntheticDefaultImports": true, <br>
+        "emitDecoratorMetadata": true, <br>
+        "esModuleInterop": true, <br>
+        "experimentalDecorators": true, <br>
+        "lib": ["dom", "ES2021"], <br>
+        "module": "es2020", <br>
+        "moduleResolution": "node", <br>
+        "preserveConstEnums": true, <br>
+        "skipLibCheck": true, <br>
+        "strictNullChecks": true, <br>
+        "target": "es2019", <br>
+        "sourceMap": true <br>
+        }, <br>
+        "include": ["**/*.ts", "**/*.tsx"], <br>
+        "exclude": ["node_modules/**/*"]
+      </span>
     </section>
 
-    <section class="apps">
+    <section class="types">
       <a href="#goit">
-        <h2 id="apps"> <span>(Lesson 2)</span></h2>
+        <h2 id="#types">Types <span>(Lesson 2)</span></h2>
       </a>
+
+      <a href="https://www.typescriptlang.org/docs/handbook/2/everyday-types.html" target="_blank"
+        rel="noopener noreferrer">
+        <h3>Basic Types</h3>
+      </a>
+      <ul>
+        <li><b>number</b>
+          <ul>
+            <li>let float: number = 3.14</li>
+          </ul>
+        </li>
+        <li><b>string</b>
+          <ul>
+            <li>let color: string = "blue"</li>
+          </ul>
+        </li>
+        <li><b>boolean</b>
+          <ul>
+            <li>let isDone: boolean = false</li>
+          </ul>
+        </li>
+        <li><b>null</b>
+          <ul>
+            <li>let empty: null = null</li>
+          </ul>
+        </li>
+        <li><b>undefined</b>
+          <ul>
+            <li>let notParam: undefined = undefined</li>
+          </ul>
+        </li>
+        <li><b>object</b>
+          <ul>
+            <li>const obj: object = { }</li>
+            <li>const obj: { } = { };</li>
+            <li><b>type</b> User = { name: string; age: number; };</li>
+            <li><b>interface</b> User = { name: string; age: number; };</li>
+          </ul>
+        </li>
+        <li><b>array</b>
+          <ul>
+            <li>let arrString: string[ ]</li>
+            <li>let numbers: Array&#60number> = [1, 2, 3, 4, 5]</li>
+            <li>let matrix: number[ ][ ] = [[1, 2], [3, 4]];</li>
+            <li>let mixed: (number | string)[ ] = [1, 'two'];</li>
+            <li>let users: User[ ]</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Variables and Arguments</h3>
+      <ul>
+        <li><b>any</b>
+          <ul>
+            <li>let data: any = fetchData( )</li>
+          </ul>
+        </li>
+        <li><b>unknown</b>:
+          <ul>
+            <li>let userData: unknown = fetchUserData( ), to check type: <b>as</b>, <b>typeof</b>, <b>instanceof</b>
+            </li>
+          </ul>
+        </li>
+        <li><b>enum</b>
+          <ul>
+            <li>enum Role {ADMIN, USER}, (bool, any - are not allowed)</li>
+            <li>const person = { role: Role.ADMIN, };</li>
+            <li>if (person.role === Role.ADMIN) { console.log('Role: ', Role.ADMIN); }</li>
+            <li>console.log(Role[Role.ADMIN]); // "ADMIN"</li>
+          </ul>
+        </li>
+        <li><b>tuple</b>
+          <ul>
+            <li>let tuple: [string, boolean]</li>
+            <li>let tuple: [string, ...number[ ]]</li>
+          </ul>
+        </li>
+        <li><b>union</b>
+          <ul>
+            <li>let mixedType: string | number | boolean</li>
+            <li>or let pet: Dog | Fish</li>
+          </ul>
+        </li>
+        <li><b>literal</b>
+          <ul>
+            <li>type size = 'small' | 'medium' | 'large'</li>
+          </ul>
+        </li>
+        <li><b>intersection</b> <b>&</b> - must contain all properties defined in Employee and Manager:
+          <ul>
+            <li>type Employee = { name: string; id: number; };</li>
+            <li>type Manager = { employees: Employee[ ]; };</li>
+            <li>type CEO = Employee <b>&</b> Manager;</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Methods and Functions</h3>
+
+      <ul>
+        <li><b>function</b>, optional argument <b>?</b>
+          <ul>
+            <li>let myFunc: (firstArg: string, secondArg<b>?</b>: number) => void</li>
+            <li>let myFunc: (...params: any[ ]) => void</li>
+            <li>type CallbackType = (num1<b>?</b>: number, num2: number) => number;</li>
+            <li>type CallbackType = (...nums: number[ ]) => number;</li>
+          </ul>
+        </li>
+        <li>function <b>return</b>
+          <ul>
+            <li>function greet( ): string { return "Hello, world!"; }</li>
+            <li>const greet = ( ): string => { return "Hello, world!"; }</li>
+            <li>const greet = ( ) => string</li>
+          </ul>
+        </li>
+        <li><b>void</b> - absence of any type:
+          <ul>
+            <li>const greet = ( ): void => { console.log("Hello, world!"); }</li>
+            <li>function doSomething(callback: ( ) => void) { callback( ); }</li>
+          </ul>
+        </li>
+        <li><b>never</b> - listen( ) method from Express, infinite loop, throw new Error( ):
+          <ul>
+            <li>function throwError(message: string): never { throw new Error(message); }</li>
+            <li>function infiniteLoop( ): never { while (true) {} }</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Custom Types</h3>
+
+      <ul>
+        <li><b>interface</b>, optional property <b>?</b>
+          <ul>
+            <li>interface Animal { name: string; } <br>
+              interface Animal { age<b>?</b>: number; } <br>
+              let dog: Animal = {name: 'Fido',age: 5,};
+            </li>
+            <li>interface Dog <b>extends</b> Animal { bark: string; }</li>
+            <li>class Animal <b>implements</b> Walkable, Eatable { <br>
+              walk( ) { console.log('The animal walks...'); } <br>
+              eat( ) { console.log('The animal eats...'); } }</li>
+            <li>interface AddFunc { (n1: number, n2: number): number; }</li>
+          </ul>
+        <li><b>type</b>, optional property <b>?</b>
+          <ul>
+            <li>type Animal = { name: string; }</li>
+            <li>type Coordinate = [number, number]; <br>
+              type UserWithCoords = {
+              id: number;
+              name: string;
+              coords<b>?</b>: Coordinate; }; </li>
+            <li>enum AnimalIds {
+              cat = 'cat',
+              dog = 'dog', } <br>
+              type Animal = {
+              [AnimalIds.cat]: {
+              meow: ( ) => string;
+              };
+              [AnimalIds.dog]: {
+              bark: ( ) => string;
+              }; }; </li>
+            <li>type Cat = { meow: ( ) => string; }; <br>
+              interface Dog { bark: ( ) => string; }
+              type DogOrCat = Dog <b>|</b> Cat; <br>
+              type DogAndCat = Dog <b>&</b> Cat;
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Advanced Types (Type Guards)</h3>
+      <ul>
+        <li><b>typeof</b>
+          <ul>
+            <li>type ComplexType = string | number;<br>
+
+              function combine(a: ComplexType, b: ComplexType) { <br>
+              if (<b>typeof</b> a === 'number' || <b>typeof</b> b === 'number') { return a + b; } <br>
+              return a.toString( ) + b.toString( ); }</li>
+          </ul>
+        </li>
+        <li><b>in</b>
+          <ul>
+            <li>
+              type Admin = { name: string; privileges: string[ ]; }; <br>
+              type Employee = { name: string; startDate: Date; }; <br>
+              type AdminOrEmployee = Admin | Employee; <br>
+              function printDetails(obj: AdminOrEmployee) { console.log(`Name: ${obj.name}`); <br>
+              if ('privileges' <b>in</b> obj) { console.log(`Privileges: ${obj.privileges.join(', ')}`); } }
+            </li>
+            <li>
+              type Dog = { bark: ( ) => void; }; <br>
+              type Cat = { meow: ( ) => void; }; <br>
+
+              function isDog(animal: Dog | Cat): animal is Dog { return 'bark' in animal; } <br>
+
+              function letAnimalTalk(animal: Dog | Cat) { <br>
+              if (isDog(animal)) { animal.bark( ); } else { animal.meow( ); } }
+            </li>
+          </ul>
+        </li>
+        <li><b>instanceof</b>
+          <ul>
+            <li>
+              class Car { drive( ) { console.log('Driving a car...'); } }; <br>
+              class Truck { drive( ) { console.log('Driving a truck...'); } <br>
+              loadCargo(amount: number) { console.log(`Loading cargo: ${amount}`); } }; <br>
+
+              type Vehicle = Car | Truck; <br>
+              const carInstance = new Car( ); <br>
+              const truckInstance = new Truck( ); <br>
+              function useVehicle(vehicle: Vehicle) { vehicle.drive( ); <br>
+              if (vehicle <b>instanceof</b> Truck) { vehicle.loadCargo(1000); } } <br>
+            </li>
+          </ul>
+        </li>
+        <li><b>as</b>
+          <ul>
+            <li>
+              type Admin = { name: string; privileges: string[ ]; }; <br>
+              type Employee = { name: string; startDate: Date; }; <br>
+              type Staff = Admin | Employee; <br>
+
+              function isEmployee(staff: Staff): staff <b>is</b> Employee { <br>
+              return (staff <b>as</b> Employee).startDate !== undefined; } <br>
+              const staffMember: Staff = { name: 'Bob', startDate: new Date( ) }; <br>
+
+              if (isEmployee(staffMember)) { console.log( <br>
+              `Welcome, ${staffMember.name}! Start date is ${staffMember.startDate}` ); }
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Type Casting (Type Conversion)</h3>
+      <ul>
+        <li><b>&#60></b></li>
+        <ul>
+          <li>
+            let someValue: unknown = 'this is a string'; <br>
+            let strLength: number = (<b>&#60</b>string<b>></b>someValue).length;
+          </li>
+          <li>const input = <b>&#60</b>HTMLInputElement<b>></b>document.getElementById('inputEmail');</li>
+        </ul>
+        <li><b>as</b></li>
+        <ul>
+          <li>
+            let someValue: unknown = 'this is a string'; <br>
+            let strLength: number = (someValue <b>as</b> string).length;
+          </li>
+          <li>const input = document.getElementById('inputEmail') <b>as</b> HTMLInputElement;</li>
+        </ul>
+        </li>
+      </ul>
+
+      <h3>Index Properties</h3>
+
+      <ul>
+        type IndexType = {<b>[prop: string]</b>: string;}
+        <ul>
+          <li>type Person = { name: string; <b>[x: string]</b>: string; }; <br>
+            const user: Person = { name: 'Alex', gender: 'MAN', };</li>
+        </ul>
+      </ul>
+
     </section>
 
-    <section class="express">
+    <section class="oop">
       <a href="#goit">
-        <h2 id="express"> <span>(Lesson 3)</span></h2>
+        <h2 id="%oop"> <span>(Lesson 3)</span></h2>
       </a>
     </section>
 
-    <section class="restapi">
+    <section class="react">
       <a href="#goit">
-        <h2 id="restapi"> <span>(Lesson 4)</span></h2>
+        <h2 id="#react"> <span>(Lesson 4)</span></h2>
       </a>
     </section>
 
-    <section class="mondo">
+    <section class="decorators">
       <a href="#goit">
-        <h2 id="mondo"> <span>(Lesson 5)</span></h2>
+        <h2 id="#decorators"> <span>(Lesson 5)</span></h2>
       </a>
     </section>
 
-    <section class="mongoose">
+    <section class="nodejs">
       <a href="#goit">
-        <h2 id="mongoose"> <span>(Lesson 6)</span></h2>
+        <h2 id="#nodejs"> <span>(Lesson 6)</span></h2>
       </a>
     </section>
-
-    <section class="auth">
-      <a href="#goit">
-        <h2 id="auth"> <span>(Lesson 7)</span></h2>
-      </a>
-    </section>
-
-    <section class="files">
-      <a href="#goit">
-        <h2 id="files"> <span>(Lesson 8)</span></h2>
-      </a>
-    </section>
-
     <footer></footer>
 </body>
 
