@@ -168,6 +168,12 @@
             <li>let users: User[ ]</li>
           </ul>
         </li>
+        <li><b>promise</b>
+          <ul>
+            <li>const promise: Promise<b>&#60</b>string<b>></b> = new Promise((resolve) => {
+              setInterval(( ) => { resolve('Done!'); }, 1000); });</li>
+          </ul>
+      </ul>
       </ul>
 
       <h3>Variables and Arguments</h3>
@@ -302,6 +308,14 @@
               return a.toString( ) + b.toString( ); }</li>
           </ul>
         </li>
+        <li><b>keyof</b>
+          <ul>
+            <li>
+              type Person = { name: string; age: number; };<br>
+              type PersonKeys = <b>keyof</b> Person;
+            </li>
+          </ul>
+        </li>
         <li><b>in</b>
           <ul>
             <li>
@@ -315,7 +329,7 @@
               type Dog = { bark: ( ) => void; }; <br>
               type Cat = { meow: ( ) => void; }; <br>
 
-              function isDog(animal: Dog | Cat): animal is Dog { return 'bark' in animal; } <br>
+              function isDog(animal: Dog | Cat): animal is Dog { return 'bark' <b>in</b> animal; } <br>
 
               function letAnimalTalk(animal: Dog | Cat) { <br>
               if (isDog(animal)) { animal.bark( ); } else { animal.meow( ); } }
@@ -353,37 +367,157 @@
             </li>
           </ul>
         </li>
-      </ul>
+        <li><b>&#60></b> (Type Conversion)
+          <ul>
+            <li>
+              let someValue: unknown = 'this is a string'; <br>
+              let strLength: number = (<b>&#60</b>string<b>></b>someValue).length;
+            </li>
+            <li>const input = <b>&#60</b>HTMLInputElement<b>></b>document.getElementById('inputEmail');</li>
+          </ul>
+        </li>
+        <li><b>as</b> (Type Conversion)
+          <ul>
+            <li>
+              let someValue: unknown = 'this is a string'; <br>
+              let strLength: number = (someValue <b>as</b> string).length;
+            </li>
+            <li>const input = document.getElementById('inputEmail') <b>as</b> HTMLInputElement;</li>
+          </ul>
+        </li>
 
-      <h3>Type Casting (Type Conversion)</h3>
-      <ul>
-        <li><b>&#60></b></li>
-        <ul>
-          <li>
-            let someValue: unknown = 'this is a string'; <br>
-            let strLength: number = (<b>&#60</b>string<b>></b>someValue).length;
-          </li>
-          <li>const input = <b>&#60</b>HTMLInputElement<b>></b>document.getElementById('inputEmail');</li>
-        </ul>
-        <li><b>as</b></li>
-        <ul>
-          <li>
-            let someValue: unknown = 'this is a string'; <br>
-            let strLength: number = (someValue <b>as</b> string).length;
-          </li>
-          <li>const input = document.getElementById('inputEmail') <b>as</b> HTMLInputElement;</li>
-        </ul>
+        <li><b>Index Properties</b>
+          <ul>
+            <li>type Person = { name: string; <b>[prop: string]</b>: string; }; <br>
+              const user: Person = { name: 'Alex', gender: 'MAN', };</li>
+          </ul>
+        </li>
+
+        <li><b>Function Overloads</b>
+          <ul>
+            <li>function concatenate(strs: string[ ]): string; <br>
+              function concatenate(strs: string[ ], separator: string): string; <br>
+              function concatenate(strs: any, separator?: any): any {
+              if (separator !== undefined) { <br>
+              return strs.join(separator); <br>
+              } else { <br>
+              return strs.join(''); } }</li>
+          </ul>
         </li>
       </ul>
 
-      <h3>Index Properties</h3>
-
+      <h3>Generics</h3>
       <ul>
-        type IndexType = {<b>[prop: string]</b>: string;}
-        <ul>
-          <li>type Person = { name: string; <b>[x: string]</b>: string; }; <br>
-            const user: Person = { name: 'Alex', gender: 'MAN', };</li>
-        </ul>
+        <li><b>T</b>
+          <ul>
+            <li>function identity&#60<b>T</b>>(arg: <b>T</b>): <b>T</b> { return arg; } <br>
+              let output1 = identity("myString"); <br>
+              let output2 = identity&#60number>(100);
+            </li>
+          </ul>
+        </li>
+        <li><b>T, U</b>
+          <ul>
+            <li>
+              type Person = { name: string; }; <br>
+              type AdditionFields = { age: number; }; <br>
+              function merge&#60<b>T</b>, <b>U</b>>(objA: <b>T</b>, objB: <b>U</b>) { return Object.assign(objA, objB);
+              } <br>
+              const merged = merge&#60Person, AdditionFields>({ name: 'Alisa' }, { age: 28 });
+            </li>
+            <li>
+              class KeyValuePair&#60<b>Tkey</b>, <b>Uvalue</b>> { <br>
+              constructor(private key: <b>Tkey</b>, private value: <b>Uvalue</b>) { } <br>
+              getKey( ): TKey { return this.key; } <br>
+              getValue( ): TValue { return this.value; } }
+            </li>
+          </ul>
+        </li>
+        <li><b>extends</b>
+          <ul>
+            <li>function merge&#60<b>T extends</b> object, <b>U extends</b> object>(objA: <b>T</b>, objB: <b>U</b>) {
+              return Object.assign(objA, objB); }</li>
+            <li>type Length = { length: number; }; <br>
+              function getLength&#60<b>T extends</b> Length>(str: <b>T</b>) { return str.length; }</li>
+            <li>type Person = { name: string; age: number; }; <br>
+              function extractValue&#60<b>T extends</b> object, <b>U extends</b> keyof T>(obj: <b>T</b>, key: <b>U</b>)
+              { return obj[key]; }</li>
+          </ul>
+        </li>
+        <li><b>Partial&#60T></b>
+          <ul>
+            <li>
+              type User = { id: number; name: string; email: string; }; <br>
+              function createUser(data: <b>Partial&#60</b>User<b>></b>): User { <br>
+              const defaultUser: User = { id: Date.now( ), name: '', email: '', }; <br>
+              return { ...defaultUser, ...data }; }
+            </li>
+          </ul>
+        </li>
+        <li><b>Readonly&#60T></b>
+          <ul>
+            <li>
+              type User = { id: number; name: string; email: string; }; <br>
+              let aliceReadonly: <b>Readonly&#60</b>User<b>></b> = { <br>
+              id: 1, name: 'Alice', email: 'alice@example.com', };
+            </li>
+            <li>const arr: <b>Readonly&#60</b>string[ ]<b>></b> = ['One', 'Two', 'Three']; </li>
+          </ul>
+        </li>
+        <li><b>Pick&#60T, K></b>
+          <ul>
+            <li>
+              type User = { id: number; name: string; email: string;}; <br>
+              type UserBasicInfo = <b>Pick&#60</b>User, 'name' | 'email'<b>></b>;
+            </li>
+          </ul>
+        </li>
+        <li><b>Record&#60K, T></b>
+          <ul>
+            <li>
+              enum UserRoles { admin = 'admin', manager = 'manager', } <br>
+              type UserRolesStatuses = <b>Record&#60</b>UserRoles, boolean<b>></b>; <br>
+              const userRoleStatuses: UserRolesStatuses = { <br>
+              [UserRoles.admin]: true, <br>
+              [UserRoles.manager]: false, };
+            </li>
+            <li>
+              type InitialFormType = { name: string; email: string; password: string; }; <br>
+              export type Form = InitialFormType & { <br>
+              errors: Partial<b>&#60Record</b>&#60keyof InitialFormType, [string]><b>></b>; };
+            </li>
+          </ul>
+        </li>
+        <li><b>Omit&#60T, K></b>
+          <ul>
+            <li>
+              type Person = { name: string; age: number; location: string; }; <br>
+              type PersonWithoutLocation = <b>Omit&#60</b>Person, 'location'<b>></b>;
+            </li>
+          </ul>
+        </li>
+        <li><b>ReturnType&#60T></b>
+          <ul>
+            <li>
+              function greeting( ) { return 'Hello, world!'; } <br>
+              type Greeting = <b>ReturnType&#60typeof</b> greeting<b>></b>; // 'string'
+            </li>
+            <li>
+              function multiply(a: number, b: number) { return a * b; } <br>
+              type MultiplyResult = <b>ReturnType&#60typeof</b> multiply<b>></b>; // 'number'
+            </li>
+          </ul>
+        </li>
+        <li><b>Parameters&#60T></b>
+          <ul>
+            <li>
+              type MyFunctionType = (a: string, b: number, c: boolean) => void; <br>
+              type MyParametersType = <b>Parameters&#60</b>MyFunctionType<b>></b>; // [string, number, boolean]
+            </li>
+          </ul>
+        </li>
+        <li><b><a href="https://www.typescriptlang.org/docs/handbook/utility-types.html" target="_blank"
+              rel="noopener noreferrer">Utility Types</a></b></li>
       </ul>
 
     </section>
