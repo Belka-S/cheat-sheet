@@ -54,12 +54,11 @@
           <li><a href="#types">Types <span>(Lesson 2)</span></a>
             <div>
               <a href="https://youtu.be/V8tefDOdw2w" target="_blank">TS-1 (Melnik)</a>
+              <a href="https://youtu.be/h2IBxOaUIf0" target="_blank">TS-2 (Melnik)</a>
             </div>
           </li>
           <li><a href="#oop">OOP <span>(Lesson 3)</span></a>
-            <div>
-              <a href="https://youtu.be/h2IBxOaUIf0" target="_blank">TS-2 (Melnik)</a>
-            </div>
+            <div></div>
           </li>
           <li><a href="#react">React <span>(Lesson 4)</span></a>
             <div>
@@ -118,7 +117,7 @@
 
     <section class="types">
       <a href="#goit">
-        <h2 id="#types">Types <span>(Lesson 2)</span></h2>
+        <h2 id="types">Types <span>(Lesson 2)</span></h2>
       </a>
 
       <a href="https://www.typescriptlang.org/docs/handbook/2/everyday-types.html" target="_blank"
@@ -159,18 +158,19 @@
             <li><b>interface</b> User = { name: string; age: number; };</li>
           </ul>
         </li>
-        <li><b>array</b>
+        <li><b>Array</b>
           <ul>
             <li>let arrString: string[ ]</li>
             <li>let numbers: Array&#60number> = [1, 2, 3, 4, 5]</li>
             <li>let matrix: number[ ][ ] = [[1, 2], [3, 4]];</li>
-            <li>let mixed: (number | string)[ ] = [1, 'two'];</li>
-            <li>let users: User[ ]</li>
+            <li>
+              type User = { name: string; age: number; }; <br>
+              let users: User[ ]</li>
           </ul>
         </li>
-        <li><b>promise</b>
+        <li><b>Promise</b>
           <ul>
-            <li>const promise: Promise<b>&#60</b>string<b>></b> = new Promise((resolve) => {
+            <li>const promise: Promise<b>&#60</b>string<b>></b> = new Promise<b>&#60</b>string<b>></b>((resolve) => {
               setInterval(( ) => { resolve('Done!'); }, 1000); });</li>
           </ul>
       </ul>
@@ -183,15 +183,15 @@
             <li>let data: any = fetchData( )</li>
           </ul>
         </li>
-        <li><b>unknown</b>:
+        <li><b>unknown</b>
           <ul>
             <li>let userData: unknown = fetchUserData( ), to check type: <b>as</b>, <b>typeof</b>, <b>instanceof</b>
             </li>
           </ul>
         </li>
-        <li><b>enum</b>
+        <li><b>enum</b>, (bool, any - are not allowed)
           <ul>
-            <li>enum Role {ADMIN, USER}, (bool, any - are not allowed)</li>
+            <li>enum Role {ADMIN, USER}</li>
             <li>const person = { role: Role.ADMIN, };</li>
             <li>if (person.role === Role.ADMIN) { console.log('Role: ', Role.ADMIN); }</li>
             <li>console.log(Role[Role.ADMIN]); // "ADMIN"</li>
@@ -209,16 +209,16 @@
             <li>or let pet: Dog | Fish</li>
           </ul>
         </li>
-        <li><b>literal</b>
-          <ul>
-            <li>type size = 'small' | 'medium' | 'large'</li>
-          </ul>
-        </li>
         <li><b>intersection</b> <b>&</b> - must contain all properties defined in Employee and Manager:
           <ul>
             <li>type Employee = { name: string; id: number; };</li>
             <li>type Manager = { employees: Employee[ ]; };</li>
             <li>type CEO = Employee <b>&</b> Manager;</li>
+          </ul>
+        </li>
+        <li><b>literal</b>
+          <ul>
+            <li>type size = 'small' | 'medium' | 'large'</li>
           </ul>
         </li>
       </ul>
@@ -238,19 +238,18 @@
           <ul>
             <li>function greet( ): string { return "Hello, world!"; }</li>
             <li>const greet = ( ): string => { return "Hello, world!"; }</li>
-            <li>const greet = ( ) => string</li>
           </ul>
         </li>
         <li><b>void</b> - absence of any type:
           <ul>
-            <li>const greet = ( ): void => { console.log("Hello, world!"); }</li>
-            <li>function doSomething(callback: ( ) => void) { callback( ); }</li>
+            <li>const greet = ( ): <b>void</b> => { console.log("Hello, world!"); }</li>
+            <li>function doSomething(callback: ( ) => <b>void</b>) { callback( ); }</li>
           </ul>
         </li>
         <li><b>never</b> - listen( ) method from Express, infinite loop, throw new Error( ):
           <ul>
-            <li>function throwError(message: string): never { throw new Error(message); }</li>
-            <li>function infiniteLoop( ): never { while (true) {} }</li>
+            <li>function throwError(message: string): <b>never</b> { throw new Error(message); }</li>
+            <li>function infiniteLoop( ): <b>never</b> { while (true) {} }</li>
           </ul>
         </li>
       </ul>
@@ -258,41 +257,45 @@
       <h3>Custom Types</h3>
 
       <ul>
-        <li><b>interface</b>, optional property <b>?</b>
+        <li><b>type</b>, <i>optional property</i> <b>?</b>
           <ul>
-            <li>interface Animal { name: string; } <br>
-              interface Animal { age<b>?</b>: number; } <br>
-              let dog: Animal = {name: 'Fido',age: 5,};
-            </li>
-            <li>interface Dog <b>extends</b> Animal { bark: string; }</li>
-            <li>class Animal <b>implements</b> Walkable, Eatable { <br>
-              walk( ) { console.log('The animal walks...'); } <br>
-              eat( ) { console.log('The animal eats...'); } }</li>
-            <li>interface AddFunc { (n1: number, n2: number): number; }</li>
-          </ul>
-        <li><b>type</b>, optional property <b>?</b>
-          <ul>
-            <li>type Animal = { name: string; }</li>
-            <li>type Coordinate = [number, number]; <br>
-              type UserWithCoords = {
+            <li><b>type</b> Animal = { name: string; }</li>
+            <li><b>type</b> Coordinate = [number, number]; <br>
+              <b>type</b> UserWithCoords = {
               id: number;
               name: string;
-              coords<b>?</b>: Coordinate; }; </li>
+              coords<b>?</b>: Coordinate; };
+            </li>
             <li>enum AnimalIds {
               cat = 'cat',
               dog = 'dog', } <br>
-              type Animal = {
+              <b>type</b> Animal = {
               [AnimalIds.cat]: {
               meow: ( ) => string;
               };
               [AnimalIds.dog]: {
               bark: ( ) => string;
-              }; }; </li>
-            <li>type Cat = { meow: ( ) => string; }; <br>
-              interface Dog { bark: ( ) => string; }
-              type DogOrCat = Dog <b>|</b> Cat; <br>
-              type DogAndCat = Dog <b>&</b> Cat;
+              }; };
             </li>
+            <li><b>type</b> Cat = { meow: ( ) => string; }; <br>
+              interface Dog { bark: ( ) => string; }; <br>
+              <b>type</b> DogOrCat = Dog <b>|</b> Cat; <br>
+              <b>type</b> DogAndCat = Dog <b>&</b> Cat;
+            </li>
+          </ul>
+        </li>
+        <li><b>interface</b>, <i>optional property</i> <b>?</b>
+          <ul>
+            <li><b>interface</b> Animal { name: string; } <br>
+              <b>interface</b> Animal { age<b>?</b>: number; } <br>
+              let dog: Animal = {name: 'Fido',age: 5,};
+            </li>
+            <li>
+              <b>interface</b> Animal { name: string; }; <br>
+              <b>interface</b> Dog <b>extends</b> Animal { bark: string; }; <br>
+              class MyDog <b>implements</b> Dog { name = 'Fido'; bark = 'Woof!'; }
+            </li>
+            <li><b>interface</b> AddFunc { (n1: number, n2: number): number; }</li>
           </ul>
         </li>
       </ul>
@@ -367,7 +370,7 @@
             </li>
           </ul>
         </li>
-        <li><b>&#60></b> (Type Conversion)
+        <li><b>&#60></b> <i>(Type Conversion - to convert to another type)</i>
           <ul>
             <li>
               let someValue: unknown = 'this is a string'; <br>
@@ -376,7 +379,7 @@
             <li>const input = <b>&#60</b>HTMLInputElement<b>></b>document.getElementById('inputEmail');</li>
           </ul>
         </li>
-        <li><b>as</b> (Type Conversion)
+        <li><b>as</b> <i>(Type Conversion - to convert to another type)</i>
           <ul>
             <li>
               let someValue: unknown = 'this is a string'; <br>
@@ -388,16 +391,17 @@
 
         <li><b>Index Properties</b>
           <ul>
-            <li>type Person = { <b>[prop: string]</b>: string; }; <br>
+            <li>type Person = { <b>[key: string]</b>: string; }; <br>
               const user: Person = { gender: 'MAN', };</li>
           </ul>
         </li>
 
-        <li><b>Function Overloads</b>
+        <li><b>Function Overloads</b> <i>(differs behavior of a function depending on the type and number of
+            argumentsand also can return different types)</i>
           <ul>
             <li>function concatenate(strs: string[ ]): string; <br>
               function concatenate(strs: string[ ], separator: string): string; <br>
-              function concatenate(strs: any, separator?: any): any {
+              function concatenate(strs: any, separator?: any): any { <br>
               if (separator !== undefined) { <br>
               return strs.join(separator); <br>
               } else { <br>
@@ -410,7 +414,7 @@
       <ul>
         <li><b>T</b>
           <ul>
-            <li>function identity&#60<b>T</b>>(arg: <b>T</b>): <b>T</b> { return arg; } <br>
+            <li>function identity&#60<b>T</b>>(arg: <b>T</b>): <b>T</b> { return arg; }; <br>
               let output1 = identity("myString"); <br>
               let output2 = identity&#60number>(100);
             </li>
@@ -426,14 +430,14 @@
               const merged = merge&#60Person, AdditionFields>({ name: 'Alisa' }, { age: 28 });
             </li>
             <li>
-              class KeyValuePair&#60<b>Tkey</b>, <b>Uvalue</b>> { <br>
-              constructor(private key: <b>Tkey</b>, private value: <b>Uvalue</b>) { } <br>
+              class KeyValuePair&#60<b>K</b>, <b>V</b>> { <br>
+              constructor(private key: <b>K</b>, private value: <b>V</b>) { } <br>
               getKey( ): TKey { return this.key; } <br>
               getValue( ): TValue { return this.value; } }
             </li>
           </ul>
         </li>
-        <li><b>extends</b>
+        <li><b>extends</b> <i>(to define constraints on types)</i>
           <ul>
             <li>function merge&#60<b>T extends</b> object, <b>U extends</b> object>(objA: <b>T</b>, objB: <b>U</b>) {
               return Object.assign(objA, objB); }</li>
@@ -444,7 +448,7 @@
               { return obj[key]; }</li>
           </ul>
         </li>
-        <li><b>Partial&#60T></b>
+        <li><b>Partial&#60T></b> <i>(to make all properties optional)</i>
           <ul>
             <li>
               type User = { id: number; name: string; email: string; }; <br>
@@ -454,7 +458,7 @@
             </li>
           </ul>
         </li>
-        <li><b>Readonly&#60T></b>
+        <li><b>Readonly&#60T></b>, <b>ReadonlyArray&#60T></b> <i>(to make all properties read-only)</i>
           <ul>
             <li>
               type User = { id: number; name: string; email: string; }; <br>
@@ -464,7 +468,7 @@
             <li>const arr: <b>Readonly&#60</b>string[ ]<b>></b> = ['One', 'Two', 'Three']; </li>
           </ul>
         </li>
-        <li><b>Pick&#60T, K></b>
+        <li><b>Pick&#60T, K></b> <i>(to create a new type based on selected properties)</i>
           <ul>
             <li>
               type User = { id: number; name: string; email: string;}; <br>
@@ -472,8 +476,20 @@
             </li>
           </ul>
         </li>
-        <li><b>Record&#60K, T></b>
+        <li><b>Omit&#60T, K></b> <i>(to create a new type based on excluded properties)</i>
           <ul>
+            <li>
+              type Person = { name: string; age: number; location: string; }; <br>
+              type PersonWithoutLocation = <b>Omit&#60</b>Person, 'location'<b>></b>;
+            </li>
+          </ul>
+        </li>
+        <li><b>Record&#60K, T></b> <i>(to create types with predefined properties)</i>
+          <ul>
+            <li>
+              type Weekdays = 'Mon' | 'Tue' | 'Wed' | 'Thu' | 'Fri' | 'Sat' | 'Sun'; <br>
+              type DayTranslations = <b>Record&#60</b>Weekdays, string<b>></b>;
+            </li>
             <li>
               enum UserRoles { admin = 'admin', manager = 'manager', } <br>
               type UserRolesStatuses = <b>Record&#60</b>UserRoles, boolean<b>></b>; <br>
@@ -488,15 +504,7 @@
             </li>
           </ul>
         </li>
-        <li><b>Omit&#60T, K></b>
-          <ul>
-            <li>
-              type Person = { name: string; age: number; location: string; }; <br>
-              type PersonWithoutLocation = <b>Omit&#60</b>Person, 'location'<b>></b>;
-            </li>
-          </ul>
-        </li>
-        <li><b>ReturnType&#60T></b>
+        <li><b>ReturnType&#60T></b> <i>(to get the return type of the function)</i>
           <ul>
             <li>
               function greeting( ) { return 'Hello, world!'; } <br>
@@ -508,7 +516,7 @@
             </li>
           </ul>
         </li>
-        <li><b>Parameters&#60T></b>
+        <li><b>Parameters&#60T></b> <i>(to get a tuple of parameter types of the function)</i>
           <ul>
             <li>
               type MyFunctionType = (a: string, b: number, c: boolean) => void; <br>
@@ -524,25 +532,25 @@
 
     <section class="oop">
       <a href="#goit">
-        <h2 id="%oop"> <span>(Lesson 3)</span></h2>
+        <h2 id="oop"> <span>(Lesson 3)</span></h2>
       </a>
     </section>
 
     <section class="react">
       <a href="#goit">
-        <h2 id="#react"> <span>(Lesson 4)</span></h2>
+        <h2 id="react"> <span>(Lesson 4)</span></h2>
       </a>
     </section>
 
     <section class="decorators">
       <a href="#goit">
-        <h2 id="#decorators"> <span>(Lesson 5)</span></h2>
+        <h2 id="decorators"> <span>(Lesson 5)</span></h2>
       </a>
     </section>
 
     <section class="nodejs">
       <a href="#goit">
-        <h2 id="#nodejs"> <span>(Lesson 6)</span></h2>
+        <h2 id="nodejs"> <span>(Lesson 6)</span></h2>
       </a>
     </section>
     <footer></footer>
