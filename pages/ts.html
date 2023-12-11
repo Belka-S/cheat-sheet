@@ -393,14 +393,23 @@
             <li>const input = document.getElementById('inputEmail') <b>as</b> HTMLInputElement;</li>
           </ul>
         </li>
-
+        <li><b>extends</b> <i>(to define constraints on types)</i>
+          <ul>
+            <li>function merge&#60<b>T extends</b> object, <b>U extends</b> object>(objA: <b>T</b>, objB: <b>U</b>) {
+              return Object.assign(objA, objB); }</li>
+            <li>type Length = { length: number; }; <br>
+              function getLength&#60<b>T extends</b> Length>(str: <b>T</b>) { return str.length; }</li>
+            <li>type Person = { name: string; age: number; }; <br>
+              function extractValue&#60<b>T extends</b> object, <b>U extends</b> keyof T>(obj: <b>T</b>, key: <b>U</b>)
+              { return obj[key]; }</li>
+          </ul>
+        </li>
         <li><b>Index Properties</b>
           <ul>
             <li>type Person = { <b>[key: string]</b>: string; }; <br>
               const user: Person = { gender: 'MAN', };</li>
           </ul>
         </li>
-
         <li><b>Function Overloads</b> <i>(differs behavior of a function depending on the type and number of
             argumentsand also can return different types)</i>
           <ul>
@@ -440,17 +449,6 @@
               getKey( ): TKey { return this.key; } <br>
               getValue( ): TValue { return this.value; } }
             </li>
-          </ul>
-        </li>
-        <li><b>extends</b> <i>(to define constraints on types)</i>
-          <ul>
-            <li>function merge&#60<b>T extends</b> object, <b>U extends</b> object>(objA: <b>T</b>, objB: <b>U</b>) {
-              return Object.assign(objA, objB); }</li>
-            <li>type Length = { length: number; }; <br>
-              function getLength&#60<b>T extends</b> Length>(str: <b>T</b>) { return str.length; }</li>
-            <li>type Person = { name: string; age: number; }; <br>
-              function extractValue&#60<b>T extends</b> object, <b>U extends</b> keyof T>(obj: <b>T</b>, key: <b>U</b>)
-              { return obj[key]; }</li>
           </ul>
         </li>
         <li><b>Partial&#60T></b> <i>(to make all properties optional)</i>
