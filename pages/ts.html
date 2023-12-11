@@ -189,11 +189,11 @@
             </li>
           </ul>
         </li>
-        <li><b>enum</b>, (bool, any - are not allowed)
+        <li><b>enum</b> <i>(<b>bool</b>, <b>any</b> - are not allowed)</i>
           <ul>
-            <li>enum Role {ADMIN, USER}</li>
-            <li>const person = { role: Role.ADMIN, };</li>
-            <li>if (person.role === Role.ADMIN) { console.log('Role: ', Role.ADMIN); }</li>
+            <li>enum Role {ADMIN, USER}; <br>
+              const person = { role: Role.ADMIN, }; <br>
+              if (person.role === Role.ADMIN) { console.log('Role: ', Role.ADMIN); }</li>
             <li>console.log(Role[Role.ADMIN]); // "ADMIN"</li>
           </ul>
         </li>
@@ -209,11 +209,11 @@
             <li>or let pet: Dog | Fish</li>
           </ul>
         </li>
-        <li><b>intersection</b> <b>&</b> <i>(must contain all properties defined in Employee and Manager)</i>
+        <li><b>intersection</b> <b>&</b> <i>(must contain all properties defined)</i>
           <ul>
-            <li>type Employee = { name: string; id: number; };</li>
-            <li>type Manager = { employees: Employee[ ]; };</li>
-            <li>type CEO = Employee <b>&</b> Manager;</li>
+            <li>type Employee = { name: string; id: number; }; <br>
+              type Manager = { employees: Employee[ ]; }; <br>
+              type CEO = Employee <b>&</b> Manager;</li>
           </ul>
         </li>
         <li><b>literal</b>
