@@ -180,33 +180,37 @@
       <ul>
         <li><b>any</b>
           <ul>
-            <li>let data: any = fetchData( )</li>
+            <li>let data: <b>any</b> = fetchData( )</li>
           </ul>
         </li>
         <li><b>unknown</b> <i>(to check type <b>as</b>, <b>typeof</b>, <b>instanceof</b>)</i>
           <ul>
-            <li>let userData: unknown = fetchUserData( );
+            <li>let userData: <b>unknown</b> = fetchUserData( );
             </li>
           </ul>
         </li>
         <li><b>enum</b> <i>(<b>bool</b>, <b>any</b> - are not allowed)</i>
           <ul>
-            <li>enum Role {ADMIN, USER}; <br>
+            <li><b>enum</b> Role {ADMIN, USER}; <br>
               const person = { role: Role.ADMIN, }; <br>
               if (person.role === Role.ADMIN) { console.log('Role: ', Role.ADMIN); }</li>
+            <li>
+              <b>enum</b> UserStatus { Active = 'ACTIVE', Inactive = 'INACTIVE', } <br>
+              let status: UserStatus = UserStatus.Active;
+            </li>
             <li>console.log(Role[Role.ADMIN]); // "ADMIN"</li>
           </ul>
         </li>
         <li><b>tuple</b>
           <ul>
-            <li>let tuple: [string, boolean]</li>
-            <li>let tuple: [string, ...number[ ]]</li>
+            <li>let tuple: <b>[</b>string, boolean<b>]</b></li>
+            <li>let tuple: <b>[</b>string, ...number[ ]<b>]</b></li>
           </ul>
         </li>
         <li><b>union</b>
           <ul>
-            <li>let mixedType: string | number | boolean</li>
-            <li>or let pet: Dog | Fish</li>
+            <li>let mixedType: string <b>|</b> number <b>|</b> boolean</li>
+            <li>or let pet: Dog <b>|</b> Fish</li>
           </ul>
         </li>
         <li><b>intersection</b> <b>&</b> <i>(must contain all properties defined)</i>
@@ -218,7 +222,7 @@
         </li>
         <li><b>literal</b>
           <ul>
-            <li>type size = 'small' | 'medium' | 'large'</li>
+            <li>type size = 'small' <b>|</b> 'medium' <b>|</b> 'large'</li>
           </ul>
         </li>
       </ul>
