@@ -168,13 +168,8 @@
               let users: User[ ]</li>
           </ul>
         </li>
-        <li><b>Promise</b>
-          <ul>
-            <li>const promise: Promise<b>&#60</b>string<b>></b> = new Promise<b>&#60</b>string<b>></b>((resolve) => {
-              setInterval(( ) => { resolve('Done!'); }, 1000); });</li>
-          </ul>
       </ul>
-      </ul>
+
 
       <h3>Variables and Arguments</h3>
       <ul>
@@ -219,7 +214,7 @@
             <li>or let pet: Dog <b>|</b> Fish</li>
           </ul>
         </li>
-        <li><b>intersection</b> <b>&</b> <i>(must contain all properties defined)</i>
+        <li>intersection <b>&</b> <i>(must contain all properties defined)</i>
           <ul>
             <li>type Employee = { name: string; id: number; }; <br>
               type Manager = { employees: Employee[ ]; }; <br>
@@ -534,6 +529,13 @@
             </li>
           </ul>
         </li>
+        <li><b>Promise&#60T></b>
+          <ul>
+            <li>const promise: Promise<b>&#60</b>string<b>></b> = new Promise<b>&#60</b>string<b>></b>((resolve) => {
+              setInterval(( ) => { resolve('Done!'); }, 1000); });</li>
+          </ul>
+        </li>
+        <li><b>Map&#60K, V></b>, <b>Set&#60T></b></li>
         <li><b><a href="https://www.typescriptlang.org/docs/handbook/utility-types.html" target="_blank"
               rel="noopener noreferrer">Utility Types</a></b></li>
       </ul>
