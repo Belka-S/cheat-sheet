@@ -198,6 +198,12 @@
               <b>enum</b> UserStatus { Active = 'ACTIVE', Inactive = 'INACTIVE', } <br>
               let status: UserStatus = UserStatus.Active;
             </li>
+            <li>
+              <b>enum</b> Day { Sun, Mon, Tue, Wed, Thu, Fri, Sat, }; <br>
+              const isWeekend = (day: <b>keyof typeof</b> Day): boolean => <br>
+              day === 'Sun' || day === 'Sat' ? true : false; <br>
+              isWeekend('Sun')
+            </li>
             <li>console.log(Role[Role.ADMIN]); // "ADMIN"</li>
           </ul>
         </li>
