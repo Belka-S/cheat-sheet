@@ -183,9 +183,9 @@
             <li>let data: any = fetchData( )</li>
           </ul>
         </li>
-        <li><b>unknown</b>
+        <li><b>unknown</b> <i>(to check type <b>as</b>, <b>typeof</b>, <b>instanceof</b>)</i>
           <ul>
-            <li>let userData: unknown = fetchUserData( ), to check type: <b>as</b>, <b>typeof</b>, <b>instanceof</b>
+            <li>let userData: unknown = fetchUserData( );
             </li>
           </ul>
         </li>
@@ -209,7 +209,7 @@
             <li>or let pet: Dog | Fish</li>
           </ul>
         </li>
-        <li><b>intersection</b> <b>&</b> - must contain all properties defined in Employee and Manager:
+        <li><b>intersection</b> <b>&</b> <i>(must contain all properties defined in Employee and Manager)</i>
           <ul>
             <li>type Employee = { name: string; id: number; };</li>
             <li>type Manager = { employees: Employee[ ]; };</li>
@@ -226,7 +226,7 @@
       <h3>Methods and Functions</h3>
 
       <ul>
-        <li><b>function</b>, optional argument <b>?</b>
+        <li><b>function</b>, <i>optional argument</i> <b>?</b>
           <ul>
             <li>let myFunc: (firstArg: string, secondArg<b>?</b>: number) => void</li>
             <li>let myFunc: (...params: any[ ]) => void</li>
@@ -240,7 +240,7 @@
             <li>const greet = ( ): string => { return "Hello, world!"; }</li>
           </ul>
         </li>
-        <li><b>void</b> - absence of any type:
+        <li><b>void</b> <i>(absence of any type)</i>
           <ul>
             <li>const greet = ( ): <b>void</b> => { console.log("Hello, world!"); }</li>
             <li>function doSomething(callback: ( ) => <b>void</b>) { callback( ); }</li>
