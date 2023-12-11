@@ -1581,14 +1581,9 @@
           at
           a specified repetition interval;</li>
         <li><b>clearInterval(</b>timerId<b>)</b> method is to cancel a function call inside a timeout;</li>
-        <li><b>Date.now( )</b> method returns the number of milliseconds that have passed since midnight on January 1,
-          1970;</li>
         <li>const date = new <b>Date( )</b> - creating a date without arguments returns an object that stores the date
           and time at its initialization time, when initializing a date with a single number, it represents the number
           of milliseconds that have passed;</li>
-        <li><b>.getTime( )</b> method returns the number of milliseconds that have passed since midnight on January 1,
-          1970;
-        </li>
         <li><b>.set</b>/<b>.get</b>[<b>UTC</b>]<b>Date( )</b> method returns day of month from 1 to 31;</li>
         <li><b>.set</b>/<b>.get</b>[<b>UTC</b>]<b>Day( )</b> method returns day of week from 0 to 6;</li>
         <li><b>.set</b>/<b>.get</b>[<b>UTC</b>]<b>Month( )</b> method returns month from 0 to 11;</li>
@@ -1603,20 +1598,26 @@
           hard-coded
           in the standard, but browser-dependent.
         </li>
-        <li>new Date(2023-04-21T04:48:10.244Z)<b>.toLocaleDateString(</b><i>'en-US'</i></b>, {
+        <li>new <b>Date(</b>2023-04-21T04:48:10.244Z<b>).toLocaleDateString(</b><i>'en-US'</i></b>, {
           day: <i>'numeric'</i>,
           month: <i>'short'</i>,
           year: <i>'2-digit'</i>,
-          }<b>)</b> method to format dates in modern browsers, where:</li>
-        <ul>
-          <li><b>en-US</b> - 9/3/2021, 5:56:58 PM</li>
-          <li><b>en-AU</b> - 03/09/2021, 5:56:58 pm</li>
-          <li><b>en-GB</b> - 03/09/2021, 17:56:58</li>
-          <li><b>es-CL</b> - 03-09-2021 17:56:58</li>
-          <li><b>ro-RO</b> - 03.09.2021, 17:56:58</li>
-          <li><b>es-ZA</b> - 2021/09/03, 17:56:58</li>
-          <li><b>en-CA</b> - 2021-09-03, 5:56:58 p.m.</li>
-        </ul>
+          }<b>)</b> method to format dates in modern browsers, where:
+          <ul>
+            <li><b>en-US</b> - 9/3/2021, 5:56:58 PM</li>
+            <li><b>en-AU</b> - 03/09/2021, 5:56:58 pm</li>
+            <li><b>en-GB</b> - 03/09/2021, 17:56:58</li>
+            <li><b>es-CL</b> - 03-09-2021 17:56:58</li>
+            <li><b>ro-RO</b> - 03.09.2021, 17:56:58</li>
+            <li><b>es-ZA</b> - 2021/09/03, 17:56:58</li>
+            <li><b>en-CA</b> - 2021-09-03, 5:56:58 p.m.</li>
+          </ul>
+        </li>
+        <li><b>Date.now( )</b> method returns the number of milliseconds that have passed since midnight on January 1,
+          1970;</li>
+        <li>new <b>Date(</b>2023-04-21T04:48:10.244Z<b>).getTime( )</b> or <b>.valueOf( )</b>method returns the number
+          of milliseconds that have passed since midnight on January 1, 1970;
+        </li>
       </ul>
     </section>
     <section class="promises">

@@ -439,8 +439,8 @@
             <li>
               type Person = { name: string; }; <br>
               type AdditionFields = { age: number; }; <br>
-              function merge&#60<b>T</b>, <b>U</b>>(objA: <b>T</b>, objB: <b>U</b>) { return Object.assign(objA, objB);
-              } <br>
+              function merge&#60<b>T extends</b> object, <b>U extends</b>>(objA: <b>T</b>, objB: <b>U</b>)
+              { return Object.assign(objA, objB); } <br>
               const merged = merge&#60Person, AdditionFields>({ name: 'Alisa' }, { age: 28 });
             </li>
             <li>
@@ -502,7 +502,7 @@
             </li>
             <li>
               type InitialFormType = { name: string; email: string; password: string; }; <br>
-              export type Form = InitialFormType & { <br>
+              type Form = InitialFormType <b>&</b> { <br>
               errors: Partial<b>&#60Record</b>&#60keyof InitialFormType, [string]><b>></b>; };
             </li>
           </ul>
