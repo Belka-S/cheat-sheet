@@ -161,7 +161,6 @@
         <li><b>Array</b>
           <ul>
             <li>let arrString: string[ ]</li>
-            <li>let numbers: Array&#60number> = [1, 2, 3, 4, 5]</li>
             <li>let matrix: number[ ][ ] = [[1, 2], [3, 4]];</li>
             <li>
               type User = { name: string; age: number; }; <br>
@@ -457,8 +456,8 @@
             <li>
               class KeyValuePair&#60<b>K</b>, <b>V</b>> { <br>
               constructor(private key: <b>K</b>, private value: <b>V</b>) { } <br>
-              getKey( ): TKey { return this.key; } <br>
-              getValue( ): TValue { return this.value; } }
+              getKey( ): K { return this.key; } <br>
+              getValue( ): V { return this.value; } }
             </li>
           </ul>
         </li>
@@ -542,6 +541,11 @@
           <ul>
             <li>const promise: Promise<b>&#60</b>string<b>></b> = new Promise<b>&#60</b>string<b>></b>((resolve) => {
               setInterval(( ) => { resolve('Done!'); }, 1000); });</li>
+          </ul>
+        </li>
+        <li><b>Array&#60T></b>
+          <ul>
+            <li>let numbers: Array&#60number> = [1, 2, 3, 4, 5]</li>
           </ul>
         </li>
         <li><b>Map&#60K, V></b>, <b>Set&#60T></b></li>
