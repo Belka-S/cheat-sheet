@@ -255,7 +255,7 @@
         <li><b>never</b> (infinite loop, <b>listen( )</b> method from Express, <b>throw new Error( )</b>)
           <ul>
             <li>function throwError(message: string): <b>never</b> { throw new Error(message); }</li>
-            <li>function infiniteLoop( ): <b>never</b> { while (true) {} }</li>
+            <li>function infiniteLoop( ): <b>never</b> { while (true) { } }</li>
           </ul>
         </li>
       </ul>
@@ -558,9 +558,246 @@
     <section class="oop">
       <a href="#goit">
         <h2 id="oop"> <span>(Lesson 3)</span></h2>
+      </a>
+      <h3>Classes</h3>
+      <ul>
+        <li><b>public</b>, <b>private</b>, <b>protected</b>, <b>readonly</b> <br>
+          class House { <br>
+          <b>private</b> city: string; <br>
+          <b>private</b> tenants: string[ ] = [ ]; <br>
+          constructor(name: string) { <b>this</b>.city = name; } <br>
+          <b>public</b> showAddress(<b>this</b>: House) { console.log(`Address: ${<b>this</b>.city}`); } <br>
+          <b>public</b> addTenant(tenant: string) { this.tenants.push(tenant); } <br>
+          <b>public</b> showTenants( ) { console.log(this.tenants); } <br>
+          }
+        </li>
+        <li><b>short syntax</b> <br>
+          class House { <br>
+          constructor(<b>private readonly</b> type: string, <b>private</b> city: string) { <br>
+          this.city = city;
+          }}
+        </li>
+        <li><b>extends</b>, <b>super( )</b> <br>
+          class StoneHouse <b>extends</b> House { <br>
+          private chargeOfTheHouse: string; <br>
+          constructor(street: string, generalTenant: string) { <br>
+          <b>super(</b>'stone', street<b>)</b>; <br>
+          this.chargeOfTheHouse = generalTenant; <br>
+          this.addTenant(generalTenant); } <br>
+          public showTenants( ) { <br>
+          console.log('General: ' + this.chargeOfTheHouse); <br>
+          <b>super</b>.showTenants( ); } }
+        </li>
+        <li><b>getter</b>, <b>setter</b> <br>
+          class Person { <br>
+          private personInfo: PersonInformation = { }; <br>
+          <b>set</b> firstName(value: string) { this.personInfo.firstName = value; } <br>
+          <b>set</b> lastName(value: string) { this.personInfo.lastName = value; } <br>
+          <b>get</b> info( ) { const { personInfo } = this; <br>
+          return `${personInfo.lastName} ${personInfo.firstName}`; } }
+        </li>
+        <li><b>static</b> <br>
+          class UseStatic { <br>
+          private static count = 0; <br>
+          constructor( ) { UseStatic.count += 1; } <br>
+          public static itStaticMethod( ) { console.log('Run static method'); } <br>
+          public showCount( ) { console.log(UseStatic.count); } }
+        </li>
+        <li><b>abstract classes</b> <br>
+          <b>abstract class</b> Plane { <br>
+          protected pilotInCabin = false; <br>
+          public sitInPlane( ) { this.pilotInCabin = true; } <br>
+          <b>public abstract</b> startEngine( ): boolean; } <br>
+          class Boeing extends Plane { <br>
+          public startEngine( ) { return true; } }
+        </li>
+      </ul>
 
+      <h3>Interfaces</h3>
+      <ul>
+        <li>
+          <b>interface</b> IPerson { <b>readonly</b> name: string; age: number; greet(phrase: string): void; } <br>
+          <b>interface</b> IPilot { flyMessage(): void; }
+        </li>
+        <li>
+          class Pilot <b>implements</b> IPerson, IPilot { <br>
+          constructor(public name: string, public age: number) { <br>
+          if (this.age < 28) { throw new Error('Pilot too young'); } } <br>
+            greet(phrase: string): void { console.log(phrase + ' ' + this.name); } <br>
+            flyMessage(): void { console.log('Let's fly, have fun!'); } }
+        </li>
+        <li>
+          interface IPilot <b>extends</b> IPerson { flyMessage(): void; }
+        </li>
+        <li>
+          <b>interface</b> AddFunc { (n1: number, n2: number): number; } <br>
+          const add: AddFunc = (n1: number, n2: number) => { return n1 + n2; };
+        </li>
+      </ul>
 
+      <h3>Patterns</h3>
+      <ul>
+        <li><b>Singleton</b> <br>
+          class App { private static instance: App; <br>
+          constructor() { if (!App.instance) { <br>
+          App.instance = this; } <br>
+          return App.instance; <br>
+          } // ... }
+        </li>
+        <li><b>Factory</b> <br>
+          interface PaymentProcessor { validate(data: any): boolean; pay(amount: number): void; } <br>
 
+          class CreditCardProcessor implements PaymentProcessor { <br>
+          validate(data: any): boolean { return true; } <br>
+          pay(amount: number): void { console.log(`Paid ${amount} using Credit Card.`); } } <br>
+
+          class PayPalProcessor implements PaymentProcessor { <br>
+          validate(data: any): boolean { return true; } <br>
+
+          pay(amount: number): void { console.log(`Paid ${amount} using PayPal.`); } } <br>
+
+          class PaymentProcessorFactory { <br>
+          static createProcessor(type: string): PaymentProcessor { <br>
+          switch (type) { <br>
+          case 'CreditCard': return new CreditCardProcessor(); <br>
+          case 'PayPal': return new PayPalProcessor(); <br>
+          default: throw new Error(`Payment method ${type} is not supported.`); <br>
+          } } }
+        </li>
+        <li><b>Builder</b> <br>
+          class Car { constructor( public model: string, public year: number, public color: string, ) {} } <br>
+
+          class CarBuilder { private model: string; private year: number; private color: string; <br>
+
+          setModel(model: string): CarBuilder { this.model = model; return this; } <br>
+          setYear(year: number): CarBuilder { this.year = year; return this; } <br>
+          setColor(color: string): CarBuilder { this.color = color; return this; } <br>
+          build(): Car { return new Car(this.model, this.year, this.color); } } <br>
+
+          const builder = new CarBuilder(); <br>
+
+          const car = builder.setModel('Tesla Model S').setYear(2023).setColor('Red').build();
+        </li>
+        <li><b>Adapter</b> <br>
+          class OldService { public oldRequest(): string { return 'Old Service Request'; } } <br>
+
+          interface NewInterface { request(): string; } <br>
+
+          class Adapter implements NewInterface { <br>
+          constructor(private oldService: OldService) {} <br>
+          public request(): string { <br>
+          const result = this.oldService.oldRequest(); <br>
+          return `Adapter: (TRANSLATED) ${result}`; } } <br>
+
+          class Client { <br>
+          constructor(private newInterface: NewInterface) {} <br>
+          public useService(): void { <br>
+          console.log(this.newInterface.request()); } } <br>
+
+          const oldService = new OldService(); <br>
+          const adapter = new Adapter(oldService); <br>
+          const client = new Client(adapter); <br>
+
+          client.useService();
+        </li>
+        <li><b>Decorator</b> <br>
+          interface Coffee { cost(): number; description(): string; } <br>
+
+          class SimpleCoffee implements Coffee { cost() { return 10; } <br>
+          description() { return 'Simple coffee'; } } <br>
+
+          class CoffeeDecorator implements Coffee { <br>
+          constructor(protected coffee: Coffee) {} <br>
+          cost() { return this.coffee.cost(); } <br>
+          description() { return this.coffee.description(); } } <br>
+
+          class MilkDecorator extends CoffeeDecorator { <br>
+          cost() { return this.coffee.cost() + 2; } <br>
+          description() { return this.coffee.description() + ', milk'; } } <br>
+
+          class SugarDecorator extends CoffeeDecorator { <br>
+          cost() { return this.coffee.cost() + 1; } <br>
+          description() { return this.coffee.description() + ', sugar'; } } <br>
+
+          let coffee: Coffee = new SimpleCoffee(); <br>
+          coffee = new MilkDecorator(coffee); <br>
+          coffee = new SugarDecorator(coffee); <br>
+
+          console.log(`${coffee.description()} - ${coffee.cost()} dollars`);
+        </li>
+        <li><b>Facade</b> <br>
+          type User = {id: number; name: string;email: string;}; <br>
+          type Address = {userId: number;street: string; city: string; country: string; }; <br>
+          type PaymentData = { userId: number; cardNumber: string; expiryDate: string; }; <br>
+          class UserService { <br>
+          getUser(id: number): User { console.log(`Fetching user data for userId: ${id}`); <br>
+          return { id, name: 'John Doe', email: 'john.doe@example.com' }; } <br>
+
+          updateUser(user: User): void { console.log(`Updating user: ${JSON.stringify(user)}`); } } <br>
+
+          class AddressService { <br>
+          getAddresses(userId: number): Address[] { console.log(`Fetching addresses for userId: ${userId}`); <br>
+          return [{ userId, street: '123 Street', city: 'City', country: 'Country' }]; } <br>
+
+          updateAddress(userId: number, address: Address): void <br>
+          { console.log(`Updating address for userId: ${userId}`); } } <br>
+
+          class PaymentService { <br>
+          getPaymentData(userId: number): PaymentData { console.log(`Fetching payment data for userId: ${userId}`); <br>
+          return { userId, cardNumber: '1234 5678 9012 3456', expiryDate: '01/25' }; } <br>
+
+          updatePaymentData(userId: number, paymentData: PaymentData): void { <br>
+          console.log(`Updating payment data for userId: ${userId}`); } } <br>
+
+          class UserProfileFacade { <br>
+          constructor( <br>
+          private userService: UserService, <br>
+          private addressService: AddressService, <br>
+          private paymentService: PaymentService, ) {} <br>
+
+          getUserProfile(userId: number): User { <br>
+          const user = this.userService.getUser(userId); <br>
+          user['addresses'] = this.addressService.getAddresses(userId); <br>
+          user['paymentData'] = this.paymentService.getPaymentData(userId); <br>
+          return user; } <br>
+
+          updateUserProfile( userId: number, userData: User, address: Address, paymentData: PaymentData, ): void { <br>
+          this.userService.updateUser(userData); <br>
+          this.addressService.updateAddress(userId, address); <br>
+          this.paymentService.updatePaymentData(userId, paymentData); } }
+        </li>
+        <li><b>State</b> <br>
+          interface State { proceedToNext(order: Order): void; toString(): string; } <br>
+          class Order { private state: State; constructor() { this.state = new PendingState(); } <br>
+          public proceedToNext() { this.state.proceedToNext(this); } <br>
+          public setState(state: State) { this.state = state; } <br>
+          public toString(): string { return this.state.toString(); } } <br>
+          class PendingState implements State { <br>
+          public proceedToNext(order: Order): void { <br>
+          console.log('Proceeding from Pending to Shipped...'); <br>
+          order.setState(new ShippedState()); } <br>
+
+          public toString(): string { return 'Pending'; } } <br>
+
+          class ShippedState implements State { <br>
+          public proceedToNext(order: Order): void { <br>
+          console.log('Proceeding from Shipped to Delivered...'); <br>
+          order.setState(new DeliveredState()); } <br>
+
+          public toString(): string { return 'Shipped'; } } <br>
+
+          class DeliveredState implements State { <br>
+          public proceedToNext(order: Order): void { <br>
+          console.log('Already delivered. Thank you!'); } <br>
+
+          public toString(): string { return 'Delivered'; } } <br>
+
+          let order = new Order(); <br>
+          order.proceedToNext(); <br>
+          order.proceedToNext(); <br>
+          order.proceedToNext();
+        </li>
+      </ul>
 
 
     </section>
