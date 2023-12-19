@@ -620,21 +620,25 @@
       <ul>
         <li>
           <b>interface</b> IPerson { <b>readonly</b> name: string; age: number; greet(phrase: string): void; } <br>
-          <b>interface</b> IPilot { flyMessage(): void; }
+          <b>interface</b> IPilot { flyMessage( ): void; }
         </li>
         <li>
           class Pilot <b>implements</b> IPerson, IPilot { <br>
           constructor(public name: string, public age: number) { <br>
           if (this.age < 28) { throw new Error('Pilot too young'); } } <br>
             greet(phrase: string): void { console.log(phrase + ' ' + this.name); } <br>
-            flyMessage(): void { console.log('Let's fly, have fun!'); } }
+            flyMessage( ): void { console.log('Let's fly, have fun!'); } }
         </li>
         <li>
-          interface IPilot <b>extends</b> IPerson { flyMessage(): void; }
+          interface IPilot <b>extends</b> IPerson { flyMessage( ): void; }
         </li>
         <li>
           <b>interface</b> AddFunc { (n1: number, n2: number): number; } <br>
           const add: AddFunc = (n1: number, n2: number) => { return n1 + n2; };
+        </li>
+        <li><b>implements</b> - to check that a class satisfies a particular interface;</li>
+        <li><b>extend</b> - a derived class has all the properties and methods of its base class, and can also define
+          additional members.
         </li>
       </ul>
 
@@ -642,7 +646,7 @@
       <ul>
         <li><b>Singleton</b> <br>
           class App { private static instance: App; <br>
-          constructor() { if (!App.instance) { <br>
+          constructor( ) { if (!App.instance) { <br>
           App.instance = this; } <br>
           return App.instance; <br>
           } // ... }
@@ -662,8 +666,8 @@
           class PaymentProcessorFactory { <br>
           static createProcessor(type: string): PaymentProcessor { <br>
           switch (type) { <br>
-          case 'CreditCard': return new CreditCardProcessor(); <br>
-          case 'PayPal': return new PayPalProcessor(); <br>
+          case 'CreditCard': return new CreditCardProcessor( ); <br>
+          case 'PayPal': return new PayPalProcessor( ); <br>
           default: throw new Error(`Payment method ${type} is not supported.`); <br>
           } } }
         </li>
@@ -675,58 +679,58 @@
           setModel(model: string): CarBuilder { this.model = model; return this; } <br>
           setYear(year: number): CarBuilder { this.year = year; return this; } <br>
           setColor(color: string): CarBuilder { this.color = color; return this; } <br>
-          build(): Car { return new Car(this.model, this.year, this.color); } } <br>
+          build( ): Car { return new Car(this.model, this.year, this.color); } } <br>
 
-          const builder = new CarBuilder(); <br>
+          const builder = new CarBuilder( ); <br>
 
-          const car = builder.setModel('Tesla Model S').setYear(2023).setColor('Red').build();
+          const car = builder.setModel('Tesla Model S').setYear(2023).setColor('Red').build( );
         </li>
         <li><b>Adapter</b> <br>
-          class OldService { public oldRequest(): string { return 'Old Service Request'; } } <br>
+          class OldService { public oldRequest( ): string { return 'Old Service Request'; } } <br>
 
-          interface NewInterface { request(): string; } <br>
+          interface NewInterface { request( ): string; } <br>
 
           class Adapter implements NewInterface { <br>
           constructor(private oldService: OldService) {} <br>
-          public request(): string { <br>
-          const result = this.oldService.oldRequest(); <br>
+          public request( ): string { <br>
+          const result = this.oldService.oldRequest( ); <br>
           return `Adapter: (TRANSLATED) ${result}`; } } <br>
 
           class Client { <br>
           constructor(private newInterface: NewInterface) {} <br>
-          public useService(): void { <br>
-          console.log(this.newInterface.request()); } } <br>
+          public useService( ): void { <br>
+          console.log(this.newInterface.request( )); } } <br>
 
-          const oldService = new OldService(); <br>
+          const oldService = new OldService( ); <br>
           const adapter = new Adapter(oldService); <br>
           const client = new Client(adapter); <br>
 
-          client.useService();
+          client.useService( );
         </li>
         <li><b>Decorator</b> <br>
-          interface Coffee { cost(): number; description(): string; } <br>
+          interface Coffee { cost( ): number; description( ): string; } <br>
 
-          class SimpleCoffee implements Coffee { cost() { return 10; } <br>
-          description() { return 'Simple coffee'; } } <br>
+          class SimpleCoffee implements Coffee { cost( ) { return 10; } <br>
+          description( ) { return 'Simple coffee'; } } <br>
 
           class CoffeeDecorator implements Coffee { <br>
           constructor(protected coffee: Coffee) {} <br>
-          cost() { return this.coffee.cost(); } <br>
-          description() { return this.coffee.description(); } } <br>
+          cost( ) { return this.coffee.cost( ); } <br>
+          description( ) { return this.coffee.description( ); } } <br>
 
           class MilkDecorator extends CoffeeDecorator { <br>
-          cost() { return this.coffee.cost() + 2; } <br>
-          description() { return this.coffee.description() + ', milk'; } } <br>
+          cost( ) { return this.coffee.cost( ) + 2; } <br>
+          description( ) { return this.coffee.description( ) + ', milk'; } } <br>
 
           class SugarDecorator extends CoffeeDecorator { <br>
-          cost() { return this.coffee.cost() + 1; } <br>
-          description() { return this.coffee.description() + ', sugar'; } } <br>
+          cost( ) { return this.coffee.cost( ) + 1; } <br>
+          description( ) { return this.coffee.description( ) + ', sugar'; } } <br>
 
-          let coffee: Coffee = new SimpleCoffee(); <br>
+          let coffee: Coffee = new SimpleCoffee( ); <br>
           coffee = new MilkDecorator(coffee); <br>
           coffee = new SugarDecorator(coffee); <br>
 
-          console.log(`${coffee.description()} - ${coffee.cost()} dollars`);
+          console.log(`${coffee.description( )} - ${coffee.cost( )} dollars`);
         </li>
         <li><b>Facade</b> <br>
           type User = {id: number; name: string;email: string;}; <br>
@@ -770,35 +774,35 @@
           this.paymentService.updatePaymentData(userId, paymentData); } }
         </li>
         <li><b>State</b> <br>
-          interface State { proceedToNext(order: Order): void; toString(): string; } <br>
-          class Order { private state: State; constructor() { this.state = new PendingState(); } <br>
-          public proceedToNext() { this.state.proceedToNext(this); } <br>
+          interface State { proceedToNext(order: Order): void; toString( ): string; } <br>
+          class Order { private state: State; constructor( ) { this.state = new PendingState( ); } <br>
+          public proceedToNext( ) { this.state.proceedToNext(this); } <br>
           public setState(state: State) { this.state = state; } <br>
-          public toString(): string { return this.state.toString(); } } <br>
+          public toString( ): string { return this.state.toString( ); } } <br>
           class PendingState implements State { <br>
           public proceedToNext(order: Order): void { <br>
           console.log('Proceeding from Pending to Shipped...'); <br>
-          order.setState(new ShippedState()); } <br>
+          order.setState(new ShippedState( )); } <br>
 
-          public toString(): string { return 'Pending'; } } <br>
+          public toString( ): string { return 'Pending'; } } <br>
 
           class ShippedState implements State { <br>
           public proceedToNext(order: Order): void { <br>
           console.log('Proceeding from Shipped to Delivered...'); <br>
-          order.setState(new DeliveredState()); } <br>
+          order.setState(new DeliveredState( )); } <br>
 
-          public toString(): string { return 'Shipped'; } } <br>
+          public toString( ): string { return 'Shipped'; } } <br>
 
           class DeliveredState implements State { <br>
           public proceedToNext(order: Order): void { <br>
           console.log('Already delivered. Thank you!'); } <br>
 
-          public toString(): string { return 'Delivered'; } } <br>
+          public toString( ): string { return 'Delivered'; } } <br>
 
-          let order = new Order(); <br>
-          order.proceedToNext(); <br>
-          order.proceedToNext(); <br>
-          order.proceedToNext();
+          let order = new Order( ); <br>
+          order.proceedToNext( ); <br>
+          order.proceedToNext( ); <br>
+          order.proceedToNext( );
         </li>
       </ul>
     </section>
