@@ -561,9 +561,9 @@
       </a>
       <h3>Classes</h3>
       <ul>
-        <li><b>public</b> <i>can be accessed anywhere</i> <br>
+        <li><b>public</b> - <i>can be accessed anywhere</i> <br>
           <b>private</b> - <i>doesn’t allow access to the member even from subclasses</i> <br>
-          <b>protected</b> - <i>ia visible to subclasses of the class they’re declared in</i><br>
+          <b>protected</b> - <i>is visible to subclasses of the class they’re declared in</i><br>
           <b>readonly</b> - <i>prevents assignments to the field outside of the constructor</i> <br>
           class House { <br>
           <b>private</b> city: string; <br>
@@ -599,11 +599,12 @@
           <b>get</b> info( ) { const { personInfo } = this; <br>
           return `${personInfo.lastName} ${personInfo.firstName}`; } }
         </li>
-        <li><b>static</b> <br>
+        <li><b>static</b> - <i>to write a sequence of statements with their own scope that can access private fields
+            within the containing class</i><br>
           class UseStatic { <br>
-          private static count = 0; <br>
+          private <b>static</b> count = 0; <br>
           constructor( ) { UseStatic.count += 1; } <br>
-          public static itStaticMethod( ) { console.log('Run static method'); } <br>
+          public <b>static</b> itStaticMethod( ) { console.log('Run static method'); } <br>
           public showCount( ) { console.log(UseStatic.count); } }
         </li>
         <li><b>abstract classes</b> <br>
