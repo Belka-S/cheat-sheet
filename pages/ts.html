@@ -561,7 +561,10 @@
       </a>
       <h3>Classes</h3>
       <ul>
-        <li><b>public</b>, <b>private</b>, <b>protected</b>, <b>readonly</b> <br>
+        <li><b>public</b> <i>can be accessed anywhere</i> <br>
+          <b>private</b> - <i>doesn’t allow access to the member even from subclasses</i> <br>
+          <b>protected</b> - <i>ia visible to subclasses of the class they’re declared in</i><br>
+          <b>readonly</b> - <i>prevents assignments to the field outside of the constructor</i> <br>
           class House { <br>
           <b>private</b> city: string; <br>
           <b>private</b> tenants: string[ ] = [ ]; <br>
@@ -798,14 +801,16 @@
           order.proceedToNext();
         </li>
       </ul>
-
-
     </section>
 
     <section class="react">
       <a href="#goit">
         <h2 id="react"> <span>(Lesson 4)</span></h2>
       </a>
+      <h3></h3>
+
+
+
     </section>
 
     <section class="decorators">
