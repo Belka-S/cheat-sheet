@@ -860,23 +860,22 @@
       </a>
       <ul>
         <li>
-          type <b>UserProps</b> = { name: string; age: number; children: <b>React.ReactNode</b>; }; <br>
-          export function User({ name, age }: <b>UserProps</b>) { // ... }; <br>
-          <b>children</b>: <br>
           <ul>
             <li>React.ReactNode</li>
             <li>React.ReactElement</li>
             <li>JSX.Element</li>
           </ul>
-
+          type <b>UserProps</b> = { name: string; age: number; children: <b>ReactNode</b>; }; <br>
+          export function User({ name, age }: <b>UserProps</b>) { // ... }; <br>
+          <b>children</b>: <br>
         </li>
         <li>
           interface <b>IUserProps</b> { name: string; age: number; }; <br>
-          export const User: <b>React.FC</b>&#60<b>IUserProps</b>> = ({ name, age }) => { // ... }
+          export const User: <b>FC</b>&#60<b>IUserProps</b>> = ({ name, age }) => { // ... }
         </li>
         <li>
           interface <b>IUserProps</b> { name: string; age: number; }; <br>
-          export class User extends <b>React.Component</b>&#60<b>IUserProps</b>> { render( ) { // ... } }
+          export class User extends <b>Component</b>&#60<b>IUserProps</b>> { render( ) { // ... } }
         </li>
         <li>
           type <b>User</b> = { name: string; email: string; }; <br>
@@ -967,9 +966,9 @@
               type User = { name: string; email: string; }; <br>
               type UserContextProps = { <br>
               user: User | null; <br>
-              setUser: React.Dispatch&#60React.SetStateAction&#60User | null>>; }; <br>
+              setUser: Dispatch&#60SetStateAction&#60User | null>>; }; <br>
               const UserContext = createContext<&#60UserContextProps | undefined>(undefined); <br>
-                type Props = { children: React.ReactNode; }; <br>
+                type Props = { children: ReactNode; }; <br>
 
                 export function UserProvider({ children }: Props) { <br>
                 const [user, setUser] = useState&#60User | null>(null); <br>
