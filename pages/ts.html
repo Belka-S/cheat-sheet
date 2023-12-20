@@ -557,7 +557,7 @@
 
     <section class="oop">
       <a href="#goit">
-        <h2 id="oop">Object Oriented Programming (OOP)<span>(Lesson 3)</span></h2>
+        <h2 id="oop">Object Oriented Programming <span>(Lesson 3)</span></h2>
       </a>
       <h3>Classes</h3>
       <ul>
@@ -638,9 +638,9 @@
           <b>interface</b> AddFunc { (n1: number, n2: number): number; } <br>
           const add: AddFunc = (n1: number, n2: number) => { return n1 + n2; };
         </li>
-        <li><b>implements</b> - to check that a class satisfies a particular interface;</li>
-        <li><b>extend</b> - a derived class has all the properties and methods of its base class, and can also define
-          additional members.
+        <li><b>implements</b> - <i>to check that a class satisfies a particular interface;</i></li>
+        <li><b>extend</b> - <i>a derived class has all the properties and methods of its base class, and can also define
+            additional members.</i>
         </li>
       </ul>
       <a href="#oop">
@@ -746,7 +746,7 @@
           updateUser(user: User): void { console.log(`Updating user: ${JSON.stringify(user)}`); } } <br>
 
           class AddressService { <br>
-          getAddresses(userId: number): Address[] { console.log(`Fetching addresses for userId: ${userId}`); <br>
+          getAddresses(userId: number): Address[ ] { console.log(`Fetching addresses for userId: ${userId}`); <br>
           return [{ userId, street: '123 Street', city: 'City', country: 'Country' }]; } <br>
 
           updateAddress(userId: number, address: Address): void <br>
@@ -814,10 +814,269 @@
       <a href="#goit">
         <h2 id="react">TypeScript in React <span>(Lesson 4)</span></h2>
       </a>
-      <h3></h3>
+      <h3>Install</h3>
+      <ul>
+        <li>npx create-react-app my-app <b>--template typescript</b> - new project;</li>
+        <li>npm install <b>--save typescript @types/react @types/react-dom</b> - migration:
+          <ul>
+            <li><b>./tsconfig.json</b>
+              { <br>
+              "compilerOptions": { <br>
+              "target": "es5", <br>
+              "lib": ["dom", "dom.iterable", "esnext"], <br>
+              "allowJs": true, <br>
+              "skipLibCheck": true, <br>
+              "esModuleInterop": true, <br>
+              "allowSyntheticDefaultImports": true, <br>
+              "strict": true, <br>
+              "forceConsistentCasingInFileNames": true, <br>
+              "noFallthroughCasesInSwitch": true, <br>
+              "module": "esnext", <br>
+              "moduleResolution": "node", <br>
+              "resolveJsonModule": true, <br>
+              "isolatedModules": true, <br>
+              "noEmit": true, <br>
+              "jsx": "react-jsx" <br>
+              }, <br>
+              "include": ["src", "@types"] <br>
+              }
+            </li>
+            <li><b>./@types/custom.d.ts</b>
+              declare module <b>"*.svg"</b> { const content: any; export default content; } <br>
+              declare module <b>"*.png"</b> { const content: any; export default content; }
+            </li>
+          </ul>
+        </li>
+        <li><b>DefinitelyTyped</b> is a repository on GitHub where the TypeScript community maintains type definitions
+          for thousands of JavaScript libraries:
+          <ul>
+            <li>npm install --save-dev <b>@types/react-router-dom</b></li>
+            <li>yarn add -D <b>@types/react-router-dom</b></li>
+          </ul>
+        </li>
+      </ul>
+      <a href="#react">
+        <h3>Components</h3>
+      </a>
+      <ul>
+        <li>
+          type <b>UserProps</b> = { name: string; age: number; children: <b>React.ReactNode</b>; }; <br>
+          export function User({ name, age }: <b>UserProps</b>) { // ... }; <br>
+          <b>children</b>: <br>
+          <ul>
+            <li>React.ReactNode</li>
+            <li>React.ReactElement</li>
+            <li>JSX.Element</li>
+          </ul>
 
+        </li>
+        <li>
+          interface <b>IUserProps</b> { name: string; age: number; }; <br>
+          export const User: <b>React.FC</b>&#60<b>IUserProps</b>> = ({ name, age }) => { // ... }
+        </li>
+        <li>
+          interface <b>IUserProps</b> { name: string; age: number; }; <br>
+          export class User extends <b>React.Component</b>&#60<b>IUserProps</b>> { render( ) { // ... } }
+        </li>
+        <li>
+          type <b>User</b> = { name: string; email: string; }; <br>
+          type <b>UserProfileProps</b> = { user: <b>User</b>; onUserUpdate: (user: <b>User</b>) => void; }; <br>
+          export function UserProfile({ user, onUserUpdate }: <b>UserProfileProps</b>) { // ... }
+        </li>
+      </ul>
+      <a href="#react">
+        <h3>Hooks</h3>
+      </a>
+      <ul>
+        <li>
+          <b>useState</b> <br>
+          <ul>
+            <li>
+              type <b>User</b> = { name: string; email: string; }; <br>
+              const [user, setUser] = useState&#60<b>User</b>>({ // ... })
+            </li>
+            <li>
+              type <b>Status</b> = 'loading' | 'idle' | 'error'; <br>
+              const [status, setStatus] = useState&#60<b>Status</b>>('idle');
+            </li>
+            <li>
+              type TextInputProps = {<b>initialValue</b>: string; onSave: (value: string) => void; }; <br>
+              export function TextInput({ initialValue, onSave }: TextInputProps) { <br>
+              const [value, setValue] = useState(<b>initialValue</b>); // ... };
+            </li>
+          </ul>
+        </li>
+        <li>
+          <b>useRef</b> <br>
+          <ul>
+            <li>
+              const inputEl = useRef&#60<b>HTMLInputElement</b>>(null);
+            </li>
+            <li>
+              const textareaRef = useRef&#60<b>HTMLTextAreaElement</b>>(null);
+            </li>
+            <li>
+              const divRef = useRef&#60<b>HTMLDivElement</b>>(null);
+            </li>
+            <li>
+              const selectRef = useRef&#60<b>HTMLSelectElement</b>>(null);
+            </li>
+            <li>
+              const constRef = useRef&#60<b>number</b>>(23);
+            </li>
+          </ul>
+        </li>
+        <li>
+          <b>useReducer</b> <br>
+          <ul>
+            <li>
+              type <b>User</b> = { id: string; name: string; email: string; }; <br>
+              type <b>State</b> = { loading: boolean; error: string | null; user: User | null; }; <br>
+              type <b>Action</b> = { type: 'LOADING' } | { type: 'SUCCESS'; payload: User } | { type: 'ERROR'; error:
+              string };
+              <br>
+            </li>
+            <li>
+              function reducer( state: State, action: <b>Action</b> ): State { <br>
+              switch (action.type) { <br>
+              case 'LOADING': return { ...state, loading: true, error: null }; <br>
+              case 'SUCCESS': return { loading: false, error: null, user: action.payload }; <br>
+              case 'ERROR': return { ...state, loading: false, error: action.error }; <br>
+              default: throw new Error( ); } }
+            </li>
+            <li>
+              const initialState: <b>State</b> = { loading: false, error: null, user: null, }; <br>
+              function UserLoader( ) { <br>
+              const [state, dispatch] = useReducer(reducer, initialState); <br>
+              // ... }
+            </li>
+            <li>
+              dispatch({ type: 'LOADING' }); <br>
+              dispatch({ type: 'SUCCESS', payload: { id: '1', name: 'John', email: 'john@example.com' } }); <br>
+              dispatch({ type: 'ERROR', error: 'Failed to load user' }); <br>
+              dispatch({ type: 'SUCCESS' }); <br>
+              dispatch({ type: 'ERROR' });
+            </li>
+          </ul>
+        </li>
+        <li>
+          <b>useContext</b> <br>
+          <ul>
+            <li><b>UserProvider.tsx</b> <br>
+              import React, { createContext, useContext, useState } from 'react'; <br>
+              type User = { name: string; email: string; }; <br>
+              type UserContextProps = { <br>
+              user: User | null; <br>
+              setUser: React.Dispatch&#60React.SetStateAction&#60User | null>>; }; <br>
+              const UserContext = createContext<&#60UserContextProps | undefined>(undefined); <br>
+                type Props = { children: React.ReactNode; }; <br>
 
+                export function UserProvider({ children }: Props) { <br>
+                const [user, setUser] = useState&#60User | null>(null); <br>
 
+                return ( <br>
+                &#60UserContext.Provider value={{ user, setUser }}> <br>
+                {children} <br>
+                &#60/UserContext.Provider> ); } <br>
+
+                export function useUserState( ) { <br>
+                const context = useContext(UserContext); <br>
+                if (context === undefined) { throw new Error('useUser must be used within a UserProvider'); } <br>
+                return context; }
+            </li>
+            <li><b>UserProfile.tsx</b> <br>
+              import { useUserState } from './UserProvider'; <br>
+              function UserProfile( ) { <br>
+              const { user, setUser } = useUserState( ); <br>
+
+              useEffect(( ) => { <br>
+              setTimeout(( ) => { setUser({ name: 'John Doe', email: 'john.doe@example.com', }); <br>
+              }, 2000); }, [setUser]); <br>
+
+              if (!user) { return &#60p>Loading...&#60/p>; } <br>
+
+              return ( &#60div> <br>
+              &#60h1>{user.name}&#60/h1> <br>
+              &#60p>{user.email}&#60/p> <br>
+              &#60/div> ); }
+            </li>
+          </ul>
+        </li>
+        <li><b>useEffect</b>, <b>useMemo</b>, <b>useCallback</b> <i>(no need to type)</i> <br>
+          <ul>
+            <li>useEffect(( ) => { let isActive = true; <br>
+              return ( ): <b>void</b> => { isActive = false; }; }, [ ]);</li>
+          </ul>
+        </li>
+      </ul>
+      <a href="#react">
+        <h3>Events</h3>
+      </a>
+      <ul>
+        <li>
+          <b>FormEvent</b> <br>
+          <ul>
+            <li>
+              const handleSubmit = (event: <b>FormEvent</b>) => { <br>
+              event.preventDefault( ); // ... };
+            </li>
+          </ul>
+        </li>
+        <li>
+          <b>ChangeEvent</b> <br>
+          <ul>
+            <li>
+              function TextInput( ) { <br>
+              const [text, setText] = useState&#60string>(''); <br>
+
+              const handleTextChange = (event: <b>ChangeEvent</b>&#60<b>HTMLInputElement</b>>) => { <br>
+              setText(event.target.value); <br>
+              console.log('Text:', event.target.value); }; <br>
+
+              return &#60input type="text" value={text} onChange={handleTextChange} />; }
+
+            </li>
+          </ul>
+        </li>
+        <li>
+          <b>MouseEvent</b> <br>
+          <ul>
+            <li>
+              const handleChildClick = (event: <b>MouseEvent</b>&#60<b>HTMLButtonElement</b>>) => {
+              event.stopPropagation( ); // ... };
+            </li>
+          </ul>
+        </li>
+        <li>
+          <b>KeyboardEvent</b> <br>
+          <ul>
+            <li>
+
+            </li>
+          </ul>
+        </li>
+        <li>
+          <b>KeyboardEvent</b> <br>
+          <ul>
+            <li>
+              type InputProps = { <br>
+              value: string; <br>
+              onChange: (value: string) => void; <br>
+              onPressEnter: ( ) => void; } <br>
+
+              function Input({ value, onChange, onPressEnter }: InputProps) { <br>
+
+              const handleKeyPress = (event: <b>KeyboardEvent</b>&#60<b>HTMLInputElement</b>>) => { <br>
+              if (event.key === 'Enter') { onPressEnter( ); } }; <br>
+
+              const handleChange = (event: <b>ChangeEvent</b>&#60<b>HTMLInputElement</b>>) => { <br>
+              onChange(event.target.value); }; <br>
+
+              return ( &#60input value={value} onChange={handleChange} onKeyPress={handleKeyPress} /> ); }
+            </li>
+          </ul>
+        </li>
+      </ul>
     </section>
 
     <section class="decorators">
