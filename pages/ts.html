@@ -968,7 +968,7 @@
               user: User | null; <br>
               setUser: <b>Dispatch</b>&#60<b>SetStateAction</b>&#60User | null>>; }; <br>
               const UserContext = createContext&#60UserContextProps | undefined>(undefined); <br>
-              type Props = { children: ReactNode; }; <br>
+              type Props = { children: <b>ReactNode</b>; }; <br>
 
               export function UserProvider({ children }: Props) { <br>
               const [user, setUser] = useState&#60User | null>(null); <br>
